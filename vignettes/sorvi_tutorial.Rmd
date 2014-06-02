@@ -17,13 +17,13 @@ Finnish open government data toolkit for R
 sorvi provides miscellaneous tools for Finnish open government data to
 complement other [rOpenGov](http://ropengov.github.io/projects)
 packages with a more specific scope. We also maintain a [todo
-list](todo-datasets) of further data sources to be added; your
+list](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md) of further data sources to be added; your
 [contributions are
 welcome](http://louhos.github.com/contact.html). For further
 information, see the [home page](http://louhos.github.com/sorvi).
 
 
-## Installation
+### Installation
 
 We assume you have installed [R](http://www.r-project.org/). If you
 use [RStudio](http://www.rstudio.com/ide/download/desktop), change the
@@ -161,7 +161,7 @@ head(tab)
 
 Line fit with confidence smoothers:
 
-```{r regressionline, message=FALSE, eval=TRUE}
+```{r regressionline, message=FALSE, eval=TRUE, fig.width=10, fig.height=5}
 library(sorvi)
 library(plyr)
 library(RColorBrewer)
