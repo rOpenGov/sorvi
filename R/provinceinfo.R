@@ -268,7 +268,7 @@ find_province <- function (municipalities = NULL, municipality.info = NULL) {
   names(m2p) <- as.character(municipality.info$Kunta.FI)
 
   if (!is.null(municipalities)) {
-    m2p <- m2p[municipalities]
+    m2p <- m2p[as.character(municipalities)]
   }
 
   m2p

@@ -70,9 +70,12 @@ valid_hetu("010101-0101") # TRUE/FALSE
 
 ### Postal codes
 
-Get Finnish postal codes vs. municipalities table from Wikipedia
+Finnish postal codes vs. municipalities table from
+[Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The
+municipality names are provided also in plain ascii without special
+characters:
 
-```{r postalcodes, message=FALSE, eval=TRUE}
+```{r postalcodes, message=FALSE, warning=FALSE, eval=TRUE}
 postal.code.table <- get_postal_code_info() 
 head(postal.code.table)
 ```
@@ -80,7 +83,7 @@ head(postal.code.table)
 ### IP Location
 
 Get geographic coordinates for a given IP-address from
-[datasciencetoolkit](http://www.datasciencetoolkit.org//ip2coordinates/):
+[Data Science Toolkit](http://www.datasciencetoolkit.org/):
 
 ```{r iplocation, message=FALSE}
 ip_location("137.224.252.10")
@@ -94,7 +97,7 @@ Registry (Vaestorekisterikeskus), Statistics Finland (Tilastokeskus)
 and Land Survey Finland (Maanmittauslaitos). The row names for each
 data set are harmonized and can be used to match data sets from
 different sources, as different data sets may carry slightly different
-versions of certain municipality names. Examples for each case:
+versions of certain municipality names. 
 
 Finnish municipality information from Land Survey Finland ([Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu)). 
 
@@ -106,6 +109,8 @@ municipality.info.mml[1:2,]
 Get information of Finnish provinces from Statistics Finland ([Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px))
 
 ```{r municipalityStatFi, message=FALSE, warning=FALSE, eval=TRUE}
+library(pxR) # can be installed with install.packages("pxR")
+library(reshape) # can be installed with install.packages("reshape")
 municipality.info.statfi <- get_municipality_info_statfi()
 municipality.info.statfi[1:2,]
 ```
@@ -131,14 +136,15 @@ municipality_ids <- convert_municipality_codes()
 head(municipality_ids)
 ```
 
-Translate municipality names Finnish/English:
+Translate municipality names Finnish/English (we have not been able to
+solve all encoding problems yet; suggestions very welcome!):
 
 ```{r translate, message=FALSE}
 translations <- load_sorvi_data("translations")
 head(translations)
 ```
 
-### Retrieve population register data
+### Finnish population registers
 
 Municipality-level population information from [Vaestorekisterikeskus](http://vrk.fi/default.aspx?docid=5127&site=3&id=0):
 
@@ -149,7 +155,7 @@ head(df)
 
 ### Province information
 
-Get information of Finnish provinces from Wikipedia:
+Get Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
 
 ```{r municipality, message=FALSE}
 tab <- get_province_info_wikipedia()
@@ -178,10 +184,16 @@ print(p)
 This work can be freely used, modified and distributed under the 
 [Two-clause BSD license](http://en.wikipedia.org/wiki/BSD\_licenses).
 
-Kindly cite the work, if appropriate, as 'Leo Lahti, Juuso Parkkinen,
-Joona Lehtomaki et al. (2014). sorvi - R tools for Finnish open
-government data. URL: http://louhos.github.com/sorvi'. A full list of
-authors and contributors and contact information is
+Kindly cite the work as follows
+
+```{r citation, message=FALSE, eval=TRUE}
+citation("sorvi")
+```
+
+Leo Lahti, Juuso Parkkinen, Joona Lehtomaki et al. (2014). sorvi - R
+tools for Finnish open government data. URL:
+http://louhos.github.com/sorvi. A full list of authors and
+contributors and contact information is
 [here](http://louhos.github.com/contact).
 
 ## Session info
