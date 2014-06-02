@@ -1,54 +1,67 @@
 <!--
 %\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{sorvi Markdown Vignette made with knitr}
+
+Joissakin esimerkeissa tarvittavat riippuvuudet 
+	<a href="http://trac.osgeo.org/gdal/wiki/DownloadSource">GDAL</a>, 
+	<a href="http://freeglut.sourceforge.net/">freeglut</a>, 
+	<a href="http://xmlsoft.org/downloads.html">XML</a>, 
+	<a href="http://trac.osgeo.org/geos">GEOS</a> ja 
+	<a href="http://trac.osgeo.org/proj">PROJ.4</a>. 
+
 -->
 
 Finnish open government data toolkit for R
 ===========
 
-This is an R package for Finnish open government data. New
-contributions are [welcome!](http://louhos.github.com/contact.html).
+sorvi provides miscellaneous tools for Finnish open government data to
+complement other [rOpenGov](http://ropengov.github.io/projects)
+packages with a more specific scope. We also maintain a [todo
+list](todo-datasets) of further data sources to be added; your
+[contributions are
+welcome](http://louhos.github.com/contact.html). For further
+information, see the [home page](http://louhos.github.com/sorvi).
 
-This work is part of the [rOpenGov](http://ropengov.github.com)
-project.
-
-We also maintain a [todo list](todo-datasets) of further data sources
-to be added. Contributions welcome!
 
 ## Installation
 
-General users (CRAN release version):
+We assume you have installed [R](http://www.r-project.org/). If you
+use [RStudio](http://www.rstudio.com/ide/download/desktop), change the
+default encoding to UTF-8. Linux users should also install
+[CURL](http://curl.haxx.se/download.html).
+
+Install the stable release version in R:
 
 
 ```r
 install.packages("sorvi")
-library(sorvi)
 ```
 
-Developers (Github development version):
+
+Test the installation by loading the library:
 
 
 ```r
-install.packages("devtools")
-library(devtools)
-install_github("sorvi", "ropengov")
 library(sorvi)
 ```
 
-Further installation and development instructions can be found at the
-project [home page](http://ropengov.github.com/sorvi). 
+
+We also recommend setting the UTF-8 encoding:
 
 
-## Using the package
+```r
+Sys.setlocale(locale = "UTF-8")
+```
 
-For further usage
-examples, see [Louhos-blog](http://louhos.wordpress.com) and
-[Datawiki](https://github.com/louhos/sorvi/wiki/Data).
+
+Brief examples of the package tools are provided below. Further
+examples are available in [Louhos-blog](http://louhos.wordpress.com)
+and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 
 
 ### Personal identification number (HETU)
 
-Extracting information from a Finnish personal identification number:
+Extract information from a Finnish personal identification number:
 
 
 ```r
@@ -88,16 +101,18 @@ hetu("111111-111C")
 ## [1] "hetu"
 ```
 
-Validating Finnish personal identification number:
+
+Validate Finnish personal identification number:
 
 
 ```r
-valid_hetu("010101-0101") # TRUE/FALSE
+valid_hetu("010101-0101")  # TRUE/FALSE
 ```
 
 ```
 ## [1] TRUE
 ```
+
 
 ### Postal codes
 
@@ -105,14 +120,33 @@ Get Finnish postal codes vs. municipalities table from Wikipedia
 
 
 ```r
-postal.code.table <- get_postal_code_info() 
+postal.code.table <- get_postal_code_info()
+```
+
+```
+## Warning: incomplete final line found on
+## 'http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain'
+```
+
+```r
 head(postal.code.table)
 ```
 
+```
+##   postal.code municipality municipality.ascii
+## 1       07230       Askola             Askola
+## 2       07500       Askola             Askola
+## 3       07510       Askola             Askola
+## 4       07530       Askola             Askola
+## 5       07580       Askola             Askola
+## 6       07590       Askola             Askola
+```
+
+
 ### IP Location
 
-Get geographic coordinates for a given IP-address from 
-http://www.datasciencetoolkit.org//ip2coordinates/
+Get geographic coordinates for a given IP-address from
+[datasciencetoolkit](http://www.datasciencetoolkit.org//ip2coordinates/):
 
 
 ```r
@@ -124,46 +158,102 @@ ip_location("137.224.252.10")
 ```
 
 
+
 ### Municipality information
 
 Finnish municipality information is available through Population
 Registry (Vaestorekisterikeskus), Statistics Finland (Tilastokeskus)
-and Land Survey Finland (Maanmittauslaitos). We provide separate
-download routine for each data set. The row names are in harmonized
-format and can be used to match data sets from different sources, as
-different data sets may carry slightly different versions of certain
-municipality names. Examples for each case:
+and Land Survey Finland (Maanmittauslaitos). The row names for each
+data set are harmonized and can be used to match data sets from
+different sources, as different data sets may carry slightly different
+versions of certain municipality names. Examples for each case:
 
 Finnish municipality information from Land Survey Finland ([Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu)). 
 
 
 ```r
 municipality.info.mml <- get_municipality_info_mml()
-municipality.info.mml[1:2,]
+municipality.info.mml[1:2, ]
 ```
+
+```
+##           Kohderyhma Kohdeluokk AVI Maakunta Kunta
+## Äänekoski         71      84200   4       13   992
+## Ähtäri            71      84200   4       14   989
+##                                             AVI_ni1
+## Äänekoski Länsi- ja Sisä-Suomen aluehallintovirasto
+## Ähtäri    Länsi- ja Sisä-Suomen aluehallintovirasto
+##                                                      AVI_ni2
+## Äänekoski Regionförvaltningsverket i Västra och Inre Finland
+## Ähtäri    Regionförvaltningsverket i Västra och Inre Finland
+##                 Maaku_ni1         Maaku_ni2 Kunta_ni1 Kunta_ni2 Kieli_ni1
+## Äänekoski     Keski-Suomi Mellersta Finland Äänekoski       N_A     Suomi
+## Ähtäri    Etelä-Pohjanmaa Södra Österbotten    Ähtäri    Etseri     Suomi
+##           Kieli_ni2                                    AVI.FI Kieli.FI
+## Äänekoski       N_A Länsi- ja Sisä-Suomen aluehallintovirasto    Suomi
+## Ähtäri       Ruotsi Länsi- ja Sisä-Suomen aluehallintovirasto    Suomi
+##                Maakunta.FI  Kunta.FI
+## Äänekoski      Keski-Suomi Äänekoski
+## Ähtäri    EtelÃ¤-Pohjanmaa    Ähtäri
+```
+
 
 Get information of Finnish provinces from Statistics Finland ([Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px))
 
 
 ```r
 municipality.info.statfi <- get_municipality_info_statfi()
-municipality.info.statfi[1:2,]
 ```
+
+```
+## Error: could not find function "str_locate_all"
+```
+
+```r
+municipality.info.statfi[1:2, ]
+```
+
+```
+## Error: object 'municipality.info.statfi' not found
+```
+
 
 List the province for each municipality in Finland:
 
 ```r
+
 # Specific municipalities
-m2p <- find_province(c("Helsinki", "Tampere", "Turku")) 
+m2p <- find_province(c("Helsinki", "Tampere", "Turku"))
 head(m2p)
+```
+
+```
+##          Helsinki           Tampere             Turku 
+##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
+```
+
+```r
 
 # All municipalities
-m2p <- find_province(municipality.info.statfi$Kunta) 
+m2p <- find_province(municipality.info.statfi$Kunta)
+```
+
+```
+## Error: object 'municipality.info.statfi' not found
+```
+
+```r
 
 # Speeding up with predefined municipality info table:
 m2p <- find_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 head(m2p)
 ```
+
+```
+##          Helsinki           Tampere             Turku 
+##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
+```
+
 
 Convert municipality codes and names:
 
@@ -171,6 +261,17 @@ Convert municipality codes and names:
 municipality_ids <- convert_municipality_codes()
 head(municipality_ids)
 ```
+
+```
+##            id      name
+## Äänekoski 992 Äänekoski
+## Ähtäri    989    Ähtäri
+## Akaa      020      Akaa
+## Alajärvi  005  Alajärvi
+## Alavieska 009 Alavieska
+## Alavus    010    Alavus
+```
+
 
 Translate municipality names Finnish/English:
 
@@ -186,6 +287,7 @@ head(translations)
 ##      Southern Savonia                Kainuu       Tavastia Proper 
 ##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
 ```
+
 
 ### Retrieve population register data
 
@@ -206,6 +308,7 @@ head(df)
 ## Alavieska   009 Alavieska Alavieska  1420   1350  2770
 ## Alavus      010    Alavus    Alavus  4619   4634  9253
 ```
+
 
 ### Province information
 
@@ -228,6 +331,7 @@ head(tab)
 ```
 
 
+
 ### Visualization routines
 
 Line fit with confidence smoothers:
@@ -240,26 +344,13 @@ library(RColorBrewer)
 library(reshape)
 library(ggplot2)
 data(iris)
-p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
+p <- regression_plot(Sepal.Length ~ Sepal.Width, iris)
 print(p)
 ```
 
 ![plot of chunk regressionline](figure/regressionline.png) 
 
-Plot matrix:
 
-
-```r
-mat <- rbind(c(1,2,3), c(1, 3, 1), c(4,2,2)); 
-pm <- plot_matrix(mat, "twoway", midpoint = 2) 
-```
-
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
-
-```r
-# Plotting the scale
-# sc <- plot_scale(pm$colors, pm$breaks)
-```
 
 ## Licensing and Citations
 
@@ -267,8 +358,8 @@ This work can be freely used, modified and distributed under the
 [Two-clause BSD license](http://en.wikipedia.org/wiki/BSD\_licenses).
 
 Kindly cite the work, if appropriate, as 'Leo Lahti, Juuso Parkkinen,
-Joona Lehtomaki ym. (2014). sorvi - suomalainen avoimen datan
-tyokalupakki. URL: http://louhos.github.com/sorvi)'. A full list of
+Joona Lehtomaki et al. (2014). sorvi - R tools for Finnish open
+government data. URL: http://louhos.github.com/sorvi'. A full list of
 authors and contributors and contact information is
 [here](http://louhos.github.com/contact).
 
@@ -297,16 +388,18 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] ggplot2_1.0.0      reshape_0.8.5      RColorBrewer_1.0-5
-## [4] plyr_1.8.1         sorvi_0.4.30       knitr_1.6         
+## [1] ggplot2_0.9.3.1    reshape_0.8.5      RColorBrewer_1.0-5
+## [4] plyr_1.8.1         sp_1.0-15          sorvi_0.4.30      
+## [7] knitr_1.5         
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_0.10    
-##  [5] grid_3.1.0       gtable_0.1.2     labeling_0.2     MASS_7.3-33     
-##  [9] munsell_0.4.2    proto_0.3-10     pxR_0.40.0       Rcpp_0.11.1     
-## [13] reshape2_1.4     RJSONIO_1.2-0.2  scales_0.2.4     stringr_0.6.2   
-## [17] tools_3.1.0      XML_3.98-1.1
+##  [5] grid_3.1.0       gtable_0.1.2     labeling_0.2     lattice_0.20-29 
+##  [9] MASS_7.3-32      munsell_0.4.2    proto_0.3-10     pxR_0.40.0      
+## [13] Rcpp_0.11.1      reshape2_1.4     RJSONIO_1.2-0.2  scales_0.2.4    
+## [17] stringr_0.6.2    tools_3.1.0      XML_3.98-1.1
 ```
+
 
 
 
