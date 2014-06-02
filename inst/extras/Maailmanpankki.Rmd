@@ -1,0 +1,164 @@
+<!--
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{sorvi Markdown Vignette made with knitr}
+-->
+
+
+[Maailmanpankki](http://data.worldbank.org/) tarjoaa runsaasti avointa dataa. Alla muutamia esimerkkeja aineistojen hakuun ja kasittelyyn R-kielella. Lisaa esimerkkeja [taalta](http://lamages.blogspot.com/2011/09/accessing-and-plotting-world-bank-data.html) ja [taalta](http://code.google.com/p/google-motion-charts-with-r/).
+
+### Suomalaisten muuttoliiketilastot
+
+Muuttotiedot maittain vuonna 2010, julkaistu [Maailmanpankin sivuilla](http://econ.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTDECPROSPECTS/0,,contentMDK:22759429~pagePK:64165401~piPK:64165026~theSitePK:476883,00.html). 
+
+```{r maailmanpankki-migration, warning=FALSE, message=FALSE}
+# sorvi installation: http://louhos.github.com/sorvi/asennus.html
+library(sorvi)
+
+GetWorldbankMigration <- function(countries) {
+
+  library("gdata")
+  
+  # Load migration matrix from World Bank
+  tmp <- try(migration.matrix <- gdata::read.xls("http://siteresources.worldbank.org/INTPROSPECTS/Resources/334934-1110315015165/T1.Estimates_of_Migrant_Stocks_2010.xls"))
+
+  if (class(tmp) == "try-error") {stop("gdata::read.xls requires installation of the PERL module for Windows")}
+
+  data.inds <- 2:214
+  
+  # Get migration flow in to and out from the given countries
+  migration.dat <- list()
+  for (i in 1:length(countries)) {
+    message("Loading migration data for:", countries[i])
+    if (!any(migration.matrix[1,]==countries[i])) {
+      cat("- Error: country not found!\n")
+    } else {
+      migration.in <- as.vector(migration.matrix[data.inds, migration.matrix[1,]==countries[i]])
+      migration.in <- as.numeric(gsub(",", "", migration.in))
+      migration.out <- as.vector(as.matrix(migration.matrix[migration.matrix[,1]==countries[i], data.inds]))
+      migration.out <- as.numeric(gsub(",", "", migration.out))
+      migration.dat[[i]] <- data.frame(In=migration.in, Out=migration.out)
+      message("- DONE\n")
+    }
+  }
+  if (length(migration.dat) > 0)
+    names(migration.dat) <- countries
+  else
+    stop("No data found - quitting\n")
+  
+  # Add country name information
+  migration.dat$Country <- as.vector(migration.matrix[data.inds, 1])
+  
+  # Add manually alternative country names for some countries (based on names used in rworldmap)
+  countries.alternative <- as.vector(migration.matrix[data.inds, 1])
+  alt.names <- c("Bahamas", "Channel Islands", "Democratic Republic of the Congo", "Congo",
+                 "Cote d'Ivoire", "Egypt", "Faroe Islands", "Gambia",
+                 "Hong Kong", "Iran (Islamic Republic of)", "Korea, Democratic People's Republic of", "Korea, Republic of",
+                 "Kosovo", "Kyrgyzstan", "Lao People's Democratic Republic", "Libyan Arab Jamahiriya",
+                 "Macau", "The former Yugoslav Republic of Macedonia", 
+                 "Micronesia, Federated States of", "Republic of Moldova",
+                 "Burma", "Russia", "Sao Tome and Principe", "Slovakia",
+                 "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "United Republic of Tanzania",
+                 "Venezuela", "Viet Nam", "United States Virgin Islands", "Palestine",
+                 "Yemen")
+  countries.alternative[c(14, 39, 44, 45, 47, 57, 63, 69, 84, 89, 101, 102, 103, 
+                          105, 106, 111, 115, 116, 128, 129, 135, 160, 164, 171, 
+                          178, 179, 180, 188, 207, 208, 209, 210, 211)] <- alt.names
+
+  migration.dat$CountryAlternative=countries.alternative
+
+  return(migration.dat)
+
+}
+
+
+migration <- GetWorldbankMigration("Finland")
+```
+
+### Suomalaisten nettomuuton visualisointi maailmankartalla
+
+Suomalaisten nettomuuton visualisointi maailmankartalla [Louhos-blogista](http://louhos.wordpress.com/2011/11/17/suomalaisten-muuttoliike-maailmanpankin-datoista-maailmankartalla-visualisoituna/):
+
+```{r maailmanpankki-migrationvisu, fig.width=12, fig.height=12, warning=FALSE, message=FALSE}
+# Load worldmap
+#install.packages("rworldmap")
+library(rworldmap)
+worldmap <- getMap(resolution="medium")
+
+# Compute the total amount of migration in to and out from Finland
+fin.in <- migration$Finland$In
+fin.out <- migration$Finland$Out
+fin.in[is.na(fin.in)] <- 0
+fin.out[is.na(fin.out)] <- 0
+migration.total <- rowSums(cbind(fin.in, fin.out), na.rm=T)
+
+# Compute ratio indicating the direction of the migration 
+# in to (1) or out from (0) Finland
+migration.ratio <- (migration.total - fin.out)/migration.total
+migration.ratio[migration.ratio==Inf] <- 1
+
+# Total amount of migration is mapped to the strength of the colours
+# Use logarithmic scale to reduce the effect of very large numbers (Sweden)
+migration.total.log <- log(migration.total)
+migration.total.log[migration.total.log==-Inf] <- 0
+alpha <- migration.total.log/max(migration.total.log)
+
+# Direction of migration is mapped to red and blue colours
+in.ratio <- migration.ratio
+out.ratio <- 1 - migration.ratio
+in.ratio[is.nan(migration.ratio)] <- out.ratio[is.nan(migration.ratio)] <- 0
+
+# Construct a rgb color scheme based on these values
+cols.rgb <- rgb(red=in.ratio, green=0, blue=out.ratio, alpha=alpha)
+cols.rgb[cols.rgb=="#00000000"] <- "grey90"
+names(cols.rgb) <- migration$CountryAlternative
+
+# Initialize colours for all countries in the worldmap to light grey
+cols.countries <- rep("grey90", length(levels(worldmap@data$NAME)))
+names(cols.countries) <- levels(worldmap@data$NAME)
+
+# Map countries in the migration data set to the worldmap and update 
+# country colours
+mapping <- match(names(cols.rgb), names(cols.countries))
+cols.countries[mapping[!is.na(mapping)]] <- cols.rgb[!is.na(mapping)]
+cols.countries["Finland"] <- "black"
+
+# Plot the map with the final visualization
+q <- spplot(worldmap, "NAME", col.regions = cols.countries,
+main = NULL, colorkey = FALSE, lwd = .4, col = "black")
+print(q)
+```
+
+### Suomen CO2-paastot
+
+Seuraava esimerkki hakee Suomen CO2-paastotasot vuosilta 1990-2008 (Lahde: [Louhos-blogi](https://louhos.wordpress.com/2012/09/21/suomen-co2-paastot-1990-2008/)):
+ 
+```{r maailmanpankki-FinlandCO2, fig.width=8, fig.height=8, warning=FALSE, message=FALSE}
+# Lataa WDI-paketti
+#install.packages("WDI")
+library(WDI)
+
+# Poimi tutkittava indikaattori manuaalisesti
+k <- 27
+indi <- WDIsearch()[k,1]
+titl <- WDIsearch()[k,2]
+
+# Hae tiedot
+df <- WDI(country="all", indicator=indi, start=1990, end=2008)
+
+# Visualisoi
+library(ggplot2)
+theme_set(theme_bw(20)) 
+p <- ggplot(data = subset(df, country == "Finland")) + aes(x = year, y = EN.ATM.CO2E.KD.GD) + geom_line() + opts(title = titl)
+print(p)
+```
+
+
+### Versiotiedot
+
+Tama esimerkki on toteutettu seuraavin versiotiedoin:
+ 
+```{r versiotiedot}
+sessionInfo()
+```
+
+
