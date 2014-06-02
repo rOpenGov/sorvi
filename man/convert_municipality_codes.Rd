@@ -3,12 +3,12 @@
 \alias{convert_municipality_codes}
 \title{Conversions between municipality codes and names}
 \usage{
-convert_municipality_codes(ids = NULL, names = NULL)
+convert_municipality_codes(ids = NULL, municipalities = NULL)
 }
 \arguments{
 \item{ids}{NULL}
 
-\item{names}{NULL}
+\item{municipalities}{NULL}
 }
 \value{
 Depending on the input. Converted id or name vector, or full conversion table.

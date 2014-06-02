@@ -7,7 +7,7 @@
 #' Conversions between municipality codes and names
 #'
 #' @param ids NULL 
-#' @param names NULL 
+#' @param municipalities NULL 
 #'
 #' @return Depending on the input. Converted id or name vector, or full conversion table.
 #' @export 
@@ -17,7 +17,7 @@
 #' @examples  \dontrun{conversion.table <- convert_municipality_codes()}
 #' @keywords utilities
 
-convert_municipality_codes <- function (ids = NULL, names = NULL) {
+convert_municipality_codes <- function (ids = NULL, municipalities = NULL) {
  
   # Reading municipality information from the web
   df <- get_municipality_info_mml()	
@@ -39,8 +39,10 @@ convert_municipality_codes <- function (ids = NULL, names = NULL) {
 
   if (!is.null(ids)) {
     res <- conversion.table$name[match(as.character(ids), conversion.table$id)]
-  } else if (!is.null(names)) {
-    res <- conversion.table$id[match(as.character(names), conversion.table$name)]
+    names(res) <- ids
+  } else if (!is.null(municipalities)) {
+    res <- conversion.table$id[match(as.character(municipalities), conversion.table$name)]
+    names(res) <- municipalities
   } 
 
   res
@@ -253,15 +255,16 @@ get_municipality_info_mml <- function () {
 #' # all.municipalities <- as.character(municipality.info$Kunta) 
 #' # Pick province for given municipalities:
 #' # mapping between municipalities (kunta) and provinces (maakunta)
-#' # m2p <- find_province(c("Helsinki", "Tampere", "Turku")) 
+#' # m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
 #' # Speed up by providing predefined table of municipality info:
-#' # m2p <- find_province(c("Helsinki", "Tampere", "Turku"), municipality.info)
+#' # m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info)
 #' @keywords utilities
 
-find_province <- function (municipalities = NULL, municipality.info = NULL) {
+municipality_to_province <- function (municipalities = NULL, municipality.info = NULL) {
 
   if (is.null(municipality.info)) { 
     municipality.info <- get_municipality_info_mml()
+    #municipality.info <- rownames(get_municipality_info_statfi())
   }
 
   m2p <- as.character(municipality.info$Maakunta.FI)

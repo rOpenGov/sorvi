@@ -17,13 +17,25 @@ Finnish open government data toolkit for R
 sorvi provides miscellaneous tools for Finnish open government data to
 complement other [rOpenGov](http://ropengov.github.io/projects)
 packages with a more specific scope. We also maintain a [todo
-list](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md) of further data sources to be added; your
+list of further data sources](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md) to be added; your
 [contributions are
 welcome](http://louhos.github.com/contact.html). For further
 information, see the [home page](http://louhos.github.com/sorvi).
 
 
-### Installation
+### Available data sources and tools
+
+ * [Installation](#installation) (Asennus)
+ * [Personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)
+ * [Postal codes](#postalcodes) (Postinumerodata)
+ * [IP address coordinates](#ip) (IP-osoitteen koordinaatit)
+ * [Municipality information](#municipality) (Kuntatason informaatio)
+ * [Province information](#provinces) (Maakuntatason informaatio)
+ * [Finnish population register](#populationregister) (Vaestorekisteri)
+ * [Visualization tools](#visualization) (Visualisointirutiineja)
+
+
+### <a name="installation"></a>Installation
 
 We assume you have installed [R](http://www.r-project.org/). If you
 use [RStudio](http://www.rstudio.com/ide/download/desktop), change the
@@ -53,7 +65,7 @@ examples are available in [Louhos-blog](http://louhos.wordpress.com)
 and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 
 
-### Personal identification number (HETU)
+### <a name="hetu"></a>Personal identification number (HETU)
 
 Extract information from a Finnish personal identification number:
 
@@ -68,7 +80,8 @@ Validate Finnish personal identification number:
 valid_hetu("010101-0101") # TRUE/FALSE
 ```
 
-### Postal codes
+
+### <a name="postalcodes"></a>Postal codes
 
 Finnish postal codes vs. municipalities table from
 [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The
@@ -80,17 +93,16 @@ postal.code.table <- get_postal_code_info()
 head(postal.code.table)
 ```
 
-### IP Location
+### <a name="ip"></a>IP Location
 
-Get geographic coordinates for a given IP-address from
+Geographic coordinates for a given IP-address from
 [Data Science Toolkit](http://www.datasciencetoolkit.org/):
 
 ```{r iplocation, message=FALSE}
 ip_location("137.224.252.10")
 ```
 
-
-### Municipality information
+### <a name="municipality"></a>Municipality data
 
 Finnish municipality information is available through Population
 Registry (Vaestorekisterikeskus), Statistics Finland (Tilastokeskus)
@@ -116,44 +128,43 @@ municipality.info.statfi[1:2,]
 ```
 
 List the province for each municipality in Finland:
-```{r province2, message=FALSE, warning=FALSE, eval=TRUE}
-
-# Specific municipalities
-m2p <- find_province(c("Helsinki", "Tampere", "Turku")) 
-head(m2p)
-
+```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 # All municipalities
-m2p <- find_province(municipality.info.statfi$Kunta) 
+m2p <- municipality_to_province() 
+head(m2p) # Just show the first ones
+
+# Selected municipalities
+municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
 
 # Speeding up with predefined municipality info table:
-m2p <- find_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
+m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 head(m2p)
 ```
 
-Convert municipality codes and names:
-```{r province3, message=FALSE, eval=TRUE}
+Convert municipality codes and names (see
+help(convert_municipality_codes) for all options):
+
+```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
+# Municipality name to code
+convert_municipality_codes(municipalities = c("Turku", "Tampere"))
+
+# Municipality codes to names
+convert_municipality_codes(ids = c(853, 837))
+
+# Complete conversion table
 municipality_ids <- convert_municipality_codes()
-head(municipality_ids)
+head(municipality_ids) # just show the first entries
 ```
 
-Translate municipality names Finnish/English (we have not been able to
-solve all encoding problems yet; suggestions very welcome!):
+Finnish-English translations for county names (we have not been able
+to solve all encoding problems yet; suggestions very welcome!):
 
 ```{r translate, message=FALSE}
 translations <- load_sorvi_data("translations")
 head(translations)
 ```
 
-### Finnish population registers
-
-Municipality-level population information from [Vaestorekisterikeskus](http://vrk.fi/default.aspx?docid=5127&site=3&id=0):
-
-```{r popreg, message=FALSE}
-df <- get_population_register()
-head(df)
-```
-
-### Province information
+### <a name="provinces"></a>Province information
 
 Get Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
 
@@ -162,13 +173,22 @@ tab <- get_province_info_wikipedia()
 head(tab)
 ```
 
+### <a name="populationregister"></a>Finnish population register
 
-### Visualization routines
+Municipality-level population information from [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
 
-Line fit with confidence smoothers:
+```{r popreg, message=FALSE}
+df <- get_population_register()
+head(df)
+```
+
+### <a name="visualization"></a>Visualization tools
+
+Line fit with confidence smoothers (if any of the required libraries
+are missing, install them with the install.packages command in R):
 
 ```{r regressionline, message=FALSE, eval=TRUE, fig.width=10, fig.height=5}
-library(sorvi)
+library(sorvi) 
 library(plyr)
 library(RColorBrewer)
 library(reshape)

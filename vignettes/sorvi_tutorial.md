@@ -17,13 +17,25 @@ Finnish open government data toolkit for R
 sorvi provides miscellaneous tools for Finnish open government data to
 complement other [rOpenGov](http://ropengov.github.io/projects)
 packages with a more specific scope. We also maintain a [todo
-list](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md) of further data sources to be added; your
+list of further data sources](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md) to be added; your
 [contributions are
 welcome](http://louhos.github.com/contact.html). For further
 information, see the [home page](http://louhos.github.com/sorvi).
 
 
-### Installation
+### Available data sources and tools
+
+ * [Installation](#installation) (Asennus)
+ * [Personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)
+ * [Postal codes](#postalcodes) (Postinumerodata)
+ * [IP address coordinates](#ip) (IP-osoitteen koordinaatit)
+ * [Municipality information](#municipality) (Kuntatason informaatio)
+ * [Province information](#provinces) (Maakuntatason informaatio)
+ * [Finnish population register](#populationregister) (Vaestorekisteri)
+ * [Visualization tools](#visualization) (Visualisointirutiineja)
+
+
+### <a name="installation"></a>Installation
 
 We assume you have installed [R](http://www.r-project.org/). If you
 use [RStudio](http://www.rstudio.com/ide/download/desktop), change the
@@ -59,7 +71,7 @@ examples are available in [Louhos-blog](http://louhos.wordpress.com)
 and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 
 
-### Personal identification number (HETU)
+### <a name="hetu"></a>Personal identification number (HETU)
 
 Extract information from a Finnish personal identification number:
 
@@ -70,33 +82,12 @@ hetu("111111-111C")
 ```
 
 ```
-## $hetu
-## [1] "111111-111C"
-## 
-## $gender
-## [1] "Male"
-## 
-## $personal.number
-## [1] 111
-## 
-## $checksum
-## [1] "C"
-## 
-## $date
-## [1] "1911-11-11"
-## 
-## $day
-## [1] 11
-## 
-## $month
-## [1] 11
-## 
-## $year
-## [1] 1911
-## 
-## $century.char
-## [1] "-"
-## 
+##            hetu          gender personal.number        checksum 
+##   "111111-111C"          "Male"           "111"             "C" 
+##            date             day           month            year 
+##        "-21236"            "11"            "11"          "1911" 
+##    century.char 
+##             "-" 
 ## attr(,"class")
 ## [1] "hetu"
 ```
@@ -114,7 +105,8 @@ valid_hetu("010101-0101")  # TRUE/FALSE
 ```
 
 
-### Postal codes
+
+### <a name="postalcodes"></a>Postal codes
 
 Finnish postal codes vs. municipalities table from
 [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The
@@ -138,9 +130,9 @@ head(postal.code.table)
 ```
 
 
-### IP Location
+### <a name="ip"></a>IP Location
 
-Get geographic coordinates for a given IP-address from
+Geographic coordinates for a given IP-address from
 [Data Science Toolkit](http://www.datasciencetoolkit.org/):
 
 
@@ -153,8 +145,7 @@ ip_location("137.224.252.10")
 ```
 
 
-
-### Municipality information
+### <a name="municipality"></a>Municipality data
 
 Finnish municipality information is available through Population
 Registry (Vaestorekisterikeskus), Statistics Finland (Tilastokeskus)
@@ -297,10 +288,22 @@ municipality.info.statfi[1:2, ]
 List the province for each municipality in Finland:
 
 ```r
+# All municipalities
+m2p <- municipality_to_province()
+head(m2p)  # Just show the first ones
+```
 
-# Specific municipalities
-m2p <- find_province(c("Helsinki", "Tampere", "Turku"))
-head(m2p)
+```
+##           Äänekoski              Ähtäri                Akaa 
+##       "Keski-Suomi"  "EtelÃ¤-Pohjanmaa"         "Pirkanmaa" 
+##            Alajärvi           Alavieska              Alavus 
+##  "EtelÃ¤-Pohjanmaa" "Pohjois-Pohjanmaa"  "EtelÃ¤-Pohjanmaa"
+```
+
+```r
+
+# Selected municipalities
+municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 ```
 
 ```
@@ -309,12 +312,9 @@ head(m2p)
 ```
 
 ```r
-
-# All municipalities
-m2p <- find_province(municipality.info.statfi$Kunta)
 
 # Speeding up with predefined municipality info table:
-m2p <- find_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
+m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 head(m2p)
 ```
 
@@ -324,11 +324,36 @@ head(m2p)
 ```
 
 
-Convert municipality codes and names:
+Convert municipality codes and names (see
+help(convert_municipality_codes) for all options):
+
 
 ```r
+# Municipality name to code
+convert_municipality_codes(municipalities = c("Turku", "Tampere"))
+```
+
+```
+##   Turku Tampere 
+##   "853"   "837"
+```
+
+```r
+
+# Municipality codes to names
+convert_municipality_codes(ids = c(853, 837))
+```
+
+```
+##       853       837 
+##   "Turku" "Tampere"
+```
+
+```r
+
+# Complete conversion table
 municipality_ids <- convert_municipality_codes()
-head(municipality_ids)
+head(municipality_ids)  # just show the first entries
 ```
 
 ```
@@ -342,8 +367,8 @@ head(municipality_ids)
 ```
 
 
-Translate municipality names Finnish/English (we have not been able to
-solve all encoding problems yet; suggestions very welcome!):
+Finnish-English translations for county names (we have not been able
+to solve all encoding problems yet; suggestions very welcome!):
 
 
 ```r
@@ -359,28 +384,7 @@ head(translations)
 ```
 
 
-### Finnish population registers
-
-Municipality-level population information from [Vaestorekisterikeskus](http://vrk.fi/default.aspx?docid=5127&site=3&id=0):
-
-
-```r
-df <- get_population_register()
-head(df)
-```
-
-```
-##           Koodi     Kunta    Kommun  Male Female Total
-## Äänekoski   992 Äänekoski Äänekoski 10187  10121 20308
-## Ähtäri      989    Ähtäri    Etseri  3231   3222  6453
-## Akaa        020      Akaa      Akaa  8452   8637 17089
-## Alajärvi    005  Alajärvi  Alajärvi  5226   5214 10440
-## Alavieska   009 Alavieska Alavieska  1420   1350  2770
-## Alavus      010    Alavus    Alavus  4619   4634  9253
-```
-
-
-### Province information
+### <a name="provinces"></a>Province information
 
 Get Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
 
@@ -401,10 +405,31 @@ head(tab)
 ```
 
 
+### <a name="populationregister"></a>Finnish population register
 
-### Visualization routines
+Municipality-level population information from [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
 
-Line fit with confidence smoothers:
+
+```r
+df <- get_population_register()
+head(df)
+```
+
+```
+##           Koodi     Kunta    Kommun  Male Female Total
+## Äänekoski   992 Äänekoski Äänekoski 10187  10121 20308
+## Ähtäri      989    Ähtäri    Etseri  3231   3222  6453
+## Akaa        020      Akaa      Akaa  8452   8637 17089
+## Alajärvi    005  Alajärvi  Alajärvi  5226   5214 10440
+## Alavieska   009 Alavieska Alavieska  1420   1350  2770
+## Alavus      010    Alavus    Alavus  4619   4634  9253
+```
+
+
+### <a name="visualization"></a>Visualization tools
+
+Line fit with confidence smoothers (if any of the required libraries
+are missing, install them with the install.packages command in R):
 
 
 ```r
@@ -488,7 +513,7 @@ sessionInfo()
 ##  [1] ggplot2_0.9.3.1    RColorBrewer_1.0-5 reshape_0.8.5     
 ##  [4] pxR_0.40.0         plyr_1.8.1         RJSONIO_1.2-0.2   
 ##  [7] reshape2_1.4       stringr_0.6.2      sp_1.0-15         
-## [10] sorvi_0.4.30       knitr_1.5         
+## [10] sorvi_0.6.1        knitr_1.5         
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_0.10    
