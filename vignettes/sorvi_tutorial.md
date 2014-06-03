@@ -1,14 +1,6 @@
+<!--
 %\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{sorvi Markdown Vignette made with knitr}
-
-<!--
-Joissakin esimerkeissa tarvittavat riippuvuudet 
-	<a href="http://trac.osgeo.org/gdal/wiki/DownloadSource">GDAL</a>, 
-	<a href="http://freeglut.sourceforge.net/">freeglut</a>, 
-	<a href="http://xmlsoft.org/downloads.html">XML</a>, 
-	<a href="http://trac.osgeo.org/geos">GEOS</a> ja 
-	<a href="http://trac.osgeo.org/proj">PROJ.4</a>. 
-
 -->
 
 Finnish open government data toolkit for R
