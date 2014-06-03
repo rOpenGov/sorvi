@@ -1,0 +1,228 @@
+
+Developers (Github development version):
+
+```{r install2, eval=FALSE}
+install.packages("devtools")
+library(devtools)
+install_github("sorvi", "ropengov")
+library(sorvi)
+```
+
+
+
+#' Visualize a matrix with one or two-way color scale. 
+#' TODO: one-way color scale
+#' 
+#' This function is used for fast investigation of matrix objects; standard visualization choices are made
+#' automatically; fast and easy-to-use but does not necessarily provide optimal visualization.
+#'
+#' @param mat matrix
+#' @param type String. Specifies visualization type. Options: "oneway" (color scale ranges from white to dark red; the color can be changed if needed); "twoway" (color scale ranges from dark blue through white to dark red; colors can be changed if needed)
+#' @param midpoint middle point for the color plot: smaller values are shown with blue, larger are shown with red in type = "twoway"
+#' @param palette Optional. Color palette.
+#' @param colors Optional. Colors.
+#' @param col.breaks breakpoints for the color palette
+#' @param interval interval for palette color switches
+#' @param plot.axes String. Indicates whether to plot x-axis ("x"), y-axis ("y"), or both ("both").
+#' @param row.tick interval for plotting row axis texts
+#' @param col.tick interval for plotting column axis texts
+#' @param cex.xlab use this to specify distinct font size for the x axis
+#' @param cex.ylab use this to specify distinct font size for the y axis
+#' @param xlab optional x axis labels
+#' @param ylab optional y axis labels
+#' @param limit.trunc color scale limit breakpoint
+#' @param mar image margins
+#' @param ... optional parameters to be passed to function 'image', see help(image) for further details
+#' @return A list with the color palette (colors), color breakpoints (breaks), and palette function (palette.function)
+#' @references See citation("sorvi") 
+#' @author Leo Lahti \email{louhos@@googlegroups.com}
+#' @examples library(sorvi)
+#'           mat <- rbind(c(1,2,3,4,5), c(1, 3, 1,1,1), c(4,2,2,1,2)); 
+#'	     plot_matrix(mat, "twoway", midpoint = 3) 
+#'
+#' @keywords utilities
+
+plot_matrix <- function (mat, type = "twoway", midpoint = 0, 
+	      	        palette = NULL, colors = NULL, col.breaks = NULL, interval = .1, 
+			plot.axes = "both",
+			row.tick = 1, col.tick = 1, 
+			cex.xlab = .9, cex.ylab = .9, 
+			xlab = NULL, ylab = NULL,
+			limit.trunc = 0, mar = c(5, 4, 4, 2), ...) {
+
+  # Center the data and color breakpoints around the specified midpoint
+  mat <- mat - midpoint
+
+  if (length(col.breaks) == 0)  {
+    m <- max(round(max(abs(mat)), limit.trunc) - interval, 0)
+    mm <- m + interval/2
+    vals <- seq(interval/2,mm,interval)
+    # Set col.breaks evenly around zero
+    col.breaks  <- c(-(m + 1e6), c(-rev(vals), vals), m+1e6)
+  }
+		  
+  if (is.null(palette)) {
+    my.palette <- colorRampPalette(c("blue", "white", "red"), space = "rgb")
+  } else if (palette == "blue-black-red") {
+    my.palette <- colorRampPalette(c("blue", "black", "red"), space = "rgb")
+  } else if (palette == "blue-white-red") {
+    my.palette <- colorRampPalette(c("blue", "white", "red"), space = "rgb")
+  } else if (palette == "blue-white-yellow") {
+    my.palette <- colorRampPalette(c("blue", "white", "yellow"), space = "rgb")
+  } else if (palette == "blue-black-yellow") {
+    my.palette <- colorRampPalette(c("blue", "black", "yellow"), space = "rgb")
+  } else if (palette == "bw") {
+    gray.palette <- function (int) {
+      gray(seq(0,1,length=int))
+    }
+    my.palette <- gray.palette
+  }
+
+  # if mycolors is provided it overrides palette
+  if (is.null(colors)) { colors <- my.palette(length(col.breaks) - 1) }
+	   		      
+  # transpose and revert row order to plot matrix in the same way it
+  # appears in its numeric form
+  par(mar = mar)
+  image(t(mat[rev(seq(nrow(mat))),]), col = colors, xaxt = 'n', yaxt = 'n', zlim = range(col.breaks), breaks = col.breaks, ...)
+
+  if (plot.axes == "both" || plot.axes == TRUE) {
+    
+    if (is.null(xlab)) {
+      v <- seq(1, ncol(mat), col.tick) # take every nth index
+      axis(1, at = seq(0,1,length = ncol(mat))[v], labels = colnames(mat)[v], cex.axis=cex.xlab, las=2, ...)    
+    } else {
+      axis(1, at = seq(0,1,length = ncol(mat)), labels = xlab, cex.axis=cex.xlab, las=2, ...)    
+    }
+
+    if (is.null(ylab)) {
+      v <- seq(1, nrow(mat), row.tick) # take every nth index
+      axis(2, at = seq(0,1,length = nrow(mat))[v], labels = rev(rownames(mat))[v], cex.axis=cex.ylab, las=2, ...)
+    } else {  
+      axis(2, at = seq(0,1,length = nrow(mat)), labels = ylab, cex.axis=cex.ylab, las=2, ...)
+    }
+
+  } else if (plot.axes == "x") {
+
+    if (is.null(xlab)) {
+      v <- seq(1, ncol(mat), col.tick) # take every nth index
+      axis(1, at = seq(0,1,length = ncol(mat))[v], labels = colnames(mat)[v], cex.axis=cex.xlab, las=2)    
+    } else {
+      axis(1, at = seq(0,1,length = ncol(mat)), labels = xlab, cex.axis=cex.xlab, las=2)    
+    }
+
+  } else if (plot.axes == "y") {
+
+    if (is.null(ylab)) {
+      v <- seq(1, nrow(mat), row.tick) # take every nth index
+      axis(2, at = seq(0, 1, length = nrow(mat))[v], labels = rev(rownames(mat))[v], cex.axis = cex.xlab, las = 2)
+    } else {  
+      axis(2, at = seq(0, 1, length = nrow(mat)), labels = ylab, cex.axis=cex.xlab, las=2)
+    }
+  }
+  
+  # Return default margins
+  par(mar = c(5, 4, 4, 2) + 0.1)
+ 
+  return(list(colors = colors, breaks = col.breaks + midpoint, palette.function = my.palette))
+      	  
+}
+
+
+#' Visualize color scale for PlotMatrix output
+#' NOTE: Experimental. To be tested thoroughly.
+#' 
+#' @param breaks breakpoints for colors
+#' @param colors Optional. Colors.
+#' @param m overrides breaks, mypalette and produces a plot that ranges (-m,m)
+#' @param label.step step between label text plotting
+#' @param interval interval for palette color switches
+#' @param two.sided indicates one- or two-sided color palette
+#' @param label.start start point for the labels
+#' @param Nlab number of labels
+#' @param palette.function palette color scale function
+#' @param ndigits number of digits to plot
+#' @param ... optional parameters to be passed to function 'axis', 
+#'        see help(axis) for further detai
+#' @return A list with the color palette (palette), 
+#'         color breakpoints (breaks), 
+#'         and palette function (palette.function)
+#' @references See citation("sorvi") 
+#' @author Leo Lahti \email{louhos@@googlegroups.com}
+#' @examples # Experimental 
+#' #library(sorvi)
+#' #mat <- rbind(c(1,2,3,4,5), c(1, 3, 1), c(4,2,2)); 
+#' #pm <- plot_matrix(mat, "twoway", midpoint = 3); 
+#' #plot_scale(pm$colors, pm$breaks)
+#'
+#' @keywords utilities
+
+plot_scale <- function (breaks, colors = NULL, m = NULL, label.step = 2, interval=.1, two.sided = TRUE, label.start = 1.00, Nlab = 3, palette.function = NULL, ndigits = 2, ...) {
+
+  if (two.sided) {
+    
+    if (length(m)>0) {
+      breaks <- set_breaks(m, interval)
+      image(t(as.matrix(seq(-mm, mm, length = 100))), col = colors, xaxt = 'n', yaxt = 'n', zlim = range(breaks), breaks=breaks)
+    } else {
+      image(t(as.matrix(breaks)), col = colors, xaxt = 'n',yaxt = 'n', zlim = range(breaks), breaks = breaks)
+    }
+  
+    mm1 <- sort(breaks)[[2]]
+    mm2 <- rev(sort(breaks))[[2]]
+    
+    tmp <- unlist(strsplit(as.character(mm1),"\\."))
+
+    digit.step <-10^(-ndigits)
+    labs <- round(seq(mm1, mm2, by = digit.step), ndigits)
+    start.position <- which.min(abs(round(labs, ndigits) - (-label.start)))
+    end.position <- length(labs) - 1 
+    inds <- seq(start.position, end.position, length = Nlab)
+      
+    axis(2, at = seq(0, 1, length = Nlab), labels = labs[inds], las=2, ...)
+  }
+
+  if (!two.sided) {
+
+    mm <- max(breaks) + 1e6 # infty
+    m <- max(breaks)
+ 
+    labs <- seq(0,m,label.step)
+    #inds = sapply(labs,function(lab){min(which(lab<=breaks))})
+    start.position <- which.min(abs(round(labs, ndigits) - (-label.start)))
+    end.position <- which.min(abs(round(labs, ndigits) - (label.start)))
+    inds <- seq(start.position,end.position,length=Nlab)  
+
+    image(t(as.matrix(seq(0, m, length = 100))), col = colors, xaxt='n', yaxt='n', zlim=range(breaks), breaks=breaks)
+    
+    axis(2, at = seq(0, 1, length=Nlab), labels=labs[inds], las=2, ...)
+  }
+  
+}
+
+
+#' Set breaks for color palette. Internal function.
+#'
+#' @param mat data matrix or vector for which the breaks will be deterined 
+#' @param interval interval of color breaks
+#' @return A vector of breakpoints
+#' @references See citation("sorvi") 
+#' @author Leo Lahti \email{louhos@@googlegroups.com}
+#'
+#' @keywords internal
+
+set_breaks <- function (mat, interval=.1) {
+  if (max(abs(mat))>1) {
+    m <- floor(max(abs(mat)))
+  } else {
+    m <- round(max(abs(mat)),nchar(1/interval)-1)
+  }
+
+  mm <- m + interval/2
+  vals <- seq(interval/2,mm,interval)
+  # Note: the first and last values mimic infinity
+  mybreaks  <- c(-(m+1e6),c(-rev(vals),vals),m+1e6)
+  mybreaks
+}
+
+
