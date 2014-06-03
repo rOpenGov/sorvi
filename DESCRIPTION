@@ -13,12 +13,12 @@ BugReports: https://github.com/louhos/sorvi/issues
 URL: http://louhos.github.com/sorvi
 Depends:
     R (>= 3.0.2),
+    reshape,
+    pxR
 Imports:
     ggplot2,
     plyr,
-    pxR,
     RColorBrewer,
-    reshape,
     XML
 Suggests:
     gdata,

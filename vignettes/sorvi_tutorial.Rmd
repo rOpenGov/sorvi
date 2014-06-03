@@ -26,11 +26,10 @@ information, see the [home page](http://louhos.github.com/sorvi).
 
 [Finnish provinces](#provinces) (Maakuntatason informaatio)  
 
-[Finnish postal codes](#postalcodes) (Postinumerodata)  
-
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
 
 [Conversions](#conversions)
+* [Municipality-Postal code conversions](#postalcodes) (Postinumerodata)  
 * [Municipality name-ID conversions](#municipalityconversions) (Kuntanimet vs. kuntakoodit)
 * [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
 * [Finnish-English translations](#translations) (Suomi-Englanti-kaannoksia)  
@@ -92,9 +91,6 @@ municipality.info.mml[1:2,]
 Source: [Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px)
 
 ```{r municipalityStatFi, message=FALSE, warning=FALSE, eval=TRUE}
-library(pxR) # can be installed with install.packages("pxR")
-library(reshape) # can be installed with install.packages("reshape")
-
 # Download Statfi municipality data
 municipality.info.statfi <- get_municipality_info_statfi()
 
@@ -104,7 +100,7 @@ names(municipality.info.statfi)
 
 ### <a name="populationregister"></a>Finnish population register (municipality information)
 
-Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
+Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus)
 
 ```{r popreg, message=FALSE, eval=TRUE}
 df <- get_population_register()
@@ -113,7 +109,7 @@ head(df)
 
 ## <a name="provinces"></a>Province information (Maakunnat)
 
-Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
+Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
 
 ```{r municipality, message=FALSE, eval=TRUE}
 tab <- get_province_info_wikipedia()
@@ -124,14 +120,14 @@ head(tab)
 
 ## <a name="hetu"></a>Personal identification number (HETU)
 
-Extract information from a Finnish personal identification number:
+**Extract information from a Finnish personal identification number:**
 
 ```{r hetu, message=FALSE}
 library(sorvi)
 hetu("111111-111C")
 ```
 
-Validate Finnish personal identification number:
+**Validate Finnish personal identification number:**
 
 ```{r hetu2, fig.message=FALSE}
 valid_hetu("010101-0101") # TRUE/FALSE
@@ -142,7 +138,7 @@ valid_hetu("010101-0101") # TRUE/FALSE
 
 ### <a name="postalcodes"></a>Postal codes vs. municipalities
 
-Finnish postal codes vs. municipalities table. Source: [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special characters:
+Source: [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special characters:
 
 ```{r postalcodes, message=FALSE, warning=FALSE, eval=TRUE}
 postal.code.table <- get_postal_code_info() 
@@ -152,15 +148,22 @@ head(postal.code.table)
 
 ### <a name="municipality2province"></a>Municipality-Province mapping
 
+**Map all municipalities to correponding provinces**
+
 ```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
-# Map all municipalities to correponding provinces
 m2p <- municipality_to_province() 
 head(m2p) # Just show the first ones
+```  
 
-# Map selected municipalities to correponding provinces
+**Map selected municipalities to correponding provinces:**
+
+```{r province6, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
+```  
 
-# Speed up conversion with predefined info table:
+**Speed up conversion with predefined info table:**
+
+```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 head(m2p)
 ```  
@@ -199,11 +202,6 @@ head(translations)
 ```
 
 
-
-
-
-
-
 ## <a name="visualization"></a>Visualization tools
 
 Line fit with confidence smoothers (if any of the required libraries
@@ -213,7 +211,6 @@ are missing, install them with the install.packages command in R):
 library(sorvi) 
 library(plyr)
 library(RColorBrewer)
-library(reshape)
 library(ggplot2)
 data(iris)
 p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 

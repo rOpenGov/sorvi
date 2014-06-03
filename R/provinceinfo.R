@@ -134,13 +134,11 @@ convert_municipality_names <- function (municipality.names) {
 
 #' @return A data frame with municipality data
 #' @export 
-#' @import pxR
-#' @importFrom reshape cast
 #'
 #' @references
 #' See citation("sorvi") 
 #' @author Leo Lahti \email{louhos@@googlegroups.com}
-#' @examples \dontrun{library(pxR); library(reshape); df <- get_municipality_info_statfi()}
+#' @examples \dontrun{df <- get_municipality_info_statfi()}
 #' @keywords utilities
 
 get_municipality_info_statfi <- function (verbose = TRUE, ...) {

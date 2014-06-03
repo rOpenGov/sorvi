@@ -26,11 +26,10 @@ information, see the [home page](http://louhos.github.com/sorvi).
 
 [Finnish provinces](#provinces) (Maakuntatason informaatio)  
 
-[Finnish postal codes](#postalcodes) (Postinumerodata)  
-
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
 
 [Conversions](#conversions)
+* [Municipality-Postal code conversions](#postalcodes) (Postinumerodata)  
 * [Municipality name-ID conversions](#municipalityconversions) (Kuntanimet vs. kuntakoodit)
 * [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
 * [Finnish-English translations](#translations) (Suomi-Englanti-kaannoksia)  
@@ -118,9 +117,6 @@ Source: [Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kun
 
 
 ```r
-library(pxR) # can be installed with install.packages("pxR")
-library(reshape) # can be installed with install.packages("reshape")
-
 # Download Statfi municipality data
 municipality.info.statfi <- get_municipality_info_statfi()
 
@@ -166,7 +162,7 @@ names(municipality.info.statfi)
 
 ### <a name="populationregister"></a>Finnish population register (municipality information)
 
-Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
+Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus)
 
 
 ```r
@@ -186,7 +182,7 @@ head(df)
 
 ## <a name="provinces"></a>Province information (Maakunnat)
 
-Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
+Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
 
 
 ```r
@@ -208,7 +204,7 @@ head(tab)
 
 ## <a name="hetu"></a>Personal identification number (HETU)
 
-Extract information from a Finnish personal identification number:
+**Extract information from a Finnish personal identification number:**
 
 
 ```r
@@ -248,7 +244,7 @@ hetu("111111-111C")
 ## [1] "hetu"
 ```
 
-Validate Finnish personal identification number:
+**Validate Finnish personal identification number:**
 
 
 ```r
@@ -264,7 +260,7 @@ valid_hetu("010101-0101") # TRUE/FALSE
 
 ### <a name="postalcodes"></a>Postal codes vs. municipalities
 
-Finnish postal codes vs. municipalities table. Source: [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special characters:
+Source: [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special characters:
 
 
 ```r
@@ -285,9 +281,10 @@ head(postal.code.table)
 
 ### <a name="municipality2province"></a>Municipality-Province mapping
 
+**Map all municipalities to correponding provinces**
+
 
 ```r
-# Map all municipalities to correponding provinces
 m2p <- municipality_to_province() 
 head(m2p) # Just show the first ones
 ```
@@ -299,8 +296,10 @@ head(m2p) # Just show the first ones
 ##  "EtelÃ¤-Pohjanmaa" "Pohjois-Pohjanmaa"  "EtelÃ¤-Pohjanmaa"
 ```
 
+**Map selected municipalities to correponding provinces:**
+
+
 ```r
-# Map selected municipalities to correponding provinces
 municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
 ```
 
@@ -309,8 +308,10 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 ##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
 ```
 
+**Speed up conversion with predefined info table:**
+
+
 ```r
-# Speed up conversion with predefined info table:
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 head(m2p)
 ```
@@ -385,11 +386,6 @@ head(translations)
 ```
 
 
-
-
-
-
-
 ## <a name="visualization"></a>Visualization tools
 
 Line fit with confidence smoothers (if any of the required libraries
@@ -400,7 +396,6 @@ are missing, install them with the install.packages command in R):
 library(sorvi) 
 library(plyr)
 library(RColorBrewer)
-library(reshape)
 library(ggplot2)
 data(iris)
 p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
