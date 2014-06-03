@@ -57,13 +57,13 @@ install.packages("sorvi")
 
 Test the installation by loading the library:
 
-```{r test, eval=TRUE}
+```{r test, message=FALSE, warning=FALSE, eval=TRUE}
 library(sorvi)
 ```
 
 We also recommend setting the UTF-8 encoding:
 
-```{r locale, eval=TRUE}
+```{r locale, eval=FALSE}
 Sys.setlocale(locale="UTF-8") 
 ```
 

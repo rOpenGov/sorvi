@@ -63,50 +63,11 @@ Test the installation by loading the library:
 library(sorvi)
 ```
 
-```
-## Loading required package: reshape
-## Loading required package: pxR
-## Loading required package: stringr
-## Loading required package: reshape2
-## 
-## Attaching package: 'reshape2'
-## 
-## The following objects are masked from 'package:reshape':
-## 
-##     colsplit, melt, recast
-## 
-## Loading required package: RJSONIO
-## Loading required package: plyr
-## 
-## Attaching package: 'plyr'
-## 
-## The following objects are masked from 'package:reshape':
-## 
-##     rename, round_any
-## 
-## sorvi - Tools for Finnish Open Data.
-## Copyright (C) 2010-2014 Leo Lahti, Juuso Parkkinen, Juuso Haapanen, Einari Happonen, Jussi Paananen, Joona Lehtomaki ym.
-## 
-## https://louhos.github.com/sorvi 
-## 
-##  Hard sciences are successful because they deal with soft problems; 
-##  soft sciences are struggling because they deal with hard problems.
-## -                        Von Foerster
-```
-
 We also recommend setting the UTF-8 encoding:
 
 
 ```r
 Sys.setlocale(locale="UTF-8") 
-```
-
-```
-## Warning: OS reports request to set locale to "UTF-8" cannot be honored
-```
-
-```
-## [1] ""
 ```
 
 Brief examples of the package tools are provided below. Further
