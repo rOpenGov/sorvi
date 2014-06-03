@@ -3,6 +3,7 @@ sorvi
 
 [![Build Status](https://api.travis-ci.org/rOpenGov/sorvi.png)](https://travis-ci.org/rOpenGov/sorvi)
 [![Stories in Ready](https://badge.waffle.io/ropengov/sorvi.png?label=Ready)](http://waffle.io/ropengov/sorvi)
+[![DOI](https://zenodo.org/badge/4203/rOpenGov/sorvi.png)](https://github.com/rOpenGov/sorvi)
 
 
 Algorithms for Finnish open goverment data. Part of the [rOpenGov

@@ -10,6 +10,7 @@ citEntry(entry="misc",
 	   person(given ="Einari", family="Happonen"),
 	   person(given ="Jussi", family="Paananen")
          ),
+	 doi = "10.5281/zenodo.10280",
 	 journal = "",
 	 year = "2011",
          textVersion =
