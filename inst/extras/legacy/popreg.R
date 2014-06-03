@@ -25,7 +25,7 @@ head(df)
 
 get_population_register <- function (url = "http://vrk.fi/default.aspx?docid=5127&site=3&id=0") {
 
-  message(paste("Downloading VRK 2011 data from", url, " - for more up-to-date information, see http://vrk.fi"))
+  message(paste("Downloading VRK 2011 data from", url, " - for most up-to-date information, see http://vrk.fi/default.aspx?id=278"))
 
   # Read tables from the website
   tables <- readHTMLTable(url)

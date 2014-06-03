@@ -30,7 +30,6 @@ page](http://louhos.github.com/sorvi).
 [Finnish municipalities](#municipality) (Kuntatason informaatio)
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
 * [Statistics Finland](#statfi) (Tilastokeskus)  
-* [Population register](#populationregister) (Vaestorekisteri)  
 
 [ID conversion tools](#conversions)
 * [Municipality-Postal code conversions](#postalcodes) (Kunnat vs. postinumerot)  
@@ -153,12 +152,12 @@ head(translations)
 
 ## <a name="municipality"></a>Municipality information
 
-Finnish municipality information is available through Population
-Registry (Vaestorekisterikeskus), Statistics Finland (Tilastokeskus)
-and Land Survey Finland (Maanmittauslaitos). The row names for each
-data set are harmonized and can be used to match data sets from
-different sources, as different data sets may carry slightly different
-versions of certain municipality names. 
+Finnish municipality information is available through Statistics
+Finland (Tilastokeskus) and Land Survey Finland
+(Maanmittauslaitos). The row names for each data set are harmonized
+and can be used to match data sets from different sources, as
+different data sets may carry slightly different versions of certain
+municipality names.
 
 ### <a name="mml"></a>Land Survey Finland (municipality information)
 
@@ -240,25 +239,6 @@ names(municipality.info.statfi)
 ## [33] "Kunta"
 ```
 
-### <a name="populationregister"></a>Finnish population register (municipality information)
-
-Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus)
-
-
-```r
-df <- get_population_register()
-head(df)
-```
-
-```
-##           Koodi     Kunta    Kommun  Male Female Total
-## Äänekoski   992 Äänekoski Äänekoski 10187  10121 20308
-## Ähtäri      989    Ähtäri    Etseri  3231   3222  6453
-## Akaa        020      Akaa      Akaa  8452   8637 17089
-## Alajärvi    005  Alajärvi  Alajärvi  5226   5214 10440
-## Alavieska   009 Alavieska Alavieska  1420   1350  2770
-## Alavus      010    Alavus    Alavus  4619   4634  9253
-```
 
 ## <a name="conversions"></a>Conversions
 
