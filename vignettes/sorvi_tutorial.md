@@ -21,14 +21,17 @@ information, see the [home page](http://louhos.github.com/sorvi).
 [Finnish municipalities](#municipality) (Kuntatason informaatio)  
  * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
  * [Statistics Finland](#statfi) (Tilastokeskus)  
+
 [Finnish provinces](#provinces) (Maakuntatason informaatio)  
 [Finnish population register](#populationregister) (Vaestorekisteri)  
 [Finnish postal codes](#postalcodes) (Postinumerodata)  
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
+
 [Conversions](#conversions)
  * [Municipality name-ID conversions](#municipalityconversions) (Kuntanimet vs. kuntakoodit)
  * [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
  * [Finnish-English translations](#translations) (Suomi-Englanti-kaannoksia)  
+
 [Visualization tools](#visualization) (Visualisointirutiineja)
 
 
