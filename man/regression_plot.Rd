@@ -73,7 +73,7 @@ Arguments:
 }
 \examples{
 \dontrun{library(sorvi); library(plyr); library(RColorBrewer);
-  	     	      library(reshape); library(ggplot2); data(iris);
+  	     	      library(ggplot2); data(iris);
 		      p <- regression_plot(Sepal.Length ~ Sepal.Width, iris)}
 }
 \author{

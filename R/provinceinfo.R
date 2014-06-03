@@ -134,6 +134,7 @@ convert_municipality_names <- function (municipality.names) {
 
 #' @return A data frame with municipality data
 #' @export 
+#' @importFrom pxR read.px
 #'
 #' @references
 #' See citation("sorvi") 

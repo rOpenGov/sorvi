@@ -41,6 +41,7 @@
 #' @import plyr
 #' @import RColorBrewer
 #' @import ggplot2
+#' @importFrom reshape melt
 #'
 #' @examples \dontrun{library(sorvi); library(plyr); library(RColorBrewer); 
 #'   	     	      library(ggplot2); data(iris); 

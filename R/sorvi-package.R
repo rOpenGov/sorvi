@@ -16,7 +16,7 @@
 #' @docType package
 #' @title Algorithmic Tools for Open Data in Finland 
 #'
-#' @author Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki ym. \email{louhos@@googlegroups.com}
+#' @author Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, and Juuso Haapanen \email{louhos@@googlegroups.com}
 #' @references
 #' See citation("sorvi")
 #' \url{http://louhos.github.com/sorvi}

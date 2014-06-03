@@ -6,34 +6,38 @@
 Finnish open government data toolkit for R
 ===========
 
-This R package provides miscellaneous tools for Finnish open government data to
-complement other [rOpenGov](http://ropengov.github.io/projects)
-packages with a more specific scope. We also maintain a [todo
-list of further data sources](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md) to be added; your
-[contributions are
-welcome](http://louhos.github.com/contact.html). For further
-information, see the [home page](http://louhos.github.com/sorvi).
+This R package provides miscellaneous tools for Finnish open
+government data to complement other
+[rOpenGov](http://ropengov.github.io/projects) packages with a more
+specific scope. We also maintain a [todo list of further data
+sources](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md)
+to be added; your
+[contributions](http://louhos.github.com/contact.html) and [bug
+reports and other feedback](https://github.com/ropengov/sorvi) are
+welcome! For further information, see the [home
+page](http://louhos.github.com/sorvi).
+
 
 
 ## Available data sources and tools
 
 [Installation](#installation) (Asennus)  
 
+[Finnish provinces](#provinces) (Maakuntatason informaatio)  
+* [Basic province information](#provinceinfo) (Area, Population, Population Density)
+* [Finnish-English province name translations](#provincetranslations)  
+
 [Finnish municipalities](#municipality) (Kuntatason informaatio)
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
 * [Statistics Finland](#statfi) (Tilastokeskus)  
 * [Population register](#populationregister) (Vaestorekisteri)  
 
-[Finnish provinces](#provinces) (Maakuntatason informaatio)  
-* [Basic province information](#provinceinfo) (Area, Population, Population Density)
-* [Finnish-English province name translations](#provincetranslations)  
+[ID conversion tools](#conversions)
+* [Municipality-Postal code conversions](#postalcodes) (Kunnat vs. postinumerot)  
+* [Municipality name-ID conversions](#municipalityconversions) (Kunnat vs. kuntakoodit)
+* [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
-
-[Conversions](#conversions)
-* [Municipality-Postal code conversions](#postalcodes) (Postinumerodata)  
-* [Municipality name-ID conversions](#municipalityconversions) (Kuntanimet vs. kuntakoodit)
-* [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
 
 [Visualization tools](#visualization) (Visualisointirutiineja)
 
@@ -60,6 +64,37 @@ Test the installation by loading the library:
 library(sorvi)
 ```
 
+```
+## Loading required package: reshape
+## Loading required package: pxR
+## Loading required package: stringr
+## Loading required package: reshape2
+## 
+## Attaching package: 'reshape2'
+## 
+## The following objects are masked from 'package:reshape':
+## 
+##     colsplit, melt, recast
+## 
+## Loading required package: RJSONIO
+## Loading required package: plyr
+## 
+## Attaching package: 'plyr'
+## 
+## The following objects are masked from 'package:reshape':
+## 
+##     rename, round_any
+## 
+## sorvi - Tools for Finnish Open Data.
+## Copyright (C) 2010-2014 Leo Lahti, Juuso Parkkinen, Juuso Haapanen, Einari Happonen, Jussi Paananen, Joona Lehtomaki ym.
+## 
+## https://louhos.github.com/sorvi 
+## 
+##  Hard sciences are successful because they deal with soft problems; 
+##  soft sciences are struggling because they deal with hard problems.
+## -                        Von Foerster
+```
+
 We also recommend setting the UTF-8 encoding:
 
 
@@ -70,6 +105,50 @@ Sys.setlocale(locale="UTF-8")
 Brief examples of the package tools are provided below. Further
 examples are available in [Louhos-blog](http://louhos.wordpress.com)
 and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
+
+
+## <a name="provinces"></a>Province information (Maakunnat)
+
+
+### <a name="provinceinfo"></a>Basic data
+
+Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
+
+
+```r
+tab <- get_province_info_wikipedia()
+head(tab)
+```
+
+```
+##          Province  Area Population PopulationDensity
+## 1         Uusimaa  9132    1550362             170.4
+## 2 Varsinais-Suomi 10664     457789              42.9
+## 3       Satakunta  7956     229360              28.8
+## 4      Kanta-Häme  5199     169952              32.7
+## 5       Pirkanmaa 12446     472181              37.9
+## 6     Päijät-Häme  5127     199235              38.9
+```
+
+### <a name="provincetranslations"></a>Finnish-English translations
+
+**Finnish-English translations for province names** (we have not been able
+to solve all encoding problems yet; suggestions very welcome!):
+
+
+```r
+translations <- load_sorvi_data("translations")
+head(translations)
+```
+
+```
+##   Ã\u0085land Islands         South Karelia Southern Ostrobothnia 
+##          "Ahvenanmaa"      "EtelÃĪ-Karjala"    "EtelÃĪ-Pohjanmaa" 
+##      Southern Savonia                Kainuu       Tavastia Proper 
+##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
+```
+
+
 
 
 ## <a name="municipality"></a>Municipality information
@@ -180,104 +259,6 @@ head(df)
 ## Alavieska   009 Alavieska Alavieska  1420   1350  2770
 ## Alavus      010    Alavus    Alavus  4619   4634  9253
 ```
-
-## <a name="provinces"></a>Province information (Maakunnat)
-
-
-### <a name="provinceinfo"></a>Basic data
-
-Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
-
-
-```r
-tab <- get_province_info_wikipedia()
-head(tab)
-```
-
-```
-##          Province  Area Population PopulationDensity
-## 1         Uusimaa  9132    1550362             170.4
-## 2 Varsinais-Suomi 10664     457789              42.9
-## 3       Satakunta  7956     229360              28.8
-## 4      Kanta-Häme  5199     169952              32.7
-## 5       Pirkanmaa 12446     472181              37.9
-## 6     Päijät-Häme  5127     199235              38.9
-```
-
-### <a name="provincetranslations"></a>Finnish-English translations
-
-**Finnish-English translations for province names** (we have not been able
-to solve all encoding problems yet; suggestions very welcome!):
-
-
-```r
-translations <- load_sorvi_data("translations")
-head(translations)
-```
-
-```
-##   Ã\u0085land Islands         South Karelia Southern Ostrobothnia 
-##          "Ahvenanmaa"      "EtelÃĪ-Karjala"    "EtelÃĪ-Pohjanmaa" 
-##      Southern Savonia                Kainuu       Tavastia Proper 
-##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
-```
-
-
-
-
-## <a name="hetu"></a>Personal identification number (HETU)
-
-**Extract information from a Finnish personal identification number:**
-
-
-```r
-library(sorvi)
-hetu("111111-111C")
-```
-
-```
-## $hetu
-## [1] "111111-111C"
-## 
-## $gender
-## [1] "Male"
-## 
-## $personal.number
-## [1] 111
-## 
-## $checksum
-## [1] "C"
-## 
-## $date
-## [1] "1911-11-11"
-## 
-## $day
-## [1] 11
-## 
-## $month
-## [1] 11
-## 
-## $year
-## [1] 1911
-## 
-## $century.char
-## [1] "-"
-## 
-## attr(,"class")
-## [1] "hetu"
-```
-
-**Validate Finnish personal identification number:**
-
-
-```r
-valid_hetu("010101-0101") # TRUE/FALSE
-```
-
-```
-## [1] TRUE
-```
-
 
 ## <a name="conversions"></a>Conversions
 
@@ -391,6 +372,61 @@ head(municipality_ids) # just show the first entries
 
 
 
+## <a name="hetu"></a>Personal identification number (HETU)
+
+**Extract information from a Finnish personal identification number:**
+
+
+```r
+library(sorvi)
+hetu("111111-111C")
+```
+
+```
+## $hetu
+## [1] "111111-111C"
+## 
+## $gender
+## [1] "Male"
+## 
+## $personal.number
+## [1] 111
+## 
+## $checksum
+## [1] "C"
+## 
+## $date
+## [1] "1911-11-11"
+## 
+## $day
+## [1] 11
+## 
+## $month
+## [1] 11
+## 
+## $year
+## [1] 1911
+## 
+## $century.char
+## [1] "-"
+## 
+## attr(,"class")
+## [1] "hetu"
+```
+
+**Validate Finnish personal identification number:**
+
+
+```r
+valid_hetu("010101-0101") # TRUE/FALSE
+```
+
+```
+## [1] TRUE
+```
+
+
+
 ## <a name="visualization"></a>Visualization tools
 
 Line fit with confidence smoothers (if any of the required libraries
@@ -470,10 +506,10 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] ggplot2_1.0.0      RColorBrewer_1.0-5 reshape_0.8.5     
-##  [4] pxR_0.40.0         plyr_1.8.1         RJSONIO_1.2-0.2   
-##  [7] reshape2_1.4       stringr_0.6.2      sp_1.0-15         
-## [10] sorvi_0.6.1        knitr_1.6         
+##  [1] ggplot2_1.0.0      RColorBrewer_1.0-5 sp_1.0-15         
+##  [4] sorvi_0.6.2        pxR_0.40.0         plyr_1.8.1        
+##  [7] RJSONIO_1.2-0.2    reshape2_1.4       stringr_0.6.2     
+## [10] reshape_0.8.5      knitr_1.6         
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_0.10    

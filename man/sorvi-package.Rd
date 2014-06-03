@@ -23,7 +23,7 @@ Algorithmic core tools for Open Data in Finland
 library(sorvi)
 }
 \author{
-Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki ym. \email{louhos@googlegroups.com}
+Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, and Juuso Haapanen \email{louhos@googlegroups.com}
 }
 \references{
 See citation("sorvi")

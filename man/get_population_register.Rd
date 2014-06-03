@@ -14,7 +14,6 @@ data.frame with municipality information.
 }
 \description{
 Retrieves municipality data from population register.
-TODO: merge with get.municipality.info function
 The url should be changed when there are updates:
 }
 \examples{

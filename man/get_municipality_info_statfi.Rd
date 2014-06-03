@@ -17,7 +17,7 @@ A data frame with municipality data
 Get information of Finnish municipalities from Statistics Finland 2013
 }
 \examples{
-\dontrun{library(pxR); library(reshape); df <- get_municipality_info_statfi()}
+\dontrun{df <- get_municipality_info_statfi()}
 }
 \author{
 Leo Lahti \email{louhos@googlegroups.com}
