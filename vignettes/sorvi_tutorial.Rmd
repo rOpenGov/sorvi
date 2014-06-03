@@ -6,7 +6,7 @@
 Finnish open government data toolkit for R
 ===========
 
-sorvi provides miscellaneous tools for Finnish open government data to
+This R package provides miscellaneous tools for Finnish open government data to
 complement other [rOpenGov](http://ropengov.github.io/projects)
 packages with a more specific scope. We also maintain a [todo
 list of further data sources](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md) to be added; your
@@ -22,10 +22,9 @@ information, see the [home page](http://louhos.github.com/sorvi).
 [Finnish municipalities](#municipality) (Kuntatason informaatio)
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
 * [Statistics Finland](#statfi) (Tilastokeskus)  
+* [Population register](#populationregister) (Vaestorekisteri)  
 
 [Finnish provinces](#provinces) (Maakuntatason informaatio)  
-
-[Finnish population register](#populationregister) (Vaestorekisteri)  
 
 [Finnish postal codes](#postalcodes) (Postinumerodata)  
 
@@ -95,12 +94,22 @@ Source: [Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kun
 ```{r municipalityStatFi, message=FALSE, warning=FALSE, eval=TRUE}
 library(pxR) # can be installed with install.packages("pxR")
 library(reshape) # can be installed with install.packages("reshape")
+
+# Download Statfi municipality data
 municipality.info.statfi <- get_municipality_info_statfi()
 
 # List available information fields for municipalities
 names(municipality.info.statfi)
 ```
 
+### <a name="populationregister"></a>Finnish population register (municipality information)
+
+Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
+
+```{r popreg, message=FALSE, eval=TRUE}
+df <- get_population_register()
+head(df)
+```
 
 ## <a name="provinces"></a>Province information (Maakunnat)
 
@@ -111,28 +120,6 @@ tab <- get_province_info_wikipedia()
 head(tab)
 ```
 
-
-## <a name="populationregister"></a>Finnish population register
-
-Municipality-level population information from [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
-
-```{r popreg, message=FALSE, eval=TRUE}
-library(sorvi)
-df <- get_population_register()
-head(df)
-```
-
-
-## <a name="postalcodes"></a>Postal codes
-
-Finnish postal codes vs. municipalities table from
-[Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special
-characters:
-
-```{r postalcodes, message=FALSE, warning=FALSE, eval=TRUE}
-postal.code.table <- get_postal_code_info() 
-head(postal.code.table)
-```
 
 
 ## <a name="hetu"></a>Personal identification number (HETU)
@@ -153,6 +140,16 @@ valid_hetu("010101-0101") # TRUE/FALSE
 
 ## <a name="conversions"></a>Conversions
 
+### <a name="postalcodes"></a>Postal codes vs. municipalities
+
+Finnish postal codes vs. municipalities table. Source: [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special characters:
+
+```{r postalcodes, message=FALSE, warning=FALSE, eval=TRUE}
+postal.code.table <- get_postal_code_info() 
+head(postal.code.table)
+```
+
+
 ### <a name="municipality2province"></a>Municipality-Province mapping
 
 ```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
@@ -171,21 +168,29 @@ head(m2p)
 
 ### <a name="municipalityconversions"></a>Municipality name-ID conversion
 
+**Municipality name to code**
+
 ```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
-# Municipality name to code
 convert_municipality_codes(municipalities = c("Turku", "Tampere"))
+```  
 
-# Municipality codes to names
+**Municipality codes to names**
+
+```{r province4, message=FALSE, echo=TRUE, eval=TRUE}
 convert_municipality_codes(ids = c(853, 837))
+```  
 
-# Complete conversion table
+**Complete conversion table**
+
+```{r province5, message=FALSE, echo=TRUE, eval=TRUE}
 municipality_ids <- convert_municipality_codes()
 head(municipality_ids) # just show the first entries
 ```
 
+
 ### <a name="translations"></a>Translations
 
-**Finnish-English translations** for province names (we have not been able
+**Finnish-English translations for province names** (we have not been able
 to solve all encoding problems yet; suggestions very welcome!):
 
 ```{r translate, message=FALSE, eval=TRUE}

@@ -6,7 +6,7 @@
 Finnish open government data toolkit for R
 ===========
 
-sorvi provides miscellaneous tools for Finnish open government data to
+This R package provides miscellaneous tools for Finnish open government data to
 complement other [rOpenGov](http://ropengov.github.io/projects)
 packages with a more specific scope. We also maintain a [todo
 list of further data sources](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md) to be added; your
@@ -22,10 +22,9 @@ information, see the [home page](http://louhos.github.com/sorvi).
 [Finnish municipalities](#municipality) (Kuntatason informaatio)
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
 * [Statistics Finland](#statfi) (Tilastokeskus)  
+* [Population register](#populationregister) (Vaestorekisteri)  
 
 [Finnish provinces](#provinces) (Maakuntatason informaatio)  
-
-[Finnish population register](#populationregister) (Vaestorekisteri)  
 
 [Finnish postal codes](#postalcodes) (Postinumerodata)  
 
@@ -121,6 +120,8 @@ Source: [Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kun
 ```r
 library(pxR) # can be installed with install.packages("pxR")
 library(reshape) # can be installed with install.packages("reshape")
+
+# Download Statfi municipality data
 municipality.info.statfi <- get_municipality_info_statfi()
 
 # List available information fields for municipalities
@@ -163,6 +164,25 @@ names(municipality.info.statfi)
 ## [33] "Kunta"
 ```
 
+### <a name="populationregister"></a>Finnish population register (municipality information)
+
+Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
+
+
+```r
+df <- get_population_register()
+head(df)
+```
+
+```
+##           Koodi     Kunta    Kommun  Male Female Total
+## Äänekoski   992 Äänekoski Äänekoski 10187  10121 20308
+## Ähtäri      989    Ähtäri    Etseri  3231   3222  6453
+## Akaa        020      Akaa      Akaa  8452   8637 17089
+## Alajärvi    005  Alajärvi  Alajärvi  5226   5214 10440
+## Alavieska   009 Alavieska Alavieska  1420   1350  2770
+## Alavus      010    Alavus    Alavus  4619   4634  9253
+```
 
 ## <a name="provinces"></a>Province information (Maakunnat)
 
@@ -184,50 +204,6 @@ head(tab)
 ## 6     Päijät-Häme  5127     199235              38.9
 ```
 
-
-## <a name="populationregister"></a>Finnish population register
-
-Municipality-level population information from [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
-
-
-```r
-library(sorvi)
-df <- get_population_register()
-head(df)
-```
-
-```
-##           Koodi     Kunta    Kommun  Male Female Total
-## Äänekoski   992 Äänekoski Äänekoski 10187  10121 20308
-## Ähtäri      989    Ähtäri    Etseri  3231   3222  6453
-## Akaa        020      Akaa      Akaa  8452   8637 17089
-## Alajärvi    005  Alajärvi  Alajärvi  5226   5214 10440
-## Alavieska   009 Alavieska Alavieska  1420   1350  2770
-## Alavus      010    Alavus    Alavus  4619   4634  9253
-```
-
-
-## <a name="postalcodes"></a>Postal codes
-
-Finnish postal codes vs. municipalities table from
-[Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special
-characters:
-
-
-```r
-postal.code.table <- get_postal_code_info() 
-head(postal.code.table)
-```
-
-```
-##   postal.code municipality municipality.ascii
-## 1       07230       Askola             Askola
-## 2       07500       Askola             Askola
-## 3       07510       Askola             Askola
-## 4       07530       Askola             Askola
-## 5       07580       Askola             Askola
-## 6       07590       Askola             Askola
-```
 
 
 ## <a name="hetu"></a>Personal identification number (HETU)
@@ -286,6 +262,27 @@ valid_hetu("010101-0101") # TRUE/FALSE
 
 ## <a name="conversions"></a>Conversions
 
+### <a name="postalcodes"></a>Postal codes vs. municipalities
+
+Finnish postal codes vs. municipalities table. Source: [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special characters:
+
+
+```r
+postal.code.table <- get_postal_code_info() 
+head(postal.code.table)
+```
+
+```
+##   postal.code municipality municipality.ascii
+## 1       07230       Askola             Askola
+## 2       07500       Askola             Askola
+## 3       07510       Askola             Askola
+## 4       07530       Askola             Askola
+## 5       07580       Askola             Askola
+## 6       07590       Askola             Askola
+```
+
+
 ### <a name="municipality2province"></a>Municipality-Province mapping
 
 
@@ -326,9 +323,10 @@ head(m2p)
 
 ### <a name="municipalityconversions"></a>Municipality name-ID conversion
 
+**Municipality name to code**
+
 
 ```r
-# Municipality name to code
 convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```
 
@@ -337,8 +335,10 @@ convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ##   "853"   "837"
 ```
 
+**Municipality codes to names**
+
+
 ```r
-# Municipality codes to names
 convert_municipality_codes(ids = c(853, 837))
 ```
 
@@ -347,8 +347,10 @@ convert_municipality_codes(ids = c(853, 837))
 ##   "Turku" "Tampere"
 ```
 
+**Complete conversion table**
+
+
 ```r
-# Complete conversion table
 municipality_ids <- convert_municipality_codes()
 head(municipality_ids) # just show the first entries
 ```
@@ -363,9 +365,10 @@ head(municipality_ids) # just show the first entries
 ## Alavus    010    Alavus
 ```
 
+
 ### <a name="translations"></a>Translations
 
-**Finnish-English translations** for province names (we have not been able
+**Finnish-English translations for province names** (we have not been able
 to solve all encoding problems yet; suggestions very welcome!):
 
 
