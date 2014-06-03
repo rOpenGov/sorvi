@@ -101,6 +101,14 @@ We also recommend setting the UTF-8 encoding:
 Sys.setlocale(locale="UTF-8") 
 ```
 
+```
+## Warning: OS reports request to set locale to "UTF-8" cannot be honored
+```
+
+```
+## [1] ""
+```
+
 Brief examples of the package tools are provided below. Further
 examples are available in [Louhos-blog](http://louhos.wordpress.com)
 and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
@@ -454,6 +462,7 @@ citation("sorvi")
 ##   @Misc{,
 ##     title = {sorvi: Finnish open government data toolkit for R},
 ##     author = {Leo Lahti and Juuso Parkkinen and Joona Lehtomaki and Juuso Haapanen and Einari Happonen and Jussi Paananen},
+##     doi = {10.5281/zenodo.10280},
 ##     year = {2011},
 ##   }
 ## 
@@ -487,7 +496,7 @@ sessionInfo()
 ## 
 ## other attached packages:
 ##  [1] ggplot2_1.0.0      RColorBrewer_1.0-5 sp_1.0-15         
-##  [4] sorvi_0.6.2        pxR_0.40.0         plyr_1.8.1        
+##  [4] sorvi_0.6.23       pxR_0.40.0         plyr_1.8.1        
 ##  [7] RJSONIO_1.2-0.2    reshape2_1.4       stringr_0.6.2     
 ## [10] reshape_0.8.5      knitr_1.6         
 ## 
