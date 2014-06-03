@@ -25,6 +25,8 @@ information, see the [home page](http://louhos.github.com/sorvi).
 * [Population register](#populationregister) (Vaestorekisteri)  
 
 [Finnish provinces](#provinces) (Maakuntatason informaatio)  
+* [Basic province information](#provinceinfo) (Area, Population, Population Density)
+* [Finnish-English province name translations](#provincetranslations)  
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
 
@@ -32,7 +34,6 @@ information, see the [home page](http://louhos.github.com/sorvi).
 * [Municipality-Postal code conversions](#postalcodes) (Postinumerodata)  
 * [Municipality name-ID conversions](#municipalityconversions) (Kuntanimet vs. kuntakoodit)
 * [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
-* [Finnish-English translations](#translations) (Suomi-Englanti-kaannoksia)  
 
 [Visualization tools](#visualization) (Visualisointirutiineja)
 
@@ -182,6 +183,9 @@ head(df)
 
 ## <a name="provinces"></a>Province information (Maakunnat)
 
+
+### <a name="provinceinfo"></a>Basic data
+
 Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
 
 
@@ -199,6 +203,25 @@ head(tab)
 ## 5       Pirkanmaa 12446     472181              37.9
 ## 6     Päijät-Häme  5127     199235              38.9
 ```
+
+### <a name="provincetranslations"></a>Finnish-English translations
+
+**Finnish-English translations for province names** (we have not been able
+to solve all encoding problems yet; suggestions very welcome!):
+
+
+```r
+translations <- load_sorvi_data("translations")
+head(translations)
+```
+
+```
+##   Ã\u0085land Islands         South Karelia Southern Ostrobothnia 
+##          "Ahvenanmaa"      "EtelÃĪ-Karjala"    "EtelÃĪ-Pohjanmaa" 
+##      Southern Savonia                Kainuu       Tavastia Proper 
+##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
+```
+
 
 
 
@@ -366,24 +389,6 @@ head(municipality_ids) # just show the first entries
 ## Alavus    010    Alavus
 ```
 
-
-### <a name="translations"></a>Translations
-
-**Finnish-English translations for province names** (we have not been able
-to solve all encoding problems yet; suggestions very welcome!):
-
-
-```r
-translations <- load_sorvi_data("translations")
-head(translations)
-```
-
-```
-##   Ã\u0085land Islands         South Karelia Southern Ostrobothnia 
-##          "Ahvenanmaa"      "EtelÃĪ-Karjala"    "EtelÃĪ-Pohjanmaa" 
-##      Southern Savonia                Kainuu       Tavastia Proper 
-##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
-```
 
 
 ## <a name="visualization"></a>Visualization tools
