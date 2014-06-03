@@ -1,5 +1,9 @@
 sorvi - todo datasets
 -------------------------
+
+### Population
+* [Väestörekisterikeskus](http://vrk.fi/default.aspx?id=276) Various very useful statistics
+
  
 ### Datakatalogit
 
@@ -60,9 +64,6 @@ sorvi - todo datasets
 
 ### Lounais-Suomi
 * [Lounaispaikka](http://paikkatietokeskus.lounaispaikka.fi/fi/aineistot/) Avoimia paikkatieto- ym. aineistoja varsinais-Suomesta.
-
-### Population
-* [Väestörekisterikeskus](http://vrk.fi/default.aspx?id=107)
 
 ### Tiede ja kulttuuri 
 * [Valtion taidemuseon kokoelmien metadata](http://creativecommons.fi/2013/10/valtion-taidemuseo-avaa-taidekokoelmansa-metadatan-avoimena-tietona/) (36000 teosta 6000 taiteilijalta)

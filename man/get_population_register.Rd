@@ -14,7 +14,7 @@ data.frame with municipality information.
 }
 \description{
 Retrieves municipality data from population register.
-The url should be changed when there are updates:
+The url should be changed when there are updates.
 }
 \examples{
 \dontrun{df <- get_population_register()}
