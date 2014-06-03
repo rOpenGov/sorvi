@@ -1,7 +1,7 @@
-<!--
-%\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{sorvi Markdown Vignette made with knitr}
+\VignetteEngine{knitr::knitr}
+\VignetteIndexEntry{sorvi Markdown Vignette made with knitr}
 
+<!--
 Joissakin esimerkeissa tarvittavat riippuvuudet 
 	<a href="http://trac.osgeo.org/gdal/wiki/DownloadSource">GDAL</a>, 
 	<a href="http://freeglut.sourceforge.net/">freeglut</a>, 

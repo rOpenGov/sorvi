@@ -50,7 +50,6 @@ Install the stable release version in R:
 install.packages("sorvi")
 ```
 
-
 Test the installation by loading the library:
 
 
@@ -58,14 +57,12 @@ Test the installation by loading the library:
 library(sorvi)
 ```
 
-
 We also recommend setting the UTF-8 encoding:
 
 
 ```r
-Sys.setlocale(locale = "UTF-8")
+Sys.setlocale(locale="UTF-8") 
 ```
-
 
 Brief examples of the package tools are provided below. Further
 examples are available in [Louhos-blog](http://louhos.wordpress.com)
@@ -99,7 +96,6 @@ head(df)
 ```
 
 
-
 ### <a name="postalcodes"></a>Postal codes
 
 Finnish postal codes vs. municipalities table from
@@ -109,7 +105,7 @@ characters:
 
 
 ```r
-postal.code.table <- get_postal_code_info()
+postal.code.table <- get_postal_code_info() 
 ```
 
 ```
@@ -123,7 +119,6 @@ head(postal.code.table)
 ```
 ## Error: object 'postal.code.table' not found
 ```
-
 
 
 
@@ -148,20 +143,19 @@ municipality.info.mml <- get_municipality_info_mml()
 ```
 
 ```r
-municipality.info.mml[1:2, ]
+municipality.info.mml[1:2,]
 ```
 
 ```
 ## Error: object 'municipality.info.mml' not found
 ```
 
-
 **Statistics Finland municipality information** ([Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px))
 
 
 ```r
-library(pxR)  # can be installed with install.packages('pxR')
-library(reshape)  # can be installed with install.packages('reshape')
+library(pxR) # can be installed with install.packages("pxR")
+library(reshape) # can be installed with install.packages("reshape")
 municipality.info.statfi <- get_municipality_info_statfi()
 ```
 
@@ -170,7 +164,7 @@ municipality.info.statfi <- get_municipality_info_statfi()
 ```
 
 ```r
-municipality.info.statfi[1:2, ]
+municipality.info.statfi[1:2,]
 ```
 
 ```
@@ -178,12 +172,11 @@ municipality.info.statfi[1:2, ]
 ```
 
 
-
 **List the province for each municipality in Finland:**
 
 ```r
 # All municipalities
-m2p <- municipality_to_province()
+m2p <- municipality_to_province() 
 ```
 
 ```
@@ -191,7 +184,7 @@ m2p <- municipality_to_province()
 ```
 
 ```r
-head(m2p)  # Just show the first ones
+head(m2p) # Just show the first ones
 ```
 
 ```
@@ -199,9 +192,8 @@ head(m2p)  # Just show the first ones
 ```
 
 ```r
-
 # Selected municipalities
-municipality_to_province(c("Helsinki", "Tampere", "Turku"))
+municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
 ```
 
 ```
@@ -209,7 +201,6 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 ```
 
 ```r
-
 # Speeding up with predefined municipality info table:
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 ```
@@ -226,7 +217,6 @@ head(m2p)
 ## Error: object 'm2p' not found
 ```
 
-
 **Convert municipality codes and names** (see
 help(convert_municipality_codes) for all options):
 
@@ -241,7 +231,6 @@ convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```
 
 ```r
-
 # Municipality codes to names
 convert_municipality_codes(ids = c(853, 837))
 ```
@@ -251,7 +240,6 @@ convert_municipality_codes(ids = c(853, 837))
 ```
 
 ```r
-
 # Complete conversion table
 municipality_ids <- convert_municipality_codes()
 ```
@@ -261,13 +249,12 @@ municipality_ids <- convert_municipality_codes()
 ```
 
 ```r
-head(municipality_ids)  # just show the first entries
+head(municipality_ids) # just show the first entries
 ```
 
 ```
 ## Error: object 'municipality_ids' not found
 ```
-
 
 
 ### <a name="provinces"></a>Province information
@@ -290,7 +277,6 @@ head(tab)
 ```
 ## Error: object 'tab' not found
 ```
-
 
 ### <a name="translations"></a>Translations
 
@@ -315,7 +301,6 @@ head(translations)
 ```
 
 
-
 ### <a name="ip"></a>IP Location
 
 Geographic coordinates for a given IP-address from
@@ -329,7 +314,6 @@ ip_location("137.224.252.10")
 ```
 ## Error: could not find function "ip_location"
 ```
-
 
 ### <a name="hetu"></a>Personal identification number (HETU)
 
@@ -373,18 +357,16 @@ hetu("111111-111C")
 ## [1] "hetu"
 ```
 
-
 Validate Finnish personal identification number:
 
 
 ```r
-valid_hetu("010101-0101")  # TRUE/FALSE
+valid_hetu("010101-0101") # TRUE/FALSE
 ```
 
 ```
 ## [1] TRUE
 ```
-
 
 
 
@@ -395,18 +377,17 @@ are missing, install them with the install.packages command in R):
 
 
 ```r
-library(sorvi)
+library(sorvi) 
 library(plyr)
 library(RColorBrewer)
 library(reshape)
 library(ggplot2)
 data(iris)
-p <- regression_plot(Sepal.Length ~ Sepal.Width, iris)
+p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
 print(p)
 ```
 
 ![plot of chunk regressionline](figure/regressionline.png) 
-
 
 
 
@@ -444,7 +425,6 @@ citation("sorvi")
 ## http://louhos.github.com/contact.html
 ```
 
-
 ## Session info
 
 This vignette was created with
@@ -470,18 +450,17 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] ggplot2_0.9.3.1    RColorBrewer_1.0-5 sorvi_0.6.1       
+##  [1] ggplot2_1.0.0      RColorBrewer_1.0-5 sorvi_0.6.1       
 ##  [4] reshape_0.8.5      pxR_0.40.0         plyr_1.8.1        
 ##  [7] RJSONIO_1.2-0.2    reshape2_1.4       stringr_0.6.2     
-## [10] knitr_1.5         
+## [10] knitr_1.6         
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_0.10    
-##  [5] grid_3.1.0       gtable_0.1.2     labeling_0.2     MASS_7.3-32     
+##  [5] grid_3.1.0       gtable_0.1.2     labeling_0.2     MASS_7.3-33     
 ##  [9] munsell_0.4.2    proto_0.3-10     Rcpp_0.11.1      scales_0.2.4    
 ## [13] tools_3.1.0      XML_3.98-1.1
 ```
-
 
 
 
