@@ -5,7 +5,7 @@
 inst/extras/.RData
 
 # Vignette sources
-vignettes/sorvi_tutorial.Rmd
+#vignettes/sorvi_tutorial.Rmd
 
 # Git related
 ./.git*
