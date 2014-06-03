@@ -1,5 +1,5 @@
-\VignetteEngine{knitr::knitr}
-\VignetteIndexEntry{sorvi Markdown Vignette made with knitr}
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{sorvi Markdown Vignette made with knitr}
 
 <!--
 Joissakin esimerkeissa tarvittavat riippuvuudet 
