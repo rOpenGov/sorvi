@@ -18,7 +18,7 @@ information, see the [home page](http://louhos.github.com/sorvi).
 ## Available data sources and tools
 
 [Installation](#installation) (Asennus)  
-[Finnish municipalities](#municipality) (Kuntatason informaatio)  
+[Finnish municipalities](#municipality) (Kuntatason informaatio)
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
 * [Statistics Finland](#statfi) (Tilastokeskus)  
 
