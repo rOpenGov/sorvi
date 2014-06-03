@@ -6,7 +6,6 @@ sorvi - todo datasets
 
  
 ### Datakatalogit
-
 * [Quandl](http://www.quandl.com/finland) Quandlin Suomi-tilastot
 * [DataHub](http://fi.thedatahub.org/dataset) Tämä datakatalogi sisältää keskitettyä ja joukkoistaen kerättyä tietoa suomalaisen yhteiskunnan avoimesta datasta. Pidetään silmällä kiintoisien aineistojen varalta, ja täydennetään itse.
 * [Suomi avoimet datat katalogi](http://www.suomi.fi/suomifi/tyohuone/yhteiset_palvelut/avoin_data/)  
@@ -23,6 +22,7 @@ sorvi - todo datasets
 * [Tampereen kaupungin avoin data](http://www.tampere.fi/tampereinfo/avoindata.html)
 
 ### Kuntien talous ja päätöksenteko
+* [Kuntien nimenmuutokset (VRK)](http://vrk.fi/default.aspx?docid=612&site=3&id=0)
 * [Kuntaliiton kuntavaali- ja demokratiatilastot](http://www.kunnat.net/fi/tietopankit/tilastot/kuntavaali-ja-demokratiatilastot/Sivut/default.aspx)
 * [Kuntien luottamushenkilöiden palkkiot ja korvaukset](http://www.kunnat.net/fi/tietopankit/tilastot/kuntavaali-ja-demokratiatilastot/kuntien-luottamushenkiloiden-palkkiot-ja-korvaukset/Sivut/default.aspx)
 * [Kuntatalouden tilastot](http://www.kunnat.net/fi/tietopankit/tilastot/kuntatalous/Sivut/default.aspx)
@@ -31,6 +31,7 @@ sorvi - todo datasets
 
 
 ### Vaalit ja vaalikoneet
+* [Maistraatit ja vaalipiirit nimi-tunnus-konversiotaulut (VRK)](http://vrk.fi/default.aspx?docid=719&site=3&id=0)
 * [Kunnallisvaalien tulostilastot aikasarjana vuodesta 1983](http://www.vaalit.fi/22381.htm)
 * [YLEn vaalikone 2012](http://yle.fi/uutiset/nyt_sita_saa_vaalikonedataa/6331306)
 * [HS Kuntavaalikone 2008 vastaukset](http://blogit.hs.fi/hsnext/hsn-kuntavaalikoneen-2008-vastaukset-avodatana) 2012 tulossa tuonnempana

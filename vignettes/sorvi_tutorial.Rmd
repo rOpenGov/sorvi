@@ -57,7 +57,7 @@ install.packages("sorvi")
 
 Test the installation by loading the library:
 
-```{r test, eval=TRUE}
+```{r test, eval=FALSE}
 library(sorvi)
 ```
 
@@ -79,7 +79,7 @@ and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 
 Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
 
-```{r municipality, message=FALSE, eval=TRUE}
+```{r municipality, message=FALSE, eval=FALSE}
 tab <- get_province_info_wikipedia()
 head(tab)
 ```
@@ -89,7 +89,7 @@ head(tab)
 **Finnish-English translations for province names** (we have not been able
 to solve all encoding problems yet; suggestions very welcome!):
 
-```{r translate, message=FALSE, eval=TRUE}
+```{r translate, message=FALSE, eval=FALSE}
 translations <- load_sorvi_data("translations")
 head(translations)
 ```
@@ -110,7 +110,7 @@ municipality names.
 
 Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu). 
 
-```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
+```{r municipalityMML, message=FALSE, warning=FALSE, eval=FALSE}
 municipality.info.mml <- get_municipality_info_mml()
 municipality.info.mml[1:2,]
 ```
@@ -119,7 +119,7 @@ municipality.info.mml[1:2,]
 
 Source: [Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px)
 
-```{r municipalityStatFi, message=FALSE, warning=FALSE, eval=TRUE}
+```{r municipalityStatFi, message=FALSE, warning=FALSE, eval=FALSE}
 # Download Statfi municipality data
 municipality.info.statfi <- get_municipality_info_statfi()
 
@@ -134,7 +134,7 @@ names(municipality.info.statfi)
 
 Source: [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special characters:
 
-```{r postalcodes, message=FALSE, warning=FALSE, eval=TRUE}
+```{r postalcodes, message=FALSE, warning=FALSE, eval=FALSE}
 postal.code.table <- get_postal_code_info() 
 head(postal.code.table)
 ```
@@ -144,20 +144,20 @@ head(postal.code.table)
 
 **Map all municipalities to correponding provinces**
 
-```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 m2p <- municipality_to_province() 
 head(m2p) # Just show the first ones
 ```  
 
 **Map selected municipalities to correponding provinces:**
 
-```{r province6, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province6, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
 ```  
 
 **Speed up conversion with predefined info table:**
 
-```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 head(m2p)
 ```  
@@ -167,19 +167,19 @@ head(m2p)
 
 **Municipality name to code**
 
-```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province3, message=FALSE, echo=TRUE, eval=FALSE}
 convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```  
 
 **Municipality codes to names**
 
-```{r province4, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province4, message=FALSE, echo=TRUE, eval=FALSE}
 convert_municipality_codes(ids = c(853, 837))
 ```  
 
 **Complete conversion table**
 
-```{r province5, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province5, message=FALSE, echo=TRUE, eval=FALSE}
 municipality_ids <- convert_municipality_codes()
 head(municipality_ids) # just show the first entries
 ```
@@ -208,7 +208,7 @@ valid_hetu("010101-0101") # TRUE/FALSE
 Line fit with confidence smoothers (if any of the required libraries
 are missing, install them with the install.packages command in R):
 
-```{r regressionline, message=FALSE, eval=TRUE, fig.width=10, fig.height=5}
+```{r regressionline, message=FALSE, eval=FALSE, fig.width=10, fig.height=5}
 library(sorvi) 
 library(plyr)
 library(RColorBrewer)
@@ -228,7 +228,7 @@ This work can be freely used, modified and distributed under the
 
 Kindly cite the work as follows
 
-```{r citation, message=FALSE, eval=TRUE}
+```{r citation, message=FALSE, eval=FALSE}
 citation("sorvi")
 ```
 
