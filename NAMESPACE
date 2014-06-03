@@ -3,7 +3,6 @@
 export(convert_municipality_codes)
 export(get_municipality_info_mml)
 export(get_municipality_info_statfi)
-export(get_population_register)
 export(get_postal_code_info)
 export(get_province_info_wikipedia)
 export(hetu)
