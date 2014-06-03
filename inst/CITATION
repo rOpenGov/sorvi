@@ -5,13 +5,17 @@ citEntry(entry="misc",
          author = personList(
 	   person(given ="Leo", family="Lahti", email = "leo.lahti@iki.fi"),
 	   person(given ="Juuso", family="Parkkinen"),
-	   person(given ="Joona", family="Lehtomaki")
+	   person(given ="Joona", family="Lehtomaki"),
+	   person(given ="Juuso", family="Haapanen"),
+	   person(given ="Einari", family="Happonen"),
+	   person(given ="Jussi", family="Paananen")
          ),
 	 journal = "",
 	 year = "2011",
          textVersion =
-         paste("(C) Louhos 2011-2013.",
-               "sorvi: Finnish open government data toolkit for R",
+         paste("(C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari Happonen and Jussi Paananen (rOpenGov 2011-2014). ",
+               "sorvi: Finnish open government data toolkit for R. ",
+	       "URL: http://ropengov.github.com/sorvi",
                sep=" ")
          )
 

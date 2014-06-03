@@ -124,7 +124,7 @@ hetu <- function(hetu) {
     }
 
   # Create hetu-object
-  object <- c(hetu = hetu, gender=gender, personal.number=personal,  checksum=check, date=date, day=day, month=month, year=full.year, century.char=century)
+  object <- list(hetu = hetu, gender=gender, personal.number=personal,  checksum=check, date=date, day=day, month=month, year=full.year, century.char=century)
   class(object) <- "hetu"
 
   return (object)

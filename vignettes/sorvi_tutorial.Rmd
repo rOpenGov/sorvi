@@ -26,12 +26,13 @@ information, see the [home page](http://louhos.github.com/sorvi).
 ### Available data sources and tools
 
  * [Installation](#installation) (Asennus)
- * [Personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)
- * [Postal codes](#postalcodes) (Postinumerodata)
- * [IP address coordinates](#ip) (IP-osoitteen koordinaatit)
- * [Municipality information](#municipality) (Kuntatason informaatio)
- * [Province information](#provinces) (Maakuntatason informaatio)
  * [Finnish population register](#populationregister) (Vaestorekisteri)
+ * [Finnish postal codes](#postalcodes) (Postinumerodata)
+ * [Finnish municipalities](#municipality) (Kuntatason informaatio)
+ * [Finnish provinces](#provinces) (Maakuntatason informaatio)
+ * [Translations](#translations) (Suomi-Englanti-kaannoksia)
+ * [IP address geographic coordinates](#ip) (IP-osoitteen koordinaatit)
+ * [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)
  * [Visualization tools](#visualization) (Visualisointirutiineja)
 
 
@@ -64,6 +65,114 @@ Brief examples of the package tools are provided below. Further
 examples are available in [Louhos-blog](http://louhos.wordpress.com)
 and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 
+### <a name="populationregister"></a>Finnish population register
+
+Municipality-level population information from [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
+
+```{r popreg, message=FALSE, eval=TRUE}
+df <- get_population_register()
+head(df)
+```
+
+
+### <a name="postalcodes"></a>Postal codes
+
+Finnish postal codes vs. municipalities table from
+[Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The
+municipality names are provided also in plain ascii without special
+characters:
+
+```{r postalcodes, message=FALSE, warning=FALSE, eval=TRUE}
+postal.code.table <- get_postal_code_info() 
+head(postal.code.table)
+```
+
+
+
+### <a name="municipality"></a>Municipality data
+
+Finnish municipality information is available through Population
+Registry (Vaestorekisterikeskus), Statistics Finland (Tilastokeskus)
+and Land Survey Finland (Maanmittauslaitos). The row names for each
+data set are harmonized and can be used to match data sets from
+different sources, as different data sets may carry slightly different
+versions of certain municipality names. 
+
+**Land Survey Finland municipality information** ([Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu)). 
+
+```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
+municipality.info.mml <- get_municipality_info_mml()
+municipality.info.mml[1:2,]
+```
+
+**Statistics Finland municipality information** ([Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px))
+
+```{r municipalityStatFi, message=FALSE, warning=FALSE, eval=TRUE}
+library(pxR) # can be installed with install.packages("pxR")
+library(reshape) # can be installed with install.packages("reshape")
+municipality.info.statfi <- get_municipality_info_statfi()
+municipality.info.statfi[1:2,]
+```
+
+
+**List the province for each municipality in Finland:**
+```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+# All municipalities
+m2p <- municipality_to_province() 
+head(m2p) # Just show the first ones
+
+# Selected municipalities
+municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
+
+# Speeding up with predefined municipality info table:
+m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
+head(m2p)
+```
+
+**Convert municipality codes and names** (see
+help(convert_municipality_codes) for all options):
+
+```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
+# Municipality name to code
+convert_municipality_codes(municipalities = c("Turku", "Tampere"))
+
+# Municipality codes to names
+convert_municipality_codes(ids = c(853, 837))
+
+# Complete conversion table
+municipality_ids <- convert_municipality_codes()
+head(municipality_ids) # just show the first entries
+```
+
+
+### <a name="provinces"></a>Province information
+
+Get Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
+
+```{r municipality, message=FALSE, eval=TRUE}
+tab <- get_province_info_wikipedia()
+head(tab)
+```
+
+### <a name="translations"></a>Translations
+
+**Finnish-English translations** for province names (we have not been able
+to solve all encoding problems yet; suggestions very welcome!):
+
+```{r translate, message=FALSE, eval=TRUE}
+translations <- load_sorvi_data("translations")
+head(translations)
+```
+
+
+### <a name="ip"></a>IP Location
+
+Geographic coordinates for a given IP-address from
+[Data Science Toolkit](http://www.datasciencetoolkit.org/):
+
+```{r iplocation, message=FALSE, eval=TRUE}
+ip_location("137.224.252.10")
+```
 
 ### <a name="hetu"></a>Personal identification number (HETU)
 
@@ -81,106 +190,6 @@ valid_hetu("010101-0101") # TRUE/FALSE
 ```
 
 
-### <a name="postalcodes"></a>Postal codes
-
-Finnish postal codes vs. municipalities table from
-[Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The
-municipality names are provided also in plain ascii without special
-characters:
-
-```{r postalcodes, message=FALSE, warning=FALSE, eval=TRUE}
-postal.code.table <- get_postal_code_info() 
-head(postal.code.table)
-```
-
-### <a name="ip"></a>IP Location
-
-Geographic coordinates for a given IP-address from
-[Data Science Toolkit](http://www.datasciencetoolkit.org/):
-
-```{r iplocation, message=FALSE}
-ip_location("137.224.252.10")
-```
-
-### <a name="municipality"></a>Municipality data
-
-Finnish municipality information is available through Population
-Registry (Vaestorekisterikeskus), Statistics Finland (Tilastokeskus)
-and Land Survey Finland (Maanmittauslaitos). The row names for each
-data set are harmonized and can be used to match data sets from
-different sources, as different data sets may carry slightly different
-versions of certain municipality names. 
-
-Finnish municipality information from Land Survey Finland ([Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu)). 
-
-```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
-municipality.info.mml <- get_municipality_info_mml()
-municipality.info.mml[1:2,]
-```
-
-Get information of Finnish provinces from Statistics Finland ([Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px))
-
-```{r municipalityStatFi, message=FALSE, warning=FALSE, eval=TRUE}
-library(pxR) # can be installed with install.packages("pxR")
-library(reshape) # can be installed with install.packages("reshape")
-municipality.info.statfi <- get_municipality_info_statfi()
-municipality.info.statfi[1:2,]
-```
-
-List the province for each municipality in Finland:
-```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
-# All municipalities
-m2p <- municipality_to_province() 
-head(m2p) # Just show the first ones
-
-# Selected municipalities
-municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
-
-# Speeding up with predefined municipality info table:
-m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
-head(m2p)
-```
-
-Convert municipality codes and names (see
-help(convert_municipality_codes) for all options):
-
-```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
-# Municipality name to code
-convert_municipality_codes(municipalities = c("Turku", "Tampere"))
-
-# Municipality codes to names
-convert_municipality_codes(ids = c(853, 837))
-
-# Complete conversion table
-municipality_ids <- convert_municipality_codes()
-head(municipality_ids) # just show the first entries
-```
-
-Finnish-English translations for county names (we have not been able
-to solve all encoding problems yet; suggestions very welcome!):
-
-```{r translate, message=FALSE}
-translations <- load_sorvi_data("translations")
-head(translations)
-```
-
-### <a name="provinces"></a>Province information
-
-Get Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
-
-```{r municipality, message=FALSE}
-tab <- get_province_info_wikipedia()
-head(tab)
-```
-
-### <a name="populationregister"></a>Finnish population register
-
-Municipality-level population information from [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
-
-```{r popreg, message=FALSE}
-df <- get_population_register()
-head(df)
-```
 
 ### <a name="visualization"></a>Visualization tools
 
@@ -199,6 +208,8 @@ print(p)
 ```
 
 
+
+
 ## Licensing and Citations
 
 This work can be freely used, modified and distributed under the 
@@ -209,12 +220,6 @@ Kindly cite the work as follows
 ```{r citation, message=FALSE, eval=TRUE}
 citation("sorvi")
 ```
-
-Leo Lahti, Juuso Parkkinen, Joona Lehtomaki et al. (2014). sorvi - R
-tools for Finnish open government data. URL:
-http://louhos.github.com/sorvi. A full list of authors and
-contributors and contact information is
-[here](http://louhos.github.com/contact).
 
 ## Session info
 
