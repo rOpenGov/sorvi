@@ -70,6 +70,7 @@ and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 Municipality-level population information from [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
 
 ```{r popreg, message=FALSE, eval=TRUE}
+library(sorvi)
 df <- get_population_register()
 head(df)
 ```

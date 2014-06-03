@@ -74,25 +74,19 @@ Municipality-level population information from [Finnish population register](htt
 
 
 ```r
+library(sorvi)
 df <- get_population_register()
-```
-
-```
-## Error: could not find function "get_population_register"
-```
-
-```r
 head(df)
 ```
 
 ```
-##                                                   
-## 1 function (x, df1, df2, ncp, log = FALSE)        
-## 2 {                                               
-## 3     if (missing(ncp))                           
-## 4         .External(C_df, x, df1, df2, log)       
-## 5     else .External(C_dnf, x, df1, df2, ncp, log)
-## 6 }
+##           Koodi     Kunta    Kommun  Male Female Total
+## Äänekoski   992 Äänekoski Äänekoski 10187  10121 20308
+## Ähtäri      989    Ähtäri    Etseri  3231   3222  6453
+## Akaa        020      Akaa      Akaa  8452   8637 17089
+## Alajärvi    005  Alajärvi  Alajärvi  5226   5214 10440
+## Alavieska   009 Alavieska Alavieska  1420   1350  2770
+## Alavus      010    Alavus    Alavus  4619   4634  9253
 ```
 
 
@@ -106,18 +100,17 @@ characters:
 
 ```r
 postal.code.table <- get_postal_code_info() 
-```
-
-```
-## Error: could not find function "get_postal_code_info"
-```
-
-```r
 head(postal.code.table)
 ```
 
 ```
-## Error: object 'postal.code.table' not found
+##   postal.code municipality municipality.ascii
+## 1       07230       Askola             Askola
+## 2       07500       Askola             Askola
+## 3       07510       Askola             Askola
+## 4       07530       Askola             Askola
+## 5       07580       Askola             Askola
+## 6       07590       Askola             Askola
 ```
 
 
@@ -136,18 +129,28 @@ versions of certain municipality names.
 
 ```r
 municipality.info.mml <- get_municipality_info_mml()
-```
-
-```
-## Error: could not find function "get_municipality_info_mml"
-```
-
-```r
 municipality.info.mml[1:2,]
 ```
 
 ```
-## Error: object 'municipality.info.mml' not found
+##           Kohderyhma Kohdeluokk AVI Maakunta Kunta
+## Äänekoski         71      84200   4       13   992
+## Ähtäri            71      84200   4       14   989
+##                                             AVI_ni1
+## Äänekoski Länsi- ja Sisä-Suomen aluehallintovirasto
+## Ähtäri    Länsi- ja Sisä-Suomen aluehallintovirasto
+##                                                      AVI_ni2
+## Äänekoski Regionförvaltningsverket i Västra och Inre Finland
+## Ähtäri    Regionförvaltningsverket i Västra och Inre Finland
+##                 Maaku_ni1         Maaku_ni2 Kunta_ni1 Kunta_ni2 Kieli_ni1
+## Äänekoski     Keski-Suomi Mellersta Finland Äänekoski       N_A     Suomi
+## Ähtäri    Etelä-Pohjanmaa Södra Österbotten    Ähtäri    Etseri     Suomi
+##           Kieli_ni2                                    AVI.FI Kieli.FI
+## Äänekoski       N_A Länsi- ja Sisä-Suomen aluehallintovirasto    Suomi
+## Ähtäri       Ruotsi Länsi- ja Sisä-Suomen aluehallintovirasto    Suomi
+##                Maakunta.FI  Kunta.FI
+## Äänekoski      Keski-Suomi Äänekoski
+## Ähtäri    EtelÃ¤-Pohjanmaa    Ähtäri
 ```
 
 **Statistics Finland municipality information** ([Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px))
@@ -157,18 +160,97 @@ municipality.info.mml[1:2,]
 library(pxR) # can be installed with install.packages("pxR")
 library(reshape) # can be installed with install.packages("reshape")
 municipality.info.statfi <- get_municipality_info_statfi()
-```
-
-```
-## Error: could not find function "get_municipality_info_statfi"
-```
-
-```r
 municipality.info.statfi[1:2,]
 ```
 
 ```
-## Error: object 'municipality.info.statfi' not found
+##                Alue Maapinta-ala, km2 1.1.2013 Taajama-aste, % 1.1.2012
+## Äänekoski Äänekoski                        884                     76.1
+## Ähtäri       Ähtäri                        805                     61.9
+##           Väkiluku 31.12.2013 Väkiluvun muutos, % 2012 - 2013
+## Äänekoski               20077                            -0.9
+## Ähtäri                   6271                            -1.4
+##           0-14 -vuotiaiden osuus väestöstä, % 31.12.2013
+## Äänekoski                                           17.3
+## Ähtäri                                              15.1
+##           15-64 -vuotiaiden osuus väestöstä, % 31.12.2013
+## Äänekoski                                            60.2
+## Ähtäri                                               59.1
+##           65 vuotta täyttäneiden osuus väestöstä, % 31.12.2013
+## Äänekoski                                                 22.4
+## Ähtäri                                                    25.8
+##           Ruotsinkielisten osuus väestöstä, % 31.12.2013
+## Äänekoski                                            0.1
+## Ähtäri                                               0.0
+##           Ulkomaiden kansalaisten osuus väestöstä, % 31.12.2013
+## Äänekoski                                                   1.1
+## Ähtäri                                                      0.8
+##           Kuntien välinen muuttovoitto/-tappio, henkilöä 2012
+## Äänekoski                                                 -67
+## Ähtäri                                                    -35
+##           Syntyneiden enemmyys, henkilöä 2012
+## Äänekoski                                 -14
+## Ähtäri                                    -20
+##           Perheiden lukumäärä 31.12.2012
+## Äänekoski                           5570
+## Ähtäri                              1807
+##           Valtionveronalaiset tulot, euroa/tulonsaaja  2011
+## Äänekoski                                             23540
+## Ähtäri                                                21744
+##           Asuntokuntien lukumäärä 31.12.2012
+## Äänekoski                               9624
+## Ähtäri                                  2957
+##           Vuokra-asunnossa asuvien asuntokuntien osuus, % 31.12.2012
+## Äänekoski                                                       26.0
+## Ähtäri                                                          20.3
+##           Rivi- ja pientaloissa asuvien asuntokuntien osuus asuntokunnista, % 31.12.2012
+## Äänekoski                                                                           65.1
+## Ähtäri                                                                              86.8
+##           Kesämökkien lukumäärä 31.12.2012
+## Äänekoski                             2551
+## Ähtäri                                1354
+##           Vähintään keskiasteen tutkinnon suorittaneiden osuus 15 vuotta täyttäneistä, % 31.12.2012
+## Äänekoski                                                                                      64.0
+## Ähtäri                                                                                         64.7
+##           Korkea-asteen tutkinnon suorittaneiden osuus 15 vuotta täyttäneistä, % 31.12.2012
+## Äänekoski                                                                              19.6
+## Ähtäri                                                                                 20.0
+##           Kunnassa olevien työpaikkojen lukumäärä 31.12.2011
+## Äänekoski                                               7972
+## Ähtäri                                                  2453
+##           Työllisten osuus 18-74-vuotiaista, % 31.12.2012
+## Äänekoski                                            52.5
+## Ähtäri                                               54.4
+##           Työttömyysaste, % 31.12.2012
+## Äänekoski                         17.5
+## Ähtäri                            11.6
+##           Kunnassa asuvan työllisen työvoiman määrä 31.12.2012
+## Äänekoski                                                 7390
+## Ähtäri                                                    2410
+##           Asuinkunnassaan työssäkäyvien osuus työllisestä työvoimasta, % 31.12. 2011
+## Äänekoski                                                                       77.3
+## Ähtäri                                                                          77.3
+##           Alkutuotannon työpaikkojen osuus, % 31.12.2011
+## Äänekoski                                            2.8
+## Ähtäri                                               9.1
+##           Jalostuksen työpaikkojen osuus, % 31.12.2011
+## Äänekoski                                         43.7
+## Ähtäri                                            27.7
+##           Palvelujen työpaikkojen osuus, % 31.12.2011
+## Äänekoski                                        52.5
+## Ähtäri                                           62.0
+##           Toimialaltaan tuntemattomien työpaikkojen osuus, % 31.12.2011
+## Äänekoski                                                           1.0
+## Ähtäri                                                              1.2
+##           Taloudellinen huoltosuhde, työvoiman ulkopuolella tai työttömänä olevat yhtä työllistä kohti 31.12.2012
+## Äänekoski                                                                                                    1.74
+## Ähtäri                                                                                                       1.64
+##           Eläkkeellä olevien osuus väestöstä, % 31.12.2012
+## Äänekoski                                             28.5
+## Ähtäri                                                31.8
+##           Yritystoimipaikkojen lukumäärä 2012     Kunta
+## Äänekoski                                 987 Äänekoski
+## Ähtäri                                    478    Ähtäri
 ```
 
 
@@ -177,18 +259,14 @@ municipality.info.statfi[1:2,]
 ```r
 # All municipalities
 m2p <- municipality_to_province() 
-```
-
-```
-## Error: could not find function "municipality_to_province"
-```
-
-```r
 head(m2p) # Just show the first ones
 ```
 
 ```
-## Error: object 'm2p' not found
+##           Äänekoski              Ähtäri                Akaa 
+##       "Keski-Suomi"  "EtelÃ¤-Pohjanmaa"         "Pirkanmaa" 
+##            Alajärvi           Alavieska              Alavus 
+##  "EtelÃ¤-Pohjanmaa" "Pohjois-Pohjanmaa"  "EtelÃ¤-Pohjanmaa"
 ```
 
 ```r
@@ -197,24 +275,19 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 ```
 
 ```
-## Error: could not find function "municipality_to_province"
+##          Helsinki           Tampere             Turku 
+##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
 ```
 
 ```r
 # Speeding up with predefined municipality info table:
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
-```
-
-```
-## Error: could not find function "municipality_to_province"
-```
-
-```r
 head(m2p)
 ```
 
 ```
-## Error: object 'm2p' not found
+##          Helsinki           Tampere             Turku 
+##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
 ```
 
 **Convert municipality codes and names** (see
@@ -227,7 +300,8 @@ convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```
 
 ```
-## Error: could not find function "convert_municipality_codes"
+##   Turku Tampere 
+##   "853"   "837"
 ```
 
 ```r
@@ -236,24 +310,24 @@ convert_municipality_codes(ids = c(853, 837))
 ```
 
 ```
-## Error: could not find function "convert_municipality_codes"
+##       853       837 
+##   "Turku" "Tampere"
 ```
 
 ```r
 # Complete conversion table
 municipality_ids <- convert_municipality_codes()
-```
-
-```
-## Error: could not find function "convert_municipality_codes"
-```
-
-```r
 head(municipality_ids) # just show the first entries
 ```
 
 ```
-## Error: object 'municipality_ids' not found
+##            id      name
+## Äänekoski 992 Äänekoski
+## Ähtäri    989    Ähtäri
+## Akaa      020      Akaa
+## Alajärvi  005  Alajärvi
+## Alavieska 009 Alavieska
+## Alavus    010    Alavus
 ```
 
 
@@ -264,18 +338,17 @@ Get Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V
 
 ```r
 tab <- get_province_info_wikipedia()
-```
-
-```
-## Error: could not find function "get_province_info_wikipedia"
-```
-
-```r
 head(tab)
 ```
 
 ```
-## Error: object 'tab' not found
+##          Province  Area Population PopulationDensity
+## 1         Uusimaa  9132    1550362             170.4
+## 2 Varsinais-Suomi 10664     457789              42.9
+## 3       Satakunta  7956     229360              28.8
+## 4      Kanta-Häme  5199     169952              32.7
+## 5       Pirkanmaa 12446     472181              37.9
+## 6     Päijät-Häme  5127     199235              38.9
 ```
 
 ### <a name="translations"></a>Translations
@@ -286,18 +359,14 @@ to solve all encoding problems yet; suggestions very welcome!):
 
 ```r
 translations <- load_sorvi_data("translations")
-```
-
-```
-## Error: could not find function "load_sorvi_data"
-```
-
-```r
 head(translations)
 ```
 
 ```
-## Error: object 'translations' not found
+##   Ã\u0085land Islands         South Karelia Southern Ostrobothnia 
+##          "Ahvenanmaa"      "EtelÃĪ-Karjala"    "EtelÃĪ-Pohjanmaa" 
+##      Southern Savonia                Kainuu       Tavastia Proper 
+##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
 ```
 
 
@@ -312,7 +381,7 @@ ip_location("137.224.252.10")
 ```
 
 ```
-## Error: could not find function "ip_location"
+## [1] "51.9667015075684" "5.66669988632202"
 ```
 
 ### <a name="hetu"></a>Personal identification number (HETU)
@@ -450,16 +519,16 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] ggplot2_1.0.0      RColorBrewer_1.0-5 sorvi_0.6.1       
-##  [4] reshape_0.8.5      pxR_0.40.0         plyr_1.8.1        
-##  [7] RJSONIO_1.2-0.2    reshape2_1.4       stringr_0.6.2     
-## [10] knitr_1.6         
+##  [1] sp_1.0-15          ggplot2_1.0.0      RColorBrewer_1.0-5
+##  [4] sorvi_0.6.1        reshape_0.8.5      pxR_0.40.0        
+##  [7] plyr_1.8.1         RJSONIO_1.2-0.2    reshape2_1.4      
+## [10] stringr_0.6.2      knitr_1.6         
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_0.10    
-##  [5] grid_3.1.0       gtable_0.1.2     labeling_0.2     MASS_7.3-33     
-##  [9] munsell_0.4.2    proto_0.3-10     Rcpp_0.11.1      scales_0.2.4    
-## [13] tools_3.1.0      XML_3.98-1.1
+##  [5] grid_3.1.0       gtable_0.1.2     labeling_0.2     lattice_0.20-29 
+##  [9] MASS_7.3-33      munsell_0.4.2    proto_0.3-10     Rcpp_0.11.1     
+## [13] scales_0.2.4     tools_3.1.0      XML_3.98-1.1
 ```
 
 
