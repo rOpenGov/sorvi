@@ -30,7 +30,6 @@ page](http://louhos.github.com/sorvi).
 [Finnish municipalities](#municipality) (Kuntatason informaatio)
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
 * [Statistics Finland](#statfi) (Tilastokeskus)  
-* [Population register](#populationregister) (Vaestorekisteri)  
 
 [ID conversion tools](#conversions)
 * [Municipality-Postal code conversions](#postalcodes) (Kunnat vs. postinumerot)  
@@ -100,12 +99,12 @@ head(translations)
 
 ## <a name="municipality"></a>Municipality information
 
-Finnish municipality information is available through Population
-Registry (Vaestorekisterikeskus), Statistics Finland (Tilastokeskus)
-and Land Survey Finland (Maanmittauslaitos). The row names for each
-data set are harmonized and can be used to match data sets from
-different sources, as different data sets may carry slightly different
-versions of certain municipality names. 
+Finnish municipality information is available through Statistics
+Finland (Tilastokeskus) and Land Survey Finland
+(Maanmittauslaitos). The row names for each data set are harmonized
+and can be used to match data sets from different sources, as
+different data sets may carry slightly different versions of certain
+municipality names.
 
 ### <a name="mml"></a>Land Survey Finland (municipality information)
 
@@ -128,14 +127,6 @@ municipality.info.statfi <- get_municipality_info_statfi()
 names(municipality.info.statfi)
 ```
 
-### <a name="populationregister"></a>Finnish population register (municipality information)
-
-Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus)
-
-```{r popreg, message=FALSE, eval=TRUE}
-df <- get_population_register()
-head(df)
-```
 
 ## <a name="conversions"></a>Conversions
 

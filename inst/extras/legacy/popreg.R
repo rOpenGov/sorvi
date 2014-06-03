@@ -1,3 +1,13 @@
+### <a name="populationregister"></a>Finnish population register (municipality information)
+
+Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus)
+
+```{r popreg, message=FALSE, eval=TRUE}
+df <- get_population_register()
+head(df)
+```
+
+
 #' Retrieve population register data
 #'
 #' Retrieves municipality data from population register. 
