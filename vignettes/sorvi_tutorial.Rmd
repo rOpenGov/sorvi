@@ -19,21 +19,21 @@ information, see the [home page](http://louhos.github.com/sorvi).
 
 [Installation](#installation) (Asennus)  
 
+[Finnish provinces](#provinces) (Maakuntatason informaatio)  
+* [Basic province information](#provinceinfo) (Area, Population, Population Density)
+* [Finnish-English province name translations](#provincetranslations)  
+
 [Finnish municipalities](#municipality) (Kuntatason informaatio)
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
 * [Statistics Finland](#statfi) (Tilastokeskus)  
 * [Population register](#populationregister) (Vaestorekisteri)  
 
-[Finnish provinces](#provinces) (Maakuntatason informaatio)  
-* [Basic province information](#provinceinfo) (Area, Population, Population Density)
-* [Finnish-English province name translations](#provincetranslations)  
+[ID conversion tools](#conversions)
+* [Municipality-Postal code conversions](#postalcodes) (Kunnat vs. postinumerot)  
+* [Municipality name-ID conversions](#municipalityconversions) (Kunnat vs. kuntakoodit)
+* [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
-
-[Conversions](#conversions)
-* [Municipality-Postal code conversions](#postalcodes) (Postinumerodata)  
-* [Municipality name-ID conversions](#municipalityconversions) (Kuntanimet vs. kuntakoodit)
-* [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
 
 [Visualization tools](#visualization) (Visualisointirutiineja)
 
@@ -67,6 +67,31 @@ Sys.setlocale(locale="UTF-8")
 Brief examples of the package tools are provided below. Further
 examples are available in [Louhos-blog](http://louhos.wordpress.com)
 and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
+
+
+## <a name="provinces"></a>Province information (Maakunnat)
+
+
+### <a name="provinceinfo"></a>Basic data
+
+Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
+
+```{r municipality, message=FALSE, eval=TRUE}
+tab <- get_province_info_wikipedia()
+head(tab)
+```
+
+### <a name="provincetranslations"></a>Finnish-English translations
+
+**Finnish-English translations for province names** (we have not been able
+to solve all encoding problems yet; suggestions very welcome!):
+
+```{r translate, message=FALSE, eval=TRUE}
+translations <- load_sorvi_data("translations")
+head(translations)
+```
+
+
 
 
 ## <a name="municipality"></a>Municipality information
@@ -107,47 +132,6 @@ Source: [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site
 df <- get_population_register()
 head(df)
 ```
-
-## <a name="provinces"></a>Province information (Maakunnat)
-
-
-### <a name="provinceinfo"></a>Basic data
-
-Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
-
-```{r municipality, message=FALSE, eval=TRUE}
-tab <- get_province_info_wikipedia()
-head(tab)
-```
-
-### <a name="provincetranslations"></a>Finnish-English translations
-
-**Finnish-English translations for province names** (we have not been able
-to solve all encoding problems yet; suggestions very welcome!):
-
-```{r translate, message=FALSE, eval=TRUE}
-translations <- load_sorvi_data("translations")
-head(translations)
-```
-
-
-
-
-## <a name="hetu"></a>Personal identification number (HETU)
-
-**Extract information from a Finnish personal identification number:**
-
-```{r hetu, message=FALSE}
-library(sorvi)
-hetu("111111-111C")
-```
-
-**Validate Finnish personal identification number:**
-
-```{r hetu2, fig.message=FALSE}
-valid_hetu("010101-0101") # TRUE/FALSE
-```
-
 
 ## <a name="conversions"></a>Conversions
 
@@ -203,6 +187,23 @@ convert_municipality_codes(ids = c(853, 837))
 ```{r province5, message=FALSE, echo=TRUE, eval=TRUE}
 municipality_ids <- convert_municipality_codes()
 head(municipality_ids) # just show the first entries
+```
+
+
+
+## <a name="hetu"></a>Personal identification number (HETU)
+
+**Extract information from a Finnish personal identification number:**
+
+```{r hetu, message=FALSE}
+library(sorvi)
+hetu("111111-111C")
+```
+
+**Validate Finnish personal identification number:**
+
+```{r hetu2, fig.message=FALSE}
+valid_hetu("010101-0101") # TRUE/FALSE
 ```
 
 
