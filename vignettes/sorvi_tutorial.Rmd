@@ -23,7 +23,7 @@ welcome](http://louhos.github.com/contact.html). For further
 information, see the [home page](http://louhos.github.com/sorvi).
 
 
-### Available data sources and tools
+## Available data sources and tools
 
  * [Installation](#installation) (Asennus)
  * [Finnish population register](#populationregister) (Vaestorekisteri)
@@ -35,7 +35,7 @@ information, see the [home page](http://louhos.github.com/sorvi).
  * [Visualization tools](#visualization) (Visualisointirutiineja)
 
 
-### <a name="installation"></a>Installation
+## <a name="installation"></a>Installation
 
 We assume you have installed [R](http://www.r-project.org/). If you
 use [RStudio](http://www.rstudio.com/ide/download/desktop), change the
@@ -64,7 +64,7 @@ Brief examples of the package tools are provided below. Further
 examples are available in [Louhos-blog](http://louhos.wordpress.com)
 and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 
-### <a name="populationregister"></a>Finnish population register
+## <a name="populationregister"></a>Finnish population register
 
 Municipality-level population information from [Finnish population register](http://vrk.fi/default.aspx?docid=5127&site=3&id=0) (Vaestokeskus): 
 
@@ -75,7 +75,7 @@ head(df)
 ```
 
 
-### <a name="postalcodes"></a>Postal codes
+## <a name="postalcodes"></a>Postal codes
 
 Finnish postal codes vs. municipalities table from
 [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The
@@ -89,7 +89,7 @@ head(postal.code.table)
 
 
 
-### <a name="municipality"></a>Municipality data
+## <a name="municipality"></a>Municipality data
 
 Finnish municipality information is available through Population
 Registry (Vaestorekisterikeskus), Statistics Finland (Tilastokeskus)
@@ -147,7 +147,7 @@ head(municipality_ids) # just show the first entries
 ```
 
 
-### <a name="provinces"></a>Province information (Maakunnat)
+## <a name="provinces"></a>Province information (Maakunnat)
 
 Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
 
@@ -156,7 +156,7 @@ tab <- get_province_info_wikipedia()
 head(tab)
 ```
 
-### <a name="translations"></a>Translations
+## <a name="translations"></a>Translations
 
 **Finnish-English translations** for province names (we have not been able
 to solve all encoding problems yet; suggestions very welcome!):
@@ -169,7 +169,7 @@ head(translations)
 
 
 
-### <a name="hetu"></a>Personal identification number (HETU)
+## <a name="hetu"></a>Personal identification number (HETU)
 
 Extract information from a Finnish personal identification number:
 
@@ -186,7 +186,7 @@ valid_hetu("010101-0101") # TRUE/FALSE
 
 
 
-### <a name="visualization"></a>Visualization tools
+## <a name="visualization"></a>Visualization tools
 
 Line fit with confidence smoothers (if any of the required libraries
 are missing, install them with the install.packages command in R):
