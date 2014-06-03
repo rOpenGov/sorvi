@@ -31,7 +31,6 @@ information, see the [home page](http://louhos.github.com/sorvi).
  * [Finnish municipalities](#municipality) (Kuntatason informaatio)
  * [Finnish provinces](#provinces) (Maakuntatason informaatio)
  * [Translations](#translations) (Suomi-Englanti-kaannoksia)
- * [IP address geographic coordinates](#ip) (IP-osoitteen koordinaatit)
  * [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)
  * [Visualization tools](#visualization) (Visualisointirutiineja)
 
@@ -112,11 +111,14 @@ municipality.info.mml[1:2,]
 library(pxR) # can be installed with install.packages("pxR")
 library(reshape) # can be installed with install.packages("reshape")
 municipality.info.statfi <- get_municipality_info_statfi()
-municipality.info.statfi[1:2,]
+
+# List available information fields for municipalities
+names(municipality.info.statfi)
 ```
 
 
-**List the province for each municipality in Finland:**
+**Map municipalities to provinces:**
+
 ```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 # All municipalities
 m2p <- municipality_to_province() 
@@ -128,10 +130,9 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 # Speeding up with predefined municipality info table:
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 head(m2p)
-```
+```  
 
-**Convert municipality codes and names** (see
-help(convert_municipality_codes) for all options):
+**Convert municipality codes and names:**
 
 ```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
 # Municipality name to code
@@ -146,9 +147,9 @@ head(municipality_ids) # just show the first entries
 ```
 
 
-### <a name="provinces"></a>Province information
+### <a name="provinces"></a>Province information (Maakunnat)
 
-Get Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
+Finnish province information from [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys):
 
 ```{r municipality, message=FALSE, eval=TRUE}
 tab <- get_province_info_wikipedia()
@@ -166,14 +167,7 @@ head(translations)
 ```
 
 
-### <a name="ip"></a>IP Location
 
-Geographic coordinates for a given IP-address from
-[Data Science Toolkit](http://www.datasciencetoolkit.org/):
-
-```{r iplocation, message=FALSE, eval=TRUE}
-ip_location("137.224.252.10")
-```
 
 ### <a name="hetu"></a>Personal identification number (HETU)
 
