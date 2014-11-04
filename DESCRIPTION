@@ -24,5 +24,6 @@ Suggests:
     gdata,
     knitr,
     RCurl,
-    rjson
+    rjson,
+    testthat
 LazyLoad: yes
