@@ -85,14 +85,6 @@ Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
 
 ```r
 tab <- get_province_info_wikipedia()
-```
-
-```
-## Warning: NAs introduced by coercion
-## Warning: NAs introduced by coercion
-```
-
-```r
 head(tab)
 ```
 
@@ -109,7 +101,7 @@ head(tab)
 ### <a name="provincetranslations"></a>Finnish-English translations
 
 **Finnish-English translations for province names** (we have not been able
-to solve all encoding problems yet; suggestions very welcome!):
+to solve all encoding problems yet; solutions welcome!):
 
 
 ```r
@@ -409,8 +401,6 @@ print(p)
 
 This work can be freely used, modified and distributed under the 
 [Two-clause BSD license](http://en.wikipedia.org/wiki/BSD\_licenses).
-
-Kindly cite the work as follows
 
 
 ```r
