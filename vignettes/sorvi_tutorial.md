@@ -85,17 +85,25 @@ Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
 
 ```r
 tab <- get_province_info_wikipedia()
+```
+
+```
+## Warning: NAs introduced by coercion
+## Warning: NAs introduced by coercion
+```
+
+```r
 head(tab)
 ```
 
 ```
-##          Province  Area Population PopulationDensity
-## 1         Uusimaa  9132    1550362             170.4
-## 2 Varsinais-Suomi 10664     457789              42.9
-## 3       Satakunta  7956     229360              28.8
-## 4      Kanta-Häme  5199     169952              32.7
-## 5       Pirkanmaa 12446     472181              37.9
-## 6     Päijät-Häme  5127     199235              38.9
+##          Province Area Population PopulationDensity
+## 1         Uusimaa   NA         NA             170.4
+## 2 Varsinais-Suomi   NA         NA              42.9
+## 3       Satakunta   NA         NA              28.8
+## 4      Kanta-Häme   NA         NA              32.7
+## 5       Pirkanmaa   NA         NA              37.9
+## 6     Päijät-Häme   NA         NA              38.9
 ```
 
 ### <a name="provincetranslations"></a>Finnish-English translations
@@ -183,14 +191,14 @@ names(municipality.info.statfi)
 ##  [8] "65 vuotta täyttäneiden osuus väestöstä, % 31.12.2013"                                                   
 ##  [9] "Ruotsinkielisten osuus väestöstä, % 31.12.2013"                                                         
 ## [10] "Ulkomaiden kansalaisten osuus väestöstä, % 31.12.2013"                                                  
-## [11] "Kuntien välinen muuttovoitto/-tappio, henkilöä 2012"                                                    
-## [12] "Syntyneiden enemmyys, henkilöä 2012"                                                                    
-## [13] "Perheiden lukumäärä 31.12.2012"                                                                         
+## [11] "Kuntien välinen muuttovoitto/-tappio, henkilöä 2013"                                                    
+## [12] "Syntyneiden enemmyys, henkilöä 2013"                                                                    
+## [13] "Perheiden lukumäärä 31.12.2013"                                                                         
 ## [14] "Valtionveronalaiset tulot, euroa/tulonsaaja  2011"                                                      
-## [15] "Asuntokuntien lukumäärä 31.12.2012"                                                                     
+## [15] "Asuntokuntien lukumäärä 31.12.2013"                                                                     
 ## [16] "Vuokra-asunnossa asuvien asuntokuntien osuus, % 31.12.2012"                                             
-## [17] "Rivi- ja pientaloissa asuvien asuntokuntien osuus asuntokunnista, % 31.12.2012"                         
-## [18] "Kesämökkien lukumäärä 31.12.2012"                                                                       
+## [17] "Rivi- ja pientaloissa asuvien asuntokuntien osuus asuntokunnista, % 31.12.2013"                         
+## [18] "Kesämökkien lukumäärä 31.12.2013"                                                                       
 ## [19] "Vähintään keskiasteen tutkinnon suorittaneiden osuus 15 vuotta täyttäneistä, % 31.12.2012"              
 ## [20] "Korkea-asteen tutkinnon suorittaneiden osuus 15 vuotta täyttäneistä, % 31.12.2012"                      
 ## [21] "Kunnassa olevien työpaikkojen lukumäärä 31.12.2011"                                                     
@@ -441,7 +449,7 @@ sessionInfo()
 ```
 
 ```
-## R version 3.1.0 (2014-04-10)
+## R version 3.1.2 (2014-10-31)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## 
 ## locale:
@@ -457,15 +465,15 @@ sessionInfo()
 ## 
 ## other attached packages:
 ##  [1] ggplot2_1.0.0      RColorBrewer_1.0-5 sp_1.0-15         
-##  [4] sorvi_0.6.23       pxR_0.40.0         plyr_1.8.1        
-##  [7] RJSONIO_1.2-0.2    reshape2_1.4       stringr_0.6.2     
-## [10] reshape_0.8.5      knitr_1.6         
+##  [4] sorvi_0.7.11       reshape_0.8.5      pxR_0.40.0        
+##  [7] plyr_1.8.1         RJSONIO_1.3-0      reshape2_1.4      
+## [10] stringr_0.6.2      knitr_1.6         
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_0.10    
-##  [5] grid_3.1.0       gtable_0.1.2     labeling_0.2     lattice_0.20-29 
-##  [9] MASS_7.3-33      munsell_0.4.2    proto_0.3-10     Rcpp_0.11.1     
-## [13] scales_0.2.4     tools_3.1.0      XML_3.98-1.1
+##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_1.0     
+##  [5] grid_3.1.2       gtable_0.1.2     labeling_0.3     lattice_0.20-29 
+##  [9] MASS_7.3-34      munsell_0.4.2    proto_0.3-10     Rcpp_0.11.2     
+## [13] scales_0.2.4     tools_3.1.2      XML_3.98-1.1
 ```
 
 

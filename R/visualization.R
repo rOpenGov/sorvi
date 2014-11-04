@@ -41,9 +41,8 @@
 #' @import plyr
 #' @import RColorBrewer
 #' @import ggplot2
-#' @importFrom reshape melt
 #'
-#' @examples \dontrun{library(sorvi); library(plyr); library(RColorBrewer); 
+#' @examples \dontrun{library(plyr); library(RColorBrewer); 
 #'   	     	      library(ggplot2); data(iris); 
 #'		      p <- regression_plot(Sepal.Length ~ Sepal.Width, iris)}
 #' @aliases vwReg

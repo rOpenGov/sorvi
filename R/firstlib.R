@@ -1,3 +1,6 @@
+#' @importFrom reshape melt
+#' @importFrom reshape cast
+
 .onAttach <- function(lib, pkg)
 {
 
