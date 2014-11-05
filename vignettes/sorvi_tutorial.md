@@ -29,7 +29,6 @@ page](http://louhos.github.com/sorvi).
 
 [Finnish municipalities](#municipality) (Kuntatason informaatio)
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
-* [Statistics Finland](#statfi) (Tilastokeskus)  
 
 [ID conversion tools](#conversions)
 * [Municipality-Postal code conversions](#postalcodes) (Kunnat vs. postinumerot)  
@@ -89,13 +88,13 @@ head(tab)
 ```
 
 ```
-##          Province Area Population PopulationDensity
-## 1         Uusimaa   NA         NA             170.4
-## 2 Varsinais-Suomi   NA         NA              42.9
-## 3       Satakunta   NA         NA              28.8
-## 4      Kanta-Häme   NA         NA              32.7
-## 5       Pirkanmaa   NA         NA              37.9
-## 6     Päijät-Häme   NA         NA              38.9
+##          Province PopulationDensity
+## 1         Uusimaa             170.4
+## 2 Varsinais-Suomi              42.9
+## 3       Satakunta              28.8
+## 4      Kanta-Häme              32.7
+## 5       Pirkanmaa              37.9
+## 6     Päijät-Häme              38.9
 ```
 
 ### <a name="provincetranslations"></a>Finnish-English translations
@@ -407,16 +406,14 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] ggplot2_1.0.0      RColorBrewer_1.0-5 sp_1.0-15         
-##  [4] sorvi_0.7.11       reshape_0.8.5      pxR_0.40.0        
-##  [7] plyr_1.8.1         RJSONIO_1.3-0      reshape2_1.4      
-## [10] stringr_0.6.2      knitr_1.7         
+## [1] ggplot2_1.0.0      RColorBrewer_1.0-5 plyr_1.8.1        
+## [4] sorvi_0.7.12       reshape_0.8.5      knitr_1.7         
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_1.0     
-##  [5] grid_3.1.2       gtable_0.1.2     labeling_0.3     lattice_0.20-29 
-##  [9] MASS_7.3-35      munsell_0.4.2    proto_0.3-10     Rcpp_0.11.3     
-## [13] scales_0.2.4     tools_3.1.2      XML_3.98-1.1
+##  [5] grid_3.1.2       gtable_0.1.2     labeling_0.3     MASS_7.3-35     
+##  [9] munsell_0.4.2    proto_0.3-10     Rcpp_0.11.3      reshape2_1.4    
+## [13] scales_0.2.4     stringr_0.6.2    tools_3.1.2      XML_3.98-1.1
 ```
 
 

@@ -29,7 +29,6 @@ page](http://louhos.github.com/sorvi).
 
 [Finnish municipalities](#municipality) (Kuntatason informaatio)
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
-* [Statistics Finland](#statfi) (Tilastokeskus)  
 
 [ID conversion tools](#conversions)
 * [Municipality-Postal code conversions](#postalcodes) (Kunnat vs. postinumerot)  

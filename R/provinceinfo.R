@@ -84,11 +84,9 @@ get_province_info_wikipedia <- function (...) {
   tables <- readHTMLTable(url)
 
   # Population density in regions (maakunnat)
-  tab <- tables[[1]]		
+  tab <- tables[[1]][, c(1, 4)]		
 
-  names(tab) <- c("Province", "AreaKm2", "PopulationN", "PopulationDensity")
-  tab$Area <- as.numeric(gsub(" ", "", as.character(tab$Area)))
-  tab$Population <- as.numeric(gsub(" ", "", as.character(tab$Population)))
+  names(tab) <- c("Province", "PopulationDensity")
   tab$PopulationDensity <- as.numeric(gsub(",", ".", tab$PopulationDensity))
 
   tab
