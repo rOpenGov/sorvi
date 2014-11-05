@@ -126,63 +126,8 @@ convert_municipality_names <- function (municipality.names) {
 }
 
 
-#' Get information of Finnish municipalities from Statistics Finland 2013 
-#  (C) Tilastokeskus 2013 http://www.stat.fi/tup/atilastotietokannat/index.html
-#' 
-#' @param verbose verbose 
-#' @param ... Arguments to be passed
-
-#' @return A data frame with municipality data
-#' @export 
-#' @importFrom pxR read.px
-#'
-#' @references
-#' See citation("sorvi") 
-#' @author Leo Lahti \email{louhos@@googlegroups.com}
-#' @examples \dontrun{df <- get_municipality_info_statfi()}
-#' @keywords utilities
-
-get_municipality_info_statfi <- function (verbose = TRUE, ...) {
-
-  url <- "http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px"
-  message(paste("Downloading data from", url))
-
-  # FIXME: merge GetPopulationRegister function in here
-
-  # Get municipality information from Tilastokeskus
-  px <- read.px(url)
-  
-  df <- as.data.frame(px) 
-  # read.csv(url, encoding = "latin1", as.is = T, colClasses = 'character', sep = ";"); 
-
-  if (verbose) { message("Cleaning up municipality names") }
-  # FIXME: scandinavic characters cause error in Windows systems, find solution
-  df$Alue <- sapply(strsplit(as.character(df[[grep("Alueluokitus", names(df))]]), " - "), function (x) {x[[1]]})
-
-  if (verbose) {message("Converting to wide format")}
-  df <- cast(df[, c("Alue", "Tunnusluku", "value")], Alue ~ Tunnusluku) 
-
-  df[, "Alue"] <- convert_municipality_names(df[, "Alue"])
-
-  df$Alue <- factor(df$Alue)
-  df$Kunta <- factor(df$Alue)
-  rownames(df) <- as.character(df[["Alue"]])
-
-  # FIXME at higher level: Kunta is factor but Maakunta is character and 
-  # UTF-8 does not seem to be working with Maakunta field
-  rownames(df) <- df$Kunta
-
-  # Order municipalities alphabetically
-  df <- df[sort(rownames(df)), ]
-
-  df
-
-}
-
-
-#' Get information of Finnish municipalities from Land Survey Finland 2013.
-#' (C) Maanmittauslaitos MML 2013. For details of MML data, see 
-#' help(GetShapeMML).
+#' Get information of Finnish municipalities from Land Survey Finland.
+#' (C) Maanmittauslaitos MML 2013. For details, see help(GetShapeMML).
 #' 
 #' @return A data frame with municipality data
 #' @export 
@@ -196,7 +141,7 @@ get_municipality_info_mml <- function () {
 
   # Load information table from Maanmittauslaitos
   map.id  <- "Yleiskartta-1000"
-  data.id <- "HallintoAlue"
+  data.id <- "HallintoAlue_DataFrame"
 
   # DO NOT SET sp <- NULL HERE; this will return NULL for the function
   # IN CONTRAST TO INTENDED OUTPUT!!!
@@ -212,12 +157,7 @@ get_municipality_info_mml <- function () {
   # dat <- read.csv(text=getURL("link.to.github.raw.csv"))
 
   #load(url(filepath), envir = .GlobalEnv) # Returns a shape file sp
-  load(url(filepath)) # Returns a shape file sp
-
-  df <- as.data.frame(sp)
-
-  #df <- df[, c("AVI.FI", "Kieli.FI", "Maakunta.FI", "Kunta.FI")]
-  #names(df) <- c("AVI", "Kieli", "Maakunta", "Kunta")
+  load(url(filepath)) # Returns a data frame df
 
   # Vaasa and Hammarland have duplicated entries where only the 
   # enclave column differs. Remove that column, remove duplicated rows
@@ -249,7 +189,7 @@ get_municipality_info_mml <- function () {
 #' @author Leo Lahti \email{louhos@@googlegroups.com}
 #' @examples 
 #' # Info table for municipalities:
-#' # municipality.info <- get_municipality_info_statfi()
+#' # municipality.info <- get_municipality_info_mml()
 #' # List all municipalities: 
 #' # all.municipalities <- as.character(municipality.info$Kunta) 
 #' # Pick province for given municipalities:

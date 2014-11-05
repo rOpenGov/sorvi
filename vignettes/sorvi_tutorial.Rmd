@@ -95,15 +95,14 @@ head(translations)
 ```
 
 
-
-
 ## <a name="municipality"></a>Municipality information
 
 Finnish municipality information is available through Statistics
-Finland (Tilastokeskus) and Land Survey Finland
-(Maanmittauslaitos). The row names for each data set are harmonized
-and can be used to match data sets from different sources, as
-different data sets may carry slightly different versions of certain
+Finland (Tilastokeskus; see
+[stafi](https://github.com/ropengov/statfi) package) and Land Survey
+Finland (Maanmittauslaitos). The row names for each data set are
+harmonized and can be used to match data sets from different sources,
+as different data sets may carry different versions of certain
 municipality names.
 
 ### <a name="mml"></a>Land Survey Finland (municipality information)
@@ -113,18 +112,6 @@ Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palve
 ```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
 municipality.info.mml <- get_municipality_info_mml()
 municipality.info.mml[1:2,]
-```
-
-### <a name="statfi"></a>Statistics Finland (municipality information)
-
-Source: [Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px)
-
-```{r municipalityStatFi, message=FALSE, warning=FALSE, eval=TRUE}
-# Download Statfi municipality data
-municipality.info.statfi <- get_municipality_info_statfi()
-
-# List available information fields for municipalities
-names(municipality.info.statfi)
 ```
 
 

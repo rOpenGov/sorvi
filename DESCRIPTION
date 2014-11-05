@@ -1,8 +1,8 @@
 Package: sorvi
 Type: Package
 Title: Finnish Open Government Data Toolkit
-Version: 0.7.11
-Date: 2014-11-05
+Version: 0.7.12
+Date: 2014-11-06
 Author: Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Jussi
     Paananen, Einari Happonen
 Maintainer: Leo Lahti <louhos@googlegroups.com>
@@ -13,7 +13,6 @@ BugReports: https://github.com/louhos/sorvi/issues
 URL: http://louhos.github.com/sorvi
 Depends:
     R (>= 3.0.2),
-    pxR,
     reshape
 Imports:
     ggplot2,

@@ -19,7 +19,7 @@ List province for each municipality in Finland.
 }
 \examples{
 # Info table for municipalities:
-# municipality.info <- get_municipality_info_statfi()
+# municipality.info <- get_municipality_info_mml()
 # List all municipalities:
 # all.municipalities <- as.character(municipality.info$Kunta)
 # Pick province for given municipalities:

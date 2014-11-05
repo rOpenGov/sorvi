@@ -117,15 +117,14 @@ head(translations)
 ```
 
 
-
-
 ## <a name="municipality"></a>Municipality information
 
 Finnish municipality information is available through Statistics
-Finland (Tilastokeskus) and Land Survey Finland
-(Maanmittauslaitos). The row names for each data set are harmonized
-and can be used to match data sets from different sources, as
-different data sets may carry slightly different versions of certain
+Finland (Tilastokeskus; see
+[stafi](https://github.com/ropengov/statfi) package) and Land Survey
+Finland (Maanmittauslaitos). The row names for each data set are
+harmonized and can be used to match data sets from different sources,
+as different data sets may carry different versions of certain
 municipality names.
 
 ### <a name="mml"></a>Land Survey Finland (municipality information)
@@ -157,55 +156,6 @@ municipality.info.mml[1:2,]
 ##                Maakunta.FI  Kunta.FI
 ## Äänekoski      Keski-Suomi Äänekoski
 ## Ähtäri    EtelÃ¤-Pohjanmaa    Ähtäri
-```
-
-### <a name="statfi"></a>Statistics Finland (municipality information)
-
-Source: [Tilastokeskus](http://pxweb2.stat.fi/Database/Kuntien%20perustiedot/Kuntien%20perustiedot/Kuntaportaali.px)
-
-
-```r
-# Download Statfi municipality data
-municipality.info.statfi <- get_municipality_info_statfi()
-
-# List available information fields for municipalities
-names(municipality.info.statfi)
-```
-
-```
-##  [1] "Alue"                                                                                                   
-##  [2] "Maapinta-ala, km2 1.1.2013"                                                                             
-##  [3] "Taajama-aste, % 1.1.2012"                                                                               
-##  [4] "Väkiluku 31.12.2013"                                                                                    
-##  [5] "Väkiluvun muutos, % 2012 - 2013"                                                                        
-##  [6] "0-14 -vuotiaiden osuus väestöstä, % 31.12.2013"                                                         
-##  [7] "15-64 -vuotiaiden osuus väestöstä, % 31.12.2013"                                                        
-##  [8] "65 vuotta täyttäneiden osuus väestöstä, % 31.12.2013"                                                   
-##  [9] "Ruotsinkielisten osuus väestöstä, % 31.12.2013"                                                         
-## [10] "Ulkomaiden kansalaisten osuus väestöstä, % 31.12.2013"                                                  
-## [11] "Kuntien välinen muuttovoitto/-tappio, henkilöä 2013"                                                    
-## [12] "Syntyneiden enemmyys, henkilöä 2013"                                                                    
-## [13] "Perheiden lukumäärä 31.12.2013"                                                                         
-## [14] "Valtionveronalaiset tulot, euroa/tulonsaaja  2011"                                                      
-## [15] "Asuntokuntien lukumäärä 31.12.2013"                                                                     
-## [16] "Vuokra-asunnossa asuvien asuntokuntien osuus, % 31.12.2012"                                             
-## [17] "Rivi- ja pientaloissa asuvien asuntokuntien osuus asuntokunnista, % 31.12.2013"                         
-## [18] "Kesämökkien lukumäärä 31.12.2013"                                                                       
-## [19] "Vähintään keskiasteen tutkinnon suorittaneiden osuus 15 vuotta täyttäneistä, % 31.12.2012"              
-## [20] "Korkea-asteen tutkinnon suorittaneiden osuus 15 vuotta täyttäneistä, % 31.12.2012"                      
-## [21] "Kunnassa olevien työpaikkojen lukumäärä 31.12.2011"                                                     
-## [22] "Työllisten osuus 18-74-vuotiaista, % 31.12.2012"                                                        
-## [23] "Työttömyysaste, % 31.12.2012"                                                                           
-## [24] "Kunnassa asuvan työllisen työvoiman määrä 31.12.2012"                                                   
-## [25] "Asuinkunnassaan työssäkäyvien osuus työllisestä työvoimasta, % 31.12. 2011"                             
-## [26] "Alkutuotannon työpaikkojen osuus, % 31.12.2011"                                                         
-## [27] "Jalostuksen työpaikkojen osuus, % 31.12.2011"                                                           
-## [28] "Palvelujen työpaikkojen osuus, % 31.12.2011"                                                            
-## [29] "Toimialaltaan tuntemattomien työpaikkojen osuus, % 31.12.2011"                                          
-## [30] "Taloudellinen huoltosuhde, työvoiman ulkopuolella tai työttömänä olevat yhtä työllistä kohti 31.12.2012"
-## [31] "Eläkkeellä olevien osuus väestöstä, % 31.12.2012"                                                       
-## [32] "Yritystoimipaikkojen lukumäärä 2012"                                                                    
-## [33] "Kunta"
 ```
 
 
@@ -392,7 +342,7 @@ p <- regression_plot(Sepal.Length ~ Sepal.Width, iris)
 print(p)
 ```
 
-![plot of chunk regressionline](figure/regressionline.png) 
+![plot of chunk regressionline](figure/regressionline-1.png) 
 
 
 
@@ -457,12 +407,12 @@ sessionInfo()
 ##  [1] ggplot2_1.0.0      RColorBrewer_1.0-5 sp_1.0-15         
 ##  [4] sorvi_0.7.11       reshape_0.8.5      pxR_0.40.0        
 ##  [7] plyr_1.8.1         RJSONIO_1.3-0      reshape2_1.4      
-## [10] stringr_0.6.2      knitr_1.6         
+## [10] stringr_0.6.2      knitr_1.7         
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_1.0     
 ##  [5] grid_3.1.2       gtable_0.1.2     labeling_0.3     lattice_0.20-29 
-##  [9] MASS_7.3-34      munsell_0.4.2    proto_0.3-10     Rcpp_0.11.2     
+##  [9] MASS_7.3-35      munsell_0.4.2    proto_0.3-10     Rcpp_0.11.3     
 ## [13] scales_0.2.4     tools_3.1.2      XML_3.98-1.1
 ```
 
