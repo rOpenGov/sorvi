@@ -106,14 +106,17 @@ to solve all encoding problems yet; solutions welcome!):
 
 ```r
 translations <- load_sorvi_data("translations")
-head(translations)
+head(as.matrix(translations))
 ```
 
 ```
-##   Ã\u0085land Islands         South Karelia Southern Ostrobothnia 
-##          "Ahvenanmaa"      "EtelÃĪ-Karjala"    "EtelÃĪ-Pohjanmaa" 
-##      Southern Savonia                Kainuu       Tavastia Proper 
-##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
+##                       [,1]              
+## Ã\u0085land Islands   "Ahvenanmaa"      
+## South Karelia         "EtelÃĪ-Karjala"  
+## Southern Ostrobothnia "EtelÃĪ-Pohjanmaa"
+## Southern Savonia      "EtelÃĪ-Savo"     
+## Kainuu                "Kainuu"          
+## Tavastia Proper       "Kanta-HÃĪme"
 ```
 
 
@@ -134,7 +137,7 @@ Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palve
 
 ```r
 municipality.info.mml <- get_municipality_info_mml()
-municipality.info.mml[1:2,]
+print(municipality.info.mml[1:2,])
 ```
 
 ```

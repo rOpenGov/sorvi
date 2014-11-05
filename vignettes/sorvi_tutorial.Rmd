@@ -91,7 +91,7 @@ to solve all encoding problems yet; solutions welcome!):
 
 ```{r translate, message=FALSE, eval=TRUE}
 translations <- load_sorvi_data("translations")
-head(translations)
+head(as.matrix(translations))
 ```
 
 
@@ -111,7 +111,7 @@ Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palve
 
 ```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
 municipality.info.mml <- get_municipality_info_mml()
-municipality.info.mml[1:2,]
+print(municipality.info.mml[1:2,])
 ```
 
 
