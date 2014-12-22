@@ -23,14 +23,17 @@ page](http://louhos.github.com/sorvi).
 
 [Installation](#installation) (Asennus)  
 
-[Finnish provinces](#provinces) (Maakuntatason informaatio)  
+[Finnish provinces](#provinces) (Maakuntatason informaatio)
+
 * [Basic province information](#provinceinfo) (Area, Population, Population Density)
 * [Finnish-English province name translations](#provincetranslations)  
 
 [Finnish municipalities](#municipality) (Kuntatason informaatio)
+
 * [Land Survey Finland](#mml) (Maanmittauslaitos / MML)
 
 [ID conversion tools](#conversions)
+
 * [Municipality-Postal code conversions](#postalcodes) (Kunnat vs. postinumerot)  
 * [Municipality name-ID conversions](#municipalityconversions) (Kunnat vs. kuntakoodit)
 * [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
