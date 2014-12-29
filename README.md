@@ -21,9 +21,8 @@ You are welcome to:
   
   * [submit suggestions and bug-reports](https://github.com/louhos/sorvi/issues)
   * [send a pull request](https://github.com/louhos/sorvi/)
-  * public email list: louhos@googlegroups.com (Finland); ropengov-forum@googlegroups.com (International)
+  * email list: louhos@googlegroups.com (Finland)
+  * [Discussion forum](https://groups.google.com/forum/?hl=fi#!forum/ropengov-forum)
   * join IRC at !louhos@IRCnet (Finland) and ropengov@Freenode (international)
   * follow us in social media [Finland](http://louhos.github.io/contact.html); [International](http://ropengov.github.io/contribute/)
  
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/771a719982cd5c78901bdc6054dd7703 "githalytics.com")](http://githalytics.com/rOpenGov/sorvi)
