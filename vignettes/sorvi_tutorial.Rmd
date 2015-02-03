@@ -63,6 +63,13 @@ Test the installation by loading the library:
 library(sorvi)
 ```
 
+Development version for developers:
+
+```{r install2, eval=FALSE}
+library(devtools)
+install_github("ropengov/sorvi")
+```
+
 We also recommend setting the UTF-8 encoding:
 
 ```{r locale, eval=FALSE}
