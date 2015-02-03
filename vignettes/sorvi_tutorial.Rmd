@@ -1,7 +1,16 @@
+---
+Title: "sorvi vignette"
+output:
+  html_document:
+    theme: flatly
+---
 <!--
-%\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{sorvi Markdown Vignette made with knitr}
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{sorvi Markdown Vignette}
+%\usepackage[utf8]{inputenc}
 -->
+
+
 
 Finnish open government data toolkit for R
 ===========

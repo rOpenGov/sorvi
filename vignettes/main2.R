@@ -1,0 +1,4 @@
+#knit("sorvi_tutorial.Rmd")
+#knit2pdf("sorvi.Rnw")
+library(rmarkdown)
+render("sorvi_tutorial.Rmd", output_format = "pdf_document")
