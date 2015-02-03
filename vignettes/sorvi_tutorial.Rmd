@@ -1,5 +1,7 @@
 ---
-Title: "sorvi vignette"
+title: "sorvi tutorial"
+author: rOpenGov core team
+date: "`r Sys.Date()`"
 output:
   html_document:
     theme: flatly
