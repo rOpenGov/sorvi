@@ -2,8 +2,8 @@ language: c
 
 env:
    global:
-     - R_BUILD_ARGS="--no-manual --no-build-vignettes"
-     - R_CHECK_ARGS="--no-manual --no-build-vignettes"
+     - R_BUILD_ARGS="--no-manual"
+     - R_CHECK_ARGS="--no-manual"
      - BOOTSTRAP_LATEX="1"
      - WARNINGS_ARE_ERRORS=0
 
