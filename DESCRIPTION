@@ -11,6 +11,7 @@ License: BSD_2_clause + file LICENSE
 VignetteBuilder: knitr
 BugReports: https://github.com/ropengov/sorvi/issues
 URL: https://github.com/ropengov/sorvi
+URL.CRAN: http://cran.r-project.org/web/packages/sorvi/index.html
 Depends:
     R (>= 3.0.2),
     reshape
