@@ -1,7 +1,18 @@
+---
+title: "sorvi tutorial"
+author: rOpenGov core team
+date: "2015-02-12"
+output:
+  html_document:
+    theme: flatly
+---
 <!--
-%\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{sorvi Markdown Vignette made with knitr}
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{sorvi Markdown Vignette}
+%\usepackage[utf8]{inputenc}
 -->
+
+
 
 Finnish open government data toolkit for R
 ===========
@@ -417,13 +428,13 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] ggplot2_1.0.0      RColorBrewer_1.0-5 plyr_1.8.1        
-## [4] sorvi_0.7.14       reshape_0.8.5      knitr_1.8         
+## [1] ggplot2_1.0.0      RColorBrewer_1.1-2 plyr_1.8.1        
+## [4] sorvi_0.7.15       reshape_0.8.5      knitr_1.9         
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] colorspace_1.2-4 digest_0.6.4     evaluate_0.5.5   formatR_1.0     
-##  [5] grid_3.1.2       gtable_0.1.2     labeling_0.3     MASS_7.3-34     
-##  [9] munsell_0.4.2    proto_0.3-10     Rcpp_0.11.3      reshape2_1.4    
+##  [1] colorspace_1.2-4 digest_0.6.8     evaluate_0.5.5   formatR_1.0     
+##  [5] grid_3.1.2       gtable_0.1.2     labeling_0.3     MASS_7.3-37     
+##  [9] munsell_0.4.2    proto_0.3-10     Rcpp_0.11.4      reshape2_1.4.1  
 ## [13] scales_0.2.4     stringr_0.6.2    tools_3.1.2      XML_3.98-1.1
 ```
 
