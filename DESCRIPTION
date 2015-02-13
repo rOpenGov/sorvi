@@ -1,17 +1,18 @@
 Package: sorvi
 Type: Package
-Title: Finnish Open Government Data Toolkit
-Version: 0.7.15
-Date: 2015-02-12
+Title: Finnish open government data toolkit
+Version: 0.7.16
+Date: 2015-02-13
 Author: Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Jussi
     Paananen, Einari Happonen
 Maintainer: Leo Lahti <louhos@googlegroups.com>
-Description: Algorithms for Finnish Open Government Data
+MailingList: <louhos@googlegroups.com>
+Description: Algorithms for Finnish open government data.
 License: BSD_2_clause + file LICENSE
 VignetteBuilder: knitr
 BugReports: https://github.com/ropengov/sorvi/issues
 URL: https://github.com/ropengov/sorvi
-URL.CRAN: http://cran.r-project.org/web/packages/sorvi/index.html
+URLCRAN: http://cran.r-project.org/web/packages/sorvi/index.html
 Depends:
     R (>= 3.0.2),
     reshape
@@ -27,4 +28,3 @@ Suggests:
     RCurl,
     rjson,
     testthat
-LazyLoad: yes
