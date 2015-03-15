@@ -1,1 +1,4 @@
 language: r
+notifications:
+  email:
+    - leo.lahti@iki.fi
