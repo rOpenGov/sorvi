@@ -26,7 +26,7 @@ to be added; your
 [contributions](http://louhos.github.com/contact.html) and [bug
 reports and other feedback](https://github.com/ropengov/sorvi) are
 welcome! For further information, see the [home
-page](http://louhos.github.com/sorvi).
+page](http://ropengov.github.com/sorvi).
 
 
 
