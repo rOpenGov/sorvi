@@ -221,8 +221,8 @@ library(plyr)
 library(RColorBrewer)
 library(ggplot2)
 data(iris)
-p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
-print(p)
+# p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
+# print(p)
 ```
 
 

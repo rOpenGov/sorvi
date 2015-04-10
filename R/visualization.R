@@ -217,6 +217,7 @@ regression_plot <- function(formula, data, main=NULL, B=1000, shade=TRUE, shade.
 
   #message("guides")
   p <- p1 + guides(color = "none") 
+
   p <- p + xlab(IV)
   p <- p + ylab(DV)
 
