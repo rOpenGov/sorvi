@@ -9,7 +9,7 @@ http://www.fight-entropy.com/2012/07/visually-weighted-regression.html
 The R implementation is based on Felix Schonbrodt's code from
 http://www.nicebread.de/visually-weighted-watercolor-plots-new-variants-please-vote/}
 \usage{
-regression_plot(formula, data, title = "", B = 1000, shade = TRUE,
+regression_plot(formula, data, main = NULL, B = 1000, shade = TRUE,
   shade.alpha = 0.1, spag = FALSE, mweight = TRUE, show.lm = FALSE,
   show.median = TRUE, median.col = "white", show.CI = FALSE,
   method = loess, bw = FALSE, slices = 200,
@@ -21,7 +21,7 @@ regression_plot(formula, data, title = "", B = 1000, shade = TRUE,
 
 \item{data}{data}
 
-\item{title}{title}
+\item{main}{figure title}
 
 \item{B}{number bootstrapped smoothers}
 

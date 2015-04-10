@@ -7,7 +7,7 @@
 #'
 #' @return A data frame with following fields: postal.code: postal code; municipality: Name of the municipality (kunnan nimi); municipality.scandless: Municpality name without special chars 
 #' @export 
-#' @import plyr
+#' @importFrom plyr ldply
 #' @references
 #' See citation("sorvi") 
 #' @author Juuso Parkkinen and Leo Lahti \email{louhos@@googlegroups.com}
