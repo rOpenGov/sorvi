@@ -1,8 +1,8 @@
 Package: sorvi
 Type: Package
 Title: Finnish Open Government Data Toolkit
-Version: 0.7.21
-Date: 2015-04-10
+Version: 0.7.22
+Date: 2015-05-16
 Author: Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Jussi
     Paananen, Einari Happonen
 Maintainer: Leo Lahti <louhos@googlegroups.com>
@@ -14,7 +14,6 @@ BugReports: https://github.com/ropengov/sorvi/issues
 URL: https://github.com/ropengov/sorvi, http://cran.r-project.org/package=sorvi
 Depends:
     R (>= 3.0.2),
-    plyr,
     dplyr,
     reshape2
 Imports:
