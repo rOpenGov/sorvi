@@ -28,7 +28,6 @@
 #'   @param ylim restrict range of the watercoloring
 #'   @param quantize either "continuous", or "SD". In the latter case, 
 #'     we get three color regions for 1, 2, and 3 SD (an idea of John Mashey)
-#'   @param .progress Progress information for ddply
 #'   @param ... further parameters passed to the fitting function, 
 #'     in the case of loess, for example, "span = .9", or 
 #'     "family = 'symmetric'"
@@ -39,7 +38,6 @@
 #' @export 
 #'
 #' @import dplyr
-#' @importFrom plyr ddply
 #' @import RColorBrewer
 #' @import ggplot2
 #'
@@ -55,7 +53,7 @@
 regression_plot <- function(formula, data, main=NULL, B=1000, shade=TRUE, shade.alpha=.1, spag=FALSE, mweight=TRUE, show.lm=FALSE, show.median = TRUE, median.col = "white", show.CI=FALSE, method=loess, bw=FALSE, slices=200, palette=colorRampPalette(c("#FFEDA0", "#DD0000"), bias=2)(20), ylim=NULL, quantize = "continuous",  .progress = "none", ...) {
 
   # Circumvent warnings
-  . <- NULL
+  #. <- NULL
   aes <- NULL
 
   # ------------------
@@ -142,11 +140,18 @@ regression_plot <- function(formula, data, main=NULL, B=1000, shade=TRUE, shade.
 
       message("vertical cross-sectional density estimate")
 
-      d2 <- ddply(b2[, c("x", "value")], .(x), function(df) {
-        res <- data.frame(density(df$value, na.rm = TRUE, n = slices, from=ylim[[1]], to=ylim[[2]])[c("x", "y")])
-        colnames(res) <- c("y", "dens")
-        return(res)
-      }, .progress=.progress)
+      d2 <- b2[, c("x", "value")] %>% group_by(x) %>% do(data.frame(density(.$value, na.rm = TRUE, n = slices, from=ylim[[1]], to=ylim[[2]])[c("x", "y")]))
+      d2 <- data.frame(d2)
+      names(d2) <- c("y", "dens")
+      d2$x <- rep(unique(b2$x), each = slices)
+      d2 <- d2[, c("x", "y", "dens")]
+
+      # Was
+      #d2 <- ddply(b2[, c("x", "value")], .(x), function(df) {
+      #  res <- data.frame(density(df$value, na.rm = TRUE, n = slices, from=ylim[[1]], to=ylim[[2]])[c("x", "y")]);
+      #  colnames(res) <- c("y", "dens");
+      #  return(res)
+      #}, .progress=.progress)
 
       maxdens <- max(d2$dens)
       mindens <- min(d2$dens)

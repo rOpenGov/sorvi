@@ -14,11 +14,11 @@ BugReports: https://github.com/ropengov/sorvi/issues
 URL: https://github.com/ropengov/sorvi, http://cran.r-project.org/package=sorvi
 Depends:
     R (>= 3.0.2),
+    plyr,
     dplyr,
     reshape2
 Imports:
     ggplot2,
-    plyr,
     RColorBrewer,
     XML
 Suggests:

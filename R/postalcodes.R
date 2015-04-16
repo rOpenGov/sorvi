@@ -42,7 +42,9 @@ get_postal_code_info <- function (...) {
     }
   }
 
-  map <- ldply(map)
+  #map <- ldply(map) # removed due to plyr problems
+  map <- data.frame(t(sapply(map, identity)))
+
   colnames(map) <- c("postal.code", "municipality")
   map$municipality.ascii <- korvaa_skandit(map$municipality)
 
