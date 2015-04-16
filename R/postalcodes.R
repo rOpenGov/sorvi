@@ -5,7 +5,12 @@
 #'
 #' @param ... Arguments to be passed
 #'
-#' @return A data frame with following fields: postal.code: postal code; municipality: Name of the municipality (kunnan nimi); municipality.scandless: Municpality name without special chars 
+#' @return A data frame with following fields: 
+#'   \itemize{
+#'       \item{postal.code}{postal code}
+#'       \item{municipality}{Name of the municipality (kunnan nimi)}
+#'       \item{municipality.scandless}{Municpality name without special chars}
+#'   }
 #' @export 
 #' @references
 #' See citation("sorvi") 

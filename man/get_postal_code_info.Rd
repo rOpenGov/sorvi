@@ -11,7 +11,12 @@ get_postal_code_info(...)
 \item{...}{Arguments to be passed}
 }
 \value{
-A data frame with following fields: postal.code: postal code; municipality: Name of the municipality (kunnan nimi); municipality.scandless: Municpality name without special chars
+A data frame with following fields:
+  \itemize{
+      \item{postal.code}{postal code}
+      \item{municipality}{Name of the municipality (kunnan nimi)}
+      \item{municipality.scandless}{Municpality name without special chars}
+  }
 }
 \description{
 Get Finnish postal codes vs. municipalities table from Wikipedia.
