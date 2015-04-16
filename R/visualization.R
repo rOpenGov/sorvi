@@ -141,6 +141,7 @@ regression_plot <- function(formula, data, main=NULL, B=1000, shade=TRUE, shade.
       message("vertical cross-sectional density estimate")
 
       d2 <- b2[, c("x", "value")] %>% group_by(x) %>% do(data.frame(density(.$value, na.rm = TRUE, n = slices, from=ylim[[1]], to=ylim[[2]])[c("x", "y")]))
+      #d2 <- b2[, c("x", "value")] %>% group_by(x) %>% { density(.$value, na.rm = TRUE, n = slices, from=ylim[[1]], to=ylim[[2]])[c("x", "y")] }
       d2 <- data.frame(d2)
       names(d2) <- c("y", "dens")
       d2$x <- rep(unique(b2$x), each = slices)
