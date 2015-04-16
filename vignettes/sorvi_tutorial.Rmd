@@ -217,7 +217,7 @@ are missing, install them with the install.packages command in R):
 
 ```{r regressionline, message=FALSE, eval=TRUE, fig.width=10, fig.height=5}
 library(sorvi) 
-library(plyr)
+library(dplyr)
 library(RColorBrewer)
 library(ggplot2)
 data(iris)

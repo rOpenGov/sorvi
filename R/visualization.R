@@ -50,10 +50,10 @@
 #'         Modified by Leo Lahti \email{microbiome-admin@@googlegroups.com}
 #' @keywords utilities
 
-regression_plot <- function(formula, data, main=NULL, B=1000, shade=TRUE, shade.alpha=.1, spag=FALSE, mweight=TRUE, show.lm=FALSE, show.median = TRUE, median.col = "white", show.CI=FALSE, method=loess, bw=FALSE, slices=200, palette=colorRampPalette(c("#FFEDA0", "#DD0000"), bias=2)(20), ylim=NULL, quantize = "continuous",  .progress = "none", ...) {
+regression_plot <- function(formula, data, main=NULL, B=1000, shade=TRUE, shade.alpha=.1, spag=FALSE, mweight=TRUE, show.lm=FALSE, show.median = TRUE, median.col = "white", show.CI=FALSE, method=loess, bw=FALSE, slices=200, palette=colorRampPalette(c("#FFEDA0", "#DD0000"), bias=2)(20), ylim=NULL, quantize = "continuous", ...) {
 
   # Circumvent warnings
-  #. <- NULL
+  . <- NULL
   aes <- NULL
 
   # ------------------

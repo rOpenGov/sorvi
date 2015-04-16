@@ -14,7 +14,7 @@ regression_plot(formula, data, main = NULL, B = 1000, shade = TRUE,
   show.median = TRUE, median.col = "white", show.CI = FALSE,
   method = loess, bw = FALSE, slices = 200,
   palette = colorRampPalette(c("#FFEDA0", "#DD0000"), bias = 2)(20),
-  ylim = NULL, quantize = "continuous", .progress = "none", ...)
+  ylim = NULL, quantize = "continuous", ...)
 }
 \arguments{
 \item{formula}{formula}
@@ -58,8 +58,6 @@ regression_plot(formula, data, main = NULL, B = 1000, shade = TRUE,
 \item{quantize}{either "continuous", or "SD". In the latter case,
   we get three color regions for 1, 2, and 3 SD (an idea of John Mashey)}
 
-\item{.progress}{Progress information for ddply}
-
 \item{...}{further parameters passed to the fitting function,
     in the case of loess, for example, "span = .9", or
     "family = 'symmetric'"
@@ -73,7 +71,7 @@ ggplot2 object
 Arguments:
 }
 \examples{
-\dontrun{library(plyr); library(RColorBrewer);
+\dontrun{library(dplyr); library(RColorBrewer);
   	     	      library(ggplot2); data(iris);
 		      p <- regression_plot(Sepal.Length ~ Sepal.Width, iris)}
 }
