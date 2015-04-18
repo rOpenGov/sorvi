@@ -10,7 +10,7 @@ hetu(hetu, extract = NULL)
 \item{hetu}{Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors}
 
 \item{extract}{Extract only selected part of the information.
-       Valid values are "hetu", "gender", "personal.number", "checksum", "date", "day", "month", "year", "century.char".
+       Valid values are "\code{hetu}", "\code{gender}", "\code{personal.number}", "\code{checksum}", "\code{date}", "\code{day}", "\code{month}", "\code{year}", "\code{century.char}".
        If \code{NULL} (default), returns all information.}
 }
 \value{
@@ -18,14 +18,14 @@ Finnish personal identification number object (or list of objects if multiple id
         or if extract parameter is set, the requested part of the information as a vector.
         Returns \code{NA} if the given character vector is not a valid Finnish personal identification number.
 \item{hetu}{Finnish personal identification number as a character vector.}
-\item{gender}{Gender of the person. Male or Female.}
+\item{gender}{Gender of the person as a character vector ("Male" or "Female").}
 \item{personal.number}{Personal number part of the identification number.}
 \item{checksum}{Checksum for the personal identification number.}
 \item{date}{Birthdate.}
 \item{day}{Day of the birthdate.}
 \item{month}{Month of the birthdate.}
 \item{year}{Year of the birthdate.}
-\item{century.char}{Century of the birthdate: + (1800), - (1900) or A  (2000). }
+\item{century.char}{Century character of the birthdate: + (1800), - (1900) or A  (2000). }
 }
 \description{
 Extract information from a Finnish personal identification number (hetu)
