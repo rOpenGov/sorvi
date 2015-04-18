@@ -195,17 +195,21 @@ head(municipality_ids) # just show the first entries
 
 ## <a name="hetu"></a>Personal identification number (HETU)
 
-**Extract information from a Finnish personal identification number:**
+**Extracting information from a Finnish personal identification number**
 
 ```{r hetu, message=FALSE}
 library(sorvi)
 hetu("111111-111C")
+```
 
+The function accepts also vectors as input, returning a data frame:
+
+```{r hetuvec, message=FALSE}
 library(knitr)
 kable(hetu(c("010101-0101", "111111-111C")))
 ```
 
-Extracting specific field
+**Extracting specific field**
 
 ```{r hetuextract, message=FALSE}
 hetu(c("010101-0101", "111111-111C"), extract = "gender")

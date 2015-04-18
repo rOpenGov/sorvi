@@ -297,7 +297,7 @@ head(municipality_ids) # just show the first entries
 
 ## <a name="hetu"></a>Personal identification number (HETU)
 
-**Extract information from a Finnish personal identification number:**
+**Extracting information from a Finnish personal identification number**
 
 
 ```r
@@ -312,6 +312,9 @@ hetu("111111-111C")
 ## 1            -
 ```
 
+The function accepts also vectors as input, returning a data frame:
+
+
 ```r
 library(knitr)
 kable(hetu(c("010101-0101", "111111-111C")))
@@ -324,7 +327,7 @@ kable(hetu(c("010101-0101", "111111-111C")))
 |010101-0101 |Female |              10|1        |1901-01-01 |   1|     1| 1901|-            |
 |111111-111C |Male   |             111|C        |1911-11-11 |  11|    11| 1911|-            |
 
-Extracting specific field
+**Extracting specific field**
 
 
 ```r
