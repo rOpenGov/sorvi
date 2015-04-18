@@ -2,3 +2,8 @@ language: r
 notifications:
   email:
     - leo.lahti@iki.fi
+warnings_are_errors: false
+r_binary_packages:
+  - testthat
+  
+ 
