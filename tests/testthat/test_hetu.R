@@ -12,4 +12,7 @@ test_that("hetu works correctly", {
   expect_equal(hetu("010101-0101")$month, 1)
   expect_equal(hetu("010101-0101")$year, 1901)
   expect_equal(as.character(hetu("010101-0101")$century.char), "-")
+
+  expect_true(valid_hetu("010101-0101"))
+  expect_false(valid_hetu("010101-010A"))
 })

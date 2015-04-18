@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2015-02-12"
+date: "2015-04-18"
 output:
   html_document:
     theme: flatly
@@ -26,7 +26,7 @@ to be added; your
 [contributions](http://louhos.github.com/contact.html) and [bug
 reports and other feedback](https://github.com/ropengov/sorvi) are
 welcome! For further information, see the [home
-page](http://louhos.github.com/sorvi).
+page](http://ropengov.github.com/sorvi).
 
 
 
@@ -306,35 +306,32 @@ hetu("111111-111C")
 ```
 
 ```
-## $hetu
-## [1] "111111-111C"
-## 
-## $gender
-## [1] "Male"
-## 
-## $personal.number
-## [1] 111
-## 
-## $checksum
-## [1] "C"
-## 
-## $date
-## [1] "1911-11-11"
-## 
-## $day
-## [1] 11
-## 
-## $month
-## [1] 11
-## 
-## $year
-## [1] 1911
-## 
-## $century.char
-## [1] "-"
-## 
-## attr(,"class")
-## [1] "hetu"
+##          hetu gender personal.number checksum       date day month year
+## 1 111111-111C   Male             111        C 1911-11-11  11    11 1911
+##   century.char
+## 1            -
+```
+
+```r
+library(knitr)
+kable(hetu(c("010101-0101", "111111-111C")))
+```
+
+
+
+|hetu        |gender | personal.number|checksum |date       | day| month| year|century.char |hetu        |gender | personal.number|checksum |date       | day| month| year|century.char |
+|:-----------|:------|---------------:|:--------|:----------|---:|-----:|----:|:------------|:-----------|:------|---------------:|:--------|:----------|---:|-----:|----:|:------------|
+|010101-0101 |Female |              10|1        |1901-01-01 |   1|     1| 1901|-            |111111-111C |Male   |             111|C        |1911-11-11 |  11|    11| 1911|-            |
+
+Extracting specific field
+
+
+```r
+hetu(c("010101-0101", "111111-111C"), extract = "gender")
+```
+
+```
+## [1] "Female" "Male"
 ```
 
 **Validate Finnish personal identification number:**
@@ -358,15 +355,13 @@ are missing, install them with the install.packages command in R):
 
 ```r
 library(sorvi) 
-library(plyr)
+library(dplyr)
 library(RColorBrewer)
 library(ggplot2)
 data(iris)
-p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
-print(p)
+# p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
+# print(p)
 ```
-
-![plot of chunk regressionline](figure/regressionline-1.png) 
 
 
 
@@ -428,14 +423,15 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] ggplot2_1.0.0      RColorBrewer_1.1-2 plyr_1.8.1        
-## [4] sorvi_0.7.15       reshape_0.8.5      knitr_1.9         
+## [1] ggplot2_1.0.0      RColorBrewer_1.1-2 sorvi_0.7.23      
+## [4] reshape2_1.4.1     dplyr_0.4.1        knitr_1.9         
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] colorspace_1.2-4 digest_0.6.8     evaluate_0.5.5   formatR_1.0     
-##  [5] grid_3.1.2       gtable_0.1.2     labeling_0.3     MASS_7.3-37     
-##  [9] munsell_0.4.2    proto_0.3-10     Rcpp_0.11.4      reshape2_1.4.1  
-## [13] scales_0.2.4     stringr_0.6.2    tools_3.1.2      XML_3.98-1.1
+##  [1] assertthat_0.1   colorspace_1.2-6 DBI_0.3.1        digest_0.6.8    
+##  [5] evaluate_0.5.5   formatR_1.0      grid_3.1.2       gtable_0.1.2    
+##  [9] magrittr_1.5     MASS_7.3-39      munsell_0.4.2    parallel_3.1.2  
+## [13] plyr_1.8.1       proto_0.3-10     Rcpp_0.11.5      scales_0.2.4    
+## [17] stringr_0.6.2    tools_3.1.2      XML_3.98-1.1
 ```
 
 

@@ -18,11 +18,13 @@
 
 valid_hetu <- function(hetu) {
   # Try to create hetu-object from the given hetu, check if created object 
-  # is of class "hetu"
+  # is of the correct class 
   if (length(hetu) > 1) {
     return(sapply(hetu, FUN=valid_hetu))
   }
-  return(class(hetu(hetu)) == "hetu")
+
+  #return(class(hetu(hetu)) == "hetu")
+  return(class(hetu(hetu)) == "data.frame")
 }
 
 
