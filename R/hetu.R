@@ -36,8 +36,7 @@ valid_hetu <- function(hetu) {
 #'    "\code{year}", "\code{century.char}".
 #'    If \code{NULL} (default), returns all information. 
 #'
-#' @return Finnish personal identification number object 
-#' 	   (or list of objects if multiple identification numbers given), 
+#' @return Finnish personal identification number data.frame,
 #'         or if extract parameter is set, the requested part of the 
 #'	   information as a vector. Returns \code{NA} if the given character 
 #'	   vector is not a valid Finnish personal identification number.
@@ -82,7 +81,15 @@ hetu <- function(hetu, extract=NULL) {
   # Check if the input parameter is a vector
   if (length(hetu) > 1) {
     if (is.null(extract)) {
-      return(lapply(hetu, FUN=hetu, extract=extract))  
+      res <- lapply(hetu, FUN=hetu, extract=extract)
+      # Convert dates to characters to avoid conversion problems
+      for (i in 1:length(res)) {res[[i]]$date <- as.character(res[[i]]$date)}
+      # Convert list to data.frame
+      res <- do.call(cbind.data.frame, tmp) 
+      # dates back to dates
+      res$date <- as.Date(as.character(res$date))
+      # Return
+      return(res)
     } else {
       return(unname(do.call("c", lapply(hetu, FUN=hetu, extract=extract))))
     }    
@@ -168,16 +175,17 @@ hetu <- function(hetu, extract=NULL) {
   } else {
     gender <- "Male"
   }
-  
+
   # Create hetu-object
-  object <- list(hetu = hetu, gender=gender, personal.number=personal, 
+  object <- list(hetu = hetu, gender=gender, 
+  	         personal.number=personal, 
   	         checksum=check, date=date, day=day, month=month, 
 		 year=full.year, century.char=century)
-  class(object) <- "hetu"
+  #class(object) <- "hetu"
   
   # Return full object or only requested part
   if (is.null(extract)) {
-    return (object) 
+    return (as.data.frame(object))
   }
   else {
     return(unname(do.call("c", object[extract])))

@@ -200,6 +200,13 @@ head(municipality_ids) # just show the first entries
 ```{r hetu, message=FALSE}
 library(sorvi)
 hetu("111111-111C")
+hetu(c("010101-0101", "111111-111C"))
+```
+
+Extracting specific field
+
+```{r hetuextract, message=FALSE}
+hetu(c("010101-0101", "111111-111C"), extract = "gender")
 ```
 
 **Validate Finnish personal identification number:**
