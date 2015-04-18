@@ -7,12 +7,12 @@
 hetu(hetu)
 }
 \arguments{
-\item{hetu}{Finnish personal identification number as a string}
+\item{hetu}{Finnish personal identification number as a character vector}
 }
 \value{
 Finnish personal identification number object.
-        Returns NA if the given string is not a valid Finnish personal identification number.
-\item{hetu}{Finnish personal identification number as a string.}
+        Returns NA if the given character vector is not a valid Finnish personal identification number.
+\item{hetu}{Finnish personal identification number as a character vector.}
 \item{gender}{Gender of the person. Male or Female.}
 \item{personal.number}{Personal number part of the identification number.}
 \item{checksum}{Checksum for the personal identification number.}
@@ -29,6 +29,12 @@ Extract information from a Finnish personal identification number
 hetu("111111-111C")
 hetu("111111-111C")$date
 hetu("111111-111C")$gender
+# Process a vector of hetus
+hetus <- c("010101-0101", "111111-111C")
+# Returns a list of hetu objects
+lapply(hetus, FUN=hetu)
+# Returns a vector of genders as character vectors
+sapply(lapply(hetus, FUN=hetu), FUN="[[", "gender")
 }
 \author{
 Jussi Paananen \email{louhos@googlegroups.com}
