@@ -2,7 +2,7 @@
 #'
 #' @param hetu Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors.
 #'
-#' @return Is the given string a valid Finnish personal identification number, TRUE or FALSE.
+#' @return Is the given string a valid Finnish personal identification number, \code{TRUE} or \code{FALSE}.
 #' 
 #' @author Jussi Paananen \email{louhos@@googlegroups.com}
 #' 
