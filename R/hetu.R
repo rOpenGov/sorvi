@@ -1,4 +1,4 @@
-#' Validate Finnish personal identification numbers (hetu). 
+#' Validate Finnish personal identification numbers (hetu) 
 #'
 #' @param hetu Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors.
 #'

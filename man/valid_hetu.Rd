@@ -2,7 +2,7 @@
 % Please edit documentation in R/hetu.R
 \name{valid_hetu}
 \alias{valid_hetu}
-\title{Validate Finnish personal identification numbers (hetu).}
+\title{Validate Finnish personal identification numbers (hetu)}
 \usage{
 valid_hetu(hetu)
 }
@@ -10,10 +10,10 @@ valid_hetu(hetu)
 \item{hetu}{Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors.}
 }
 \value{
-Is the given string a valid Finnish personal identification number, TRUE or FALSE.
+Is the given string a valid Finnish personal identification number, \code{TRUE} or \code{FALSE}.
 }
 \description{
-Validate Finnish personal identification numbers (hetu).
+Validate Finnish personal identification numbers (hetu)
 }
 \examples{
 valid_hetu("010101-0101") # TRUE
