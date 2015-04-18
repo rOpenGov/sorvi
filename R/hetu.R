@@ -1,6 +1,6 @@
 #' Validate a Finnish personal identification number (HETU). 
 #'
-#' @param hetu Finnish personal identification number as a string.
+#' @param hetu Finnish personal identification number as a character vector.
 #'
 #' @return Is the given string a valid Finnish personal identification number, TRUE or FALSE.
 #' 
@@ -21,11 +21,11 @@ valid_hetu <- function(hetu) {
 
 #' Extract information from a Finnish personal identification number
 #'
-#' @param hetu Finnish personal identification number as a string
+#' @param hetu Finnish personal identification number as a character vector
 #'
 #' @return Finnish personal identification number object. 
-#'         Returns NA if the given string is not a valid Finnish personal identification number.
-#' \item{hetu}{Finnish personal identification number as a string.}
+#'         Returns NA if the given character vector is not a valid Finnish personal identification number.
+#' \item{hetu}{Finnish personal identification number as a character vector.}
 #' \item{gender}{Gender of the person. Male or Female.}
 #' \item{personal.number}{Personal number part of the identification number.}
 #' \item{checksum}{Checksum for the personal identification number.}
@@ -42,10 +42,18 @@ valid_hetu <- function(hetu) {
 #' hetu("111111-111C")
 #' hetu("111111-111C")$date
 #' hetu("111111-111C")$gender
+#' # Process a vector of hetus
+#' hetus <- c("010101-0101", "111111-111C")
+#' # Returns a list of hetu objects
+#' lapply(hetus, FUN=hetu)
+#' # Returns a vector of genders as character vectors
+#' sapply(lapply(hetus, FUN=hetu), FUN="[[", "gender")
 #' @export
 
 hetu <- function(hetu) {
-
+  
+  if(!is.character(hetu)) hetu <- as.character(hetu)
+  
   # Check general format
   match <- regexpr("^[0-9]{6}[\\+-A][0-9]{3}[0123456789ABCDEFHJKLMNPRSTUVWXY]$", hetu)
   if (match == -1 ) {
@@ -66,7 +74,7 @@ hetu <- function(hetu) {
   
   # Check year
   year <- as.numeric(substr(hetu, start=5, stop=6))
-  if (!((year >= 1) && (year <= 99))) {
+  if (!((year >= 00) && (year <= 99))) {
     return(NA)
   }
   
@@ -118,15 +126,15 @@ hetu <- function(hetu) {
   
   # Check gender
   if ((personal %% 2) == 0) {
-      gender <- "Female"
-    } else {
-      gender <- "Male"
-    }
-
+    gender <- "Female"
+  } else {
+    gender <- "Male"
+  }
+  
   # Create hetu-object
   object <- list(hetu = hetu, gender=gender, personal.number=personal,  checksum=check, date=date, day=day, month=month, year=full.year, century.char=century)
   class(object) <- "hetu"
-
+  
   return (object)
 }
 
