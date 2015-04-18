@@ -225,21 +225,15 @@ valid_hetu("010101-0101") # TRUE/FALSE
 
 ## <a name="visualization"></a>Visualization tools
 
-Line fit with confidence smoothers (if any of the required libraries
-are missing, install them with the install.packages command in R):
+Draw regression curve with smoothed error bars based on
+the [Visually-Weighted Regression](http://www.fight-entropy.com/2012/07/visually-weighted-regression.html) by Solomon M. Hsiang. The sorvi implementation extends [Felix Schonbrodt's original code](http://www.nicebread.de/visually-weighted-watercolor-plots-new-variants-please-vote/).
 
 ```{r regressionline, message=FALSE, eval=TRUE, fig.width=10, fig.height=5}
 library(sorvi) 
-library(dplyr)
-library(RColorBrewer)
-library(ggplot2)
 data(iris)
-# p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
-# print(p)
+p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
+print(p)
 ```
-
-
-
 
 ## Licensing and Citations
 

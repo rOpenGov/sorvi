@@ -353,22 +353,18 @@ valid_hetu("010101-0101") # TRUE/FALSE
 
 ## <a name="visualization"></a>Visualization tools
 
-Line fit with confidence smoothers (if any of the required libraries
-are missing, install them with the install.packages command in R):
+Draw regression curve with smoothed error bars based on
+the [Visually-Weighted Regression](http://www.fight-entropy.com/2012/07/visually-weighted-regression.html) by Solomon M. Hsiang. The sorvi implementation extends [Felix Schonbrodt's original code](http://www.nicebread.de/visually-weighted-watercolor-plots-new-variants-please-vote/).
 
 
 ```r
 library(sorvi) 
-library(dplyr)
-library(RColorBrewer)
-library(ggplot2)
 data(iris)
-# p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
-# print(p)
+p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
+print(p)
 ```
 
-
-
+![plot of chunk regressionline](figure/regressionline-1.png) 
 
 ## Licensing and Citations
 
@@ -427,15 +423,17 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] ggplot2_1.0.0      RColorBrewer_1.1-2 sorvi_0.7.23      
-## [4] reshape2_1.4.1     dplyr_0.4.1        knitr_1.9         
+## [1] sorvi_0.7.23   reshape2_1.4.1 dplyr_0.4.1    knitr_1.9     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] assertthat_0.1   colorspace_1.2-6 DBI_0.3.1        digest_0.6.8    
-##  [5] evaluate_0.5.5   formatR_1.0      grid_3.1.2       gtable_0.1.2    
-##  [9] magrittr_1.5     MASS_7.3-39      munsell_0.4.2    parallel_3.1.2  
-## [13] plyr_1.8.1       proto_0.3-10     Rcpp_0.11.5      scales_0.2.4    
-## [17] stringr_0.6.2    tools_3.1.2      XML_3.98-1.1
+##  [1] assertthat_0.1     colorspace_1.2-6   DBI_0.3.1         
+##  [4] digest_0.6.8       evaluate_0.5.5     formatR_1.0       
+##  [7] ggplot2_1.0.0      grid_3.1.2         gtable_0.1.2      
+## [10] labeling_0.3       lazyeval_0.1.10    magrittr_1.5      
+## [13] MASS_7.3-39        munsell_0.4.2      parallel_3.1.2    
+## [16] plyr_1.8.1         proto_0.3-10       R6_2.0.1          
+## [19] RColorBrewer_1.1-2 Rcpp_0.11.5        scales_0.2.4      
+## [22] stringr_0.6.2      tools_3.1.2        XML_3.98-1.1
 ```
 
 
