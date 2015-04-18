@@ -2,18 +2,18 @@
 % Please edit documentation in R/hetu.R
 \name{valid_hetu}
 \alias{valid_hetu}
-\title{Validate a Finnish personal identification number (HETU).}
+\title{Validate Finnish personal identification numbers (hetu)}
 \usage{
 valid_hetu(hetu)
 }
 \arguments{
-\item{hetu}{Finnish personal identification number as a character vector.}
+\item{hetu}{Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors.}
 }
 \value{
-Is the given string a valid Finnish personal identification number, TRUE or FALSE.
+Is the given string a valid Finnish personal identification number, \code{TRUE} or \code{FALSE}.
 }
 \description{
-Validate a Finnish personal identification number (HETU).
+Validate Finnish personal identification numbers (hetu)
 }
 \examples{
 valid_hetu("010101-0101") # TRUE
@@ -23,6 +23,6 @@ valid_hetu("010101-010A") # FALSE
 Jussi Paananen \email{louhos@googlegroups.com}
 }
 \seealso{
-\code{\link{hetu}} For extracting information from a Finnish personal identification number.
+\code{\link{hetu}} For extracting information from Finnish personal identification numbers.
 }
 
