@@ -1,12 +1,15 @@
 #' Validate Finnish personal identification numbers (hetu) 
 #'
-#' @param hetu Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors.
+#' @param hetu Finnish personal identification number as a character vector, 
+#' 	  or vector of identification numbers as a character vectors.
 #'
-#' @return Is the given string a valid Finnish personal identification number, \code{TRUE} or \code{FALSE}.
+#' @return Is the given string a valid Finnish personal identification number, 
+#' 	   \code{TRUE} or \code{FALSE}.
 #' 
 #' @author Jussi Paananen \email{louhos@@googlegroups.com}
 #' 
-#' @seealso \code{\link{hetu}} For extracting information from Finnish personal identification numbers. 
+#' @seealso \code{\link{hetu}} For extracting information from Finnish 
+#' 	    personal identification numbers. 
 #' 
 #' @examples
 #' valid_hetu("010101-0101") # TRUE
@@ -14,7 +17,8 @@
 #' @export
 
 valid_hetu <- function(hetu) {
-  # Try to create hetu-object from the given hetu, check if created object is of class "hetu"
+  # Try to create hetu-object from the given hetu, check if created object 
+  # is of class "hetu"
   if (length(hetu) > 1) {
     return(sapply(hetu, FUN=valid_hetu))
   }
@@ -24,14 +28,19 @@ valid_hetu <- function(hetu) {
 
 #' Extract information from Finnish personal identification numbers (hetu)
 #'
-#' @param hetu Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors
+#' @param hetu Finnish personal identification number as a character vector, 
+#' 	  or vector of identification numbers as a character vectors
 #' @param extract Extract only selected part of the information. 
-#'        Valid values are "\code{hetu}", "\code{gender}", "\code{personal.number}", "\code{checksum}", "\code{date}", "\code{day}", "\code{month}", "\code{year}", "\code{century.char}".
-#'        If \code{NULL} (default), returns all information. 
+#'    Valid values are "\code{hetu}", "\code{gender}", "\code{personal.number}",
+#'    "\code{checksum}", "\code{date}", "\code{day}", "\code{month}", 
+#'    "\code{year}", "\code{century.char}".
+#'    If \code{NULL} (default), returns all information. 
 #'
-#' @return Finnish personal identification number object (or list of objects if multiple identification numbers given), 
-#'         or if extract parameter is set, the requested part of the information as a vector. 
-#'         Returns \code{NA} if the given character vector is not a valid Finnish personal identification number.
+#' @return Finnish personal identification number object 
+#' 	   (or list of objects if multiple identification numbers given), 
+#'         or if extract parameter is set, the requested part of the 
+#'	   information as a vector. Returns \code{NA} if the given character 
+#'	   vector is not a valid Finnish personal identification number.
 #' \item{hetu}{Finnish personal identification number as a character vector.}
 #' \item{gender}{Gender of the person as a character vector ("Male" or "Female").}
 #' \item{personal.number}{Personal number part of the identification number.}
@@ -40,11 +49,13 @@ valid_hetu <- function(hetu) {
 #' \item{day}{Day of the birthdate.}
 #' \item{month}{Month of the birthdate.}
 #' \item{year}{Year of the birthdate.}
-#' \item{century.char}{Century character of the birthdate: + (1800), - (1900) or A  (2000). }
+#' \item{century.char}{Century character of the birthdate: 
+#'                     + (1800), - (1900) or A (2000). }
 #' 
 #' @author Jussi Paananen \email{louhos@@googlegroups.com}
 #' 
-#' @seealso \code{\link{valid_hetu}} For validating Finnish personal identification numbers.
+#' @seealso \code{\link{valid_hetu}} For validating Finnish personal 
+#' 	    identification numbers.
 #' @examples
 #' hetu("111111-111C")
 #' hetu("111111-111C")$date
@@ -62,7 +73,8 @@ valid_hetu <- function(hetu) {
 hetu <- function(hetu, extract=NULL) {
   
   if (!is.null(extract)) {
-    if (!extract %in% c("hetu", "gender", "personal.number", "checksum", "date", "day", "month", "year", "century.char")) {
+    if (!extract %in% c("hetu", "gender", "personal.number", "checksum", 
+       		        "date", "day", "month", "year", "century.char")) {
       stop("Trying to extract invalid part of hetu")
     }
   }
@@ -144,7 +156,8 @@ hetu <- function(hetu, extract=NULL) {
     return(NA)
   }
   # Check checksum character
-  mod <- as.numeric(paste(substr(hetu, start=1, stop=6), substr(hetu, start=8, stop=10), sep="")) %% 31
+  mod <- as.numeric(paste(substr(hetu, start=1, stop=6), 
+      	 		substr(hetu, start=8, stop=10), sep="")) %% 31
   if (check != checklist[as.character(mod)]) {
     return(NA)
   }
@@ -157,7 +170,9 @@ hetu <- function(hetu, extract=NULL) {
   }
   
   # Create hetu-object
-  object <- list(hetu = hetu, gender=gender, personal.number=personal,  checksum=check, date=date, day=day, month=month, year=full.year, century.char=century)
+  object <- list(hetu = hetu, gender=gender, personal.number=personal, 
+  	         checksum=check, date=date, day=day, month=month, 
+		 year=full.year, century.char=century)
   class(object) <- "hetu"
   
   # Return full object or only requested part
