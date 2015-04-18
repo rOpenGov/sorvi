@@ -319,9 +319,10 @@ kable(hetu(c("010101-0101", "111111-111C")))
 
 
 
-|hetu        |gender | personal.number|checksum |date       | day| month| year|century.char |hetu        |gender | personal.number|checksum |date       | day| month| year|century.char |
-|:-----------|:------|---------------:|:--------|:----------|---:|-----:|----:|:------------|:-----------|:------|---------------:|:--------|:----------|---:|-----:|----:|:------------|
-|010101-0101 |Female |              10|1        |1901-01-01 |   1|     1| 1901|-            |111111-111C |Male   |             111|C        |1911-11-11 |  11|    11| 1911|-            |
+|hetu        |gender | personal.number|checksum |date       | day| month| year|century.char |
+|:-----------|:------|---------------:|:--------|:----------|---:|-----:|----:|:------------|
+|010101-0101 |Female |              10|1        |1901-01-01 |   1|     1| 1901|-            |
+|111111-111C |Male   |             111|C        |1911-11-11 |  11|    11| 1911|-            |
 
 Extracting specific field
 
