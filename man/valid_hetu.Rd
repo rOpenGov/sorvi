@@ -2,7 +2,7 @@
 % Please edit documentation in R/hetu.R
 \name{valid_hetu}
 \alias{valid_hetu}
-\title{Validate a Finnish personal identification number (HETU).}
+\title{Validate Finnish personal identification numbers (hetu).}
 \usage{
 valid_hetu(hetu)
 }
@@ -13,7 +13,7 @@ valid_hetu(hetu)
 Is the given string a valid Finnish personal identification number, TRUE or FALSE.
 }
 \description{
-Validate a Finnish personal identification number (HETU).
+Validate Finnish personal identification numbers (hetu).
 }
 \examples{
 valid_hetu("010101-0101") # TRUE
@@ -23,6 +23,6 @@ valid_hetu("010101-010A") # FALSE
 Jussi Paananen \email{louhos@googlegroups.com}
 }
 \seealso{
-\code{\link{hetu}} For extracting information from a Finnish personal identification number.
+\code{\link{hetu}} For extracting information from Finnish personal identification numbers.
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/hetu.R
 \name{hetu}
 \alias{hetu}
-\title{Extract information from a Finnish personal identification number (hetu)}
+\title{Extract information from Finnish personal identification numbers (hetu)}
 \usage{
 hetu(hetu, extract = NULL)
 }
@@ -28,12 +28,14 @@ Finnish personal identification number object (or list of objects if multiple id
 \item{century.char}{Century character of the birthdate: + (1800), - (1900) or A  (2000). }
 }
 \description{
-Extract information from a Finnish personal identification number (hetu)
+Extract information from Finnish personal identification numbers (hetu)
 }
 \examples{
 hetu("111111-111C")
 hetu("111111-111C")$date
 hetu("111111-111C")$gender
+# Same as previous, but using extract argument
+hetu("111111-111C", extract="gender")
 
 # Process a vector of hetu's
 hetu(c("010101-0101", "111111-111C"))
@@ -45,6 +47,6 @@ hetu(c("010101-0101", "111111-111C"), extract="gender")
 Jussi Paananen \email{louhos@googlegroups.com}
 }
 \seealso{
-\code{\link{valid_hetu}} For validating Finnish personal identification number.
+\code{\link{valid_hetu}} For validating Finnish personal identification numbers.
 }
 
