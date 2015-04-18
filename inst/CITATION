@@ -14,10 +14,10 @@ citEntry(entry="misc",
 	 journal = "",
 	 year = "2011",
          textVersion =
-         paste("(C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari Happonen and Jussi Paananen (rOpenGov 2011-2014). ",
-               "sorvi: Finnish open government data toolkit for R. ",
+         paste("(C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari Happonen and Jussi Paananen (rOpenGov 2010-2015). ",
+               "sorvi: Finnish open data toolkit for R. ",
 	       "URL: http://ropengov.github.com/sorvi",
                sep=" ")
          )
 
-citFooter("\nMany thanks for all contributors! See: http://louhos.github.com/contact.html")
+citFooter("\nMany thanks for all contributors! See: http://ropengov.github.com")
