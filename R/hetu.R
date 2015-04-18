@@ -85,7 +85,7 @@ hetu <- function(hetu, extract=NULL) {
       # Convert dates to characters to avoid conversion problems
       for (i in 1:length(res)) {res[[i]]$date <- as.character(res[[i]]$date)}
       # Convert list to data.frame
-      res <- do.call(cbind.data.frame, tmp) 
+      res <- do.call(cbind.data.frame, res) 
       # dates back to dates
       res$date <- as.Date(as.character(res$date))
       # Return
