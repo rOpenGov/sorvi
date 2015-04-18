@@ -1,4 +1,4 @@
-#' Validate a Finnish personal identification number (HETU). 
+#' Validate Finnish personal identification numbers (hetu). 
 #'
 #' @param hetu Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors.
 #'
@@ -6,7 +6,7 @@
 #' 
 #' @author Jussi Paananen \email{louhos@@googlegroups.com}
 #' 
-#' @seealso \code{\link{hetu}} For extracting information from a Finnish personal identification number. 
+#' @seealso \code{\link{hetu}} For extracting information from Finnish personal identification numbers. 
 #' 
 #' @examples
 #' valid_hetu("010101-0101") # TRUE
@@ -22,7 +22,7 @@ valid_hetu <- function(hetu) {
 }
 
 
-#' Extract information from a Finnish personal identification number (hetu)
+#' Extract information from Finnish personal identification numbers (hetu)
 #'
 #' @param hetu Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors
 #' @param extract Extract only selected part of the information. 
@@ -44,11 +44,13 @@ valid_hetu <- function(hetu) {
 #' 
 #' @author Jussi Paananen \email{louhos@@googlegroups.com}
 #' 
-#' @seealso \code{\link{valid_hetu}} For validating Finnish personal identification number.
+#' @seealso \code{\link{valid_hetu}} For validating Finnish personal identification numbers.
 #' @examples
 #' hetu("111111-111C")
 #' hetu("111111-111C")$date
 #' hetu("111111-111C")$gender
+#' # Same as previous, but using extract argument
+#' hetu("111111-111C", extract="gender")
 #' 
 #' # Process a vector of hetu's
 #' hetu(c("010101-0101", "111111-111C"))
