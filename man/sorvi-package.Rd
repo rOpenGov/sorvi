@@ -13,12 +13,12 @@ Brief summary of the sorvi package
 Package: \tab sorvi\cr
 Type: \tab Package\cr
 Version: \tab See sessionInfo() or DESCRIPTION file\cr
-Date: \tab 2010-2014\cr
+Date: \tab 2010-2015\cr
 License: \tab BSD-2-clause\cr
 LazyLoad: \tab yes\cr
 }
 
-Algorithmic core tools for Open Data in Finland
+Open Data tools for Finland
 }
 \examples{
 library(sorvi)
@@ -28,7 +28,7 @@ Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, an
 }
 \references{
 See citation("sorvi")
-\url{http://louhos.github.com/sorvi}
+\url{http://ropengov.github.com/sorvi}
 }
 \keyword{package}
 

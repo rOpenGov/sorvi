@@ -7,10 +7,12 @@
 valid_hetu(hetu)
 }
 \arguments{
-\item{hetu}{Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors.}
+\item{hetu}{Finnish personal identification number as a character vector,
+      or vector of identification numbers as a character vectors.}
 }
 \value{
-Is the given string a valid Finnish personal identification number, \code{TRUE} or \code{FALSE}.
+Is the given string a valid Finnish personal identification number,
+	   \code{TRUE} or \code{FALSE}.
 }
 \description{
 Validate Finnish personal identification numbers (hetu)
@@ -23,6 +25,7 @@ valid_hetu("010101-010A") # FALSE
 Jussi Paananen \email{louhos@googlegroups.com}
 }
 \seealso{
-\code{\link{hetu}} For extracting information from Finnish personal identification numbers.
+\code{\link{hetu}} For extracting information from Finnish
+	    personal identification numbers.
 }
 
