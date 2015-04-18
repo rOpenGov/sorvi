@@ -2,16 +2,21 @@
 % Please edit documentation in R/hetu.R
 \name{hetu}
 \alias{hetu}
-\title{Extract information from a Finnish personal identification number}
+\title{Extract information from a Finnish personal identification number (hetu)}
 \usage{
-hetu(hetu)
+hetu(hetu, extract = NULL)
 }
 \arguments{
-\item{hetu}{Finnish personal identification number as a character vector}
+\item{hetu}{Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors}
+
+\item{extract}{Extract only selected part of the information.
+       Valid values are "hetu", "gender", "personal.number", "checksum", "date", "day", "month", "year", "century.char".
+       If \code{NULL} (default), returns all information.}
 }
 \value{
-Finnish personal identification number object.
-        Returns NA if the given character vector is not a valid Finnish personal identification number.
+Finnish personal identification number object (or list of objects if multiple identification numbers given),
+        or if extract parameter is set, the requested part of the information as a vector.
+        Returns \code{NA} if the given character vector is not a valid Finnish personal identification number.
 \item{hetu}{Finnish personal identification number as a character vector.}
 \item{gender}{Gender of the person. Male or Female.}
 \item{personal.number}{Personal number part of the identification number.}
@@ -23,18 +28,18 @@ Finnish personal identification number object.
 \item{century.char}{Century of the birthdate: + (1800), - (1900) or A  (2000). }
 }
 \description{
-Extract information from a Finnish personal identification number
+Extract information from a Finnish personal identification number (hetu)
 }
 \examples{
 hetu("111111-111C")
 hetu("111111-111C")$date
 hetu("111111-111C")$gender
-# Process a vector of hetus
-hetus <- c("010101-0101", "111111-111C")
-# Returns a list of hetu objects
-lapply(hetus, FUN=hetu)
-# Returns a vector of genders as character vectors
-sapply(lapply(hetus, FUN=hetu), FUN="[[", "gender")
+
+# Process a vector of hetu's
+hetu(c("010101-0101", "111111-111C"))
+
+# Process a vector of hetu's and extract gender information from each
+hetu(c("010101-0101", "111111-111C"), extract="gender")
 }
 \author{
 Jussi Paananen \email{louhos@googlegroups.com}

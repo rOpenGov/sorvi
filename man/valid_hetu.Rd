@@ -7,7 +7,7 @@
 valid_hetu(hetu)
 }
 \arguments{
-\item{hetu}{Finnish personal identification number as a character vector.}
+\item{hetu}{Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors.}
 }
 \value{
 Is the given string a valid Finnish personal identification number, TRUE or FALSE.

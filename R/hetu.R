@@ -1,6 +1,6 @@
 #' Validate a Finnish personal identification number (HETU). 
 #'
-#' @param hetu Finnish personal identification number as a character vector.
+#' @param hetu Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors.
 #'
 #' @return Is the given string a valid Finnish personal identification number, TRUE or FALSE.
 #' 
@@ -15,16 +15,23 @@
 
 valid_hetu <- function(hetu) {
   # Try to create hetu-object from the given hetu, check if created object is of class "hetu"
+  if (length(hetu) > 1) {
+    return(sapply(hetu, FUN=valid_hetu))
+  }
   return(class(hetu(hetu)) == "hetu")
 }
 
 
-#' Extract information from a Finnish personal identification number
+#' Extract information from a Finnish personal identification number (hetu)
 #'
-#' @param hetu Finnish personal identification number as a character vector
+#' @param hetu Finnish personal identification number as a character vector, or vector of identification numbers as a character vectors
+#' @param extract Extract only selected part of the information. 
+#'        Valid values are "hetu", "gender", "personal.number", "checksum", "date", "day", "month", "year", "century.char".
+#'        If \code{NULL} (default), returns all information. 
 #'
-#' @return Finnish personal identification number object. 
-#'         Returns NA if the given character vector is not a valid Finnish personal identification number.
+#' @return Finnish personal identification number object (or list of objects if multiple identification numbers given), 
+#'         or if extract parameter is set, the requested part of the information as a vector. 
+#'         Returns \code{NA} if the given character vector is not a valid Finnish personal identification number.
 #' \item{hetu}{Finnish personal identification number as a character vector.}
 #' \item{gender}{Gender of the person. Male or Female.}
 #' \item{personal.number}{Personal number part of the identification number.}
@@ -42,16 +49,32 @@ valid_hetu <- function(hetu) {
 #' hetu("111111-111C")
 #' hetu("111111-111C")$date
 #' hetu("111111-111C")$gender
-#' # Process a vector of hetus
-#' hetus <- c("010101-0101", "111111-111C")
-#' # Returns a list of hetu objects
-#' lapply(hetus, FUN=hetu)
-#' # Returns a vector of genders as character vectors
-#' sapply(lapply(hetus, FUN=hetu), FUN="[[", "gender")
+#' 
+#' # Process a vector of hetu's
+#' hetu(c("010101-0101", "111111-111C"))
+#' 
+#' # Process a vector of hetu's and extract gender information from each
+#' hetu(c("010101-0101", "111111-111C"), extract="gender")
 #' @export
 
-hetu <- function(hetu) {
+hetu <- function(hetu, extract=NULL) {
   
+  if (!is.null(extract)) {
+    if (!extract %in% c("hetu", "gender", "personal.number", "checksum", "date", "day", "month", "year", "century.char")) {
+      stop("Trying to extract invalid part of hetu")
+    }
+  }
+  
+  # Check if the input parameter is a vector
+  if (length(hetu) > 1) {
+    if (is.null(extract)) {
+      return(lapply(hetu, FUN=hetu, extract=extract))  
+    } else {
+      return(unlist(lapply(hetu, FUN=hetu, extract=extract), use.names=FALSE))
+    }    
+  }
+  
+  # Convert to character vector if necessary
   if(!is.character(hetu)) hetu <- as.character(hetu)
   
   # Check general format
@@ -135,6 +158,11 @@ hetu <- function(hetu) {
   object <- list(hetu = hetu, gender=gender, personal.number=personal,  checksum=check, date=date, day=day, month=month, year=full.year, century.char=century)
   class(object) <- "hetu"
   
-  return (object)
+  # Return full object or only requested part
+  if (is.null(extract)) {
+    return (object) }
+  else {
+    return(unlist(object[extract], use.names=FALSE))
+  }
 }
 
