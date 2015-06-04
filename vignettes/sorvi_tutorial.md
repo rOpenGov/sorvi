@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2015-04-18"
+date: "2015-06-04"
 output:
   html_document:
     theme: flatly
@@ -18,16 +18,20 @@ Finnish open government data toolkit for R
 ===========
 
 This R package provides miscellaneous tools for Finnish open
-government data to complement other
-[rOpenGov](http://ropengov.github.io/projects) packages with a more
-specific scope. We also maintain a [todo list of further data
-sources](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md)
-to be added; your
-[contributions](http://louhos.github.com/contact.html) and [bug
+government data. You can also find further tools in our other
+R packages, including:
+
+ * [gisfin](https://github.com/rOpenGov/gisfin/) Visualization of Finnish geographic information 
+ * [helsinki](https://github.com/rOpenGov/helsinki/) Helsinki open data tools 
+ * [sotkanet](https://github.com/rOpenGov/sotkanet/) THL Sotkanet database on health and demography
+ * [pxweb](https://github.com/rOpenGov/pxweb/) PX-Web interface to access data fom Statistics Finland and other PX-Web compliant sources
+ * [finpar](https://github.com/rOpenGov/finpar/) Finnish parliament data
+
+
+For a full list, see [rOpenGov homepage](http://ropengov.github.io/projects). Your [contributions](http://ropengov.github.com/contact.html), [bug
 reports and other feedback](https://github.com/ropengov/sorvi) are
 welcome! For further information, see the [home
 page](http://ropengov.github.com/sorvi).
-
 
 
 ## Available data sources and tools
@@ -366,6 +370,12 @@ print(p)
 
 ![plot of chunk regressionline](figure/regressionline-1.png) 
 
+### TODO
+
+[TODO list of further data
+sources](https://github.com/rOpenGov/sorvi/blob/master/vignettes/todo-datasets.md)
+
+
 ## Licensing and Citations
 
 This work can be freely used, modified and distributed under the 
@@ -381,8 +391,8 @@ citation("sorvi")
 ## Kindly cite the sorvi R package as follows:
 ## 
 ##   (C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen,
-##   Einari Happonen and Jussi Paananen (rOpenGov 2011-2014).  sorvi:
-##   Finnish open government data toolkit for R.  URL:
+##   Einari Happonen and Jussi Paananen (rOpenGov 2010-2015).  sorvi:
+##   Finnish open data toolkit for R.  URL:
 ##   http://ropengov.github.com/sorvi
 ## 
 ## A BibTeX entry for LaTeX users is
@@ -394,8 +404,7 @@ citation("sorvi")
 ##     year = {2011},
 ##   }
 ## 
-## Many thanks for all contributors! See:
-## http://louhos.github.com/contact.html
+## Many thanks for all contributors! See: http://ropengov.github.com
 ```
 
 ## Session info
@@ -408,8 +417,9 @@ sessionInfo()
 ```
 
 ```
-## R version 3.1.2 (2014-10-31)
-## Platform: x86_64-pc-linux-gnu (64-bit)
+## R version 3.2.0 (2015-04-16)
+## Platform: x86_64-unknown-linux-gnu (64-bit)
+## Running under: Ubuntu 15.04
 ## 
 ## locale:
 ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
@@ -423,17 +433,19 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] sorvi_0.7.23   reshape2_1.4.1 dplyr_0.4.1    knitr_1.9     
+## [1] sorvi_0.7.23       reshape2_1.4.1     dplyr_0.4.1       
+## [4] knitr_1.10.5       scimapClient_0.2.1
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] assertthat_0.1     colorspace_1.2-6   DBI_0.3.1         
-##  [4] digest_0.6.8       evaluate_0.5.5     formatR_1.0       
-##  [7] ggplot2_1.0.0      grid_3.1.2         gtable_0.1.2      
-## [10] labeling_0.3       lazyeval_0.1.10    magrittr_1.5      
-## [13] MASS_7.3-39        munsell_0.4.2      parallel_3.1.2    
-## [16] plyr_1.8.1         proto_0.3-10       R6_2.0.1          
-## [19] RColorBrewer_1.1-2 Rcpp_0.11.5        scales_0.2.4      
-## [22] stringr_0.6.2      tools_3.1.2        XML_3.98-1.1
+##  [1] Rcpp_0.11.6        magrittr_1.5       MASS_7.3-40       
+##  [4] munsell_0.4.2      colorspace_1.2-6   R6_2.0.1          
+##  [7] highr_0.5          stringr_1.0.0      plyr_1.8.2        
+## [10] tools_3.2.0        parallel_3.2.0     grid_3.2.0        
+## [13] gtable_0.1.2       DBI_0.3.1          lazyeval_0.1.10   
+## [16] assertthat_0.1     digest_0.6.8       RJSONIO_1.3-0     
+## [19] RColorBrewer_1.1-2 ggplot2_1.0.1      formatR_1.2       
+## [22] evaluate_0.7       labeling_0.3       stringi_0.4-1     
+## [25] scales_0.2.4       XML_3.98-1.2       proto_0.3-10
 ```
 
 
