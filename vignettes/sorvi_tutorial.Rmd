@@ -19,10 +19,10 @@ Finnish open government data toolkit for R
 
 This R package provides miscellaneous tools for Finnish open
 government data. Your
-[contributions](http://ropengov.github.com/contact.html), [bug reports
+[contributions](http://ropengov.github.io/contribute/), [bug reports
 and other feedback](https://github.com/ropengov/sorvi) are welcome!
 For further information, see the [home
-page](http://ropengov.github.com/sorvi).
+page](https://github.com/ropengov/sorvi).
 
 
 

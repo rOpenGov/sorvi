@@ -28,7 +28,7 @@ Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, an
 }
 \references{
 See citation("sorvi")
-\url{http://ropengov.github.com/sorvi}
+\url{https://github.com/rOpenGov/sorvi}
 }
 \keyword{package}
 

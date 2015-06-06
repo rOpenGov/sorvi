@@ -19,7 +19,7 @@
 #' @author Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, and Juuso Haapanen \email{louhos@@googlegroups.com}
 #' @references
 #' See citation("sorvi")
-#' \url{http://ropengov.github.com/sorvi}
+#' \url{https://github.com/rOpenGov/sorvi}
 #' @examples library(sorvi)
 #' @keywords package
 NULL
