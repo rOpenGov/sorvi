@@ -25,9 +25,6 @@ convert_municipality_codes <- function (ids = NULL, municipalities = NULL) {
   conversion.table <- df[, c("Kunta", "Kunta.FI")]
   names(conversion.table) <- c("id", "name")
 
-  conversion.table$id <- as.character(conversion.table$id)
-  conversion.table$name <- as.character(conversion.table$name)
-
   #write.csv(conversion.table, file = "../inst/extdata/conversiontable.tab", quote = FALSE, row.names =FALSE)
   #conversion.table <- read.csv(paste(system.file("extdata", package = "sorvi"), 
   # 		     	"/conversiontable.tab", sep = ""))

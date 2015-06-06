@@ -18,20 +18,13 @@ Finnish open government data toolkit for R
 ===========
 
 This R package provides miscellaneous tools for Finnish open
-government data. You can also find further tools in our other
-R packages, including:
-
- * [gisfin](https://github.com/rOpenGov/gisfin/) Visualization of Finnish geographic information 
- * [helsinki](https://github.com/rOpenGov/helsinki/) Helsinki open data tools 
- * [sotkanet](https://github.com/rOpenGov/sotkanet/) THL Sotkanet database on health and demography
- * [pxweb](https://github.com/rOpenGov/pxweb/) PX-Web interface to access data fom Statistics Finland and other PX-Web compliant sources
- * [finpar](https://github.com/rOpenGov/finpar/) Finnish parliament data
-
-
-For a full list, see [rOpenGov homepage](http://ropengov.github.io/projects). Your [contributions](http://ropengov.github.com/contact.html), [bug
-reports and other feedback](https://github.com/ropengov/sorvi) are
-welcome! For further information, see the [home
+government data. Your
+[contributions](http://ropengov.github.com/contact.html), [bug reports
+and other feedback](https://github.com/ropengov/sorvi) are welcome!
+For further information, see the [home
 page](http://ropengov.github.com/sorvi).
+
+
 
 
 ## Available data sources and tools
@@ -55,8 +48,15 @@ page](http://ropengov.github.com/sorvi).
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
 
-[Visualization tools](#visualization) (Visualisointirutiineja)
+[Visualization tools](#visualization) (Visualisointirutiineja)  
 
+See also [other rOpenGov packages](http://ropengov.github.io/projects), in particular:
+
+ * [gisfin](https://github.com/rOpenGov/gisfin/) Visualization of Finnish geographic information 
+ * [helsinki](https://github.com/rOpenGov/helsinki/) Helsinki open data tools 
+ * [sotkanet](https://github.com/rOpenGov/sotkanet/) THL Sotkanet database on health and demography
+ * [pxweb](https://github.com/rOpenGov/pxweb/) PX-Web interface to access data fom Statistics Finland and other PX-Web compliant sources
+ * [finpar](https://github.com/rOpenGov/finpar/) Finnish parliament data
 
 
 ## <a name="installation"></a>Installation
