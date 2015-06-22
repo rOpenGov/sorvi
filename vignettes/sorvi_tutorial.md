@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2015-06-04"
+date: "2015-06-22"
 output:
   html_document:
     theme: flatly
@@ -18,20 +18,9 @@ Finnish open government data toolkit for R
 ===========
 
 This R package provides miscellaneous tools for Finnish open
-government data. You can also find further tools in our other
-R packages, including:
-
- * [gisfin](https://github.com/rOpenGov/gisfin/) Visualization of Finnish geographic information 
- * [helsinki](https://github.com/rOpenGov/helsinki/) Helsinki open data tools 
- * [sotkanet](https://github.com/rOpenGov/sotkanet/) THL Sotkanet database on health and demography
- * [pxweb](https://github.com/rOpenGov/pxweb/) PX-Web interface to access data fom Statistics Finland and other PX-Web compliant sources
- * [finpar](https://github.com/rOpenGov/finpar/) Finnish parliament data
-
-
-For a full list, see [rOpenGov homepage](http://ropengov.github.io/projects). Your [contributions](http://ropengov.github.com/contact.html), [bug
-reports and other feedback](https://github.com/ropengov/sorvi) are
-welcome! For further information, see the [home
-page](http://ropengov.github.com/sorvi).
+government data. Your
+[contributions](http://ropengov.github.io/contribute/), [bug reports
+and other feedback](https://github.com/ropengov/sorvi) are welcome!
 
 
 ## Available data sources and tools
@@ -55,8 +44,15 @@ page](http://ropengov.github.com/sorvi).
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
 
-[Visualization tools](#visualization) (Visualisointirutiineja)
+[Visualization tools](#visualization) (Visualisointirutiineja)  
 
+See also [other rOpenGov packages](http://ropengov.github.io/projects), in particular:
+
+ * [gisfin](https://github.com/rOpenGov/gisfin/) Visualization of Finnish geographic information 
+ * [helsinki](https://github.com/rOpenGov/helsinki/) Helsinki open data tools 
+ * [sotkanet](https://github.com/rOpenGov/sotkanet/) THL Sotkanet database on health and demography
+ * [pxweb](https://github.com/rOpenGov/pxweb/) PX-Web interface to access data fom Statistics Finland and other PX-Web compliant sources
+ * [finpar](https://github.com/rOpenGov/finpar/) Finnish parliament data
 
 
 ## <a name="installation"></a>Installation
@@ -102,26 +98,6 @@ and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 
 ## <a name="provinces"></a>Province information (Maakunnat)
 
-
-### <a name="provinceinfo"></a>Basic data
-
-Source: [Wikipedia](http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys)
-
-
-```r
-tab <- get_province_info_wikipedia()
-head(tab)
-```
-
-```
-##          Province PopulationDensity
-## 1         Uusimaa             170.4
-## 2 Varsinais-Suomi              42.9
-## 3       Satakunta              28.8
-## 4      Kanta-Häme              32.7
-## 5       Pirkanmaa              37.9
-## 6     Päijät-Häme              38.9
-```
 
 ### <a name="provincetranslations"></a>Finnish-English translations
 
@@ -188,26 +164,6 @@ print(municipality.info.mml[1:2,])
 
 
 ## <a name="conversions"></a>Conversions
-
-### <a name="postalcodes"></a>Postal codes vs. municipalities
-
-Source: [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special characters:
-
-
-```r
-postal.code.table <- get_postal_code_info() 
-head(postal.code.table)
-```
-
-```
-##   postal.code municipality municipality.ascii
-## 1       07230       Askola             Askola
-## 2       07500       Askola             Askola
-## 3       07510       Askola             Askola
-## 4       07530       Askola             Askola
-## 5       07580       Askola             Askola
-## 6       07590       Askola             Askola
-```
 
 
 ### <a name="municipality2province"></a>Municipality-Province mapping
@@ -433,19 +389,19 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] sorvi_0.7.23       reshape2_1.4.1     dplyr_0.4.1       
+## [1] sorvi_0.7.25       reshape2_1.4.1     dplyr_0.4.2       
 ## [4] knitr_1.10.5       scimapClient_0.2.1
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_0.11.6        magrittr_1.5       MASS_7.3-40       
 ##  [4] munsell_0.4.2      colorspace_1.2-6   R6_2.0.1          
-##  [7] highr_0.5          stringr_1.0.0      plyr_1.8.2        
+##  [7] highr_0.5          stringr_1.0.0      plyr_1.8.3        
 ## [10] tools_3.2.0        parallel_3.2.0     grid_3.2.0        
 ## [13] gtable_0.1.2       DBI_0.3.1          lazyeval_0.1.10   
 ## [16] assertthat_0.1     digest_0.6.8       RJSONIO_1.3-0     
 ## [19] RColorBrewer_1.1-2 ggplot2_1.0.1      formatR_1.2       
 ## [22] evaluate_0.7       labeling_0.3       stringi_0.4-1     
-## [25] scales_0.2.4       XML_3.98-1.2       proto_0.3-10
+## [25] scales_0.2.5       XML_3.98-1.2       proto_0.3-10
 ```
 
 
