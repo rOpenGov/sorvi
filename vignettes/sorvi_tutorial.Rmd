@@ -128,15 +128,6 @@ print(municipality.info.mml[1:2,])
 
 ## <a name="conversions"></a>Conversions
 
-### <a name="postalcodes"></a>Postal codes vs. municipalities
-
-Source: [Wikipedia](http://fi.wikipedia.org/wiki/Luettelo_Suomen_postinumeroista_kunnittain). The municipality names are provided also in plain ascii without special characters:
-
-```{r postalcodes, message=FALSE, warning=FALSE, eval=TRUE}
-postal.code.table <- get_postal_code_info() 
-head(postal.code.table)
-```
-
 
 ### <a name="municipality2province"></a>Municipality-Province mapping
 

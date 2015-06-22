@@ -1,3 +1,7 @@
+CHANGES IN VERSION 0.7.24 (2015-06-22)
+  o Removed get_postal_code_info
+  o Removed get_province_info  
+
 CHANGES IN VERSION 0.7.24 (2014-06-04)
 
  o Rewritten the package and moved many functions to other packages
