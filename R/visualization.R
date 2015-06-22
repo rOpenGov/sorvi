@@ -1,3 +1,6 @@
+# 'There is more to the truth than the facts'
+
+
 #' Description: Draw regression curve with smoothed error bars 
 #' based on the Visually-Weighted Regression by Solomon M. Hsiang; see
 #' http://www.fight-entropy.com/2012/07/visually-weighted-regression.html
