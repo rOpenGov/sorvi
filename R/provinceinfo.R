@@ -60,36 +60,6 @@ NULL
 
 
 
-#' Get information of Finnish provinces.
-#'
-#' @param ... Arguments to be passed
-#' @return A data frame. With the following entries: Maakunta: province; Pinta-ala: area; Vakiluku: population; Vaestotiheys: population density
-#' @export 
-#' @importFrom XML readHTMLTable
-#' @references
-#' See citation("sorvi") 
-#' @author Leo Lahti \email{louhos@@googlegroups.com}
-#' @examples \dontrun{tab <- get_province_info_wikipedia()}
-#' @keywords utilities
-
-get_province_info_wikipedia <- function (...) {
-
-  url <- "http://fi.wikipedia.org/wiki/V%C3%A4est%C3%B6tiheys"
-  message(paste("Downloading data from", url))
-
-  # Read tables from the website
-  tables <- readHTMLTable(url)
-
-  # Population density in regions (maakunnat)
-  tab <- tables[[1]][, c(1, 4)]		
-
-  names(tab) <- c("Province", "PopulationDensity")
-  tab$PopulationDensity <- as.numeric(gsub(",", ".", tab$PopulationDensity))
-
-  tab
-
-}
-
 
 #' Convert municipality names into standard versions harmonized within the package
 #'
@@ -99,6 +69,7 @@ get_province_info_wikipedia <- function (...) {
 #' See citation("sorvi") 
 #' @author Leo Lahti \email{louhos@@googlegroups.com}
 #' @examples \dontrun{tmp <- convert_municipality_names(municipality.names)}
+#' @export
 #' @keywords internal
 convert_municipality_names <- function (municipality.names) {
 			 
