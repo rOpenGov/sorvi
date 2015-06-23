@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2015-06-22"
+date: "2015-06-23"
 output:
   html_document:
     theme: flatly
@@ -41,6 +41,7 @@ and other feedback](https://github.com/ropengov/sorvi) are welcome!
 * [Municipality-Postal code conversions](#postalcodes) (Kunnat vs. postinumerot)  
 * [Municipality name-ID conversions](#municipalityconversions) (Kunnat vs. kuntakoodit)
 * [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
+* [Generic synonyme converter](#synonymes) (Synonyymit)
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
 
@@ -138,29 +139,16 @@ Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palve
 
 ```r
 municipality.info.mml <- get_municipality_info_mml()
-print(municipality.info.mml[1:2,])
+library(knitr)
+kable(municipality.info.mml[1:2,])
 ```
 
-```
-##           Kohderyhma Kohdeluokk AVI Maakunta Kunta
-## Äänekoski         71      84200   4       13   992
-## Ähtäri            71      84200   4       14   989
-##                                             AVI_ni1
-## Äänekoski Länsi- ja Sisä-Suomen aluehallintovirasto
-## Ähtäri    Länsi- ja Sisä-Suomen aluehallintovirasto
-##                                                      AVI_ni2
-## Äänekoski Regionförvaltningsverket i Västra och Inre Finland
-## Ähtäri    Regionförvaltningsverket i Västra och Inre Finland
-##                 Maaku_ni1         Maaku_ni2 Kunta_ni1 Kunta_ni2 Kieli_ni1
-## Äänekoski     Keski-Suomi Mellersta Finland Äänekoski       N_A     Suomi
-## Ähtäri    Etelä-Pohjanmaa Södra Österbotten    Ähtäri    Etseri     Suomi
-##           Kieli_ni2                                    AVI.FI Kieli.FI
-## Äänekoski       N_A Länsi- ja Sisä-Suomen aluehallintovirasto    Suomi
-## Ähtäri       Ruotsi Länsi- ja Sisä-Suomen aluehallintovirasto    Suomi
-##                Maakunta.FI  Kunta.FI
-## Äänekoski      Keski-Suomi Äänekoski
-## Ähtäri    EtelÃ¤-Pohjanmaa    Ähtäri
-```
+
+
+|   | Kohderyhma| Kohdeluokk|AVI |Maakunta |Kunta |AVI_ni1                                   |AVI_ni2                                            |Maaku_ni1       |Maaku_ni2         |Kunta_ni1       |Kunta_ni2 |Kieli_ni1 |Kieli_ni2 |AVI.FI                                    |Kieli.FI |Maakunta.FI     |Kunta.FI        |
+|:--|----------:|----------:|:---|:--------|:-----|:-----------------------------------------|:--------------------------------------------------|:---------------|:-----------------|:---------------|:---------|:---------|:---------|:-----------------------------------------|:--------|:---------------|:---------------|
+|3  |         71|      84200|2   |02       |284   |Lounais-Suomen aluehallintovirasto        |Regionförvaltningsverket i Sydvästra Finland       |Varsinais-Suomi |Egentliga Finland |Koski Tl        |N_A       |Suomi     |N_A       |Lounais-Suomen aluehallintovirasto        |Suomi    |Varsinais-Suomi |Koski.Tl        |
+|6  |         71|      84200|4   |06       |508   |Länsi- ja Sisä-Suomen aluehallintovirasto |Regionförvaltningsverket i Västra och Inre Finland |Pirkanmaa       |Birkaland         |Mänttä-Vilppula |N_A       |Suomi     |N_A       |Länsi- ja Sisä-Suomen aluehallintovirasto |Suomi    |Pirkanmaa       |Mänttä-Vilppula |
 
 
 ## <a name="conversions"></a>Conversions
@@ -173,14 +161,11 @@ print(municipality.info.mml[1:2,])
 
 ```r
 m2p <- municipality_to_province() 
-head(m2p) # Just show the first ones
+kable(head(m2p)) # Just show the first ones
 ```
 
 ```
-##           Äänekoski              Ähtäri                Akaa 
-##       "Keski-Suomi"  "EtelÃ¤-Pohjanmaa"         "Pirkanmaa" 
-##            Alajärvi           Alavieska              Alavus 
-##  "EtelÃ¤-Pohjanmaa" "Pohjois-Pohjanmaa"  "EtelÃ¤-Pohjanmaa"
+## Error in kable_markdown(x = structure(c("Koski.Tl", "Mänttä-Vilppula", : the table must have a header (column names)
 ```
 
 **Map selected municipalities to correponding provinces:**
@@ -200,13 +185,13 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 
 ```r
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
-head(m2p)
+kable(head(m2p))
 ```
 
 ```
-##          Helsinki           Tampere             Turku 
-##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
+## Error in kable_markdown(x = structure(c("Helsinki", "Tampere", "Turku", : the table must have a header (column names)
 ```
+
 
 
 ### <a name="municipalityconversions"></a>Municipality name-ID conversion
@@ -240,19 +225,56 @@ convert_municipality_codes(ids = c(853, 837))
 
 ```r
 municipality_ids <- convert_municipality_codes()
-head(municipality_ids) # just show the first entries
+kable(head(municipality_ids)) # just show the first entries
 ```
 
-```
-##            id      name
-## Äänekoski 992 Äänekoski
-## Ähtäri    989    Ähtäri
-## Akaa      020      Akaa
-## Alajärvi  005  Alajärvi
-## Alavieska 009 Alavieska
-## Alavus    010    Alavus
+
+
+|          |id  |name            |
+|:---------|:---|:---------------|
+|3         |284 |Koski.Tl        |
+|6         |508 |Mänttä-Vilppula |
+|Äänekoski |992 |Äänekoski       |
+|Ähtäri    |989 |Ähtäri          |
+|Akaa      |020 |Akaa            |
+|Alajärvi  |005 |Alajärvi        |
+
+
+### <a name="synonymes"></a>Synonyme conversions
+
+Generic conversion of synonymes into harmonized terms.
+
+First, get a synonyme-name mapping table. In this example we harmonize Finnish municipality names that have multiple versions. But the synonyme list can be arbitrary.
+
+
+```r
+f <- system.file("extdata/municipality_synonymes.csv", package = "sorvi")
+synonymes <- read.csv(f, sep = "\t")		 
 ```
 
+
+Validate the synonyme list and add lowercase and trimmed (removing
+extra spaces) versions of the terms:
+
+
+```r
+synonymes <- check_synonymes(synonymes, include.lowercase = TRUE, include.trimmed = TRUE)
+```
+
+Convert the given terms from synonymes to the harmonized names:
+
+
+```r
+harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
+kable(harmonized)
+```
+
+
+
+|name     |original |
+|:--------|:--------|
+|Mäntta   |Mantta   |
+|Koski Tl |Koski.Tl |
 
 
 ## <a name="hetu"></a>Personal identification number (HETU)
@@ -373,7 +395,7 @@ sessionInfo()
 ```
 
 ```
-## R version 3.2.0 (2015-04-16)
+## R version 3.2.1 (2015-06-18)
 ## Platform: x86_64-unknown-linux-gnu (64-bit)
 ## Running under: Ubuntu 15.04
 ## 
@@ -389,18 +411,18 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] sorvi_0.7.25       reshape2_1.4.1     dplyr_0.4.2       
+## [1] sorvi_0.7.26       reshape2_1.4.1     dplyr_0.4.2       
 ## [4] knitr_1.10.5       scimapClient_0.2.1
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.11.6        magrittr_1.5       MASS_7.3-40       
+##  [1] Rcpp_0.11.6        magrittr_1.5       MASS_7.3-41       
 ##  [4] munsell_0.4.2      colorspace_1.2-6   R6_2.0.1          
 ##  [7] highr_0.5          stringr_1.0.0      plyr_1.8.3        
-## [10] tools_3.2.0        parallel_3.2.0     grid_3.2.0        
+## [10] tools_3.2.1        parallel_3.2.1     grid_3.2.1        
 ## [13] gtable_0.1.2       DBI_0.3.1          lazyeval_0.1.10   
 ## [16] assertthat_0.1     digest_0.6.8       RJSONIO_1.3-0     
 ## [19] RColorBrewer_1.1-2 ggplot2_1.0.1      formatR_1.2       
-## [22] evaluate_0.7       labeling_0.3       stringi_0.4-1     
+## [22] evaluate_0.7       labeling_0.3       stringi_0.5-2     
 ## [25] scales_0.2.5       XML_3.98-1.2       proto_0.3-10
 ```
 

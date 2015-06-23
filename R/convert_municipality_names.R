@@ -11,7 +11,7 @@
 #' @keywords internal
 convert_municipality_names <- function (municipality.names) {
 
-  f <- system.file("extdata/municipality_synonymes.csv")
+  f <- system.file("extdata/municipality_synonymes.csv", package = "sorvi")
   syn <- read.csv(f, sep = "\t")		 
   
   harmonized.names <- c()

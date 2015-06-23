@@ -41,6 +41,7 @@ and other feedback](https://github.com/ropengov/sorvi) are welcome!
 * [Municipality-Postal code conversions](#postalcodes) (Kunnat vs. postinumerot)  
 * [Municipality name-ID conversions](#municipalityconversions) (Kunnat vs. kuntakoodit)
 * [Municipality-province conversions](#municipality2province) (Kunnat vs. maakunnat)
+* [Generic synonyme converter](#synonymes) (Synonyymit)
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
 
@@ -122,7 +123,8 @@ Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palve
 
 ```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
 municipality.info.mml <- get_municipality_info_mml()
-print(municipality.info.mml[1:2,])
+library(knitr)
+kable(municipality.info.mml[1:2,])
 ```
 
 
@@ -135,7 +137,7 @@ print(municipality.info.mml[1:2,])
 
 ```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 m2p <- municipality_to_province() 
-head(m2p) # Just show the first ones
+kable(head(m2p)) # Just show the first ones
 ```  
 
 **Map selected municipalities to correponding provinces:**
@@ -148,8 +150,9 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 
 ```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
-head(m2p)
+kable(head(m2p))
 ```  
+
 
 
 ### <a name="municipalityconversions"></a>Municipality name-ID conversion
@@ -170,9 +173,35 @@ convert_municipality_codes(ids = c(853, 837))
 
 ```{r province5, message=FALSE, echo=TRUE, eval=TRUE}
 municipality_ids <- convert_municipality_codes()
-head(municipality_ids) # just show the first entries
+kable(head(municipality_ids)) # just show the first entries
 ```
 
+
+### <a name="synonymes"></a>Synonyme conversions
+
+Generic conversion of synonymes into harmonized terms.
+
+First, get a synonyme-name mapping table. In this example we harmonize Finnish municipality names that have multiple versions. But the synonyme list can be arbitrary.
+
+```{r sorvi-synonymes-1, message=FALSE}
+f <- system.file("extdata/municipality_synonymes.csv", package = "sorvi")
+synonymes <- read.csv(f, sep = "\t")		 
+```
+
+
+Validate the synonyme list and add lowercase and trimmed (removing
+extra spaces) versions of the terms:
+
+```{r sorvi-synonymes-2, message=FALSE}
+synonymes <- check_synonymes(synonymes, include.lowercase = TRUE, include.trimmed = TRUE)
+```
+
+Convert the given terms from synonymes to the harmonized names:
+
+```{r sorvi-synonymes-3, message=FALSE}
+harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
+kable(harmonized)
+```
 
 
 ## <a name="hetu"></a>Personal identification number (HETU)

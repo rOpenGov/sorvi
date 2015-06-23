@@ -1,6 +1,3 @@
-#' @importFrom reshape2 melt
-#' @importFrom XML readHTMLTable
-
 .onAttach <- function(lib, pkg)
 {
 

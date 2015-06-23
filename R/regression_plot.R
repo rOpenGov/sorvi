@@ -40,6 +40,7 @@
 #'
 #' @export 
 #'
+#' @importFrom reshape2 melt
 #' @import dplyr
 #' @import RColorBrewer
 #' @import ggplot2
