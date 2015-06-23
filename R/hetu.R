@@ -23,7 +23,6 @@ valid_hetu <- function(hetu) {
     return(sapply(hetu, FUN=valid_hetu))
   }
 
-  #return(class(hetu(hetu)) == "hetu")
   return(class(hetu(hetu)) == "data.frame")
 }
 
