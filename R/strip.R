@@ -35,6 +35,7 @@ strstrip <- function (s) {
 strstrip_single <- function (s) {
 
   # Remove spaces from a string
+  s <- as.character(s)
 
   # strip string i.e. remove spaces from the beginning and end
   while (substr(s,1,1)==" ") {
@@ -57,6 +58,8 @@ strstrip_single <- function (s) {
 #' @examples strip(c("s ", " a")) 
 #' @keywords utilities
 strip <- function (s) {
+
+  s <- as.character(s)
 
   ss <- c()
   for (i in 1:length(s)) {

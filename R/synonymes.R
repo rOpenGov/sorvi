@@ -7,7 +7,6 @@
 #' @param include.trimmed Include trimmed versions of the synonymes (leading and trailing spaces removed)
 #' @return Polished synonyme table
 #'
-#' @importFrom stringr str_trim
 #' @export
 #'
 #' @details Remove duplicated information. Ensure identical matches
@@ -23,7 +22,7 @@ check_synonymes <- function (synonymes, include.lowercase = TRUE, include.trimme
   synonyme <- NULL		
 
   # Use trimmed versions of the final names
-  synonymes$name <- str_trim(synonymes$name)
+  synonymes$name <- strip(synonymes$name)
 
   # Ensure each proper name is synonyme also for itself
   synonymes <- rbind(synonymes, cbind(name = synonymes$name, synonyme = synonymes$name))
@@ -39,7 +38,7 @@ check_synonymes <- function (synonymes, include.lowercase = TRUE, include.trimme
   # Include trimmed versions of the synonymes
   if (include.lowercase) {
     message("Including trimmed versions of the synonymes")  
-    synonymes <- rbind(synonymes, cbind(name = synonymes$name, synonyme = str_trim(synonymes$synonyme)))
+    synonymes <- rbind(synonymes, cbind(name = synonymes$name, synonyme = strip(synonymes$synonyme)))
     synonymes <- unique(synonymes)
   }
   

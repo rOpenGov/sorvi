@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2015-06-23"
+date: "2015-06-24"
 output:
   html_document:
     theme: flatly
@@ -252,7 +252,6 @@ f <- system.file("extdata/municipality_synonymes.csv", package = "sorvi")
 synonymes <- read.csv(f, sep = "\t")		 
 ```
 
-
 Validate the synonyme list and add lowercase and trimmed (removing
 extra spaces) versions of the terms:
 
@@ -411,19 +410,19 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] sorvi_0.7.26       reshape2_1.4.1     dplyr_0.4.2       
-## [4] knitr_1.10.5       scimapClient_0.2.1
+## [1] sorvi_0.7.26       knitr_1.10.5       scimapClient_0.2.1
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_0.11.6        magrittr_1.5       MASS_7.3-41       
 ##  [4] munsell_0.4.2      colorspace_1.2-6   R6_2.0.1          
 ##  [7] highr_0.5          stringr_1.0.0      plyr_1.8.3        
-## [10] tools_3.2.1        parallel_3.2.1     grid_3.2.1        
-## [13] gtable_0.1.2       DBI_0.3.1          lazyeval_0.1.10   
-## [16] assertthat_0.1     digest_0.6.8       RJSONIO_1.3-0     
-## [19] RColorBrewer_1.1-2 ggplot2_1.0.1      formatR_1.2       
-## [22] evaluate_0.7       labeling_0.3       stringi_0.5-2     
-## [25] scales_0.2.5       XML_3.98-1.2       proto_0.3-10
+## [10] dplyr_0.4.2        tools_3.2.1        parallel_3.2.1    
+## [13] grid_3.2.1         gtable_0.1.2       DBI_0.3.1         
+## [16] lazyeval_0.1.10    assertthat_0.1     digest_0.6.8      
+## [19] RJSONIO_1.3-0      RColorBrewer_1.1-2 reshape2_1.4.1    
+## [22] ggplot2_1.0.1      formatR_1.2        evaluate_0.7      
+## [25] labeling_0.3       stringi_0.5-2      scales_0.2.5      
+## [28] proto_0.3-10
 ```
 
 

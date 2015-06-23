@@ -17,7 +17,6 @@ Depends:
 Imports:
     ggplot2,
     RColorBrewer,
-    stringr,
     dplyr,
     reshape2    
 Suggests:

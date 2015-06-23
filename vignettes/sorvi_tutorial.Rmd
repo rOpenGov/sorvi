@@ -188,7 +188,6 @@ f <- system.file("extdata/municipality_synonymes.csv", package = "sorvi")
 synonymes <- read.csv(f, sep = "\t")		 
 ```
 
-
 Validate the synonyme list and add lowercase and trimmed (removing
 extra spaces) versions of the terms:
 
