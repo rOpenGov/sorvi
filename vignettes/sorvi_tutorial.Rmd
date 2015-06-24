@@ -188,16 +188,15 @@ f <- system.file("extdata/municipality_synonymes.csv", package = "sorvi")
 synonymes <- read.csv(f, sep = "\t")		 
 ```
 
-Validate the synonyme list and add lowercase and trimmed (removing
-extra spaces) versions of the terms:
+Validate the synonyme list and add lowercase versions of the terms:
 
-```{r sorvi-synonymes-2, message=FALSE}
-synonymes <- check_synonymes(synonymes, include.lowercase = TRUE, include.trimmed = TRUE)
+```{r sorvi-synonymes-2, message=FALSE, eval=FALSE}
+synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
 Convert the given terms from synonymes to the harmonized names:
 
-```{r sorvi-synonymes-3, message=FALSE}
+```{r sorvi-synonymes-3, message=FALSE, eval=FALSE}
 harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
 kable(harmonized)
 ```

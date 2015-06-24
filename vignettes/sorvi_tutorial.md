@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2015-06-24"
+date: "2015-06-25"
 output:
   html_document:
     theme: flatly
@@ -252,12 +252,11 @@ f <- system.file("extdata/municipality_synonymes.csv", package = "sorvi")
 synonymes <- read.csv(f, sep = "\t")		 
 ```
 
-Validate the synonyme list and add lowercase and trimmed (removing
-extra spaces) versions of the terms:
+Validate the synonyme list and add lowercase versions of the terms:
 
 
 ```r
-synonymes <- check_synonymes(synonymes, include.lowercase = TRUE, include.trimmed = TRUE)
+synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
 Convert the given terms from synonymes to the harmonized names:
@@ -267,13 +266,6 @@ Convert the given terms from synonymes to the harmonized names:
 harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
 kable(harmonized)
 ```
-
-
-
-|name     |original |
-|:--------|:--------|
-|Mäntta   |Mantta   |
-|Koski Tl |Koski.Tl |
 
 
 ## <a name="hetu"></a>Personal identification number (HETU)

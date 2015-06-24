@@ -4,7 +4,6 @@
 #'
 #' @param synonymes synonymes data.frame with the self-explanatory fields 'name' and 'synonyme'.
 #' @param include.lowercase Include lowercase versions of the synonymes
-#' @param include.trimmed Include trimmed versions of the synonymes (leading and trailing spaces removed)
 #' @return Polished synonyme table
 #'
 #' @export
@@ -17,12 +16,9 @@
 #' 
 #' @examples \dontrun{s <- check_synonymes(synonymes)}
 #' @keywords utilities
-check_synonymes <- function (synonymes, include.lowercase = TRUE, include.trimmed = TRUE) {
+check_synonymes <- function (synonymes, include.lowercase = TRUE) {
 
   synonyme <- NULL		
-
-  # Use trimmed versions of the final names
-  synonymes$name <- strip(synonymes$name)
 
   # Ensure each proper name is synonyme also for itself
   synonymes <- rbind(synonymes, cbind(name = synonymes$name, synonyme = synonymes$name))
@@ -33,13 +29,6 @@ check_synonymes <- function (synonymes, include.lowercase = TRUE, include.trimme
     message("Including lowercase versions of the synonymes")
     synonymes <- rbind(synonymes, cbind(name = synonymes$name, synonyme = tolower(synonymes$synonyme)))
     synonymes <- unique(synonymes)    
-  }
-  
-  # Include trimmed versions of the synonymes
-  if (include.lowercase) {
-    message("Including trimmed versions of the synonymes")  
-    synonymes <- rbind(synonymes, cbind(name = synonymes$name, synonyme = strip(synonymes$synonyme)))
-    synonymes <- unique(synonymes)
   }
   
   # Remove duplicated info

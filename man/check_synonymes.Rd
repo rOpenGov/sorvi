@@ -4,14 +4,12 @@
 \alias{check_synonymes}
 \title{check_synonymes}
 \usage{
-check_synonymes(synonymes, include.lowercase = TRUE, include.trimmed = TRUE)
+check_synonymes(synonymes, include.lowercase = TRUE)
 }
 \arguments{
 \item{synonymes}{synonymes data.frame with the self-explanatory fields 'name' and 'synonyme'.}
 
 \item{include.lowercase}{Include lowercase versions of the synonymes}
-
-\item{include.trimmed}{Include trimmed versions of the synonymes (leading and trailing spaces removed)}
 }
 \value{
 Polished synonyme table
