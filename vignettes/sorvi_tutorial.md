@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2015-06-25"
+date: "2015-06-26"
 output:
   html_document:
     theme: flatly
@@ -70,13 +70,6 @@ Install the stable release version in R:
 install.packages("sorvi")
 ```
 
-Test the installation by loading the library:
-
-
-```r
-library(sorvi)
-```
-
 Development version for developers:
 
 
@@ -85,11 +78,28 @@ library(devtools)
 install_github("ropengov/sorvi")
 ```
 
+Test the installation by loading the library:
+
+
+```r
+library(sorvi)
+```
+
+
 We also recommend setting the UTF-8 encoding:
 
 
 ```r
 Sys.setlocale(locale="UTF-8") 
+```
+
+```
+## Warning in Sys.setlocale(locale = "UTF-8"): OS reports request to set
+## locale to "UTF-8" cannot be honored
+```
+
+```
+## [1] ""
 ```
 
 Brief examples of the package tools are provided below. Further
@@ -108,18 +118,11 @@ to solve all encoding problems yet; solutions welcome!):
 
 ```r
 translations <- load_sorvi_data("translations")
+kable(as.matrix(translations))
 ```
 
 ```
-## Error: the input does not start with a magic number compatible with loading from a connection
-```
-
-```r
-head(as.matrix(translations))
-```
-
-```
-## Error in as.matrix(translations): object 'translations' not found
+## Error in kable_markdown(x = structure(c("Ã\u0085land Islands", "South Karelia", : the table must have a header (column names)
 ```
 
 
@@ -140,20 +143,16 @@ Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palve
 
 ```r
 municipality.info.mml <- get_municipality_info_mml()
-```
-
-```
-## Error: the input does not start with a magic number compatible with loading from a connection
-```
-
-```r
 library(knitr)
 kable(municipality.info.mml[1:2,])
 ```
 
-```
-## Error in is.data.frame(x): object 'municipality.info.mml' not found
-```
+
+
+|   | Kohderyhma| Kohdeluokk|AVI |Maakunta |Kunta |AVI_ni1                                   |AVI_ni2                                            |Maaku_ni1       |Maaku_ni2         |Kunta_ni1       |Kunta_ni2 |Kieli_ni1 |Kieli_ni2 |AVI.FI                                    |Kieli.FI |Maakunta.FI     |Kunta.FI        |
+|:--|----------:|----------:|:---|:--------|:-----|:-----------------------------------------|:--------------------------------------------------|:---------------|:-----------------|:---------------|:---------|:---------|:---------|:-----------------------------------------|:--------|:---------------|:---------------|
+|3  |         71|      84200|2   |02       |284   |Lounais-Suomen aluehallintovirasto        |Regionförvaltningsverket i Sydvästra Finland       |Varsinais-Suomi |Egentliga Finland |Koski Tl        |N_A       |Suomi     |N_A       |Lounais-Suomen aluehallintovirasto        |Suomi    |Varsinais-Suomi |Koski.Tl        |
+|6  |         71|      84200|4   |06       |508   |Länsi- ja Sisä-Suomen aluehallintovirasto |Regionförvaltningsverket i Västra och Inre Finland |Pirkanmaa       |Birkaland         |Mänttä-Vilppula |N_A       |Suomi     |N_A       |Länsi- ja Sisä-Suomen aluehallintovirasto |Suomi    |Pirkanmaa       |Mänttä-Vilppula |
 
 
 ## <a name="conversions"></a>Conversions
@@ -166,18 +165,11 @@ kable(municipality.info.mml[1:2,])
 
 ```r
 m2p <- municipality_to_province() 
-```
-
-```
-## Error: the input does not start with a magic number compatible with loading from a connection
-```
-
-```r
 kable(head(m2p)) # Just show the first ones
 ```
 
 ```
-## Error in head(m2p): object 'm2p' not found
+## Error in kable_markdown(x = structure(c("Koski.Tl", "Mänttä-Vilppula", : the table must have a header (column names)
 ```
 
 **Map selected municipalities to correponding provinces:**
@@ -188,7 +180,8 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 ```
 
 ```
-## Error: the input does not start with a magic number compatible with loading from a connection
+##          Helsinki           Tampere             Turku 
+##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
 ```
 
 **Speed up conversion with predefined info table:**
@@ -196,18 +189,11 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 
 ```r
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
-```
-
-```
-## Error in municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml): object 'municipality.info.mml' not found
-```
-
-```r
 kable(head(m2p))
 ```
 
 ```
-## Error in head(m2p): object 'm2p' not found
+## Error in kable_markdown(x = structure(c("Helsinki", "Tampere", "Turku", : the table must have a header (column names)
 ```
 
 
@@ -221,11 +207,21 @@ kable(head(m2p))
 convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```
 
+```
+##   Turku Tampere 
+##   "853"   "837"
+```
+
 **Municipality codes to names**
 
 
 ```r
 convert_municipality_codes(ids = c(853, 837))
+```
+
+```
+##       853       837 
+##   "Turku" "Tampere"
 ```
 
 **Complete conversion table**
@@ -235,6 +231,17 @@ convert_municipality_codes(ids = c(853, 837))
 municipality_ids <- convert_municipality_codes()
 kable(head(municipality_ids)) # just show the first entries
 ```
+
+
+
+|          |id  |name            |
+|:---------|:---|:---------------|
+|3         |284 |Koski.Tl        |
+|6         |508 |Mänttä-Vilppula |
+|Äänekoski |992 |Äänekoski       |
+|Ähtäri    |989 |Ähtäri          |
+|Akaa      |020 |Akaa            |
+|Alajärvi  |005 |Alajärvi        |
 
 
 ### <a name="synonymes"></a>Synonyme conversions
@@ -256,13 +263,65 @@ Validate the synonyme list and add lowercase versions of the terms:
 synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
+```
+## Warning in `[<-.factor`(`*tmp*`, ri, value = c(2L, 6L, 5L, 7L, 1L, 1L,
+## 4L, : invalid factor level, NA generated
+```
+
+```
+## Warning in `[<-.factor`(`*tmp*`, ri, value = c(2L, 6L, 5L, 7L, 1L, 1L,
+## 4L, : invalid factor level, NA generated
+```
+
+```
+## Warning in check_synonymes(synonymes, include.lowercase = TRUE): Removing
+## ambiguous terms from synonyme list (no unique mapping): n kunta
+```
+
 Convert the given terms from synonymes to the harmonized names:
 
 
 ```r
 harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
+```
+
+```
+## Warning in `[<-.factor`(`*tmp*`, ri, value = c(1L, 2L, 8L, 9L, 10L, 11L, :
+## invalid factor level, NA generated
+```
+
+```
+## Warning in `[<-.factor`(`*tmp*`, ri, value = c(1L, 2L, 8L, 9L, 10L, 11L, :
+## invalid factor level, NA generated
+```
+
+```
+## Warning in check_synonymes(synonymes): Removing ambiguous terms
+## from synonyme list (no unique mapping): -tavastkyro,-vilppula-
+## vilppula,koski.tl,länsi-turunmaa,maarianhamina - mariehamn,mantta,mänttä-
+## vilppula
+```
+
+```
+## Warning in harmonize_names(c("Mantta", "Koski.Tl"), synonymes): No unique
+## mapping available for Mantta
+```
+
+```
+## Warning in harmonize_names(c("Mantta", "Koski.Tl"), synonymes): No unique
+## mapping available for Koski.Tl
+```
+
+```r
 kable(harmonized)
 ```
+
+
+
+|name |original |
+|:----|:--------|
+|NA   |Mantta   |
+|NA   |Koski.Tl |
 
 
 ## <a name="hetu"></a>Personal identification number (HETU)
