@@ -101,9 +101,9 @@ and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 **Finnish-English translations for province names** (we have not been able
 to solve all encoding problems yet; solutions welcome!):
 
-```{r translate, message=FALSE, eval=TRUE}
+```{r translate, message=FALSE, eval=FALSE}
 translations <- load_sorvi_data("translations")
-head(as.matrix(translations))
+kable(as.matrix(translations))
 ```
 
 
@@ -121,7 +121,7 @@ municipality names.
 
 Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu). 
 
-```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
+```{r municipalityMML, message=FALSE, warning=FALSE, eval=FALSE}
 municipality.info.mml <- get_municipality_info_mml()
 library(knitr)
 kable(municipality.info.mml[1:2,])
@@ -135,20 +135,20 @@ kable(municipality.info.mml[1:2,])
 
 **Map all municipalities to correponding provinces**
 
-```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 m2p <- municipality_to_province() 
 kable(head(m2p)) # Just show the first ones
 ```  
 
 **Map selected municipalities to correponding provinces:**
 
-```{r province6, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province6, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
 ```  
 
 **Speed up conversion with predefined info table:**
 
-```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 kable(head(m2p))
 ```  
@@ -159,19 +159,19 @@ kable(head(m2p))
 
 **Municipality name to code**
 
-```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province3, message=FALSE, echo=TRUE, eval=FALSE}
 convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```  
 
 **Municipality codes to names**
 
-```{r province4, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province4, message=FALSE, echo=TRUE, eval=FALSE}
 convert_municipality_codes(ids = c(853, 837))
 ```  
 
 **Complete conversion table**
 
-```{r province5, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province5, message=FALSE, echo=TRUE, eval=FALSE}
 municipality_ids <- convert_municipality_codes()
 kable(head(municipality_ids)) # just show the first entries
 ```

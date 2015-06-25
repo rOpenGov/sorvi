@@ -108,17 +108,18 @@ to solve all encoding problems yet; solutions welcome!):
 
 ```r
 translations <- load_sorvi_data("translations")
+```
+
+```
+## Error: the input does not start with a magic number compatible with loading from a connection
+```
+
+```r
 head(as.matrix(translations))
 ```
 
 ```
-##                       [,1]              
-## Ã\u0085land Islands   "Ahvenanmaa"      
-## South Karelia         "EtelÃĪ-Karjala"  
-## Southern Ostrobothnia "EtelÃĪ-Pohjanmaa"
-## Southern Savonia      "EtelÃĪ-Savo"     
-## Kainuu                "Kainuu"          
-## Tavastia Proper       "Kanta-HÃĪme"
+## Error in as.matrix(translations): object 'translations' not found
 ```
 
 
@@ -139,16 +140,20 @@ Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palve
 
 ```r
 municipality.info.mml <- get_municipality_info_mml()
+```
+
+```
+## Error: the input does not start with a magic number compatible with loading from a connection
+```
+
+```r
 library(knitr)
 kable(municipality.info.mml[1:2,])
 ```
 
-
-
-|   | Kohderyhma| Kohdeluokk|AVI |Maakunta |Kunta |AVI_ni1                                   |AVI_ni2                                            |Maaku_ni1       |Maaku_ni2         |Kunta_ni1       |Kunta_ni2 |Kieli_ni1 |Kieli_ni2 |AVI.FI                                    |Kieli.FI |Maakunta.FI     |Kunta.FI        |
-|:--|----------:|----------:|:---|:--------|:-----|:-----------------------------------------|:--------------------------------------------------|:---------------|:-----------------|:---------------|:---------|:---------|:---------|:-----------------------------------------|:--------|:---------------|:---------------|
-|3  |         71|      84200|2   |02       |284   |Lounais-Suomen aluehallintovirasto        |Regionförvaltningsverket i Sydvästra Finland       |Varsinais-Suomi |Egentliga Finland |Koski Tl        |N_A       |Suomi     |N_A       |Lounais-Suomen aluehallintovirasto        |Suomi    |Varsinais-Suomi |Koski.Tl        |
-|6  |         71|      84200|4   |06       |508   |Länsi- ja Sisä-Suomen aluehallintovirasto |Regionförvaltningsverket i Västra och Inre Finland |Pirkanmaa       |Birkaland         |Mänttä-Vilppula |N_A       |Suomi     |N_A       |Länsi- ja Sisä-Suomen aluehallintovirasto |Suomi    |Pirkanmaa       |Mänttä-Vilppula |
+```
+## Error in is.data.frame(x): object 'municipality.info.mml' not found
+```
 
 
 ## <a name="conversions"></a>Conversions
@@ -161,11 +166,18 @@ kable(municipality.info.mml[1:2,])
 
 ```r
 m2p <- municipality_to_province() 
+```
+
+```
+## Error: the input does not start with a magic number compatible with loading from a connection
+```
+
+```r
 kable(head(m2p)) # Just show the first ones
 ```
 
 ```
-## Error in kable_markdown(x = structure(c("Koski.Tl", "Mänttä-Vilppula", : the table must have a header (column names)
+## Error in head(m2p): object 'm2p' not found
 ```
 
 **Map selected municipalities to correponding provinces:**
@@ -176,8 +188,7 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 ```
 
 ```
-##          Helsinki           Tampere             Turku 
-##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
+## Error: the input does not start with a magic number compatible with loading from a connection
 ```
 
 **Speed up conversion with predefined info table:**
@@ -185,11 +196,18 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 
 ```r
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
+```
+
+```
+## Error in municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml): object 'municipality.info.mml' not found
+```
+
+```r
 kable(head(m2p))
 ```
 
 ```
-## Error in kable_markdown(x = structure(c("Helsinki", "Tampere", "Turku", : the table must have a header (column names)
+## Error in head(m2p): object 'm2p' not found
 ```
 
 
@@ -203,21 +221,11 @@ kable(head(m2p))
 convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```
 
-```
-##   Turku Tampere 
-##   "853"   "837"
-```
-
 **Municipality codes to names**
 
 
 ```r
 convert_municipality_codes(ids = c(853, 837))
-```
-
-```
-##       853       837 
-##   "Turku" "Tampere"
 ```
 
 **Complete conversion table**
@@ -227,17 +235,6 @@ convert_municipality_codes(ids = c(853, 837))
 municipality_ids <- convert_municipality_codes()
 kable(head(municipality_ids)) # just show the first entries
 ```
-
-
-
-|          |id  |name            |
-|:---------|:---|:---------------|
-|3         |284 |Koski.Tl        |
-|6         |508 |Mänttä-Vilppula |
-|Äänekoski |992 |Äänekoski       |
-|Ähtäri    |989 |Ähtäri          |
-|Akaa      |020 |Akaa            |
-|Alajärvi  |005 |Alajärvi        |
 
 
 ### <a name="synonymes"></a>Synonyme conversions

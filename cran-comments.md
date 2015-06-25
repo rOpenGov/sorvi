@@ -1,6 +1,6 @@
 ## Test environments
 * local ubuntu 15.04, R 3.2.1
-* win-builder (devel and release)
+* win-builder (devel)
 
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
