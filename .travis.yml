@@ -1,6 +1,12 @@
 language: r
 #installs:
 #  - ./travis-tool.sh install_github sorvi
+env:
+   global:
+     - CRAN: http://cran.rstudio.com
+     - R_BUILD_ARGS="--no-build-vignettes --no-manual --no-build-vignettes"
+     - R_CHECK_ARGS="--no-build-vignettes --no-manual --as-cran"
+     - BOOTSTRAP_LATEX=""
 notifications:
   email:
     - leo.lahti@iki.fi
