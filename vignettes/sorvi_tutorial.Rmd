@@ -143,13 +143,13 @@ kable(head(m2p)) # Just show the first ones
 
 **Map selected municipalities to correponding provinces:**
 
-```{r province6, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province6, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
 ```  
 
 **Speed up conversion with predefined info table:**
 
-```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 kable(head(m2p))
 ```  
