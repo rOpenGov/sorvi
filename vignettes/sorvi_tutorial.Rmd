@@ -102,7 +102,7 @@ and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 **Finnish-English translations for province names** (we have not been able
 to solve all encoding problems yet; solutions welcome!):
 
-```{r translate, message=FALSE, eval=FALSE}
+```{r translate, message=FALSE, eval=TRUE}
 translations <- load_sorvi_data("translations")
 kable(as.matrix(translations))
 ```
