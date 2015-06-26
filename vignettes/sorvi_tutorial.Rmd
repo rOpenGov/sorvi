@@ -160,19 +160,19 @@ kable(head(m2p))
 
 **Municipality name to code**
 
-```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province3, message=FALSE, echo=TRUE, eval=FALSE}
 convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```  
 
 **Municipality codes to names**
 
-```{r province4, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province4, message=FALSE, echo=TRUE, eval=FALSE}
 convert_municipality_codes(ids = c(853, 837))
 ```  
 
 **Complete conversion table**
 
-```{r province5, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province5, message=FALSE, echo=TRUE, eval=FALSE}
 municipality_ids <- convert_municipality_codes()
 kable(head(municipality_ids)) # just show the first entries
 ```
