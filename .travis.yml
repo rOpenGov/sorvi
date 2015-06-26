@@ -1,6 +1,6 @@
 language: r
-installs:
-  - ./travis-tool.sh install_github sorvi
+#installs:
+#  - ./travis-tool.sh install_github sorvi
 notifications:
   email:
     - leo.lahti@iki.fi

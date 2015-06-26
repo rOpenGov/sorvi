@@ -136,7 +136,7 @@ kable(municipality.info.mml[1:2,])
 
 **Map all municipalities to correponding provinces**
 
-```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 m2p <- municipality_to_province() 
 kable(head(m2p)) # Just show the first ones
 ```  
