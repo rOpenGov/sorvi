@@ -122,7 +122,7 @@ municipality names.
 
 Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu). 
 
-```{r municipalityMML, message=FALSE, warning=FALSE, eval=FALSE}
+```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
 municipality.info.mml <- get_municipality_info_mml()
 library(knitr)
 kable(municipality.info.mml[1:2,])
@@ -136,20 +136,20 @@ kable(municipality.info.mml[1:2,])
 
 **Map all municipalities to correponding provinces**
 
-```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
+```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 m2p <- municipality_to_province() 
 kable(head(m2p)) # Just show the first ones
 ```  
 
 **Map selected municipalities to correponding provinces:**
 
-```{r province6, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
+```{r province6, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 municipality_to_province(c("Helsinki", "Tampere", "Turku")) 
 ```  
 
 **Speed up conversion with predefined info table:**
 
-```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
+```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 kable(head(m2p))
 ```  
@@ -160,19 +160,19 @@ kable(head(m2p))
 
 **Municipality name to code**
 
-```{r province3, message=FALSE, echo=TRUE, eval=FALSE}
+```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
 convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```  
 
 **Municipality codes to names**
 
-```{r province4, message=FALSE, echo=TRUE, eval=FALSE}
+```{r province4, message=FALSE, echo=TRUE, eval=TRUE}
 convert_municipality_codes(ids = c(853, 837))
 ```  
 
 **Complete conversion table**
 
-```{r province5, message=FALSE, echo=TRUE, eval=FALSE}
+```{r province5, message=FALSE, echo=TRUE, eval=TRUE}
 municipality_ids <- convert_municipality_codes()
 kable(head(municipality_ids)) # just show the first entries
 ```
@@ -191,13 +191,13 @@ synonymes <- read.csv(f, sep = "\t")
 
 Validate the synonyme list and add lowercase versions of the terms:
 
-```{r sorvi-synonymes-2, message=FALSE, eval=FALSE}
+```{r sorvi-synonymes-2, message=FALSE, eval=TRUE}
 synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
 Convert the given terms from synonymes to the harmonized names:
 
-```{r sorvi-synonymes-3, message=FALSE, eval=FALSE}
+```{r sorvi-synonymes-3, message=FALSE, eval=TRUE}
 harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
 kable(harmonized)
 ```
