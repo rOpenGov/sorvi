@@ -191,13 +191,13 @@ synonymes <- read.csv(f, sep = "\t")
 
 Validate the synonyme list and add lowercase versions of the terms:
 
-```{r sorvi-synonymes-2, message=FALSE, eval=TRUE}
+```{r sorvi-synonymes-2, message=FALSE, eval=FALSE}
 synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
 Convert the given terms from synonymes to the harmonized names:
 
-```{r sorvi-synonymes-3, message=FALSE, eval=TRUE}
+```{r sorvi-synonymes-3, message=FALSE, eval=FALSE}
 harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
 kable(harmonized)
 ```
