@@ -1,6 +1,6 @@
 language: r
-#installs:
-#  - ./travis-tool.sh install_github sorvi
+install:
+  - ./travis-tool.sh install_github sorvi
 env:
    global:
      - CRAN: http://cran.rstudio.com
