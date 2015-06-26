@@ -1,6 +1,7 @@
 language: r
 install:
   - ./travis-tool.sh install_github sorvi
+  - Rscript -e 'library("devtools"); install_github("ropengov/sorvi")'
 env:
    global:
      - CRAN: http://cran.rstudio.com
