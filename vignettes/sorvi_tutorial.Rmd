@@ -122,7 +122,7 @@ municipality names.
 
 Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu). 
 
-```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
+```{r municipalityMML, message=FALSE, warning=FALSE, eval=FALSE}
 municipality.info.mml <- get_municipality_info_mml()
 library(knitr)
 kable(municipality.info.mml[1:2,])
