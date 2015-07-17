@@ -5,9 +5,9 @@
 # http://r-pkgs.had.co.nz/man.html
 
 /usr/local/bin/R CMD BATCH document.R
-#/usr/local/bin/R CMD build ../../ --no-build-vignettes
-/usr/local/bin/R CMD build ../../
-/usr/local/bin/R CMD check --as-cran sorvi_0.7.26.tar.gz
-/usr/local/bin/R CMD INSTALL sorvi_0.7.26.tar.gz
+/usr/local/bin/R CMD build ../../ --no-build-vignettes
+#/usr/local/bin/R CMD build ../../
+/usr/local/bin/R CMD check --as-cran sorvi_0.7.30.tar.gz
+/usr/local/bin/R CMD INSTALL sorvi_0.7.30.tar.gz
 #/usr/local/bin/R CMD BATCH document.R
 

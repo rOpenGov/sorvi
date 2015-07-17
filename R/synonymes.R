@@ -21,13 +21,14 @@ check_synonymes <- function (synonymes, include.lowercase = TRUE) {
   synonyme <- NULL		
 
   # Ensure each proper name is synonyme also for itself
-  synonymes <- rbind(synonymes, cbind(name = synonymes$name, synonyme = synonymes$name))
+  synonymes <- rbind(synonymes, cbind(name = as.character(synonymes$name),
+  	       			      synonyme = as.character(synonymes$name)))
   synonymes <- unique(synonymes)
   
   # Include lowercase versions of the synonymes
   if (include.lowercase) {
     message("Including lowercase versions of the synonymes")
-    synonymes <- rbind(synonymes, cbind(name = synonymes$name, synonyme = tolower(synonymes$synonyme)))
+    synonymes <- rbind(synonymes, cbind(name = as.character(synonymes$name), synonyme = tolower(as.character(synonymes$synonyme))))
     synonymes <- unique(synonymes)    
   }
   

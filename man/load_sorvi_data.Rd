@@ -2,22 +2,20 @@
 % Please edit documentation in R/load_sorvi_data.R
 \name{load_sorvi_data}
 \alias{load_sorvi_data}
-\title{load_sorvi_data}
+\title{Load custom data sets}
 \usage{
 load_sorvi_data(data.id, verbose = TRUE)
 }
 \arguments{
 \item{data.id}{data ID to download (suffix before .rda). Investigate the contents of the url path to check data.ids}
 
-\item{verbose}{verbose
-
-Return:}
+\item{verbose}{verbose}
 }
 \value{
 translations
 }
 \description{
-Arguments:
+Load custom data sets
 }
 \examples{
 # translations <- load_sorvi_data("translations")

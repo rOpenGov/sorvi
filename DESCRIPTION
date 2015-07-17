@@ -1,8 +1,8 @@
 Package: sorvi
 Type: Package
 Title: Finnish Open Government Data Toolkit
-Version: 0.7.29
-Date: 2015-06-25
+Version: 0.7.30
+Date: 2015-07-18
 Author: Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Jussi
     Paananen, Einari Happonen
 Maintainer: Leo Lahti <louhos@googlegroups.com>

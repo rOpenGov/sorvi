@@ -5,7 +5,7 @@
 \title{harmonize_names}
 \usage{
 harmonize_names(x, synonymes, remove.unknown = FALSE,
-  check.synonymes = TRUE)
+  check.synonymes = TRUE, mode = "exact.match")
 }
 \arguments{
 \item{x}{A character vector}
@@ -15,9 +15,13 @@ harmonize_names(x, synonymes, remove.unknown = FALSE,
 \item{remove.unknown}{Logical. Remove terms that do not have synonymes.}
 
 \item{check.synonymes}{Check the synonyme table}
+
+\item{mode}{'exact.match' replaces the terms based on the synonyme list if an exact match
+       is  found; 'recursive' replaces all (sub)strings recursively in the same order as
+       in the synonyme table}
 }
 \value{
-Harmonized vector where synonymes are renamed by the selected names
+Harmonized vector
 }
 \description{
 Harmonize names
