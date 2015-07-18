@@ -25,7 +25,7 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
   # Check which terms are not on the synonyme list and add them there		
   if (!remove.unknown) {
     r <- setdiff(x, synonymes$synonyme)
-    synonymes <- rbind(synonymes,
+    synonymes <- rbind(synonymes[, c("name", "synonyme")],
     	      as.data.frame(list(name = r, synonyme = r)))    
   }
 
@@ -57,7 +57,9 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
 
     xx <- xuniq
     for (i in 1:nrow(synonymes)) {
+      print(synonymes[i,])
       xx <- gsub(synonymes[i, "synonyme"], synonymes[i, "name"], xx)
+      print(xx)
     }
   
     xx2 <- xx[match(xorig, xuniq)]
