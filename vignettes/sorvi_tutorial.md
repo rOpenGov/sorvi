@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2015-06-26"
+date: "2015-07-18"
 output:
   html_document:
     theme: flatly
@@ -263,65 +263,20 @@ Validate the synonyme list and add lowercase versions of the terms:
 synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
-```
-## Warning in `[<-.factor`(`*tmp*`, ri, value = c(2L, 6L, 5L, 7L, 1L, 1L,
-## 4L, : invalid factor level, NA generated
-```
-
-```
-## Warning in `[<-.factor`(`*tmp*`, ri, value = c(2L, 6L, 5L, 7L, 1L, 1L,
-## 4L, : invalid factor level, NA generated
-```
-
-```
-## Warning in check_synonymes(synonymes, include.lowercase = TRUE): Removing
-## ambiguous terms from synonyme list (no unique mapping): n kunta
-```
-
 Convert the given terms from synonymes to the harmonized names:
 
 
 ```r
 harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
-```
-
-```
-## Warning in `[<-.factor`(`*tmp*`, ri, value = c(1L, 2L, 8L, 9L, 10L, 11L, :
-## invalid factor level, NA generated
-```
-
-```
-## Warning in `[<-.factor`(`*tmp*`, ri, value = c(1L, 2L, 8L, 9L, 10L, 11L, :
-## invalid factor level, NA generated
-```
-
-```
-## Warning in check_synonymes(synonymes): Removing ambiguous terms
-## from synonyme list (no unique mapping): -tavastkyro,-vilppula-
-## vilppula,koski.tl,länsi-turunmaa,maarianhamina - mariehamn,mantta,mänttä-
-## vilppula
-```
-
-```
-## Warning in harmonize_names(c("Mantta", "Koski.Tl"), synonymes): No unique
-## mapping available for Mantta
-```
-
-```
-## Warning in harmonize_names(c("Mantta", "Koski.Tl"), synonymes): No unique
-## mapping available for Koski.Tl
-```
-
-```r
 kable(harmonized)
 ```
 
 
 
-|name |original |
-|:----|:--------|
-|NA   |Mantta   |
-|NA   |Koski.Tl |
+|name     |original |
+|:--------|:--------|
+|Mäntta   |Mantta   |
+|Koski Tl |Koski.Tl |
 
 
 ## <a name="hetu"></a>Personal identification number (HETU)
@@ -458,7 +413,7 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] sorvi_0.7.26       knitr_1.10.5       scimapClient_0.2.1
+## [1] sorvi_0.7.30       knitr_1.10.5       scimapClient_0.2.1
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_0.11.6        magrittr_1.5       MASS_7.3-41       
@@ -469,7 +424,7 @@ sessionInfo()
 ## [16] lazyeval_0.1.10    assertthat_0.1     digest_0.6.8      
 ## [19] RJSONIO_1.3-0      RColorBrewer_1.1-2 reshape2_1.4.1    
 ## [22] ggplot2_1.0.1      formatR_1.2        evaluate_0.7      
-## [25] labeling_0.3       stringi_0.5-2      scales_0.2.5      
+## [25] labeling_0.3       stringi_0.5-5      scales_0.2.5      
 ## [28] proto_0.3-10
 ```
 
