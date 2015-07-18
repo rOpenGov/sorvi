@@ -21,20 +21,19 @@
 harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonymes = TRUE, mode = "exact.match") {
 
   x <- as.character(x)
-
-  # Check which terms are not on the synonyme list and add them there		
-  if (!remove.unknown) {
-    r <- setdiff(x, synonymes$synonyme)
-    synonymes <- rbind(synonymes[, c("name", "synonyme")],
-    	      as.data.frame(list(name = r, synonyme = r)))    
-  }
-
   # Map synonymes to selected names: NA if mapping not available
   xorig <- x
   xuniq <- unique(x)
 
   if (mode == "exact.match") {
-  
+
+    # Check which terms are not on the synonyme list and add them there		
+    if (!remove.unknown) {
+      r <- setdiff(x, synonymes$synonyme)
+      synonymes <- rbind(synonymes[, c("name", "synonyme")],
+    	      as.data.frame(list(name = r, synonyme = r)))    
+    }
+
     # Polish the synonyme table
     if (check.synonymes) {
       synonymes <- check_synonymes(synonymes)
@@ -61,7 +60,6 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
       xx <- gsub(synonymes[i, "synonyme"], synonymes[i, "name"], xx)
       #print(xx)
     }
-  
     xx2 <- xx[match(xorig, xuniq)]
     
   }
