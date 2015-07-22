@@ -56,9 +56,7 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
 
     xx <- xuniq
     for (i in 1:nrow(synonymes)) {
-      #print(synonymes[i,])
       xx <- gsub(synonymes[i, "synonyme"], synonymes[i, "name"], xx)
-      #print(xx)
     }
     xx2 <- xx[match(xorig, xuniq)]
     
