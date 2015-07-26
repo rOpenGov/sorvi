@@ -27,13 +27,6 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
 
   if (mode == "exact.match") {
 
-    # Check which terms are not on the synonyme list and add them there		
-    if (!remove.unknown) {
-      r <- setdiff(x, synonymes$synonyme)
-      synonymes <- rbind(synonymes[, c("name", "synonyme")],
-    	      as.data.frame(list(name = r, synonyme = r)))    
-    }
-
     # Polish the synonyme table
     if (check.synonymes) {
       synonymes <- check_synonymes(synonymes)
@@ -44,9 +37,15 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
       xh <- unique(as.character(synonymes$name[which(synonymes$synonyme == xuniq[[i]])]))
       if (length(xh) == 1) {
         xx[[i]] <- xh
-      } else {
-        warning(paste("No unique mapping available for", xuniq[[i]]))
+      } else if (length(xh) > 1)  {
+        warning(paste("No unique synonyme mapping available for", xuniq[[i]]))
         xx[[i]] <- NA
+      } else if (length(xh) == 0)  {
+        if (remove.unknown) {
+          xx[[i]] <- NA	  
+	} else {
+          xx[[i]] <- xuniq[[i]]
+	}
       }
     }
   
