@@ -4,6 +4,7 @@
 #'
 #' @param synonymes synonymes data.frame with the self-explanatory fields 'name' and 'synonyme'.
 #' @param include.lowercase Include lowercase versions of the synonymes
+#' @param verbose verbose
 #' @return Polished synonyme table
 #'
 #' @export
@@ -16,7 +17,7 @@
 #' 
 #' @examples \dontrun{s <- check_synonymes(synonymes)}
 #' @keywords utilities
-check_synonymes <- function (synonymes, include.lowercase = TRUE) {
+check_synonymes <- function (synonymes, include.lowercase = TRUE, verbose = FALSE) {
 
   synonyme <- NULL		
 
@@ -27,7 +28,7 @@ check_synonymes <- function (synonymes, include.lowercase = TRUE) {
   
   # Include lowercase versions of the synonymes
   if (include.lowercase) {
-    message("Including lowercase versions of the synonymes")
+    if (verbose) {message("Including lowercase versions of the synonymes")}
     synonymes <- rbind(synonymes, cbind(name = as.character(synonymes$name), synonyme = tolower(as.character(synonymes$synonyme))))
     synonymes <- unique(synonymes)    
   }

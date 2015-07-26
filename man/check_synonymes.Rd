@@ -4,12 +4,14 @@
 \alias{check_synonymes}
 \title{check_synonymes}
 \usage{
-check_synonymes(synonymes, include.lowercase = TRUE)
+check_synonymes(synonymes, include.lowercase = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{synonymes}{synonymes data.frame with the self-explanatory fields 'name' and 'synonyme'.}
 
 \item{include.lowercase}{Include lowercase versions of the synonymes}
+
+\item{verbose}{verbose}
 }
 \value{
 Polished synonyme table

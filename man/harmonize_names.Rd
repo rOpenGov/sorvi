@@ -5,7 +5,8 @@
 \title{harmonize_names}
 \usage{
 harmonize_names(x, synonymes, remove.unknown = FALSE,
-  check.synonymes = TRUE, mode = "exact.match")
+  check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE,
+  verbose = FALSE)
 }
 \arguments{
 \item{x}{A character vector}
@@ -16,9 +17,11 @@ harmonize_names(x, synonymes, remove.unknown = FALSE,
 
 \item{check.synonymes}{Check the synonyme table}
 
-\item{mode}{'exact.match' replaces the terms based on the synonyme list if an exact match
-       is  found; 'recursive' replaces all (sub)strings recursively in the same order as
-       in the synonyme table}
+\item{mode}{'exact.match' replaces the terms based on the synonyme list if an exact match is  found; 'recursive' replaces all (sub)strings recursively in the same order as in the synonyme table}
+
+\item{include.lowercase}{Include also lowercase versions of the synonymes. Only works with the exact.match mode}
+
+\item{verbose}{verbose}
 }
 \value{
 Harmonized vector
