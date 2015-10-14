@@ -29,7 +29,9 @@ check_synonymes <- function (synonymes, include.lowercase = TRUE, verbose = FALS
   synonymes <- rbind(tmp1, tmp2)
 
   synonymes <- unique(synonymes)
-  
+  synonymes <- synonymes[, c("synonyme", "name")]
+  synonymes <- as.data.frame(synonymes, stringsAsFactors = FALSE)
+
   # Include lowercase versions of the synonymes
   if (include.lowercase) {
     if (verbose) {message("Including lowercase versions of the synonymes")}
