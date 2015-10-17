@@ -5,6 +5,9 @@
 #' @param synonymes synonymes data.frame with the self-explanatory fields 'name' and 'synonyme'.
 #' @param include.lowercase Include lowercase versions of the synonymes
 #' @param verbose verbose
+#' @param sort Sort synonymes
+#' @param self Ensure that each name is synonyme for itself (this may
+#'             cause ambiguous mappings, use with care !)
 #' @return Polished synonyme table
 #'
 #' @export
@@ -17,24 +20,31 @@
 #' 
 #' @examples \dontrun{s <- check_synonymes(synonymes)}
 #' @keywords utilities
-check_synonymes <- function (synonymes, include.lowercase = TRUE, verbose = FALSE) {
+check_synonymes <- function (synonymes, include.lowercase = TRUE, verbose = FALSE, sort = FALSE, self = FALSE) {
 
-  synonyme <- NULL		
+  synonyme <- NULL
+
+  # Remove comment columns
+  synonymes <- synonymes[, c("synonyme", "name")]
 
   # Ensure each proper name is synonyme also for itself
-  tmp1 <- cbind(name = as.character(synonymes$name),
-  	       synonyme = as.character(synonymes$synonyme))
-  tmp2 <- cbind(name = as.character(synonymes$name),
-  	       synonyme = as.character(synonymes$name))
-  synonymes <- rbind(tmp1, tmp2)
+  if (self) {
+    tmp1 <- cbind(name = as.character(synonymes$name),
+    	          synonyme = as.character(synonymes$synonyme))
+    tmp2 <- cbind(name = as.character(synonymes$name),
+    	          synonyme = as.character(synonymes$name))
+    synonymes <- rbind(tmp1, tmp2)
+  }
 
+  # Remove duplicates
   synonymes <- unique(synonymes)
-  synonymes <- synonymes[, c("synonyme", "name")]
+
+  # Make data frame
   synonymes <- as.data.frame(synonymes, stringsAsFactors = FALSE)
 
   # Include lowercase versions of the synonymes
   if (include.lowercase) {
-    if (verbose) {message("Including lowercase versions of the synonymes")}
+    if (verbose) { message("Including lowercase versions of the synonymes") }
     synonymes <- rbind(synonymes, cbind(name = as.character(synonymes$name), synonyme = tolower(as.character(synonymes$synonyme))))
     synonymes <- unique(synonymes)    
   }
@@ -53,8 +63,10 @@ check_synonymes <- function (synonymes, include.lowercase = TRUE, verbose = FALS
   synonymes <- subset(synonymes, !synonyme %in% ambiguous)
   
   # Order alphabetically
-  synonymes <- synonymes[order(as.character(synonymes$name)),]
-
+  if (sort) {
+    synonymes <- synonymes[order(as.character(synonymes$name)),]
+  }
+  
   synonymes
  
 }

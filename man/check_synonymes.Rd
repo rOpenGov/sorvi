@@ -4,7 +4,8 @@
 \alias{check_synonymes}
 \title{check_synonymes}
 \usage{
-check_synonymes(synonymes, include.lowercase = TRUE, verbose = FALSE)
+check_synonymes(synonymes, include.lowercase = TRUE, verbose = FALSE,
+  sort = FALSE, self = FALSE)
 }
 \arguments{
 \item{synonymes}{synonymes data.frame with the self-explanatory fields 'name' and 'synonyme'.}
@@ -12,6 +13,11 @@ check_synonymes(synonymes, include.lowercase = TRUE, verbose = FALSE)
 \item{include.lowercase}{Include lowercase versions of the synonymes}
 
 \item{verbose}{verbose}
+
+\item{sort}{Sort synonymes}
+
+\item{self}{Ensure that each name is synonyme for itself (this may
+cause ambiguous mappings, use with care !)}
 }
 \value{
 Polished synonyme table
