@@ -2,7 +2,7 @@
 % Please edit documentation in R/condense_spaces.R
 \name{condense_spaces}
 \alias{condense_spaces}
-\title{condense_spaces}
+\title{Trim and remove double spaces from the input strings}
 \usage{
 condense_spaces(x)
 }
@@ -10,10 +10,14 @@ condense_spaces(x)
 \item{x}{A vector}
 }
 \value{
-A polished vector
+A vector with spaces removed
 }
 \description{
-Trim spaces
+Trim and remove double spaces from the input strings
+}
+\details{
+Beginning, double and ending
+         spaces are also removed from the strings.
 }
 \examples{
 \dontrun{x2 <- condense_spaces(x)}
@@ -22,7 +26,7 @@ Trim spaces
 Leo Lahti \email{leo.lahti@iki.fi}
 }
 \references{
-See citation("bibliographica")
+See citation("sorvi")
 }
 \keyword{utilities}
 
