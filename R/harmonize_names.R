@@ -34,6 +34,7 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
   
     xx <- c()
     for (i in 1:length(xuniq)) {
+
       xh <- unique(as.character(synonymes$name[which(synonymes$synonyme == xuniq[[i]])]))
       if (length(xh) == 1) {
         xx[[i]] <- xh
