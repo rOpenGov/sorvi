@@ -8,6 +8,8 @@
 #' @param mode 'exact.match' replaces the terms based on the synonyme list if an exact match is  found; 'recursive' replaces all (sub)strings recursively in the same order as in the synonyme table
 #' @param include.lowercase Include also lowercase versions of the synonymes. Only works with the exact.match mode
 #' @param verbose verbose
+#' @param from String. If given, use the field with this name in the synonymes table as the synonyme list
+#' @param to String. If given, convert the names corresponding to the 'from' field in this format
 #'
 #' @return Harmonized vector 
 #'
@@ -18,7 +20,12 @@
 #' 
 #' @examples \dontrun{x2 <- harmonize_names(x, synonymes)}
 #' @keywords utilities
-harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE, verbose = FALSE) {
+harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE, verbose = FALSE, from = NULL, to = NULL) {
+
+  if (!is.null(from) && !is.null(to)) {
+    synonymes <- synonymes[, c(from, to)]
+    names(synonymes) <- c("synonyme", "name")
+  }		
 
   x <- as.character(x)
   # Map synonymes to selected names: NA if mapping not available
