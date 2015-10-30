@@ -1,6 +1,5 @@
 #' @title harmonize_names
 #' @description Harmonize names
-#'
 #' @param x A character vector 
 #' @param synonymes synonyme table with the fields 'synonyme' and 'name'
 #' @param remove.unknown Logical. Remove terms that do not have synonymes.
@@ -10,14 +9,10 @@
 #' @param verbose verbose
 #' @param from String. If given, use the field with this name in the synonymes table as the synonyme list
 #' @param to String. If given, convert the names corresponding to the 'from' field in this format
-#'
 #' @return Harmonized vector 
-#'
 #' @export
-#'
 #' @author Leo Lahti \email{leo.lahti@@iki.fi}
 #' @references See citation("sorvi")
-#' 
 #' @examples \dontrun{x2 <- harmonize_names(x, synonymes)}
 #' @keywords utilities
 harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE, verbose = FALSE, from = NULL, to = NULL) {
@@ -25,7 +20,10 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
   if (!is.null(from) && !is.null(to)) {
     synonymes <- synonymes[, c(from, to)]
     names(synonymes) <- c("synonyme", "name")
-  }		
+  }
+
+  # Remove duplicates
+  synonymes <- synonymes[!duplicated(synonymes),]
 
   x <- as.character(x)
   # Map synonymes to selected names: NA if mapping not available

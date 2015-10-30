@@ -1,14 +1,10 @@
-#' Trim and remove double spaces from the input strings
-#'
+#' @title condense_spaces
+#' @description Trim and remove double spaces from the input strings
 #' @param x A vector
 #' @importFrom stringr str_trim
 #' @return A vector with spaces removed
-#'
-#' @details Beginning, double and ending 
-#'          spaces are also removed from the strings.
-#'
-#' @export
-#' 
+#' @details Beginning, double and ending spaces are also removed from the strings.
+#' @export 
 #' @author Leo Lahti \email{leo.lahti@@iki.fi}
 #' @references See citation("sorvi") 
 #' @examples \dontrun{x2 <- condense_spaces(x)}

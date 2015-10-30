@@ -27,3 +27,4 @@ Suggests:
     RCurl,
     rjson,
     testthat
+RoxygenNote: 5.0.0
