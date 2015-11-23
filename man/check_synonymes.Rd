@@ -5,7 +5,7 @@
 \title{check_synonymes}
 \usage{
 check_synonymes(synonymes, include.lowercase = TRUE, verbose = FALSE,
-  sort = FALSE, self = FALSE)
+  sort = FALSE, self = FALSE, fill_empty = FALSE)
 }
 \arguments{
 \item{synonymes}{synonymes data.frame with the self-explanatory fields 'name' and 'synonyme'.}
@@ -18,12 +18,14 @@ check_synonymes(synonymes, include.lowercase = TRUE, verbose = FALSE,
 
 \item{self}{Ensure that each name is synonyme for itself (this may
 cause ambiguous mappings, use with care !)}
+
+\item{fill_empty}{If name field is empty, accept the given synonyme as the final name.}
 }
 \value{
 Polished synonyme table
 }
 \description{
-Check synonyme table.
+Check synonyme table. Remove ambiguous mappings.
 }
 \details{
 Remove duplicated information. Ensure identical matches
