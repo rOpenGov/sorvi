@@ -6,7 +6,7 @@
 \usage{
 harmonize_names(x, synonymes, remove.unknown = FALSE,
   check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE,
-  verbose = FALSE, from = NULL, to = NULL)
+  verbose = FALSE, from = NULL, to = NULL, ignore_empty = FALSE)
 }
 \arguments{
 \item{x}{A character vector}
@@ -26,6 +26,8 @@ harmonize_names(x, synonymes, remove.unknown = FALSE,
 \item{from}{String. If given, use the field with this name in the synonymes table as the synonyme list}
 
 \item{to}{String. If given, convert the names corresponding to the 'from' field in this format}
+
+\item{ignore_empty}{Ignore entries with an empty name}
 }
 \value{
 Harmonized vector

@@ -9,13 +9,14 @@
 #' @param verbose verbose
 #' @param from String. If given, use the field with this name in the synonymes table as the synonyme list
 #' @param to String. If given, convert the names corresponding to the 'from' field in this format
+#' @param ignore_empty Ignore entries with an empty name
 #' @return Harmonized vector 
 #' @export
 #' @author Leo Lahti \email{leo.lahti@@iki.fi}
 #' @references See citation("sorvi")
 #' @examples \dontrun{x2 <- harmonize_names(x, synonymes)}
 #' @keywords utilities
-harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE, verbose = FALSE, from = NULL, to = NULL) {
+harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE, verbose = FALSE, from = NULL, to = NULL, ignore_empty = FALSE) {
 
   if (!is.null(from) && !is.null(to)) {
     synonymes <- synonymes[, c(from, to)]
@@ -24,6 +25,13 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
 
   # Remove duplicates
   synonymes <- synonymes[!duplicated(synonymes),]
+
+  if (ignore_empty) {
+    inds <- which(synonymes$name == "")
+    if (length(inds)) {
+      synonymes <- synonymes[-inds,]
+    }
+  }
 
   x <- as.character(x)
   # Map synonymes to selected names: NA if mapping not available
