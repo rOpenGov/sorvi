@@ -4,7 +4,7 @@
 #' @param synonymes synonyme table with the fields 'synonyme' and 'name'
 #' @param remove.unknown Logical. Remove terms that do not have synonymes.
 #' @param check.synonymes Check the synonyme table
-#' @param mode 'exact.match' replaces the terms based on the synonyme list if an exact match is  found; 'recursive' replaces all (sub)strings recursively in the same order as in the synonyme table
+#' @param mode 'exact.match' replaces the terms based on the synonyme list if an exact match is  found; 'match' replaces the parts that match synonymes; 'recursive' replaces all (sub)strings recursively in the same order as in the synonyme table
 #' @param include.lowercase Include also lowercase versions of the synonymes. Only works with the exact.match mode
 #' @param verbose verbose
 #' @param from String. If given, use the field with this name in the synonymes table as the synonyme list
@@ -63,6 +63,21 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
       }
     }
   
+    xx2 <- xx[match(xorig, xuniq)]
+
+  } else if (mode == "match") {
+
+    xx <- xuniq
+    
+    # Go through synonymes from longest to shortest
+    synonymes <- synonymes[rev(order(nchar(as.character(synonymes[, "synonyme"])))),]
+
+    for (i in 1:nrow(synonymes)) {
+
+      xx <- gsub(synonymes[i, "synonyme"], synonymes[i, "name"], xx)
+      xx <- condense_spaces(xx)
+
+    }
     xx2 <- xx[match(xorig, xuniq)]
 
   } else if (mode == "recursive") {
