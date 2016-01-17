@@ -4,10 +4,10 @@
 # Roxygen tips:
 # http://r-pkgs.had.co.nz/man.html
 
-/usr/local/bin/R CMD BATCH document.R
-/usr/local/bin/R CMD build ../../ --no-build-vignettes
-#/usr/local/bin/R CMD build ../../
-/usr/local/bin/R CMD check --as-cran sorvi_0.7.34.tar.gz --no-build-vignettes
-/usr/local/bin/R CMD INSTALL sorvi_0.7.34.tar.gz
-#/usr/local/bin/R CMD BATCH document.R
+/usr/bin/R CMD BATCH document.R
+/usr/bin/R CMD build ../../ --no-build-vignettes
+#/usr/bin/R CMD build ../../
+/usr/bin/R CMD check --as-cran sorvi_0.7.34.tar.gz --no-build-vignettes
+/usr/bin/R CMD INSTALL sorvi_0.7.34.tar.gz
+#/usr/bin/R CMD BATCH document.R
 
