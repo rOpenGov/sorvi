@@ -12,11 +12,7 @@
 condense_spaces <- function (x) {
 
   x <- str_trim(x)
-
-  while (length(grep("  ", x)) > 0) {
-    x <- gsub("  ", " ", x)
-  }
-
+  x <- gsub(" +", " ", x)
   x[x == ""] <- NA
    
   x
