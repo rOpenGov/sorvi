@@ -6,7 +6,8 @@
 \usage{
 harmonize_names(x, synonymes, remove.unknown = FALSE,
   check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE,
-  verbose = FALSE, from = NULL, to = NULL, ignore_empty = FALSE)
+  verbose = FALSE, from = NULL, to = NULL, ignore_empty = FALSE,
+  include.original = FALSE)
 }
 \arguments{
 \item{x}{A character vector}
@@ -28,9 +29,11 @@ harmonize_names(x, synonymes, remove.unknown = FALSE,
 \item{to}{String. If given, convert the names corresponding to the 'from' field in this format}
 
 \item{ignore_empty}{Ignore entries with an empty name}
+
+\item{include.original}{Include the original query and result a data frame. Otherwise, return a vector of converted entries.}
 }
 \value{
-Harmonized vector
+Harmonized vector, or a data.frame if include.original is TRUE
 }
 \description{
 Harmonize names

@@ -10,13 +10,14 @@
 #' @param from String. If given, use the field with this name in the synonymes table as the synonyme list
 #' @param to String. If given, convert the names corresponding to the 'from' field in this format
 #' @param ignore_empty Ignore entries with an empty name
-#' @return Harmonized vector 
+#' @param include.original Include the original query and result a data frame. Otherwise, return a vector of converted entries.
+#' @return Harmonized vector, or a data.frame if include.original is TRUE
 #' @export
 #' @author Leo Lahti \email{leo.lahti@@iki.fi}
 #' @references See citation("sorvi")
 #' @examples \dontrun{x2 <- harmonize_names(x, synonymes)}
 #' @keywords utilities
-harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE, verbose = FALSE, from = NULL, to = NULL, ignore_empty = FALSE) {
+harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE, verbose = FALSE, from = NULL, to = NULL, ignore_empty = FALSE, include.original = FALSE) {
 
   if (!is.null(from) && !is.null(to)) {
     synonymes <- synonymes[, c(from, to)]
@@ -92,8 +93,11 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
   }
 
   # message("Return data frame")
-  data.frame(list(name = xx2, original = x))
-
+  if (include.original) {
+    data.frame(name = xx2, original = x)
+  } else {
+    xx2
+  }
 }
 
 
