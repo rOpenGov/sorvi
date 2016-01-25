@@ -11,8 +11,8 @@
 #' @keywords utilities
 condense_spaces <- function (x) {
 
-  #x <- str_trim(x)
-  x <- gsub("[^ | $]", "", x)  
+  x <- str_trim(x, "both")
+  #x <- gsub("[^ | $]", "", x)  
   x <- gsub(" +", " ", x)
   x[x == ""] <- NA
    
