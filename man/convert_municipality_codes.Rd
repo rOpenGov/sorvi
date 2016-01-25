@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert_municipality_codes.R
 \name{convert_municipality_codes}
 \alias{convert_municipality_codes}
-\title{Conversions between municipality codes and names}
+\title{Munucipality code conversions}
 \usage{
 convert_municipality_codes(ids = NULL, municipalities = NULL)
 }

@@ -1,9 +1,7 @@
-
-#' Conversions between municipality codes and names
-#'
+#' @title Munucipality code conversions
+#' @description Conversions between municipality codes and names
 #' @param ids NULL 
 #' @param municipalities NULL 
-#'
 #' @return Depending on the input. Converted id or name vector, or full conversion table.
 #' @export 
 #' @references
@@ -11,7 +9,6 @@
 #' @author Leo Lahti \email{louhos@@googlegroups.com}
 #' @examples  \dontrun{conversion.table <- convert_municipality_codes()}
 #' @keywords utilities
-
 convert_municipality_codes <- function (ids = NULL, municipalities = NULL) {
  
   # Reading municipality information from the web
@@ -19,10 +16,6 @@ convert_municipality_codes <- function (ids = NULL, municipalities = NULL) {
 
   conversion.table <- df[, c("Kunta", "Kunta.FI")]
   names(conversion.table) <- c("id", "name")
-
-  #write.csv(conversion.table, file = "../inst/extdata/conversiontable.tab", quote = FALSE, row.names =FALSE)
-  #conversion.table <- read.csv(paste(system.file("extdata", package = "sorvi"), 
-  # 		     	"/conversiontable.tab", sep = ""))
 
   conversion.table$id <- as.character(conversion.table$id)
   conversion.table$name <- as.character(conversion.table$name)
