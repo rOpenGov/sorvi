@@ -1,4 +1,4 @@
-#' @title harmonize_names
+#' @title Harmonize names
 #' @description Harmonize names
 #' @param x A character vector 
 #' @param synonymes synonyme table with the fields 'synonyme' and 'name'
