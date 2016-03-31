@@ -44,10 +44,18 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
     # Polish the synonyme table
     if (check.synonymes) {
       synonymes <- check_synonymes(synonymes, include.lowercase = include.lowercase, verbose = verbose)
+      # Remove self-matches to speed up
+      synonymes <- synonymes[which(!synonymes$synonyme == synonymes$name),]
+
     }
-  
-    xx <- c()
-    for (i in 1:length(xuniq)) {
+
+    # By default each term maps to itself
+    xx <- xuniq
+    
+    # Only check those cases that overlap
+    inds <- which(xuniq %in% synonymes$synonyme)
+    
+    for (i in inds) {
 
       xh <- unique(as.character(synonymes$name[which(synonymes$synonyme == xuniq[[i]])]))
       if (length(xh) == 1) {
@@ -55,12 +63,8 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
       } else if (length(xh) > 1)  {
         warning(paste("No unique synonyme mapping available for", xuniq[[i]]))
         xx[[i]] <- NA
-      } else if (length(xh) == 0)  {
-        if (remove.unknown) {
-          xx[[i]] <- NA	  
-	} else {
-          xx[[i]] <- xuniq[[i]]
-	}
+      } else if (length(xh) == 0 && remove.unknown)  {
+        xx[[i]] <- NA
       }
     }
   

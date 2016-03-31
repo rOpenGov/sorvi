@@ -2,7 +2,7 @@
 % Please edit documentation in R/harmonize_names.R
 \name{harmonize_names}
 \alias{harmonize_names}
-\title{harmonize_names}
+\title{Harmonize names}
 \usage{
 harmonize_names(x, synonymes, remove.unknown = FALSE,
   check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE,
