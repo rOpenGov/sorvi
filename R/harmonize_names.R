@@ -43,6 +43,7 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
 
     # Polish the synonyme table
     if (check.synonymes) {
+
       synonymes <- check_synonymes(synonymes, include.lowercase = include.lowercase, verbose = verbose)
       # Remove self-matches to speed up
       synonymes <- synonymes[which(!synonymes$synonyme == synonymes$name),]
@@ -88,7 +89,8 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
   } else if (mode == "recursive") {
 
     xx <- xuniq
-    for (i in 1:nrow(synonymes)) {    
+    for (i in 1:nrow(synonymes)) {
+
       xx <- gsub(synonymes[i, "synonyme"], synonymes[i, "name"], xx)
       # xx <- condense_spaces(xx)
     }
