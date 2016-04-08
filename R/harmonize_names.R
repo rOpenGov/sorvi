@@ -51,10 +51,10 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
 
     # By default each term maps to itself
     xx <- xuniq
-    
+
     # Only check those cases that overlap
     inds <- which(xuniq %in% synonymes$synonyme)
-    
+
     for (i in inds) {
 
       xh <- unique(as.character(synonymes$name[which(synonymes$synonyme == xuniq[[i]])]))
