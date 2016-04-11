@@ -4,7 +4,8 @@
 \alias{read_synonymes}
 \title{Read synonyme table}
 \usage{
-read_synonymes(file, mode = "list", sep = ";")
+read_synonymes(file, mode = "list", sep = ";", self.match = FALSE,
+  include.lowercase = FALSE, ignore.empty = FALSE)
 }
 \arguments{
 \item{file}{Input file}
@@ -12,6 +13,12 @@ read_synonymes(file, mode = "list", sep = ";")
 \item{mode}{The input file type: "list" or "table"; see details.}
 
 \item{sep}{Separator mark.}
+
+\item{self.match}{Include self matches}
+
+\item{include.lowercase}{Include lowercase}
+
+\item{ignore.empty}{Ignore the empty cases}
 }
 \value{
 Synonyme data frame with the fields 'name' (the selected term) and 'synonyme' (the alternative terms).

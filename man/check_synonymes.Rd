@@ -2,7 +2,7 @@
 % Please edit documentation in R/synonymes.R
 \name{check_synonymes}
 \alias{check_synonymes}
-\title{check_synonymes}
+\title{Check synonymes}
 \usage{
 check_synonymes(synonymes, include.lowercase = TRUE, verbose = FALSE,
   sort = FALSE, self = FALSE, fill_empty = FALSE)

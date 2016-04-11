@@ -24,6 +24,19 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
     names(synonymes) <- c("synonyme", "name")
   }
 
+  # TODO many of these already done in read_synonymes
+  # make fully optional here
+
+  # include self matches
+  synonymes <- rbind(synonymes,
+        cbind(name = synonymes$name, synonyme = synonymes$name))
+
+
+  if (include.lowercase) {
+    synonymes <- rbind(synonymes,
+        cbind(name = synonymes$name, synonyme = tolower(synonymes$name)))
+  }
+
   # Remove duplicates
   synonymes <- synonymes[!duplicated(synonymes),]
 
@@ -46,11 +59,13 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
 
       synonymes <- check_synonymes(synonymes, include.lowercase = include.lowercase, verbose = verbose)
       # Remove self-matches to speed up
-      synonymes <- synonymes[which(!synonymes$synonyme == synonymes$name),]
+      # May cause a bug - to be checked
+      # synonymes <- synonymes[which(!synonymes$synonyme == synonymes$name),]
 
     }
 
     # By default each term maps to itself
+    # TODO to speed up remove first those that match directly
     xx <- xuniq
     
     # Only check those cases that overlap

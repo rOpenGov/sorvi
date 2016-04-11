@@ -1,4 +1,4 @@
-#' @title check_synonymes
+#' @title Check synonymes
 #' @description Check synonyme table. Remove ambiguous mappings.
 #' @param synonymes synonymes data.frame with the self-explanatory fields 'name' and 'synonyme'.
 #' @param include.lowercase Include lowercase versions of the synonymes
