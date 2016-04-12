@@ -1,68 +1,26 @@
 #' @title Harmonize names
 #' @description Harmonize names
+#' @details Map the input vector to harmonized versions based on the synonyme table.
 #' @param x A character vector 
 #' @param synonymes synonyme table with the fields 'synonyme' and 'name'
 #' @param remove.unknown Logical. Remove terms that do not have synonymes.
-#' @param check.synonymes Check the synonyme table
 #' @param mode 'exact.match' replaces the terms based on the synonyme list if an exact match is  found; 'match' replaces the parts that match synonymes; 'recursive' replaces all (sub)strings recursively in the same order as in the synonyme table
-#' @param include.lowercase Include also lowercase versions of the synonymes. Only works with the exact.match mode
 #' @param verbose verbose
-#' @param from String. If given, use the field with this name in the synonymes table as the synonyme list
-#' @param to String. If given, convert the names corresponding to the 'from' field in this format
-#' @param ignore_empty Ignore entries with an empty name
-#' @param include.original Include the original query and result a data frame. Otherwise, return a vector of converted entries.
-#' @return Harmonized vector, or a data.frame if include.original is TRUE
+#' @return Vector of harmonized terms
 #' @export
 #' @author Leo Lahti \email{leo.lahti@@iki.fi}
 #' @references See citation("sorvi")
 #' @examples \dontrun{x2 <- harmonize_names(x, synonymes)}
 #' @keywords utilities
-harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE, verbose = FALSE, from = NULL, to = NULL, ignore_empty = FALSE, include.original = FALSE) {
-
-  if (!is.null(from) && !is.null(to)) {
-    synonymes <- synonymes[, c(from, to)]
-    names(synonymes) <- c("synonyme", "name")
-  }
-
-  # TODO many of these already done in read_synonymes
-  # make fully optional here
-
-  # include self matches
-  synonymes <- rbind(synonymes,
-        cbind(name = synonymes$name, synonyme = synonymes$name))
-
-
-  if (include.lowercase) {
-    synonymes <- rbind(synonymes,
-        cbind(name = synonymes$name, synonyme = tolower(synonymes$name)))
-  }
-
-  # Remove duplicates
-  synonymes <- synonymes[!duplicated(synonymes),]
-
-  if (ignore_empty) {
-    inds <- which(synonymes$name == "")
-    if (length(inds)) {
-      synonymes <- synonymes[-inds,]
-    }
-  }
+harmonize_names <- function (x, synonymes, remove.unknown = FALSE, mode = "exact.match", verbose = FALSE) {
 
   x <- as.character(x)
+  
   # Map synonymes to selected names: NA if mapping not available
   xorig <- x
   xuniq <- unique(x)
 
   if (mode == "exact.match") {
-
-    # Polish the synonyme table
-    if (check.synonymes) {
-
-      synonymes <- check_synonymes(synonymes, include.lowercase = include.lowercase, verbose = verbose)
-      # Remove self-matches to speed up
-      # May cause a bug - to be checked
-      # synonymes <- synonymes[which(!synonymes$synonyme == synonymes$name),]
-
-    }
 
     # By default each term maps to itself
     # TODO to speed up remove first those that match directly
@@ -82,6 +40,7 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
       } else if (length(xh) == 0 && remove.unknown)  {
         xx[[i]] <- NA
       }
+      
     }
   
     xx2 <- xx[match(xorig, xuniq)]
@@ -105,7 +64,6 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
 
     xx <- xuniq
     for (i in 1:nrow(synonymes)) {
-
       xx <- gsub(synonymes[i, "synonyme"], synonymes[i, "name"], xx)
       # xx <- condense_spaces(xx)
     }
@@ -113,12 +71,8 @@ harmonize_names <- function (x, synonymes, remove.unknown = FALSE, check.synonym
     
   }
 
-  # message("Return data frame")
-  if (include.original) {
-    data.frame(name = xx2, original = x)
-  } else {
-    xx2
-  }
+  as.character(xx2)
+
 }
 
 

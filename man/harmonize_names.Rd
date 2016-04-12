@@ -4,10 +4,8 @@
 \alias{harmonize_names}
 \title{Harmonize names}
 \usage{
-harmonize_names(x, synonymes, remove.unknown = FALSE,
-  check.synonymes = TRUE, mode = "exact.match", include.lowercase = TRUE,
-  verbose = FALSE, from = NULL, to = NULL, ignore_empty = FALSE,
-  include.original = FALSE)
+harmonize_names(x, synonymes, remove.unknown = FALSE, mode = "exact.match",
+  verbose = FALSE)
 }
 \arguments{
 \item{x}{A character vector}
@@ -16,27 +14,18 @@ harmonize_names(x, synonymes, remove.unknown = FALSE,
 
 \item{remove.unknown}{Logical. Remove terms that do not have synonymes.}
 
-\item{check.synonymes}{Check the synonyme table}
-
 \item{mode}{'exact.match' replaces the terms based on the synonyme list if an exact match is  found; 'match' replaces the parts that match synonymes; 'recursive' replaces all (sub)strings recursively in the same order as in the synonyme table}
 
-\item{include.lowercase}{Include also lowercase versions of the synonymes. Only works with the exact.match mode}
-
 \item{verbose}{verbose}
-
-\item{from}{String. If given, use the field with this name in the synonymes table as the synonyme list}
-
-\item{to}{String. If given, convert the names corresponding to the 'from' field in this format}
-
-\item{ignore_empty}{Ignore entries with an empty name}
-
-\item{include.original}{Include the original query and result a data frame. Otherwise, return a vector of converted entries.}
 }
 \value{
-Harmonized vector, or a data.frame if include.original is TRUE
+Vector of harmonized terms
 }
 \description{
 Harmonize names
+}
+\details{
+Map the input vector to harmonized versions based on the synonyme table.
 }
 \examples{
 \dontrun{x2 <- harmonize_names(x, synonymes)}

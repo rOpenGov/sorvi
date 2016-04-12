@@ -5,7 +5,8 @@
 \title{Read synonyme table}
 \usage{
 read_synonymes(file, mode = "list", sep = ";", self.match = FALSE,
-  include.lowercase = FALSE, ignore.empty = FALSE)
+  include.lowercase = FALSE, ignore.empty = FALSE, sort = FALSE,
+  verbose = FALSE, remove.ambiguous = TRUE)
 }
 \arguments{
 \item{file}{Input file}
@@ -19,6 +20,12 @@ read_synonymes(file, mode = "list", sep = ";", self.match = FALSE,
 \item{include.lowercase}{Include lowercase}
 
 \item{ignore.empty}{Ignore the empty cases}
+
+\item{sort}{Sort synonymes}
+
+\item{verbose}{verbose}
+
+\item{remove.ambiguous}{Remove ambiguous terms.}
 }
 \value{
 Synonyme data frame with the fields 'name' (the selected term) and 'synonyme' (the alternative terms).
