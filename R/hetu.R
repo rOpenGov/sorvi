@@ -1,21 +1,16 @@
-#' Validate Finnish personal identification numbers (hetu) 
-#'
+#' @title Finnish personal identification number validator
+#' @description Validate Finnish personal identification numbers (hetu).
 #' @param hetu Finnish personal identification number as a character vector, 
 #' 	  or vector of identification numbers as a character vectors.
-#'
 #' @return Is the given string a valid Finnish personal identification number, 
 #' 	   \code{TRUE} or \code{FALSE}.
-#' 
 #' @author Jussi Paananen \email{louhos@@googlegroups.com}
-#' 
 #' @seealso \code{\link{hetu}} For extracting information from Finnish 
 #' 	    personal identification numbers. 
-#' 
 #' @examples
 #' valid_hetu("010101-0101") # TRUE
 #' valid_hetu("010101-010A") # FALSE
 #' @export
-
 valid_hetu <- function(hetu) {
   # Try to create hetu-object from the given hetu, check if created object 
   # is of the correct class 
@@ -27,8 +22,8 @@ valid_hetu <- function(hetu) {
 }
 
 
-#' Extract information from Finnish personal identification numbers (hetu)
-#'
+#' @title Finnish personal identification number extraction
+#' @description Extract information from Finnish personal identification numbers (hetu).
 #' @param hetu Finnish personal identification number as a character vector, 
 #' 	  or vector of identification numbers as a character vectors
 #' @param extract Extract only selected part of the information. 
@@ -36,7 +31,6 @@ valid_hetu <- function(hetu) {
 #'    "\code{checksum}", "\code{date}", "\code{day}", "\code{month}", 
 #'    "\code{year}", "\code{century.char}".
 #'    If \code{NULL} (default), returns all information. 
-#'
 #' @return Finnish personal identification number data.frame,
 #'         or if extract parameter is set, the requested part of the 
 #'	   information as a vector. Returns \code{NA} if the given character 
@@ -52,8 +46,7 @@ valid_hetu <- function(hetu) {
 #' \item{century.char}{Century character of the birthdate: 
 #'                     + (1800), - (1900) or A (2000). }
 #' 
-#' @author Jussi Paananen \email{louhos@@googlegroups.com}
-#' 
+#' @author Jussi Paananen \email{louhos@@googlegroups.com} 
 #' @seealso \code{\link{valid_hetu}} For validating Finnish personal 
 #' 	    identification numbers.
 #' @examples
@@ -69,7 +62,6 @@ valid_hetu <- function(hetu) {
 #' # Process a vector of hetu's and extract gender information from each
 #' hetu(c("010101-0101", "111111-111C"), extract="gender")
 #' @export
-
 hetu <- function(hetu, extract=NULL) {
   
   if (!is.null(extract)) {

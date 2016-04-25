@@ -7,7 +7,7 @@
 /usr/bin/R CMD BATCH document.R
 /usr/bin/R CMD build ../../ --no-build-vignettes
 #/usr/bin/R CMD build ../../
-/usr/bin/R CMD check --as-cran sorvi_0.7.42.tar.gz --no-build-vignettes
-/usr/bin/R CMD INSTALL sorvi_0.7.42.tar.gz
+/usr/bin/R CMD check --as-cran sorvi_0.7.43.tar.gz --no-build-vignettes
+/usr/bin/R CMD INSTALL sorvi_0.7.43.tar.gz
 #/usr/bin/R CMD BATCH document.R
 

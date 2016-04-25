@@ -2,7 +2,7 @@
 % Please edit documentation in R/hetu.R
 \name{hetu}
 \alias{hetu}
-\title{Extract information from Finnish personal identification numbers (hetu)}
+\title{Finnish personal identification number extraction}
 \usage{
 hetu(hetu, extract = NULL)
 }
@@ -33,7 +33,7 @@ Finnish personal identification number data.frame,
                     + (1800), - (1900) or A (2000). }
 }
 \description{
-Extract information from Finnish personal identification numbers (hetu)
+Extract information from Finnish personal identification numbers (hetu).
 }
 \examples{
 hetu("111111-111C")

@@ -1,8 +1,8 @@
 Package: sorvi
 Type: Package
 Title: Finnish Open Government Data Toolkit
-Version: 0.7.42
-Date: 2016-04-23
+Version: 0.7.43
+Date: 2016-04-24
 Author: Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Jussi
     Paananen, Einari Happonen
 Maintainer: Leo Lahti <louhos@googlegroups.com>
@@ -13,7 +13,8 @@ VignetteBuilder: knitr
 BugReports: https://github.com/ropengov/sorvi/issues
 URL: https://github.com/ropengov/sorvi, http://cran.r-project.org/package=sorvi
 Depends:
-    R (>= 3.0.2)
+    R (>= 3.0.2),
+    tibble
 Imports:
     ggplot2,
     RColorBrewer,
