@@ -15,12 +15,11 @@ URL: https://github.com/ropengov/sorvi, http://cran.r-project.org/package=sorvi
 Depends:
     R (>= 3.0.2),
     tibble
-Imports:
+Suggests:
     ggplot2,
     RColorBrewer,
     dplyr,
-    reshape2
-Suggests:
+    reshape2,
     knitr,
     rmarkdown,
     RCurl,

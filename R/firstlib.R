@@ -1,3 +1,4 @@
+#' @importFrom tibble as_data_frame
 .onAttach <- function(lib, pkg)
 {
 

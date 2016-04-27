@@ -1,4 +1,3 @@
-
 #' Convert municipality names into standard versions harmonized within the package
 #'
 #' @param municipality.names municipality names to convert
