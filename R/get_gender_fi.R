@@ -7,7 +7,7 @@
 #' @return A data_frame with the field "name" (first name), followed
 #' by the population frequencies and population counts for that name.
 #' @author Leo Lahti \email{leo.lahti@iki.fi}
-#' @examples gender_FI <- get_gender_table_fi()
+#' @examples gender_FI <- get_gender_fi()
 #' @export
 #' @details Information from the Finnish Population register. All
 #' first names for living Finnish citizens that live in Finland and
@@ -21,7 +21,7 @@
 #' are added after the download as some names occur for both genders.
 #' @references See cite("sorvi")
 #' @keywords data
-get_gender_table_fi <- function (download = FALSE) {
+get_gender_fi <- function (download = FALSE) {
 
   if (download) {
 
@@ -48,27 +48,23 @@ get_gender_table_fi <- function (download = FALSE) {
       # Frequencies
       nm <- subset(tab, name == nam & gender == "male")$n
       nf <- subset(tab, name == nam & gender == "female")$n
-      if (length(nm)==0) {nm <- 0}
-      if (length(nf)==0) {nf <- 0}    
-      # Fractions (probabilities)
-      fm <- nm/(nm + nf)
-      ff <- nf/(nm + nf)
+      if (length(nm) == 0) { nm <- 0 }
+      if (length(nf) == 0) { nf <- 0 }    
       x <- c(name = nam,
-        male.freq = fm, female.freq = ff,
-        male.count = nm, female.count = nf,
-	total.count = nm + nf)
-
+      	     gender = c("male", "female")[which.max(c(nm, nf))],
+	     probability = max(c(nm, nf))/sum(c(nm, nf)),
+             n = nm + nf)
       tab2 <- rbind(tab2, x)
     }
     rownames(tab2) <- NULL  
     tab3 <- data.frame(tab2)
     tab3$name <- factor(tab3$name)
-    for (k in 2:ncol(tab3)) {
+    for (k in c("probability", "n")) {
       tab3[, k] <- as.numeric(as.character(tab3[,k]))
     }
     gender_FI <- tab3
 
-    # write.csv(gender_FI, fileEncoding = "UTF-8", file = "../inst/extdata/gender_FI.csv", quote = FALSE, row.names = FALSE)
+    write.csv(gender_FI, fileEncoding = "UTF-8", file = "../inst/extdata/gender_FI.csv", quote = FALSE, row.names = FALSE)
 
   } else {
 
