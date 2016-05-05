@@ -2,7 +2,6 @@
 
 export(convert_municipality_codes)
 export(convert_municipality_names)
-export(get_gender_fi)
 export(get_municipality_info_mml)
 export(hetu)
 export(is_url)
