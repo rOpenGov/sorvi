@@ -1,15 +1,15 @@
-#' @title Quick data frame
-#' @description Speedups in data.frame creation
-#' @param l named list of equal length vectors
+#' @title Quick Data Frame
+#' @description Speedups in data.frame creation.
+#' @param x named list of equal length vectors
 #' @return data.frame
 #' @details This is 20x faster than as.data.frame. 
 #' @export 
 #' @references Idea borrowed from \url{http://adv-r.had.co.nz/Profiling.html}. 
 #' @author HW/LL
-#' @examples  \dontrun{quickdf(l)}
+#' @examples  \dontrun{quickdf(x)}
 #' @keywords utilities
-quickdf <- function(l) {
-  class(l) <- "data.frame"
-  attr(l, "row.names") <- .set_row_names(length(l[[1]]))
+quickdf <- function(x) {
+  class(x) <- "data.frame"
+  attr(x, "row.names") <- .set_row_names(length(x[[1]]))
   l
 }
