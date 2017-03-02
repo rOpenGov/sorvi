@@ -202,7 +202,6 @@ synonymes <- bibliographica::check_synonymes(synonymes, include.lowercase = TRUE
 
 Convert the given terms from synonymes to the harmonized names:
 
-<<<<<<< HEAD
 ```{r sorvi-synonymes-3, message=FALSE, eval=TRUE}
 harmonized <- bibliographica::map(c("Mantta", "Koski.Tl"), synonymes)
 kable(harmonized)
