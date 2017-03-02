@@ -2,8 +2,8 @@
 % Please edit documentation in R/sorvi-package.R
 \docType{package}
 \name{sorvi-package}
-\alias{sorvi}
 \alias{sorvi-package}
+\alias{sorvi}
 \title{Algorithmic Tools for Open Data in Finland}
 \description{
 Brief summary of the sorvi package
@@ -23,12 +23,11 @@ Open Data tools for Finland
 \examples{
 library(sorvi)
 }
-\author{
-Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, and Juuso Haapanen \email{louhos@googlegroups.com}
-}
 \references{
 See citation("sorvi")
 \url{https://github.com/rOpenGov/sorvi}
 }
+\author{
+Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, and Juuso Haapanen \email{louhos@googlegroups.com}
+}
 \keyword{package}
-

@@ -20,11 +20,10 @@ Conversions between municipality codes and names
 \examples{
  \dontrun{conversion.table <- convert_municipality_codes()}
 }
-\author{
-Leo Lahti \email{louhos@googlegroups.com}
-}
 \references{
 See citation("sorvi")
 }
+\author{
+Leo Lahti \email{louhos@googlegroups.com}
+}
 \keyword{utilities}
-

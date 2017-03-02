@@ -2,30 +2,29 @@
 % Please edit documentation in R/quickdf.R
 \name{quickdf}
 \alias{quickdf}
-\title{Quick data frame}
+\title{Quick Data Frame}
 \usage{
-quickdf(l)
+quickdf(x)
 }
 \arguments{
-\item{l}{named list of equal length vectors}
+\item{x}{named list of equal length vectors}
 }
 \value{
 data.frame
 }
 \description{
-Speedups in data.frame creation
+Speedups in data.frame creation.
 }
 \details{
 This is 20x faster than as.data.frame.
 }
 \examples{
- \dontrun{quickdf(l)}
-}
-\author{
-HW/LL
+ \dontrun{quickdf(x)}
 }
 \references{
 Idea borrowed from \url{http://adv-r.had.co.nz/Profiling.html}.
 }
+\author{
+HW/LL
+}
 \keyword{utilities}
-

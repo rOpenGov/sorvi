@@ -18,11 +18,10 @@ Convert municipality names into standard versions harmonized within the package
 \examples{
 \dontrun{tmp <- convert_municipality_names("Koski.Tl")}
 }
-\author{
-Leo Lahti \email{louhos@googlegroups.com}
-}
 \references{
 See citation("sorvi")
 }
+\author{
+Leo Lahti \email{louhos@googlegroups.com}
+}
 \keyword{internal}
-

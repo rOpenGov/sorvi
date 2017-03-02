@@ -48,11 +48,10 @@ hetu(c("010101-0101", "111111-111C"))
 # Process a vector of hetu's and extract gender information from each
 hetu(c("010101-0101", "111111-111C"), extract="gender")
 }
-\author{
-Jussi Paananen \email{louhos@googlegroups.com}
-}
 \seealso{
 \code{\link{valid_hetu}} For validating Finnish personal 
 	    identification numbers.
 }
-
+\author{
+Jussi Paananen \email{louhos@googlegroups.com}
+}

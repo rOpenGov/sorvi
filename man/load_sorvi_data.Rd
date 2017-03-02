@@ -21,11 +21,10 @@ Load custom data sets
 # translations <- load_sorvi_data("translations")
 
 }
-\author{
-Leo Lahti \email{louhos@googlegroups.com}
-}
 \references{
 See citation("sorvi")
 }
+\author{
+Leo Lahti \email{louhos@googlegroups.com}
+}
 \keyword{utilities}
-

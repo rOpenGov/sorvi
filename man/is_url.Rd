@@ -18,11 +18,10 @@ Check if the given object is an url string
 \examples{
 is_url("http://aa.px")
 }
-\author{
-Leo Lahti \email{louhos@googlegroups.com}
-}
 \references{
 See citation("sorvi")
 }
+\author{
+Leo Lahti \email{louhos@googlegroups.com}
+}
 \keyword{utilities}
-
