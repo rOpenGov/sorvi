@@ -48,8 +48,6 @@ and other feedback](https://github.com/ropengov/sorvi) are welcome!
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
 
-[Visualization tools](#visualization) (Visualisointirutiineja)  
-
 See also [other rOpenGov packages](http://ropengov.github.io/projects), in particular:
 
  * [gisfin](https://github.com/rOpenGov/gisfin/) Visualization of Finnish geographic information 

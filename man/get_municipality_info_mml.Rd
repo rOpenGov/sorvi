@@ -2,8 +2,7 @@
 % Please edit documentation in R/get_municipality_info_mml.R
 \name{get_municipality_info_mml}
 \alias{get_municipality_info_mml}
-\title{Get information of Finnish municipalities from Land Survey Finland.
-(C) Maanmittauslaitos MML 2013. For details, see help(GetShapeMML).}
+\title{Municipality Info}
 \usage{
 get_municipality_info_mml(...)
 }
@@ -14,14 +13,14 @@ get_municipality_info_mml(...)
 A data frame with municipality data
 }
 \description{
-Get information of Finnish municipalities from Land Survey Finland.
-(C) Maanmittauslaitos MML 2013. For details, see help(GetShapeMML).
+Get information of Finnish municipalities from
+Land Survey Finland. (C) Maanmittauslaitos MML 2013.
 }
 \examples{
 \dontrun{tab <- get_municipality_info_mml()}
 }
 \author{
-Leo Lahti \email{louhos@googlegroups.com}
+Leo Lahti \email{leo.lahti@iki.fi}
 }
 \references{
 See citation("sorvi")
