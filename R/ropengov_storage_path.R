@@ -11,17 +11,17 @@
 #'
 #' @export
 #' @references
-#' See citation("sorvi") 
+#' See citation("sorvi")
 #' @author Leo Lahti \email{louhos@@googlegroups.com}
 #' @keywords utilities
-ropengov_storage_path <- function () {
-  # Louhos data is stored in Github avoindata repo: 
-  # https://github.com/avoindata/ which is 
+ropengov_storage_path <- function() {
+  # Louhos data is stored in Github avoindata repo:
+  # https://github.com/avoindata/ which is
   # mirrored on Datavaalit server
   #"http://www.datavaalit.fi/storage/avoindata/"
 
-  # OKF Finland Server is now running daily cron jobs to
-  # update the avoindata Github repository
-  "http://data.okf.fi/ropengov/avoindata/"
+  # Load data directly from GitHub
+  storage_path <- "https://github.com/avoindata/mml/blob/master/"
+  return(storage_path)
 }
 
