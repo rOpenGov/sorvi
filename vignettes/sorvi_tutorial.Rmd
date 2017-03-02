@@ -154,7 +154,7 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 
 ```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
-kable(head(m2p))
+head(m2p)
 ```  
 
 

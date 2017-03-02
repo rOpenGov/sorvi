@@ -191,11 +191,12 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 
 ```r
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
-kable(head(m2p))
+head(m2p)
 ```
 
 ```
-## Error in kable_markdown(x = structure(c("Helsinki", "Tampere", "Turku", : the table must have a header (column names)
+##          Helsinki           Tampere             Turku 
+##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
 ```
 
 
