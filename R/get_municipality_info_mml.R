@@ -1,15 +1,15 @@
-#' Get information of Finnish municipalities from Land Survey Finland.
-#' (C) Maanmittauslaitos MML 2013. For details, see help(GetShapeMML).
+#' @title Municipality Info
+#' @description Get information of Finnish municipalities from
+#' Land Survey Finland. (C) Maanmittauslaitos MML 2013.
 #' @param ... Arguments to be passed
 #'
 #' @return A data frame with municipality data
 #' @export
 #' @references
 #' See citation("sorvi")
-#' @author Leo Lahti \email{louhos@@googlegroups.com}
+#' @author Leo Lahti \email{leo.lahti@iki.fi}
 #' @examples \dontrun{tab <- get_municipality_info_mml()}
 #' @keywords utilities
-
 get_municipality_info_mml <- function (...) {
 
   # Load information table from Maanmittauslaitos
