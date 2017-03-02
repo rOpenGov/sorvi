@@ -17,5 +17,5 @@ You are welcome to:
   
   * [submit feedback and bug reports](https://github.com/louhos/sorvi/issues)
   * [send a pull request](https://github.com/louhos/sorvi/)
-  * join (or follow) the community [Finland](http://louhos.github.io/contact.html); [International](http://ropengov.github.io/contribute/)
+  * join (or follow) the [community](http://ropengov.github.io/contribute/)
  

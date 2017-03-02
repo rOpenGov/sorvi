@@ -3,7 +3,6 @@ Type: Package
 Title: Finnish Open Government Data Toolkit
 Version: 0.8.12
 Date: 2017-03-02
-
 Authors@R: c(
   person("Leo", "Lahti", email = "leo.lahti@iki.fi", role = c("aut", "cre")),
   person("Juuso", "Parkkinen", role = "aut"),   
