@@ -14,7 +14,7 @@ citEntry(entry="misc",
 	 journal = "",
 	 year = "2011",
          textVersion =
-         paste("(C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari Happonen and Jussi Paananen (rOpenGov 2010-2015). ",
+         paste("(C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari Happonen and Jussi Paananen (rOpenGov 2010-2017). ",
                "sorvi: Finnish open data toolkit for R. ",
 	       "URL: http://ropengov.github.com/sorvi",
                sep=" ")
