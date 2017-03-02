@@ -86,9 +86,9 @@ library(sorvi)
 ```
 
 
-We also recommend setting the UTF-8 encoding:
+We recommend setting the UTF-8 encoding:
 
-```{r locale, eval=TRUE}
+```{r locale, eval=TRUE, warning=FALSE, message=FALSE}
 Sys.setlocale(locale="UTF-8") 
 ```
 
@@ -107,7 +107,7 @@ to solve all encoding problems yet; solutions welcome!):
 
 ```{r translate, message=FALSE, eval=TRUE}
 translations <- load_sorvi_data("translations")
-kable(as.matrix(translations))
+print(head(translations))
 ```
 
 
@@ -141,7 +141,7 @@ kable(municipality.info.mml[1:2,])
 
 ```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 m2p <- municipality_to_province() 
-kable(head(m2p)) # Just show the first ones
+head(m2p) # Just show the first ones
 ```  
 
 **Map selected municipalities to correponding provinces:**
@@ -204,7 +204,7 @@ Convert the given terms from synonymes to the harmonized names:
 
 ```{r sorvi-synonymes-3, message=FALSE, eval=TRUE}
 harmonized <- bibliographica::map(c("Mantta", "Koski.Tl"), synonymes)
-kable(harmonized)
+head(harmonized)
 ```
 
 
