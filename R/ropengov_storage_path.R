@@ -7,7 +7,7 @@
 #' Return:
 #' @return URL for Louhos data
 #'
-#' @examples url <- ropengov_storage_path()
+#' @examples url <- ropengov_storage_path("mml")
 #'
 #' @export
 #' @references
