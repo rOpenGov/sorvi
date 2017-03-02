@@ -192,13 +192,15 @@ synonymes <- read.csv(f, sep = "\t")
 Validate the synonyme list and add lowercase versions of the terms:
 
 ```{r sorvi-synonymes-2, message=FALSE, eval=TRUE}
-synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
+# install_github("ropengov/bibliographica")
+library(bibliographica) # Get some synonyme mapping tools
+synonymes <- bibliographica::check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
 Convert the given terms from synonymes to the harmonized names:
 
 ```{r sorvi-synonymes-3, message=FALSE, eval=TRUE}
-harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
+harmonized <- bibliographica::map(c("Mantta", "Koski.Tl"), synonymes)
 kable(harmonized)
 ```
 
