@@ -15,4 +15,3 @@ Mappings between Finnish and English province (maakunta) names
 Leo Lahti \email{louhos@googlegroups.com}
 }
 \keyword{data}
-

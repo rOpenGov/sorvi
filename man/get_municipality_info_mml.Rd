@@ -20,11 +20,10 @@ Get information of Finnish municipalities from Land Survey Finland.
 \examples{
 \dontrun{tab <- get_municipality_info_mml()}
 }
-\author{
-Leo Lahti \email{louhos@googlegroups.com}
-}
 \references{
 See citation("sorvi")
 }
+\author{
+Leo Lahti \email{louhos@googlegroups.com}
+}
 \keyword{utilities}
-

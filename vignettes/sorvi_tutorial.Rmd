@@ -11,6 +11,9 @@ output:
 %\VignetteIndexEntry{sorvi Markdown Vignette}
 %\usepackage[utf8]{inputenc}
 -->
+```{r setup, echo=FALSE,message=FALSE,warning=FALSE}
+library(knitr)
+```
 
 
 
@@ -78,7 +81,7 @@ install_github("ropengov/sorvi")
 
 Test the installation by loading the library:
 
-```{r test, message=FALSE, warning=FALSE, eval=FALSE}
+```{r test, message=FALSE, warning=FALSE, eval=TRUE}
 library(sorvi)
 ```
 
@@ -191,13 +194,13 @@ synonymes <- read.csv(f, sep = "\t")
 
 Validate the synonyme list and add lowercase versions of the terms:
 
-```{r sorvi-synonymes-2, message=FALSE, eval=TRUE}
+```{r sorvi-synonymes-2, message=FALSE, eval=FALSE}
 synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
 Convert the given terms from synonymes to the harmonized names:
 
-```{r sorvi-synonymes-3, message=FALSE, eval=TRUE}
+```{r sorvi-synonymes-3, message=FALSE, eval=FALSE}
 harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
 kable(harmonized)
 ```
