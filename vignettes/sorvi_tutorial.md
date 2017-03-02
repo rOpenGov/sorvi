@@ -87,16 +87,11 @@ library(sorvi)
 ```
 
 
-We also recommend setting the UTF-8 encoding:
+We recommend setting the UTF-8 encoding:
 
 
 ```r
 Sys.setlocale(locale="UTF-8") 
-```
-
-```
-## Warning in Sys.setlocale(locale = "UTF-8"): OS reports request to set
-## locale to "UTF-8" cannot be honored
 ```
 
 ```
@@ -119,11 +114,14 @@ to solve all encoding problems yet; solutions welcome!):
 
 ```r
 translations <- load_sorvi_data("translations")
-kable(as.matrix(translations))
+print(head(translations))
 ```
 
 ```
-## Error in kable_markdown(x = structure(c("Ã\u0085land Islands", "South Karelia", : the table must have a header (column names)
+##   Ã\u0085land Islands         South Karelia Southern Ostrobothnia 
+##          "Ahvenanmaa"      "EtelÃĪ-Karjala"    "EtelÃĪ-Pohjanmaa" 
+##      Southern Savonia                Kainuu       Tavastia Proper 
+##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
 ```
 
 
@@ -166,11 +164,14 @@ kable(municipality.info.mml[1:2,])
 
 ```r
 m2p <- municipality_to_province() 
-kable(head(m2p)) # Just show the first ones
+head(m2p) # Just show the first ones
 ```
 
 ```
-## Error in kable_markdown(x = structure(c("Koski.Tl", "Mänttä-Vilppula", : the table must have a header (column names)
+##           Koski.Tl    Mänttä-Vilppula          Äänekoski 
+##  "Varsinais-Suomi"        "Pirkanmaa"      "Keski-Suomi" 
+##             Ähtäri               Akaa           Alajärvi 
+## "EtelÃ¤-Pohjanmaa"        "Pirkanmaa" "EtelÃ¤-Pohjanmaa"
 ```
 
 **Map selected municipalities to correponding provinces:**
@@ -271,11 +272,11 @@ Convert the given terms from synonymes to the harmonized names:
 
 ```r
 harmonized <- bibliographica::map(c("Mantta", "Koski.Tl"), synonymes)
-kable(harmonized)
+head(harmonized)
 ```
 
 ```
-## Error in kable_markdown(x = structure(c("Mäntta", "Koski Tl"), .Dim = c(2L, : the table must have a header (column names)
+## [1] "Mäntta"   "Koski Tl"
 ```
 
 
@@ -358,7 +359,7 @@ citation("sorvi")
 ## Kindly cite the sorvi R package as follows:
 ## 
 ##   (C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen,
-##   Einari Happonen and Jussi Paananen (rOpenGov 2010-2015).  sorvi:
+##   Einari Happonen and Jussi Paananen (rOpenGov 2010-2017).  sorvi:
 ##   Finnish open data toolkit for R.  URL:
 ##   http://ropengov.github.com/sorvi
 ## 
