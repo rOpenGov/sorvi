@@ -20,7 +20,7 @@ get_municipality_info_mml <- function (...) {
   # IN CONTRAST TO INTENDED OUTPUT!!!
   sp <- NULL
 
-  url <- paste0(ropengov_storage_path(), "rdata/")
+  url <- ropengov_storage_path("mml")
   filepath <- paste0(url, map.id, "/", data.id, ".RData")
   # While trying to be URL agnostic, figure out if storage path is
   # pointing to GitHub. If yes, add an extra extension to the url
