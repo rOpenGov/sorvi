@@ -7,3 +7,6 @@ inst/extras/..Rcheck
 vignettes/sorvi_tutorial.md
 vignettes/figure
 
+.Rproj.user
+*.Rproj
+.Rhistory
