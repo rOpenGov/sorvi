@@ -11,6 +11,9 @@ output:
 %\VignetteIndexEntry{sorvi Markdown Vignette}
 %\usepackage[utf8]{inputenc}
 -->
+```{r setup, echo=FALSE,message=FALSE,warning=FALSE}
+library(knitr)
+```
 
 
 
@@ -45,8 +48,6 @@ and other feedback](https://github.com/ropengov/sorvi) are welcome!
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
 
-[Visualization tools](#visualization) (Visualisointirutiineja)  
-
 See also [other rOpenGov packages](http://ropengov.github.io/projects), in particular:
 
  * [gisfin](https://github.com/rOpenGov/gisfin/) Visualization of Finnish geographic information 
@@ -78,14 +79,14 @@ install_github("ropengov/sorvi")
 
 Test the installation by loading the library:
 
-```{r test, message=FALSE, warning=FALSE, eval=FALSE}
+```{r test, message=FALSE, warning=FALSE, eval=TRUE}
 library(sorvi)
 ```
 
 
-We also recommend setting the UTF-8 encoding:
+We recommend setting the UTF-8 encoding:
 
-```{r locale, eval=TRUE}
+```{r locale, eval=TRUE, warning=FALSE, message=FALSE}
 Sys.setlocale(locale="UTF-8") 
 ```
 
@@ -104,7 +105,7 @@ to solve all encoding problems yet; solutions welcome!):
 
 ```{r translate, message=FALSE, eval=TRUE}
 translations <- load_sorvi_data("translations")
-kable(as.matrix(translations))
+print(head(translations))
 ```
 
 
@@ -138,7 +139,7 @@ kable(municipality.info.mml[1:2,])
 
 ```{r province2, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 m2p <- municipality_to_province() 
-kable(head(m2p)) # Just show the first ones
+head(m2p) # Just show the first ones
 ```  
 
 **Map selected municipalities to correponding provinces:**
@@ -151,7 +152,7 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 
 ```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
-kable(head(m2p))
+head(m2p)
 ```  
 
 
@@ -192,14 +193,16 @@ synonymes <- read.csv(f, sep = "\t")
 Validate the synonyme list and add lowercase versions of the terms:
 
 ```{r sorvi-synonymes-2, message=FALSE, eval=TRUE}
-synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
+# install_github("ropengov/bibliographica")
+library(bibliographica) # Get some synonyme mapping tools
+synonymes <- bibliographica::check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
 Convert the given terms from synonymes to the harmonized names:
 
 ```{r sorvi-synonymes-3, message=FALSE, eval=TRUE}
-harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
-kable(harmonized)
+harmonized <- bibliographica::map(c("Mantta", "Koski.Tl"), synonymes)
+head(harmonized)
 ```
 
 

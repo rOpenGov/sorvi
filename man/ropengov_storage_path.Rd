@@ -4,20 +4,22 @@
 \alias{ropengov_storage_path}
 \title{ropengov_storage_path}
 \usage{
-ropengov_storage_path()
+ropengov_storage_path(x)
+}
+\arguments{
+\item{x}{Characted string key defining which storage path
+is requested.
+
+Return:}
 }
 \value{
 URL for Louhos data
 }
 \description{
-Arguments:
-  ... Arguments to pass
-}
-\details{
-Return:
+ropengov_storage_path
 }
 \examples{
-url <- ropengov_storage_path()
+url <- ropengov_storage_path("mml")
 
 }
 \author{

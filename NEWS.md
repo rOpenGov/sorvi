@@ -1,3 +1,6 @@
+CHANGES IN VERSION 0.8 (2017-03-02)
+  o Get data from GitHub
+
 CHANGES IN VERSION 0.7.24 (2015-06-22)
   o Removed get_postal_code_info
   o Removed get_province_info  

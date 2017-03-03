@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2015-07-18"
+date: "2017-03-02"
 output:
   html_document:
     theme: flatly
@@ -11,6 +11,7 @@ output:
 %\VignetteIndexEntry{sorvi Markdown Vignette}
 %\usepackage[utf8]{inputenc}
 -->
+
 
 
 
@@ -44,8 +45,6 @@ and other feedback](https://github.com/ropengov/sorvi) are welcome!
 * [Generic synonyme converter](#synonymes) (Synonyymit)
 
 [Finnish personal identification number (HETU)](#hetu) (Henkilotunnuksen kasittely)  
-
-[Visualization tools](#visualization) (Visualisointirutiineja)  
 
 See also [other rOpenGov packages](http://ropengov.github.io/projects), in particular:
 
@@ -86,16 +85,11 @@ library(sorvi)
 ```
 
 
-We also recommend setting the UTF-8 encoding:
+We recommend setting the UTF-8 encoding:
 
 
 ```r
 Sys.setlocale(locale="UTF-8") 
-```
-
-```
-## Warning in Sys.setlocale(locale = "UTF-8"): OS reports request to set
-## locale to "UTF-8" cannot be honored
 ```
 
 ```
@@ -118,11 +112,14 @@ to solve all encoding problems yet; solutions welcome!):
 
 ```r
 translations <- load_sorvi_data("translations")
-kable(as.matrix(translations))
+print(head(translations))
 ```
 
 ```
-## Error in kable_markdown(x = structure(c("Ã\u0085land Islands", "South Karelia", : the table must have a header (column names)
+##   Ã\u0085land Islands         South Karelia Southern Ostrobothnia 
+##          "Ahvenanmaa"      "EtelÃĪ-Karjala"    "EtelÃĪ-Pohjanmaa" 
+##      Southern Savonia                Kainuu       Tavastia Proper 
+##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
 ```
 
 
@@ -151,8 +148,8 @@ kable(municipality.info.mml[1:2,])
 
 |   | Kohderyhma| Kohdeluokk|AVI |Maakunta |Kunta |AVI_ni1                                   |AVI_ni2                                            |Maaku_ni1       |Maaku_ni2         |Kunta_ni1       |Kunta_ni2 |Kieli_ni1 |Kieli_ni2 |AVI.FI                                    |Kieli.FI |Maakunta.FI     |Kunta.FI        |
 |:--|----------:|----------:|:---|:--------|:-----|:-----------------------------------------|:--------------------------------------------------|:---------------|:-----------------|:---------------|:---------|:---------|:---------|:-----------------------------------------|:--------|:---------------|:---------------|
-|3  |         71|      84200|2   |02       |284   |Lounais-Suomen aluehallintovirasto        |Regionförvaltningsverket i Sydvästra Finland       |Varsinais-Suomi |Egentliga Finland |Koski Tl        |N_A       |Suomi     |N_A       |Lounais-Suomen aluehallintovirasto        |Suomi    |Varsinais-Suomi |Koski.Tl        |
-|6  |         71|      84200|4   |06       |508   |Länsi- ja Sisä-Suomen aluehallintovirasto |Regionförvaltningsverket i Västra och Inre Finland |Pirkanmaa       |Birkaland         |Mänttä-Vilppula |N_A       |Suomi     |N_A       |Länsi- ja Sisä-Suomen aluehallintovirasto |Suomi    |Pirkanmaa       |Mänttä-Vilppula |
+|2  |         71|      84200|2   |02       |284   |Lounais-Suomen aluehallintovirasto        |Regionförvaltningsverket i Sydvästra Finland       |Varsinais-Suomi |Egentliga Finland |Koski Tl        |N_A       |Suomi     |N_A       |Lounais-Suomen aluehallintovirasto        |Suomi    |Varsinais-Suomi |Koski.Tl        |
+|5  |         71|      84200|4   |06       |508   |Länsi- ja Sisä-Suomen aluehallintovirasto |Regionförvaltningsverket i Västra och Inre Finland |Pirkanmaa       |Birkaland         |Mänttä-Vilppula |N_A       |Suomi     |N_A       |Länsi- ja Sisä-Suomen aluehallintovirasto |Suomi    |Pirkanmaa       |Mänttä-Vilppula |
 
 
 ## <a name="conversions"></a>Conversions
@@ -165,11 +162,14 @@ kable(municipality.info.mml[1:2,])
 
 ```r
 m2p <- municipality_to_province() 
-kable(head(m2p)) # Just show the first ones
+head(m2p) # Just show the first ones
 ```
 
 ```
-## Error in kable_markdown(x = structure(c("Koski.Tl", "Mänttä-Vilppula", : the table must have a header (column names)
+##           Koski.Tl    Mänttä-Vilppula          Äänekoski 
+##  "Varsinais-Suomi"        "Pirkanmaa"      "Keski-Suomi" 
+##             Ähtäri               Akaa           Alajärvi 
+## "EtelÃ¤-Pohjanmaa"        "Pirkanmaa" "EtelÃ¤-Pohjanmaa"
 ```
 
 **Map selected municipalities to correponding provinces:**
@@ -189,11 +189,12 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 
 ```r
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
-kable(head(m2p))
+head(m2p)
 ```
 
 ```
-## Error in kable_markdown(x = structure(c("Helsinki", "Tampere", "Turku", : the table must have a header (column names)
+##          Helsinki           Tampere             Turku 
+##         "Uusimaa"       "Pirkanmaa" "Varsinais-Suomi"
 ```
 
 
@@ -236,8 +237,8 @@ kable(head(municipality_ids)) # just show the first entries
 
 |          |id  |name            |
 |:---------|:---|:---------------|
-|3         |284 |Koski.Tl        |
-|6         |508 |Mänttä-Vilppula |
+|2         |284 |Koski.Tl        |
+|5         |508 |Mänttä-Vilppula |
 |Äänekoski |992 |Äänekoski       |
 |Ähtäri    |989 |Ähtäri          |
 |Akaa      |020 |Akaa            |
@@ -260,23 +261,22 @@ Validate the synonyme list and add lowercase versions of the terms:
 
 
 ```r
-synonymes <- check_synonymes(synonymes, include.lowercase = TRUE)
+# install_github("ropengov/bibliographica")
+library(bibliographica) # Get some synonyme mapping tools
+synonymes <- bibliographica::check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
 Convert the given terms from synonymes to the harmonized names:
 
 
 ```r
-harmonized <- harmonize_names(c("Mantta", "Koski.Tl"), synonymes)
-kable(harmonized)
+harmonized <- bibliographica::map(c("Mantta", "Koski.Tl"), synonymes)
+head(harmonized)
 ```
 
-
-
-|name     |original |
-|:--------|:--------|
-|Mäntta   |Mantta   |
-|Koski Tl |Koski.Tl |
+```
+## [1] "Mäntta"   "Koski Tl"
+```
 
 
 ## <a name="hetu"></a>Personal identification number (HETU)
@@ -335,20 +335,7 @@ valid_hetu("010101-0101") # TRUE/FALSE
 
 
 
-## <a name="visualization"></a>Visualization tools
 
-Draw regression curve with smoothed error bars based on
-the [Visually-Weighted Regression](http://www.fight-entropy.com/2012/07/visually-weighted-regression.html) by Solomon M. Hsiang. The sorvi implementation extends [Felix Schonbrodt's original code](http://www.nicebread.de/visually-weighted-watercolor-plots-new-variants-please-vote/).
-
-
-```r
-library(sorvi) 
-data(iris)
-p <- regression_plot(Sepal.Length ~ Sepal.Width, iris) 
-print(p)
-```
-
-![plot of chunk regressionline](figure/regressionline-1.png) 
 
 ### TODO
 
@@ -371,7 +358,7 @@ citation("sorvi")
 ## Kindly cite the sorvi R package as follows:
 ## 
 ##   (C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen,
-##   Einari Happonen and Jussi Paananen (rOpenGov 2010-2015).  sorvi:
+##   Einari Happonen and Jussi Paananen (rOpenGov 2010-2017).  sorvi:
 ##   Finnish open data toolkit for R.  URL:
 ##   http://ropengov.github.com/sorvi
 ## 
@@ -397,36 +384,39 @@ sessionInfo()
 ```
 
 ```
-## R version 3.2.1 (2015-06-18)
-## Platform: x86_64-unknown-linux-gnu (64-bit)
-## Running under: Ubuntu 15.04
+## R version 3.3.2 (2016-10-31)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 16.04.2 LTS
 ## 
 ## locale:
 ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
-##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
-##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [3] LC_TIME=de_BE.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=de_BE.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=de_BE.UTF-8       LC_NAME=C                 
 ##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## [11] LC_MEASUREMENT=de_BE.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] sorvi_0.7.30       knitr_1.10.5       scimapClient_0.2.1
+## [1] bibliographica_0.2.30 sorvi_0.8.12          tibble_1.2           
+## [4] knitr_1.14           
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.11.6        magrittr_1.5       MASS_7.3-41       
-##  [4] munsell_0.4.2      colorspace_1.2-6   R6_2.0.1          
-##  [7] highr_0.5          stringr_1.0.0      plyr_1.8.3        
-## [10] dplyr_0.4.2        tools_3.2.1        parallel_3.2.1    
-## [13] grid_3.2.1         gtable_0.1.2       DBI_0.3.1         
-## [16] lazyeval_0.1.10    assertthat_0.1     digest_0.6.8      
-## [19] RJSONIO_1.3-0      RColorBrewer_1.1-2 reshape2_1.4.1    
-## [22] ggplot2_1.0.1      formatR_1.2        evaluate_0.7      
-## [25] labeling_0.3       stringi_0.5-5      scales_0.2.5      
-## [28] proto_0.3-10
+##  [1] Rcpp_0.12.9        magrittr_1.5       munsell_0.4.3     
+##  [4] tm_0.6-2           colorspace_1.2-7   R6_2.2.0          
+##  [7] stringr_1.1.0      highr_0.6          plyr_1.8.4        
+## [10] dplyr_0.5.0        tools_3.3.2        babynames_0.2.1   
+## [13] parallel_3.3.2     grid_3.3.2         data.table_1.10.0 
+## [16] gtable_0.2.0       genderdata_0.5.0   DBI_0.5-1         
+## [19] assertthat_0.1     NLP_0.1-9          tidyr_0.6.0.9000  
+## [22] reshape2_1.4.2     ggplot2_2.1.0      formatR_1.4       
+## [25] stringdist_0.9.4.2 slam_0.1-38        evaluate_0.10     
+## [28] stringi_1.1.2      gender_0.5.1.9000  scales_0.4.0
 ```
+
+To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of. ~ Sir Ronald Aylmer Fisher
 
 
 
