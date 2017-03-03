@@ -1,8 +1,8 @@
 Package: sorvi
 Type: Package
 Title: Finnish Open Government Data Toolkit
-Version: 0.8.12
-Date: 2017-03-02
+Version: 0.8.13
+Date: 2017-03-03
 Authors@R: c(
   person("Leo", "Lahti", email = "louhos@googlegroups.com", role = c("aut", "cre")),
   person("Juuso", "Parkkinen", role = "aut"),   

@@ -16,8 +16,8 @@ citEntry(entry="misc",
          textVersion =
          paste("(C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari Happonen and Jussi Paananen (rOpenGov 2010-2017). ",
                "sorvi: Finnish open data toolkit for R. ",
-	       "URL: http://ropengov.github.com/sorvi",
+	       "URL: http://github.com/rOpenGov/sorvi",
                sep=" ")
          )
 
-citFooter("\nMany thanks for all contributors! See: http://ropengov.github.com")
+citFooter("\nMany thanks for all contributors!")

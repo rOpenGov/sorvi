@@ -100,20 +100,27 @@ and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 
 ### <a name="provincetranslations"></a>Finnish-English translations
 
-**Finnish-English translations for province names** (we have not been able
-to solve all encoding problems yet; solutions welcome!):
+**Finnish-English translations for province names**:
 
 ```{r translate, message=FALSE, eval=TRUE}
-translations <- load_sorvi_data("translations")
+translations <- load_sorvi_data("translation_provinces")
 print(head(translations))
 ```
 
+Convert the given terms (for now, using tools from the bibliographica R package):
+
+```{r sorvi-transl, message=FALSE, eval=TRUE}
+# install_github("ropengov/bibliographica")
+library(bibliographica) # Get some synonyme mapping tools
+translated <- bibliographica::map(c("Varsinais-Suomi", "Lappi"), translations, from = "Finnish", to = "English", keep.names = TRUE)
+head(translated)
+```
 
 ## <a name="municipality"></a>Municipality information
 
 Finnish municipality information is available through Statistics
 Finland (Tilastokeskus; see
-[stafi](https://github.com/ropengov/statfi) package) and Land Survey
+[pxweb](https://github.com/ropengov/pxweb) package) and Land Survey
 Finland (Maanmittauslaitos). The row names for each data set are
 harmonized and can be used to match data sets from different sources,
 as different data sets may carry different versions of certain
@@ -121,7 +128,7 @@ municipality names.
 
 ### <a name="mml"></a>Land Survey Finland (municipality information)
 
-Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu). 
+Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu). See also the [gisfin](https://github.com/ropengov/gisfin) package for further Finnish GIS data sets.
 
 ```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
 municipality.info.mml <- get_municipality_info_mml()
@@ -193,8 +200,6 @@ synonymes <- read.csv(f, sep = "\t")
 Validate the synonyme list and add lowercase versions of the terms:
 
 ```{r sorvi-synonymes-2, message=FALSE, eval=TRUE}
-# install_github("ropengov/bibliographica")
-library(bibliographica) # Get some synonyme mapping tools
 synonymes <- bibliographica::check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 

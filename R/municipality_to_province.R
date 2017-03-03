@@ -1,4 +1,5 @@
-#' List province for each municipality in Finland.
+#' @title Municipality-Province Mappings
+#' @description List province for each municipality in Finland.
 #' @aliases municipality2province
 #' @param municipalities NULL 
 #' @param municipality.info NULL 

@@ -3,7 +3,7 @@
 \name{municipality_to_province}
 \alias{municipality2province}
 \alias{municipality_to_province}
-\title{List province for each municipality in Finland.}
+\title{Municipality-Province Mappings}
 \usage{
 municipality_to_province(municipalities = NULL, municipality.info = NULL)
 }

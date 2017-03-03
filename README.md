@@ -23,7 +23,7 @@ Finnish).-->
 
 You are welcome to:
   
-  * [submit feedback and bug reports](https://github.com/louhos/sorvi/issues)
-  * [send a pull request](https://github.com/louhos/sorvi/)
+  * [submit feedback and bug reports](https://github.com/ropengov/sorvi/issues)
+  * [send a pull request](https://github.com/ropengov/sorvi/)
   * join (or follow) the [community](http://ropengov.github.io/contribute/)
  

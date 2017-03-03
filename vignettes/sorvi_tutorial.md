@@ -1,7 +1,7 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2017-03-02"
+date: "2017-03-03"
 output:
   html_document:
     theme: flatly
@@ -106,28 +106,50 @@ and in our [Rmarkdown blog](http://louhos.github.io/archive.html).
 
 ### <a name="provincetranslations"></a>Finnish-English translations
 
-**Finnish-English translations for province names** (we have not been able
-to solve all encoding problems yet; solutions welcome!):
+**Finnish-English translations for province names**:
 
 
 ```r
-translations <- load_sorvi_data("translations")
+translations <- load_sorvi_data("translation_provinces")
 print(head(translations))
 ```
 
 ```
-##   Ã\u0085land Islands         South Karelia Southern Ostrobothnia 
-##          "Ahvenanmaa"      "EtelÃĪ-Karjala"    "EtelÃĪ-Pohjanmaa" 
-##      Southern Savonia                Kainuu       Tavastia Proper 
-##         "EtelÃĪ-Savo"              "Kainuu"         "Kanta-HÃĪme"
+##                 English         Finnish
+## 1         Åland Islands      Ahvenanmaa
+## 2         South Karelia   Etelä-Karjala
+## 3 Southern Ostrobothnia Etelä-Pohjanmaa
+## 4      Southern Savonia      Etelä-Savo
+## 5                Kainuu          Kainuu
+## 6       Tavastia Proper      Kanta-Häme
 ```
 
+Convert the given terms (for now, using tools from the bibliographica R package):
+
+
+```r
+# install_github("ropengov/bibliographica")
+library(bibliographica) # Get some synonyme mapping tools
+translated <- bibliographica::map(c("Varsinais-Suomi", "Lappi"), translations, from = "Finnish", to = "English", keep.names = TRUE)
+```
+
+```
+## Error in bibliographica::map(c("Varsinais-Suomi", "Lappi"), translations, : unused argument (keep.names = TRUE)
+```
+
+```r
+head(translated)
+```
+
+```
+## Error in head(translated): object 'translated' not found
+```
 
 ## <a name="municipality"></a>Municipality information
 
 Finnish municipality information is available through Statistics
 Finland (Tilastokeskus; see
-[stafi](https://github.com/ropengov/statfi) package) and Land Survey
+[pxweb](https://github.com/ropengov/pxweb) package) and Land Survey
 Finland (Maanmittauslaitos). The row names for each data set are
 harmonized and can be used to match data sets from different sources,
 as different data sets may carry different versions of certain
@@ -135,7 +157,7 @@ municipality names.
 
 ### <a name="mml"></a>Land Survey Finland (municipality information)
 
-Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu). 
+Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu). See also the [gisfin](https://github.com/ropengov/gisfin) package for further Finnish GIS data sets.
 
 
 ```r
@@ -148,8 +170,8 @@ kable(municipality.info.mml[1:2,])
 
 |   | Kohderyhma| Kohdeluokk|AVI |Maakunta |Kunta |AVI_ni1                                   |AVI_ni2                                            |Maaku_ni1       |Maaku_ni2         |Kunta_ni1       |Kunta_ni2 |Kieli_ni1 |Kieli_ni2 |AVI.FI                                    |Kieli.FI |Maakunta.FI     |Kunta.FI        |
 |:--|----------:|----------:|:---|:--------|:-----|:-----------------------------------------|:--------------------------------------------------|:---------------|:-----------------|:---------------|:---------|:---------|:---------|:-----------------------------------------|:--------|:---------------|:---------------|
-|2  |         71|      84200|2   |02       |284   |Lounais-Suomen aluehallintovirasto        |Regionförvaltningsverket i Sydvästra Finland       |Varsinais-Suomi |Egentliga Finland |Koski Tl        |N_A       |Suomi     |N_A       |Lounais-Suomen aluehallintovirasto        |Suomi    |Varsinais-Suomi |Koski.Tl        |
-|5  |         71|      84200|4   |06       |508   |Länsi- ja Sisä-Suomen aluehallintovirasto |Regionförvaltningsverket i Västra och Inre Finland |Pirkanmaa       |Birkaland         |Mänttä-Vilppula |N_A       |Suomi     |N_A       |Länsi- ja Sisä-Suomen aluehallintovirasto |Suomi    |Pirkanmaa       |Mänttä-Vilppula |
+|3  |         71|      84200|2   |02       |284   |Lounais-Suomen aluehallintovirasto        |Regionförvaltningsverket i Sydvästra Finland       |Varsinais-Suomi |Egentliga Finland |Koski Tl        |N_A       |Suomi     |N_A       |Lounais-Suomen aluehallintovirasto        |Suomi    |Varsinais-Suomi |Koski.Tl        |
+|6  |         71|      84200|4   |06       |508   |Länsi- ja Sisä-Suomen aluehallintovirasto |Regionförvaltningsverket i Västra och Inre Finland |Pirkanmaa       |Birkaland         |Mänttä-Vilppula |N_A       |Suomi     |N_A       |Länsi- ja Sisä-Suomen aluehallintovirasto |Suomi    |Pirkanmaa       |Mänttä-Vilppula |
 
 
 ## <a name="conversions"></a>Conversions
@@ -237,8 +259,8 @@ kable(head(municipality_ids)) # just show the first entries
 
 |          |id  |name            |
 |:---------|:---|:---------------|
-|2         |284 |Koski.Tl        |
-|5         |508 |Mänttä-Vilppula |
+|3         |284 |Koski.Tl        |
+|6         |508 |Mänttä-Vilppula |
 |Äänekoski |992 |Äänekoski       |
 |Ähtäri    |989 |Ähtäri          |
 |Akaa      |020 |Akaa            |
@@ -261,8 +283,6 @@ Validate the synonyme list and add lowercase versions of the terms:
 
 
 ```r
-# install_github("ropengov/bibliographica")
-library(bibliographica) # Get some synonyme mapping tools
 synonymes <- bibliographica::check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
@@ -360,7 +380,7 @@ citation("sorvi")
 ##   (C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen,
 ##   Einari Happonen and Jussi Paananen (rOpenGov 2010-2017).  sorvi:
 ##   Finnish open data toolkit for R.  URL:
-##   http://ropengov.github.com/sorvi
+##   http://github.com/rOpenGov/sorvi
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
@@ -371,7 +391,7 @@ citation("sorvi")
 ##     year = {2011},
 ##   }
 ## 
-## Many thanks for all contributors! See: http://ropengov.github.com
+## Many thanks for all contributors!
 ```
 
 ## Session info
@@ -384,36 +404,36 @@ sessionInfo()
 ```
 
 ```
-## R version 3.3.2 (2016-10-31)
+## R version 3.3.1 (2016-06-21)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 16.04.2 LTS
+## Running under: Ubuntu 16.10
 ## 
 ## locale:
 ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=de_BE.UTF-8        LC_COLLATE=en_US.UTF-8    
-##  [5] LC_MONETARY=de_BE.UTF-8    LC_MESSAGES=en_US.UTF-8   
-##  [7] LC_PAPER=de_BE.UTF-8       LC_NAME=C                 
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
 ##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=de_BE.UTF-8 LC_IDENTIFICATION=C       
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] bibliographica_0.2.30 sorvi_0.8.12          tibble_1.2           
-## [4] knitr_1.14           
+## [1] bibliographica_0.2.31 sorvi_0.8.13          tibble_1.2           
+## [4] knitr_1.15.1         
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.12.9        magrittr_1.5       munsell_0.4.3     
-##  [4] tm_0.6-2           colorspace_1.2-7   R6_2.2.0          
-##  [7] stringr_1.1.0      highr_0.6          plyr_1.8.4        
-## [10] dplyr_0.5.0        tools_3.3.2        babynames_0.2.1   
-## [13] parallel_3.3.2     grid_3.3.2         data.table_1.10.0 
+##  [1] Rcpp_0.12.9.3      magrittr_1.5       munsell_0.4.3     
+##  [4] tm_0.6-2           colorspace_1.3-0   R6_2.2.0          
+##  [7] highr_0.6          stringr_1.1.0      plyr_1.8.4        
+## [10] dplyr_0.5.0        tools_3.3.1        babynames_0.2.1   
+## [13] parallel_3.3.1     grid_3.3.1         data.table_1.10.0 
 ## [16] gtable_0.2.0       genderdata_0.5.0   DBI_0.5-1         
-## [19] assertthat_0.1     NLP_0.1-9          tidyr_0.6.0.9000  
-## [22] reshape2_1.4.2     ggplot2_2.1.0      formatR_1.4       
+## [19] lazyeval_0.2.0     assertthat_0.1     NLP_0.1-9         
+## [22] tidyr_0.6.1        reshape2_1.4.2     ggplot2_2.2.1     
 ## [25] stringdist_0.9.4.2 slam_0.1-38        evaluate_0.10     
-## [28] stringi_1.1.2      gender_0.5.1.9000  scales_0.4.0
+## [28] stringi_1.1.3      gender_0.5.1       scales_0.4.1
 ```
 
 To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of. ~ Sir Ronald Aylmer Fisher

@@ -2,27 +2,32 @@
 % Please edit documentation in R/load_sorvi_data.R
 \name{load_sorvi_data}
 \alias{load_sorvi_data}
-\title{Load custom data sets}
+\title{Supporting Data}
 \usage{
 load_sorvi_data(data.id, verbose = TRUE)
 }
 \arguments{
-\item{data.id}{data ID to download (suffix before .rda). Investigate the contents of the url path to check data.ids}
+\item{data.id}{data ID to download (see details)}
 
 \item{verbose}{verbose}
 }
 \value{
-translations
+Data set. The format depends on the data.
 }
 \description{
-Load custom data sets
+Load custom data sets.
+}
+\details{
+The following data sets are available:
+   \itemize{
+     \item{translation_provinces}{Translation of Finnish province (maakunta) names (Finnish, English).}
+   }
 }
 \examples{
-# translations <- load_sorvi_data("translations")
-
+translations <- load_sorvi_data("translation_provinces")
 }
 \author{
-Leo Lahti \email{louhos@googlegroups.com}
+Leo Lahti \email{leo.lahti@iki.fi}
 }
 \references{
 See citation("sorvi")
