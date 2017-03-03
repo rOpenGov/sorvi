@@ -131,18 +131,12 @@ Convert the given terms (for now, using tools from the bibliographica R package)
 # install_github("ropengov/bibliographica")
 library(bibliographica) # Get some synonyme mapping tools
 translated <- bibliographica::map(c("Varsinais-Suomi", "Lappi"), translations, from = "Finnish", to = "English", keep.names = TRUE)
-```
-
-```
-## Error in bibliographica::map(c("Varsinais-Suomi", "Lappi"), translations, : unused argument (keep.names = TRUE)
-```
-
-```r
 head(translated)
 ```
 
 ```
-## Error in head(translated): object 'translated' not found
+##  Varsinais-Suomi            Lappi 
+## "Finland Proper"        "Lapland"
 ```
 
 ## <a name="municipality"></a>Municipality information
