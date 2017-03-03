@@ -12,6 +12,12 @@ For installation and usage, check the [tutorial page](https://github.com/rOpenGo
 
 Authors: See the [DESCRIPTION file](DESCRIPTION). Part of [rOpenGov](http://ropengov.github.io/). 
 
+<!--open government data in Finland (R/GitHub). [Double award in the
+Apps4Finland 2011 Data Opening
+Category](http://apps4finland.fi/fi/en): both the official competition
+and the public votes ([Apps4Finland presentation
+slides](http://www.slideshare.net/antagomir/apps4finland-sorvi), in
+Finnish).-->
 
 You are welcome to:
   
