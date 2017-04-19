@@ -1,17 +1,18 @@
 ---
 title: "sorvi tutorial"
 author: rOpenGov core team
-date: "2017-03-03"
+date: "2017-04-19"
 output:
-  html_document:
-    theme: flatly
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{sorvi Markdown Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteDepends{Cairo}
+  %\VignetteEncoding{UTF-8}
+  \usepackage[utf8]{inputenc}
 ---
-<!--
-%\VignetteEngine{knitr::rmarkdown}
-%\VignetteIndexEntry{sorvi Markdown Vignette}
-%\usepackage[utf8]{inputenc}
--->
-
 
 
 
@@ -130,13 +131,26 @@ Convert the given terms (for now, using tools from the bibliographica R package)
 ```r
 # install_github("ropengov/bibliographica")
 library(bibliographica) # Get some synonyme mapping tools
+```
+
+```
+## Error: package or namespace load failed for 'bibliographica'
+```
+
+```r
 translated <- bibliographica::map(c("Varsinais-Suomi", "Lappi"), translations, from = "Finnish", to = "English", keep.names = TRUE)
+```
+
+```
+## Error: object 'rbind_all' is not exported by 'namespace:dplyr'
+```
+
+```r
 head(translated)
 ```
 
 ```
-##  Varsinais-Suomi            Lappi 
-## "Finland Proper"        "Lapland"
+## Error in head(translated): object 'translated' not found
 ```
 
 ## <a name="municipality"></a>Municipality information
@@ -164,8 +178,8 @@ kable(municipality.info.mml[1:2,])
 
 |   | Kohderyhma| Kohdeluokk|AVI |Maakunta |Kunta |AVI_ni1                                   |AVI_ni2                                            |Maaku_ni1       |Maaku_ni2         |Kunta_ni1       |Kunta_ni2 |Kieli_ni1 |Kieli_ni2 |AVI.FI                                    |Kieli.FI |Maakunta.FI     |Kunta.FI        |
 |:--|----------:|----------:|:---|:--------|:-----|:-----------------------------------------|:--------------------------------------------------|:---------------|:-----------------|:---------------|:---------|:---------|:---------|:-----------------------------------------|:--------|:---------------|:---------------|
-|3  |         71|      84200|2   |02       |284   |Lounais-Suomen aluehallintovirasto        |Regionförvaltningsverket i Sydvästra Finland       |Varsinais-Suomi |Egentliga Finland |Koski Tl        |N_A       |Suomi     |N_A       |Lounais-Suomen aluehallintovirasto        |Suomi    |Varsinais-Suomi |Koski.Tl        |
-|6  |         71|      84200|4   |06       |508   |Länsi- ja Sisä-Suomen aluehallintovirasto |Regionförvaltningsverket i Västra och Inre Finland |Pirkanmaa       |Birkaland         |Mänttä-Vilppula |N_A       |Suomi     |N_A       |Länsi- ja Sisä-Suomen aluehallintovirasto |Suomi    |Pirkanmaa       |Mänttä-Vilppula |
+|2  |         71|      84200|2   |02       |284   |Lounais-Suomen aluehallintovirasto        |Regionförvaltningsverket i Sydvästra Finland       |Varsinais-Suomi |Egentliga Finland |Koski Tl        |N_A       |Suomi     |N_A       |Lounais-Suomen aluehallintovirasto        |Suomi    |Varsinais-Suomi |Koski.Tl        |
+|5  |         71|      84200|4   |06       |508   |Länsi- ja Sisä-Suomen aluehallintovirasto |Regionförvaltningsverket i Västra och Inre Finland |Pirkanmaa       |Birkaland         |Mänttä-Vilppula |N_A       |Suomi     |N_A       |Länsi- ja Sisä-Suomen aluehallintovirasto |Suomi    |Pirkanmaa       |Mänttä-Vilppula |
 
 
 ## <a name="conversions"></a>Conversions
@@ -253,8 +267,8 @@ kable(head(municipality_ids)) # just show the first entries
 
 |          |id  |name            |
 |:---------|:---|:---------------|
-|3         |284 |Koski.Tl        |
-|6         |508 |Mänttä-Vilppula |
+|2         |284 |Koski.Tl        |
+|5         |508 |Mänttä-Vilppula |
 |Äänekoski |992 |Äänekoski       |
 |Ähtäri    |989 |Ähtäri          |
 |Akaa      |020 |Akaa            |
@@ -280,16 +294,27 @@ Validate the synonyme list and add lowercase versions of the terms:
 synonymes <- bibliographica::check_synonymes(synonymes, include.lowercase = TRUE)
 ```
 
+```
+## Error: object 'rbind_all' is not exported by 'namespace:dplyr'
+```
+
 Convert the given terms from synonymes to the harmonized names:
 
 
 ```r
 harmonized <- bibliographica::map(c("Mantta", "Koski.Tl"), synonymes)
+```
+
+```
+## Error: object 'rbind_all' is not exported by 'namespace:dplyr'
+```
+
+```r
 head(harmonized)
 ```
 
 ```
-## [1] "Mäntta"   "Koski Tl"
+## Error in head(harmonized): object 'harmonized' not found
 ```
 
 
@@ -398,36 +423,30 @@ sessionInfo()
 ```
 
 ```
-## R version 3.3.1 (2016-06-21)
+## R version 3.3.3 (2017-03-06)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 16.10
+## Running under: Ubuntu 16.04.2 LTS
 ## 
 ## locale:
 ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
-##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
-##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [3] LC_TIME=de_BE.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=de_BE.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=de_BE.UTF-8       LC_NAME=C                 
 ##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## [11] LC_MEASUREMENT=de_BE.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] bibliographica_0.2.31 sorvi_0.8.13          tibble_1.2           
-## [4] knitr_1.15.1         
+## [1] sorvi_0.8.13 tibble_1.3.0 knitr_1.15.1
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.12.9.3      magrittr_1.5       munsell_0.4.3     
-##  [4] tm_0.6-2           colorspace_1.3-0   R6_2.2.0          
-##  [7] highr_0.6          stringr_1.1.0      plyr_1.8.4        
-## [10] dplyr_0.5.0        tools_3.3.1        babynames_0.2.1   
-## [13] parallel_3.3.1     grid_3.3.1         data.table_1.10.0 
-## [16] gtable_0.2.0       genderdata_0.5.0   DBI_0.5-1         
-## [19] lazyeval_0.2.0     assertthat_0.1     NLP_0.1-9         
-## [22] tidyr_0.6.1        reshape2_1.4.2     ggplot2_2.2.1     
-## [25] stringdist_0.9.4.2 slam_0.1-38        evaluate_0.10     
-## [28] stringi_1.1.3      gender_0.5.1       scales_0.4.1
+##  [1] Rcpp_0.12.10.1    dplyr_0.5.0.9004  assertthat_0.2.0 
+##  [4] R6_2.2.0          magrittr_1.5      evaluate_0.10    
+##  [7] highr_0.6         rlang_0.0.0.9017  stringi_1.1.5    
+## [10] data.table_1.10.4 genderdata_0.5.0  babynames_0.2.1  
+## [13] tools_3.3.3       stringr_1.2.0     glue_1.0.0
 ```
 
 To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of. ~ Sir Ronald Aylmer Fisher

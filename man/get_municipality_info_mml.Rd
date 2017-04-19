@@ -19,11 +19,10 @@ Land Survey Finland. (C) Maanmittauslaitos MML 2013.
 \examples{
 \dontrun{tab <- get_municipality_info_mml()}
 }
-\author{
-Leo Lahti \email{leo.lahti@iki.fi}
-}
 \references{
 See citation("sorvi")
 }
+\author{
+Leo Lahti \email{leo.lahti@iki.fi}
+}
 \keyword{utilities}
-

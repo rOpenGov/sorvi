@@ -21,11 +21,10 @@ Validate Finnish personal identification numbers (hetu).
 valid_hetu("010101-0101") # TRUE
 valid_hetu("010101-010A") # FALSE
 }
-\author{
-Jussi Paananen \email{louhos@googlegroups.com}
-}
 \seealso{
 \code{\link{hetu}} For extracting information from Finnish 
 	    personal identification numbers.
 }
-
+\author{
+Jussi Paananen \email{louhos@googlegroups.com}
+}

@@ -22,11 +22,10 @@ ropengov_storage_path
 url <- ropengov_storage_path("mml")
 
 }
-\author{
-Leo Lahti \email{louhos@googlegroups.com}
-}
 \references{
 See citation("sorvi")
 }
+\author{
+Leo Lahti \email{louhos@googlegroups.com}
+}
 \keyword{utilities}
-

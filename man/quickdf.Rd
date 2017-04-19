@@ -21,11 +21,10 @@ This is 20x faster than as.data.frame.
 \examples{
  \dontrun{quickdf(x)}
 }
-\author{
-HW/LL
-}
 \references{
 Idea borrowed from \url{http://adv-r.had.co.nz/Profiling.html}.
 }
+\author{
+HW/LL
+}
 \keyword{utilities}
-

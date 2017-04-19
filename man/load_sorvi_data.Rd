@@ -26,11 +26,10 @@ The following data sets are available:
 \examples{
 translations <- load_sorvi_data("translation_provinces")
 }
-\author{
-Leo Lahti \email{leo.lahti@iki.fi}
-}
 \references{
 See citation("sorvi")
 }
+\author{
+Leo Lahti \email{leo.lahti@iki.fi}
+}
 \keyword{utilities}
-
