@@ -12,6 +12,9 @@
 #' valid_hetu("010101-010A") # FALSE
 #' @export
 valid_hetu <- function(hetu) {
+
+  .Deprecated("hetu functionality moved from sorvi to rOpenGov package hetu")
+  
   # Try to create hetu-object from the given hetu, check if created object 
   # is of the correct class 
   if (length(hetu) > 1) {
@@ -63,7 +66,9 @@ valid_hetu <- function(hetu) {
 #' hetu(c("010101-0101", "111111-111C"), extract="gender")
 #' @export
 hetu <- function(hetu, extract=NULL) {
-  
+
+  .Deprecated("hetu functionality moved from sorvi to rOpenGov package hetu")
+
   if (!is.null(extract)) {
     if (!extract %in% c("hetu", "gender", "personal.number", "checksum", 
        		        "date", "day", "month", "year", "century.char")) {
