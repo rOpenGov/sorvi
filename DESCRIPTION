@@ -1,8 +1,8 @@
 Package: sorvi
 Type: Package
 Title: Finnish Open Government Data Toolkit
-Version: 0.8.13
-Date: 2017-03-03
+Version: 0.8.14
+Date: 2021-11-23
 Authors@R: c(
   person("Leo", "Lahti", email = "louhos@googlegroups.com", role = c("aut", "cre")),
   person("Juuso", "Parkkinen", role = "aut"),   
@@ -19,14 +19,18 @@ URL: https://github.com/ropengov/sorvi, http://cran.r-project.org/package=sorvi
 Depends:
     R (>= 3.0.2),
     tibble
-Suggests:
-    ggplot2,
-    RColorBrewer,
+Imports:
+    dlstats (>= 0.1.4),
     dplyr,
+    ggplot2
+Suggests:
+    gridExtra,
+    RColorBrewer,
     reshape2,
     knitr,
     rmarkdown,
     RCurl,
     rjson,
-    testthat
-RoxygenNote: 6.0.1
+    Cairo
+Encoding: UTF-8
+RoxygenNote: 7.1.2
