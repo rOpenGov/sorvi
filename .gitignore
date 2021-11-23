@@ -10,3 +10,4 @@ vignettes/figure
 .Rproj.user
 *.Rproj
 .Rhistory
+.DS_Store
