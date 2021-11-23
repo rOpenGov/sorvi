@@ -2,7 +2,6 @@
 title: "sorvi tutorial"
 author: rOpenGov core team
 date: "`r Sys.Date()`"
-output:
 output: 
   rmarkdown::html_vignette:
     toc: true
@@ -108,15 +107,6 @@ translations <- load_sorvi_data("translation_provinces")
 print(head(translations))
 ```
 
-Convert the given terms (for now, using tools from the bibliographica R package):
-
-```{r sorvi-transl, message=FALSE, eval=TRUE}
-# install_github("ropengov/bibliographica")
-library(bibliographica) # Get some synonyme mapping tools
-translated <- bibliographica::map(c("Varsinais-Suomi", "Lappi"), translations, from = "Finnish", to = "English", keep.names = TRUE)
-head(translated)
-```
-
 ## <a name="municipality"></a>Municipality information
 
 Finnish municipality information is available through Statistics
@@ -131,7 +121,7 @@ municipality names.
 
 Source: [Maanmittauslaitos, MML](http://www.maanmittauslaitos.fi/aineistot-palvelut/latauspalvelut/avoimien-aineistojen-tiedostopalvelu). See also the [gisfin](https://github.com/ropengov/gisfin) package for further Finnish GIS data sets.
 
-```{r municipalityMML, message=FALSE, warning=FALSE, eval=TRUE}
+```{r municipalityMML, message=FALSE, warning=FALSE, eval=FALSE}
 municipality.info.mml <- get_municipality_info_mml()
 library(knitr)
 kable(municipality.info.mml[1:2,])
@@ -158,7 +148,7 @@ municipality_to_province(c("Helsinki", "Tampere", "Turku"))
 
 **Speed up conversion with predefined info table:**
 
-```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=TRUE}
+```{r province7, message=FALSE, warning=FALSE, echo=TRUE, eval=FALSE}
 m2p <- municipality_to_province(c("Helsinki", "Tampere", "Turku"), municipality.info.mml)
 head(m2p)
 ```  
@@ -169,19 +159,19 @@ head(m2p)
 
 **Municipality name to code**
 
-```{r province3, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province3, message=FALSE, echo=TRUE, eval=FALSE}
 convert_municipality_codes(municipalities = c("Turku", "Tampere"))
 ```  
 
 **Municipality codes to names**
 
-```{r province4, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province4, message=FALSE, echo=TRUE, eval=FALSE}
 convert_municipality_codes(ids = c(853, 837))
 ```  
 
 **Complete conversion table**
 
-```{r province5, message=FALSE, echo=TRUE, eval=TRUE}
+```{r province5, message=FALSE, echo=TRUE, eval=FALSE}
 municipality_ids <- convert_municipality_codes()
 kable(head(municipality_ids)) # just show the first entries
 ```
@@ -197,49 +187,6 @@ First, get a synonyme-name mapping table. In this example we harmonize Finnish m
 f <- system.file("extdata/municipality_synonymes.csv", package = "sorvi")
 synonymes <- read.csv(f, sep = "\t")		 
 ```
-
-Validate the synonyme list and add lowercase versions of the terms:
-
-```{r sorvi-synonymes-2, message=FALSE, eval=TRUE}
-synonymes <- bibliographica::check_synonymes(synonymes, include.lowercase = TRUE)
-```
-
-Convert the given terms from synonymes to the harmonized names:
-
-```{r sorvi-synonymes-3, message=FALSE, eval=TRUE}
-harmonized <- bibliographica::map(c("Mantta", "Koski.Tl"), synonymes)
-head(harmonized)
-```
-
-
-## <a name="hetu"></a>Personal identification number (HETU)
-
-**Extracting information from a Finnish personal identification number**
-
-```{r hetu, message=FALSE}
-library(sorvi)
-hetu("111111-111C")
-```
-
-The function accepts also vectors as input, returning a data frame:
-
-```{r hetuvec, message=FALSE}
-library(knitr)
-kable(hetu(c("010101-0101", "111111-111C")))
-```
-
-**Extracting specific field**
-
-```{r hetuextract, message=FALSE}
-hetu(c("010101-0101", "111111-111C"), extract = "gender")
-```
-
-**Validate Finnish personal identification number:**
-
-```{r hetu2, fig.message=FALSE}
-valid_hetu("010101-0101") # TRUE/FALSE
-```
-
 
 
 
