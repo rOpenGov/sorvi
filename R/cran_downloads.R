@@ -9,8 +9,6 @@
 #' by antagomir. As such it retains some features that were present in
 #' the original R script and were deemed useful for our use case and it is not
 #' intended for generalized use.
-#' 
-#' 
 #'
 #' @param pkgs Package name(s). Default is "all", which prints statistics for
 #' all rOpenGov packages. You can also input 1 or more package names as a 
