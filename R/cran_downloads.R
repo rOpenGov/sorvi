@@ -1,20 +1,35 @@
 #' @title Get CRAN download statistics
 #'
-#' @description Produces a tibble or a visualization of package download
-#'    statistics.
+#' @description 
+#' Produces a tibble or a visualization of package download statistics.
 #'
-#' @param pkgs Package name(s)
-#' @param output "tibble" or "plot"
-#' @param sum "by_month", "by_year" or "total"
-#' @param plot.scale integer, default is 10. Smaller numbers decrease the size of
-#'    plot elements, larger numbers make them larger.
+#' @details 
+#' This function is intended for easy retrieval and visualization of rOpenGov 
+#' package download statistics from CRAN. It is an evolution of an R script
+#' by antagomir. As such it retains some features that were present in
+#' the original R script and were deemed useful for our use case and it is not
+#' intended for generalized use.
+#' 
+#' 
+#'
+#' @param pkgs Package name(s). Default is "all", which prints statistics for
+#' all rOpenGov packages. You can also input 1 or more package names as a 
+#' vector.
+#' @param output "tibble" (default) or "plot". With sum "by_month" and
+#' "by_year" "plot" outputs a line chart, with "total" it outputs a
+#' bar chart.
+#' @param sum "by_month" (default), "by_year" or "total"
+#' @param plot.scale integer, default is 11. Smaller numbers decrease the size of
+#' plot elements, larger numbers make them larger.
 #' @param use.cache Cache downloaded statistics. Default is TRUE
 #'
 #' @return sf object
 #'
-#' @import ggplot2
-#' @import dplyr
+#' @importFrom dplyr group_by summarise filter arrange %>% desc
+#' @importFrom ggplot2 ggplot geom_line geom_label geom_bar 
+#' @importFrom ggplot2 aes theme theme_set element_text
 #' @importFrom dlstats cran_stats
+#' @importFrom rlang .data
 #' 
 #' @examples
 #' \dontrun{
@@ -36,7 +51,7 @@ cran_downloads <- function(pkgs = "all",
                            plot.scale = 11,
                            use.cache = TRUE){
   
-  # ropengov all
+  # All rOpenGov packages: Edit this list if you want to add or remove packages
   if (identical(pkgs, "all")){
     pkgs <- sort(unique(c(
       "enigma",  
@@ -120,93 +135,12 @@ cran_downloads <- function(pkgs = "all",
                   geom_line(size = 3) + 
                   geom_label(aes(label=.data$n)) 
   } else if (output == "plot" && sum == "total"){
+    # Make x axis text angle 90 for increased legibility
+    plot_angle <- ifelse(length(pkgs) > 5, 90, 0)
+    
     plot <- ggplot(x, aes(x = .data$package, y = .data$total, fill= .data$package)) +
-      geom_bar(stat="identity")
+      geom_bar(stat="identity") +
+      theme(axis.text.x = element_text(angle = plot_angle))
   }
   return(plot)
 }
-  
-  # if (sum == "by_year"){
-  #   # Downloads per year
-  #   x2 <- x %>% group_by(year, Package) %>%
-  #     summarise(n = sum(downloads)) %>%
-  #     # Exclude current year (non-complete)
-  #     filter(year < as.numeric(format(Sys.time(), "%Y"))) 
-  #   
-  #   if (output == "tibble"){
-  #     return(x2)
-  #   } else if (output == "plot"){
-  #     p2 <- ggplot(x2, aes(year, n, group=Package, color=Package)) +
-  #       geom_line(size = 3) +
-  #       scale_y_log10() +
-  #       geom_label(aes(label=n))
-  #     
-  #     return(p2)
-  #   }
-  # }
-  # 
-  # if (sum == "total"){
-  #   df <- x %>% 
-  #     group_by(Package) %>%
-  #     summarise(total = sum(downloads)) %>% 
-  #     arrange(desc(total))
-  #   
-  #   if (output == "tibble"){
-  #     return(df)
-  #   } else if (output == "plot"){
-  #     p3 <- ggplot(df, aes(year, n, group=Package, color=Package)) +
-  #       geom_line(size = 3) +
-  #       scale_y_log10() +
-  #       geom_label(aes(label=n))
-  #     
-  #     return(p3)
-  #   }
-  # }
-# }
-
-# These rOpenGov packages caused problems, probably not on CRAN
-#digitransit
-#dkstat
-#europarl
-#fmi2
-#mpg
-#ogdindiar
-#openthl
-#rqog
-#rwfs
-#usbroadband
-#vipunen
-
-# gridExtra::grid.arrange(p1, p2, nrow = 2)
-# 
-# 
-# 
-# df2020 <- x %>% filter(year == 2020) %>%
-#   group_by(Package, month) %>%
-#   summarise(total = sum(downloads),
-#             monthly = sum(downloads)/n()) %>%
-#   select(Package, total, monthly)  %>%
-#   arrange(desc(total))
-# 
-# df2020total <- x %>% filter(year == 2020) %>%
-#   group_by(Package) %>%
-#   summarise(total = sum(downloads)) %>%
-#   arrange(desc(total))
-# 
-# 
-# df2020$Package <- factor(df2020$Package, levels = rev(unique(df2020$Package)))
-# p <- ggplot(df2020, aes(x = Package, y = total)) +
-#   geom_bar(stat = "identity") +
-#   labs(x = "", y = "Downloads (2020)",
-#        title = paste0("CRAN downloads (", sum(df2020$total), ")")) + 
-#   coord_flip() 
-# print(p)
-# 
-# p3 <- ggplot(x, aes(x = start, y = downloads, color = Package)) +
-#   geom_point() +
-#   geom_smooth()
-# print(p3)
-
-#png("ropengov2020dl.png")
-#print(p)
-#dev.off()

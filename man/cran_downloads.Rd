@@ -13,13 +13,17 @@ cran_downloads(
 )
 }
 \arguments{
-\item{pkgs}{Package name(s)}
+\item{pkgs}{Package name(s). Default is "all", which prints statistics for
+all rOpenGov packages. You can also input 1 or more package names as a 
+vector.}
 
-\item{output}{"tibble" or "plot"}
+\item{output}{"tibble" (default) or "plot". With sum "by_month" and
+"by_year" "plot" outputs a line chart, with "total" it outputs a
+bar chart.}
 
-\item{sum}{"by_month", "by_year" or "total"}
+\item{sum}{"by_month" (default), "by_year" or "total"}
 
-\item{plot.scale}{integer, default is 10. Smaller numbers decrease the size of
+\item{plot.scale}{integer, default is 11. Smaller numbers decrease the size of
 plot elements, larger numbers make them larger.}
 
 \item{use.cache}{Cache downloaded statistics. Default is TRUE}
@@ -28,8 +32,14 @@ plot elements, larger numbers make them larger.}
 sf object
 }
 \description{
-Produces a tibble or a visualization of package download
-   statistics.
+Produces a tibble or a visualization of package download statistics.
+}
+\details{
+This function is intended for easy retrieval and visualization of rOpenGov 
+package download statistics from CRAN. It is an evolution of an R script
+by antagomir. As such it retains some features that were present in
+the original R script and were deemed useful for our use case and it is not
+intended for generalized use.
 }
 \examples{
 \dontrun{
