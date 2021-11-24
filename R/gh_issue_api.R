@@ -1,15 +1,13 @@
 #' @title GitHub issues statistics
 #'
-#' @description
-#' Get statistics about GitHub issues from GitHub API.
+#' @description Get statistics about GitHub issues from GitHub API.
 #'
 #' @param owner Repository owner / organization. Default is "ropengov"
 #' @param repo Repository name. Default is "geofi"
 #'
 #' @return tibble
 #'
-#' @author Original scripts by Jennifer Bryan (jennybc), function by 
-#' Pyry Kantanen <pyry.kantanen@@gmail.com>
+#' @author Original scripts by Jennifer Bryan (jennybc), function by Pyry Kantanen <pyry.kantanen@@gmail.com>
 #' 
 #' @seealso
 #' GitHub Issues API documentation: 
@@ -25,7 +23,7 @@
 #' @importFrom rlang .data
 #'
 #' @export
-github_issue_stats <- function(owner = "ropengov", repo = "geofi"){
+gh_issue_stats <- function(owner = "ropengov", repo = "geofi"){
   issue_list <-
     gh::gh("/repos/:owner/:repo/issues", owner = owner, repo = repo,
            state = "all", since = "2010-09-01T00:00:00Z", .limit = Inf)

@@ -3,7 +3,6 @@
 # there still remains oneself. Who can calculate the orbit of his own
 # soul? - Oscar Wilde 
 
-#' @importFrom tibble as_data_frame
 #' @importFrom utils read.csv
 
 .onAttach <- function(lib, pkg)

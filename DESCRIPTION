@@ -18,8 +18,7 @@ VignetteBuilder: knitr
 BugReports: https://github.com/ropengov/sorvi/issues
 URL: https://github.com/ropengov/sorvi, http://cran.r-project.org/package=sorvi
 Depends:
-    R (>= 3.0.2),
-    tibble
+    R (>= 3.3.0)
 Imports:
     dlstats (>= 0.1.4),
     dplyr,
@@ -28,7 +27,8 @@ Imports:
     tidyr,
     purrr,
     curl,
-    rlang
+    rlang,
+    utils
 Suggests:
     gridExtra,
     RColorBrewer,
@@ -37,6 +37,7 @@ Suggests:
     rmarkdown,
     RCurl,
     rjson,
-    Cairo
+    Cairo,
+    qpdf
 Encoding: UTF-8
 RoxygenNote: 7.1.2
