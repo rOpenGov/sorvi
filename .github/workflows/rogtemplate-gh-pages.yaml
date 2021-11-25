@@ -4,7 +4,10 @@ on:
   push:
     branches: [main, master]
     tags: ['*']
-  workflow_dispatch:
+    paths-ignore:
+      - 'README.Rmd'
+  repository-dispatch:
+    types: [trigger-pkgdown-workflow]
 
 name: rogtemplate-gh-pages
 

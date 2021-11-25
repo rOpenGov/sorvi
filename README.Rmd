@@ -42,12 +42,16 @@ Loading the package in R:
 library(sorvi)
 ```
 
-Get download statistics of various rOpenGov packages and visualize them:
+Get download statistics of eurostat-package, by year:
 
-```{r example_get, eval=TRUE}
+```{r example_download_stats, eval=TRUE}
 df <- cran_downloads(pkgs = "eurostat", sum = "by_year", use.cache = FALSE)
 df
+```
 
+Get download statistics of various rOpenGov packages over time and draw a chart:
+
+```{r example_visualize, eval=TRUE}
 plot <- cran_downloads(pkgs = c("eurostat", "giscoR", "sotkanet", "geofi", "sweidnumbr"), sum = "total", output = "plot", use.cache = FALSE)
 plot
 ```
