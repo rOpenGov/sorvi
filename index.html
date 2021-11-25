@@ -39,7 +39,7 @@
     <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-dark"><div class="container">
     <a class="navbar-brand me-2" href="index.html">sorvi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.15</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.16</small>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -77,53 +77,24 @@
 </nav><div class="container template-home" id="container">
 <div class="row">
   <div class="contents col-md-9">
-
-
-<p><a href="https://github.com/ropengov/sorvi/watchers" class="external-link"><img src="https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social" alt="Watch on GitHub"></a> <a href="https://github.com/ropengov/sorvi/stargazers" class="external-link"><img src="https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social" alt="Star on GitHub"></a> <a href="https://twitter.com/intent/follow?screen_name=ropengov" class="external-link"><img src="https://img.shields.io/twitter/follow/ropengov.svg?style=social" alt="Follow on Twitter"></a> <!-- badges: end --></p>
 <div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="sorvi">sorvi
-<a class="anchor" aria-label="anchor" href="#sorvi"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="sorvi">sorvi<a class="anchor" aria-label="anchor" href="#sorvi"></a>
 </h1>
 </div>
-<p>sorvi package was originally intended for hosting various algorithms for Finnish open goverment data in <a href="http://www.r-project.org" class="external-link">R</a>. Now it hosts various functions that are helpful in package maintenance and authoring but do not fit in other, more specialized packages.</p>
-<div class="section level2">
-<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
-</h2>
-<p>You can install the development version of sorvi from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"rOpenGov/sorvi"</span><span class="op">)</span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="using-the-package">Using the package<a class="anchor" aria-label="anchor" href="#using-the-package"></a>
-</h2>
-<p>Loading the package in R:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ropengov/sorvi" class="external-link">sorvi</a></span><span class="op">)</span></code></pre></div>
-<p>Get download statistics of eurostat-package, by year:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"eurostat"</span>, sum <span class="op">=</span> <span class="st">"by_year"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="va">df</span>
-<span class="co">#&gt; # A tibble: 5 × 3</span>
-<span class="co">#&gt; # Groups:   year [5]</span>
-<span class="co">#&gt;    year package      n</span>
-<span class="co">#&gt;   &lt;dbl&gt; &lt;fct&gt;    &lt;int&gt;</span>
-<span class="co">#&gt; 1  2016 eurostat  6419</span>
-<span class="co">#&gt; 2  2017 eurostat 12482</span>
-<span class="co">#&gt; 3  2018 eurostat 18932</span>
-<span class="co">#&gt; 4  2019 eurostat 28454</span>
-<span class="co">#&gt; 5  2020 eurostat 31298</span></code></pre></div>
-<p>Get download statistics of various rOpenGov packages over time and draw a chart:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"eurostat"</span>, <span class="st">"giscoR"</span>, <span class="st">"sotkanet"</span>, <span class="st">"geofi"</span>, <span class="st">"sweidnumbr"</span><span class="op">)</span>, sum <span class="op">=</span> <span class="st">"total"</span>, output <span class="op">=</span> <span class="st">"plot"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="va">plot</span></code></pre></div>
-<p><img src="reference/figures/README-example_visualize-1.png" width="80%"></p>
-<p>For more examples, check the <a href="https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html">tutorial page</a>.</p>
-</div>
-<div class="section level2">
-<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
-</h2>
+
+<p>Algorithms for Finnish open goverment data in <a href="http://www.r-project.org" class="external-link">R</a>.</p>
+<p>For installation and usage, check the <a href="https://github.com/rOpenGov/sorvi/blob/master/vignettes/sorvi_tutorial.md" class="external-link">tutorial page</a>.</p>
+<p>Authors: <a href="http://github.com/antagomir/" class="external-link">Leo Lahti</a>, Juuso Parkkinen, Joona Lehtomäki, Jussi Paananen, Einari Happonen, Juuso Haapanen.</p>
+<p>Part of <a href="http://ropengov.github.io/" class="external-link">rOpenGov</a>.</p>
+<!--open government data in Finland (R/GitHub). [Double award in the
+Apps4Finland 2011 Data Opening
+Category](http://apps4finland.fi/fi/en): both the official competition
+and the public votes ([Apps4Finland presentation
+slides](http://www.slideshare.net/antagomir/apps4finland-sorvi), in
+Finnish).-->
+<p>You are welcome to:</p>
+<p>You are welcome to contact us:</p>
 <ul>
 <li>
 <a href="https://github.com/ropengov/sorvi/issues" class="external-link">Submit suggestions and bug reports</a> (provide the output of <code><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo()</a></code> and <code>packageVersion("sorvi")</code> and preferably provide a <a href="http://adv-r.had.co.nz/Reproducibility.html" class="external-link">reproducible example</a>)</li>
@@ -133,14 +104,6 @@
 <a href="http://ropengov.org/community/" class="external-link">See our website</a> for additional contact information</li>
 </ul>
 </div>
-<div class="section level2">
-<h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
-</h2>
-<p><strong>Kindly cite this work</strong> as follows: <a href="http://github.com/antagomir/" class="external-link">Leo Lahti</a>, Juuso Parkkinen, Joona Lehtomäki, Jussi Paananen, Einari Happonen, Juuso Haapanen, Pyry Kantanen. sorvi - Finnish Open Government Data Toolkit. URL: <a href="http://ropengov.github.io/sorvi/" class="external-link uri">http://ropengov.github.io/sorvi/</a></p>
-<p>We are grateful to all <a href="https://github.com/rOpenGov/sorvi/graphs/contributors" class="external-link">contributors</a>! This project is part of <a href="http://ropengov.org" class="external-link">rOpenGov</a>.</p>
-</div>
-</div>
-
   </div>
 
   <div class="col-md-3" id="pkgdown-sidebar">
@@ -185,10 +148,8 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="http://ropengov.org/" class="external-link"><img src="https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg" alt="rOG-badge"></a></li>
-<li><a href="https://github.com/rOpenGov/sorvi/actions" class="external-link"><img src="https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://CRAN.R-project.org/package=sorvi" class="external-link"><img src="https://www.r-pkg.org/badges/version/sorvi" alt="CRAN status"></a></li>
-<li><a href="http://github.com/badges/stability-badges" class="external-link"><img src="http://badges.github.io/stability-badges/dist/experimental.svg" alt="experimental"></a></li>
+<li><a href="https://travis-ci.org/rOpenGov/sorvi" class="external-link"><img src="https://api.travis-ci.org/rOpenGov/sorvi.png" alt="Build Status"></a></li>
+<li><a href="http://waffle.io/ropengov/sorvi" class="external-link"><img src="https://badge.waffle.io/ropengov/sorvi.png?label=Ready" alt="Stories in Ready"></a></li>
 </ul>
 </div>
 
