@@ -57,7 +57,7 @@ plot <- cran_downloads(pkgs = c("eurostat", "giscoR", "sotkanet", "geofi", "swei
 plot
 ```
 
-<img src="man/figures/README-example_get-1.png" width="60%" />
+<img src="man/figures/README-example_get-1.png" width="80%" />
 
 For more examples, check the [tutorial
 page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
