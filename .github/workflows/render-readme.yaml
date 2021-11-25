@@ -6,8 +6,6 @@ on:
   push:
     paths:
       - 'README.Rmd'
-    paths-ignore:
-      - 'README.md'
 
 name: Render README
 
