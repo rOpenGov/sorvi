@@ -2,8 +2,8 @@
 
 ### NEW FEATURES
 
-- New function: cran_downloads() for getting information about package downloads and optionally visualizing them
-- New function: gh_issue_stats() for downloading information about opened issues and pull requests from different repositories
+- New function: `cran_downloads()` for getting information about package downloads and optionally visualizing them
+- New function: `gh_issue_stats()` for downloading information about opened issues and pull requests from different repositories
 
 ### MINOR IMPROVEMENTS
 
