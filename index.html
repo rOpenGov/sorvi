@@ -77,14 +77,15 @@
 </nav><div class="container template-home" id="container">
 <div class="row">
   <div class="contents col-md-9">
+
+
 <div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="sorvi">sorvi<a class="anchor" aria-label="anchor" href="#sorvi"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="sorvi">sorvi
+<a class="anchor" aria-label="anchor" href="#sorvi"></a>
 </h1>
 </div>
-<!-- badges: start -->
-
-<p>This package was originally intended for various algorithms for Finnish open goverment data using <a href="http://www.r-project.org" class="external-link">R</a>. Now it hosts various functions that are helpful in package maintenance and authoring but do not fit in other, more specialized packages.</p>
+<p>sorvi package was originally intended for hosting various algorithms for Finnish open goverment data in <a href="http://www.r-project.org" class="external-link">R</a>. Now it hosts various functions that are helpful in package maintenance and authoring but do not fit in other, more specialized packages.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -99,7 +100,7 @@
 <p>Loading the package in R:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ropengov/sorvi" class="external-link">sorvi</a></span><span class="op">)</span></code></pre></div>
-<p>Get download statistics of various rOpenGov packages and visualize them:</p>
+<p>Get download statistics of eurostat-package, by year:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"eurostat"</span>, sum <span class="op">=</span> <span class="st">"by_year"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="va">df</span>
@@ -111,11 +112,12 @@
 <span class="co">#&gt; 2  2017 eurostat 12482</span>
 <span class="co">#&gt; 3  2018 eurostat 18932</span>
 <span class="co">#&gt; 4  2019 eurostat 28454</span>
-<span class="co">#&gt; 5  2020 eurostat 31298</span>
-
-<span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"eurostat"</span>, <span class="st">"giscoR"</span>, <span class="st">"sotkanet"</span>, <span class="st">"geofi"</span>, <span class="st">"sweidnumbr"</span><span class="op">)</span>, sum <span class="op">=</span> <span class="st">"total"</span>, output <span class="op">=</span> <span class="st">"plot"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; 5  2020 eurostat 31298</span></code></pre></div>
+<p>Get download statistics of various rOpenGov packages over time and draw a chart:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"eurostat"</span>, <span class="st">"giscoR"</span>, <span class="st">"sotkanet"</span>, <span class="st">"geofi"</span>, <span class="st">"sweidnumbr"</span><span class="op">)</span>, sum <span class="op">=</span> <span class="st">"total"</span>, output <span class="op">=</span> <span class="st">"plot"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="va">plot</span></code></pre></div>
-<p><img src="reference/figures/README-example_get-1.png" width="80%"></p>
+<p><img src="reference/figures/README-example_visualize-1.png" width="80%"></p>
 <p>For more examples, check the <a href="https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html">tutorial page</a>.</p>
 </div>
 <div class="section level2">
@@ -137,6 +139,7 @@
 <p>We are grateful to all <a href="https://github.com/rOpenGov/sorvi/graphs/contributors" class="external-link">contributors</a>! This project is part of <a href="http://ropengov.org" class="external-link">rOpenGov</a>.</p>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3" id="pkgdown-sidebar">
