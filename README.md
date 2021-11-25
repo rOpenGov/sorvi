@@ -1,6 +1,5 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
 <!-- badges: start -->
 
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
@@ -69,14 +68,14 @@ page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
 
 ## Contributing
 
-  - [Submit suggestions and bug
+-   [Submit suggestions and bug
     reports](https://github.com/ropengov/sorvi/issues) (provide the
     output of `sessionInfo()` and `packageVersion("sorvi")` and
     preferably provide a [reproducible
     example](http://adv-r.had.co.nz/Reproducibility.html))
-  - [Send a pull request](https://github.com/ropengov/sorvi/)
-  - [Star us on the Github page](https://github.com/ropengov/sorvi/)
-  - [See our website](http://ropengov.org/community/) for additional
+-   [Send a pull request](https://github.com/ropengov/sorvi/)
+-   [Star us on the Github page](https://github.com/ropengov/sorvi/)
+-   [See our website](http://ropengov.org/community/) for additional
     contact information
 
 ## Acknowledgements
@@ -88,5 +87,5 @@ Finnish Open Government Data Toolkit. URL:
 <http://ropengov.github.io/sorvi/>
 
 We are grateful to all
-[contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)\!
+[contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)!
 This project is part of [rOpenGov](http://ropengov.org).
