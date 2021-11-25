@@ -8,14 +8,13 @@
 [![CRAN
 status](https://www.r-pkg.org/badges/version/sorvi)](https://CRAN.R-project.org/package=sorvi)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+
 [![Watch on
 GitHub](https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social)](https://github.com/ropengov/sorvi/watchers)
 [![Star on
 GitHub](https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social)](https://github.com/ropengov/sorvi/stargazers)
 [![Follow on
 Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/intent/follow?screen_name=ropengov)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/sorvi)](https://CRAN.R-project.org/package=sorvi)
 <!-- badges: end -->
 
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
