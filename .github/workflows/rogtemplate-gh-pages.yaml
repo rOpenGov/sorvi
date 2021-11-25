@@ -6,7 +6,7 @@ on:
     tags: ['*']
     paths-ignore:
       - 'README.Rmd'
-  repository-dispatch:
+  repository_dispatch:
     types: [trigger-pkgdown-workflow]
 
 name: rogtemplate-gh-pages
