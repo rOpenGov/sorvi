@@ -13,8 +13,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-# sorvi
-
 <!-- badges: start -->
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
@@ -23,7 +21,9 @@ knitr::opts_chunk$set(
 [![Follow on Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/intent/follow?screen_name=ropengov)
 <!-- badges: end -->
 
-This package was originally intended for various algorithms for Finnish open goverment data using [R](http://www.r-project.org). Now it hosts various functions that are helpful in package maintenance and authoring but do not fit in other, more specialized packages.
+# sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
+
+sorvi package was originally intended for hosting various algorithms for Finnish open goverment data in [R](http://www.r-project.org). Now it hosts various functions that are helpful in package maintenance and authoring but do not fit in other, more specialized packages.
 
 ## Installation
 
