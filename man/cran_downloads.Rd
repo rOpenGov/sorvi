@@ -29,7 +29,7 @@ plot elements, larger numbers make them larger.}
 \item{use.cache}{Cache downloaded statistics. Default is TRUE}
 }
 \value{
-sf object
+tibble or a ggplot2 line chart or a bar chart
 }
 \description{
 Produces a tibble or a visualization of package download statistics.
@@ -38,8 +38,8 @@ Produces a tibble or a visualization of package download statistics.
 This function is intended for easy retrieval and visualization of rOpenGov 
 package download statistics from CRAN. It is an evolution of an R script
 by antagomir. As such it retains some features that were present in
-the original R script and were deemed useful for our use case and it is not
-intended for generalized use.
+the original R script and were deemed useful for rOpenGov's internal use.
+This function may or may not be useful in other instances.
 }
 \examples{
 \dontrun{

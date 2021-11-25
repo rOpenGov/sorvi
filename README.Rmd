@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
 [![R-CMD-check](https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg)](https://github.com/rOpenGov/sorvi/actions)
 [![CRAN status](https://www.r-pkg.org/badges/version/sorvi)](https://CRAN.R-project.org/package=sorvi)
+[![r-universe](https://ropengov.r-universe.dev/badges/sorvi)](https://ropengov.r-universe.dev/)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
@@ -26,7 +27,9 @@ knitr::opts_chunk$set(
 
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
 
-sorvi package was originally intended for hosting various algorithms for Finnish open goverment data in [R](http://www.r-project.org). Now it hosts various functions that are helpful in package maintenance and authoring but do not fit in other, more specialized packages.
+sorvi package was originally intended for hosting various algorithms for Finnish open goverment data in [R](http://www.r-project.org). After being superseded by later rOpenGov packages that are more specialized in scope, sorvi now has a new life in hosting various functions that are helpful in rOpenGov package maintenance, authoring and preparing presentations.
+
+Originally rOpenGov/sorvi was a fork of [juusohaapanen/soRvi-dev](https://github.com/juusohaapanen/soRvi-dev) but rOpenGov's sorvi branch has since taken a life of its own. The fork was detached fron juusohaapanen's branch in November 2021.
 
 ## Installation
 
@@ -36,6 +39,8 @@ You can install the development version of sorvi from [GitHub](https://github.co
 # install.packages("devtools")
 devtools::install_github("rOpenGov/sorvi")
 ```
+
+There is still a CRAN release version of sorvi and while it passes CRAN checks without problems it contains mostly outdated functions. It is therefore highly recommended to use development version of the package.
 
 ## Using the package
 
@@ -55,11 +60,12 @@ df
 Get download statistics of various rOpenGov packages over time and draw a chart:
 
 ```{r example_visualize, eval=TRUE}
-plot <- cran_downloads(pkgs = c("eurostat", "giscoR", "sotkanet", "geofi", "sweidnumbr"), sum = "total", output = "plot", use.cache = FALSE)
+packages <- c("eurostat", "giscoR", "sotkanet", "geofi", "sweidnumbr")
+plot <- cran_downloads(pkgs = packages, sum = "total", output = "plot", use.cache = FALSE)
 plot
 ```
 
-For more examples, check the [tutorial page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html). 
+For more (partly outdated) examples, check the [tutorial page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html). 
 
 ## Contributing
 

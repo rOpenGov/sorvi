@@ -7,8 +7,8 @@
 #' This function is intended for easy retrieval and visualization of rOpenGov 
 #' package download statistics from CRAN. It is an evolution of an R script
 #' by antagomir. As such it retains some features that were present in
-#' the original R script and were deemed useful for our use case and it is not
-#' intended for generalized use.
+#' the original R script and were deemed useful for rOpenGov's internal use.
+#' This function may or may not be useful in other instances.
 #'
 #' @param pkgs Package name(s). Default is "all", which prints statistics for
 #' all rOpenGov packages. You can also input 1 or more package names as a 
@@ -21,7 +21,7 @@
 #' plot elements, larger numbers make them larger.
 #' @param use.cache Cache downloaded statistics. Default is TRUE
 #'
-#' @return sf object
+#' @return tibble or a ggplot2 line chart or a bar chart 
 #'
 #' @importFrom dplyr group_by summarise filter arrange %>% desc
 #' @importFrom ggplot2 ggplot geom_line geom_label geom_bar 
