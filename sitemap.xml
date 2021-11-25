@@ -1,60 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ropengov.github.io/sorvi/404.html</loc>
+    <loc>http://ropengov.github.io/sorvi/index.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/LICENSE-text.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/convert_municipality_codes.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/articles/index.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/convert_municipality_names.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/cran_downloads.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/authors.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/get_municipality_info_mml.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/index.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/gh_issue_stats.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/news/index.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/is_url.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/reference/convert_municipality_codes.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/load_sorvi_data.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/reference/convert_municipality_names.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/municipality_to_province.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/reference/cran_downloads.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/quickdf.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/reference/get_municipality_info_mml.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/ropengov_storage_path.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/reference/gh_issue_stats.html</loc>
+    <loc>http://ropengov.github.io/sorvi/reference/sorvi-package.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://ropengov.github.io/sorvi/reference/is_url.html</loc>
-  </url>
-  <url>
-    <loc>https://ropengov.github.io/sorvi/reference/load_sorvi_data.html</loc>
-  </url>
-  <url>
-    <loc>https://ropengov.github.io/sorvi/reference/municipality_to_province.html</loc>
-  </url>
-  <url>
-    <loc>https://ropengov.github.io/sorvi/reference/quickdf.html</loc>
-  </url>
-  <url>
-    <loc>https://ropengov.github.io/sorvi/reference/ropengov_storage_path.html</loc>
-  </url>
-  <url>
-    <loc>https://ropengov.github.io/sorvi/reference/sorvi-package.html</loc>
+    <loc>http://ropengov.github.io/sorvi/articles/sorvi_tutorial.html</loc>
   </url>
 </urlset>

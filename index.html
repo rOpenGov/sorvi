@@ -4,8 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Algorithms for Finnish open government data.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finnish Open Government Data Toolkit • sorvi</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -13,92 +12,102 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
-<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><link href="deps/_Roboto%20Mono-0.4.0/font.css" rel="stylesheet">
-<!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Finnish Open Government Data Toolkit">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script><meta property="og:title" content="Finnish Open Government Data Toolkit">
 <meta property="og:description" content="Algorithms for Finnish open government data.">
-<meta property="og:image" content="https://ropengov.github.io/sorvi/logo.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@rOpenGov">
-<meta name="twitter:site" content="@rOpenGov">
+<meta property="og:image" content="http://ropengov.github.io/sorvi/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=B612+Mono&amp;display=swap" rel="stylesheet">
-<!-- rogtemplate style sheet --><link href="BS5/rogtemplate.css" rel="stylesheet">
+<![endif]-->
 </head>
-<body>
-    <a href="#container" class="visually-hidden-focusable">Skip to contents</a>
-    
+<body data-spy="scroll" data-target="#toc">
+    <div class="container template-home">
+      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="index.html">sorvi</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.15</span>
+      </span>
+    </div>
 
-    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-dark"><div class="container">
-    <a class="navbar-brand me-2" href="index.html">sorvi</a>
-
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.15</small>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div id="navbar" class="collapse navbar-collapse ms-2">
-      <ul class="navbar-nav me-auto">
-<li class="nav-item">
-  <a class="nav-link" href="reference/index.html">Reference</a>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+<li>
+  <a href="index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
 </li>
-<li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="articles/sorvi_tutorial.html">sorvi tutorial</a>
-  </div>
+<li>
+  <a href="reference/index.html">Reference</a>
 </li>
-<li class="nav-item">
-  <a class="nav-link" href="news/index.html">Changelog</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/sorvi_tutorial.html">sorvi tutorial</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
-<form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
-</form>
-
-      <ul class="navbar-nav">
-<li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/rOpenGov/sorvi/" aria-label="github">
-    <span class="fab fa fab fa-github fa-lg"></span>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/ropengov/sorvi/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
 </div>
+<!--/.nav-collapse -->
   </div>
-</nav><div class="container template-home" id="container">
-<div class="row">
-  <div class="contents col-md-9">
-<div class="section level1">
-<div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="sorvi">sorvi<a class="anchor" aria-label="anchor" href="#sorvi"></a>
-</h1>
+<!--/.container -->
 </div>
+<!--/.navbar -->
+
+      
+
+      </header><div class="row">
+  <div class="contents col-md-9">
+<div id="sorvi" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#sorvi" class="anchor"></a>sorvi</h1></div>
 <!-- badges: start -->
 
-<p>This package was originally intended for various algorithms for Finnish open goverment data using <a href="http://www.r-project.org" class="external-link">R</a>. Now it hosts various functions that are helpful in package maintenance and authoring but do not fit in other, more specialized packages.</p>
-<div class="section level2">
-<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
-</h2>
-<p>You can install the development version of sorvi from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>This package was originally intended for various algorithms for Finnish open goverment data using <a href="http://www.r-project.org">R</a>. Now it hosts various functions that are helpful in package maintenance and authoring but do not fit in other, more specialized packages.</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the development version of sorvi from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"rOpenGov/sorvi"</span><span class="op">)</span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="using-the-package">Using the package<a class="anchor" aria-label="anchor" href="#using-the-package"></a>
-</h2>
+<div id="using-the-package" class="section level2">
+<h2 class="hasAnchor">
+<a href="#using-the-package" class="anchor"></a>Using the package</h2>
 <p>Loading the package in R:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ropengov/sorvi" class="external-link">sorvi</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ropengov/sorvi">sorvi</a></span><span class="op">)</span></code></pre></div>
 <p>Get download statistics of various rOpenGov packages and visualize them:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"eurostat"</span>, sum <span class="op">=</span> <span class="st">"by_year"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
@@ -113,102 +122,97 @@
 <span class="co">#&gt; 4  2019 eurostat 28454</span>
 <span class="co">#&gt; 5  2020 eurostat 31298</span>
 
-<span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"eurostat"</span>, <span class="st">"giscoR"</span>, <span class="st">"sotkanet"</span>, <span class="st">"geofi"</span>, <span class="st">"sweidnumbr"</span><span class="op">)</span>, sum <span class="op">=</span> <span class="st">"total"</span>, output <span class="op">=</span> <span class="st">"plot"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"eurostat"</span>, <span class="st">"giscoR"</span>, <span class="st">"sotkanet"</span>, <span class="st">"geofi"</span>, <span class="st">"sweidnumbr"</span><span class="op">)</span>, sum <span class="op">=</span> <span class="st">"total"</span>, output <span class="op">=</span> <span class="st">"plot"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="va">plot</span></code></pre></div>
-<p><img src="reference/figures/README-example_get-1.png" width="60%"></p>
+<p><img src="reference/figures/README-example_get-1.png" width="80%"></p>
 <p>For more examples, check the <a href="https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html">tutorial page</a>.</p>
 </div>
-<div class="section level2">
-<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
-</h2>
+<div id="contributing" class="section level2">
+<h2 class="hasAnchor">
+<a href="#contributing" class="anchor"></a>Contributing</h2>
 <ul>
 <li>
-<a href="https://github.com/ropengov/sorvi/issues" class="external-link">Submit suggestions and bug reports</a> (provide the output of <code><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo()</a></code> and <code>packageVersion("sorvi")</code> and preferably provide a <a href="http://adv-r.had.co.nz/Reproducibility.html" class="external-link">reproducible example</a>)</li>
-<li><a href="https://github.com/ropengov/sorvi/" class="external-link">Send a pull request</a></li>
-<li><a href="https://github.com/ropengov/sorvi/" class="external-link">Star us on the Github page</a></li>
+<a href="https://github.com/ropengov/sorvi/issues">Submit suggestions and bug reports</a> (provide the output of <code><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo()</a></code> and <code>packageVersion("sorvi")</code> and preferably provide a <a href="http://adv-r.had.co.nz/Reproducibility.html">reproducible example</a>)</li>
+<li><a href="https://github.com/ropengov/sorvi/">Send a pull request</a></li>
+<li><a href="https://github.com/ropengov/sorvi/">Star us on the Github page</a></li>
 <li>
-<a href="http://ropengov.org/community/" class="external-link">See our website</a> for additional contact information</li>
+<a href="http://ropengov.org/community/">See our website</a> for additional contact information</li>
 </ul>
 </div>
-<div class="section level2">
-<h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
-</h2>
-<p><strong>Kindly cite this work</strong> as follows: <a href="http://github.com/antagomir/" class="external-link">Leo Lahti</a>, Juuso Parkkinen, Joona Lehtomäki, Jussi Paananen, Einari Happonen, Juuso Haapanen, Pyry Kantanen. sorvi - Finnish Open Government Data Toolkit. URL: <a href="http://ropengov.github.io/sorvi/" class="external-link uri">http://ropengov.github.io/sorvi/</a></p>
-<p>We are grateful to all <a href="https://github.com/rOpenGov/sorvi/graphs/contributors" class="external-link">contributors</a>! This project is part of <a href="http://ropengov.org" class="external-link">rOpenGov</a>.</p>
+<div id="acknowledgements" class="section level2">
+<h2 class="hasAnchor">
+<a href="#acknowledgements" class="anchor"></a>Acknowledgements</h2>
+<p><strong>Kindly cite this work</strong> as follows: <a href="http://github.com/antagomir/">Leo Lahti</a>, Juuso Parkkinen, Joona Lehtomäki, Jussi Paananen, Einari Happonen, Juuso Haapanen, Pyry Kantanen. sorvi - Finnish Open Government Data Toolkit. URL: <a href="http://ropengov.github.io/sorvi/" class="uri">http://ropengov.github.io/sorvi/</a></p>
+<p>We are grateful to all <a href="https://github.com/rOpenGov/sorvi/graphs/contributors">contributors</a>! This project is part of <a href="http://ropengov.org">rOpenGov</a>.</p>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3" id="pkgdown-sidebar">
-<div class="links">
-<h2 data-toc-skip>Links</h2>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <div class="links">
+<h2>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://cloud.r-project.org/package=sorvi" class="external-link">View on CRAN</a></li>
-<li><a href="https://github.com/rOpenGov/sorvi/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/rOpenGov/sorvi/issues" class="external-link">Report a bug</a></li>
-</ul>
-</div>
-
-<div class="license">
-<h2 data-toc-skip>License</h2>
-<ul class="list-unstyled">
-<li>
-<a href="https://opensource.org/licenses/BSD-2-Clause" class="external-link">BSD_2_clause</a> + file <a href="LICENSE-text.html">LICENSE</a>
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=sorvi">https://​cloud.r-project.org/​package=sorvi</a>
+</li>
+<li>Browse source code at <br><a href="https://github.com/ropengov/sorvi/">https://​github.com/​ropengov/​sorvi/​</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/ropengov/sorvi/issues">https://​github.com/​ropengov/​sorvi/​issues</a>
 </li>
 </ul>
 </div>
-
-
+<div class="license">
+<h2>License</h2>
+<ul class="list-unstyled">
+<li>
+<a href="https://opensource.org/licenses/BSD-2-Clause">BSD_2_clause</a> + file <a href="LICENSE-text.html">LICENSE</a>
+</li>
+</ul>
+</div>
 <div class="citation">
-<h2 data-toc-skip>Citation</h2>
+<h2>Citation</h2>
 <ul class="list-unstyled">
 <li><a href="authors.html">Citing sorvi</a></li>
 </ul>
 </div>
-
 <div class="developers">
-<h2 data-toc-skip>Developers</h2>
+<h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Leo Lahti <br><small class="roles"> Author, maintainer </small>  </li>
 <li>Juuso Parkkinen <br><small class="roles"> Author </small>  </li>
 <li>Joona Lehtomaki <br><small class="roles"> Author </small>  </li>
 <li>Jussi Paananen <br><small class="roles"> Author </small>  </li>
 <li>Einari Happonen <br><small class="roles"> Author </small>  </li>
-<li><a href="authors.html">More about authors...</a></li>
+<li><a href="authors.html">All authors...</a></li>
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
+  <div class="dev-status">
+<h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="http://ropengov.org/" class="external-link"><img src="https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg" alt="rOG-badge"></a></li>
-<li><a href="http://github.com/badges/stability-badges" class="external-link"><img src="http://badges.github.io/stability-badges/dist/experimental.svg" alt="experimental"></a></li>
-<li><a href="https://github.com/ropengov/sorvi/watchers" class="external-link"><img src="https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social" alt="Watch on GitHub"></a></li>
-<li><a href="https://github.com/ropengov/sorvi/stargazers" class="external-link"><img src="https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social" alt="Star on GitHub"></a></li>
-<li><a href="https://twitter.com/intent/follow?screen_name=ropengov" class="external-link"><img src="https://img.shields.io/twitter/follow/ropengov.svg?style=social" alt="Follow on Twitter"></a></li>
+<li><a href="http://ropengov.org/"><img src="https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg" alt="rOG-badge"></a></li>
+<li><a href="http://github.com/badges/stability-badges"><img src="http://badges.github.io/stability-badges/dist/experimental.svg" alt="experimental"></a></li>
+<li><a href="https://github.com/ropengov/sorvi/watchers"><img src="https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social" alt="Watch on GitHub"></a></li>
+<li><a href="https://github.com/ropengov/sorvi/stargazers"><img src="https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social" alt="Star on GitHub"></a></li>
+<li><a href="https://twitter.com/intent/follow?screen_name=ropengov"><img src="https://img.shields.io/twitter/follow/ropengov.svg?style=social" alt="Follow on Twitter"></a></li>
 </ul>
 </div>
-
-  </div>
+</div>
 </div>
 
 
-    <footer><div class="pkgdown-footer-left">
-  <p></p>
-<p>Developed by Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Jussi Paananen, Einari Happonen.</p>
+      <footer><div class="copyright">
+  <p>Developed by Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Jussi Paananen, Einari Happonen.</p>
 </div>
 
-<div class="pkgdown-footer-right">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+<div class="pkgdown">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
-    </footer>
+      </footer>
 </div>
 
   
 
-    <!-- Add ropengov logo -->
-  <script src="BS5/logo.js"></script>
-</body>
+
+  </body>
 </html>
