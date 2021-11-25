@@ -38,7 +38,7 @@ Loading the package in R:
 library(sorvi)
 ```
 
-Get download statistics of various rOpenGov packages and visualize them:
+Get download statistics of eurostat-package, by year:
 
 ``` r
 df <- cran_downloads(pkgs = "eurostat", sum = "by_year", use.cache = FALSE)
@@ -52,12 +52,17 @@ df
 #> 3  2018 eurostat 18932
 #> 4  2019 eurostat 28454
 #> 5  2020 eurostat 31298
+```
 
+Get download statistics of various rOpenGov packages over time and draw
+a chart:
+
+``` r
 plot <- cran_downloads(pkgs = c("eurostat", "giscoR", "sotkanet", "geofi", "sweidnumbr"), sum = "total", output = "plot", use.cache = FALSE)
 plot
 ```
 
-<img src="man/figures/README-example_get-1.png" width="80%" />
+<img src="man/figures/README-example_visualize-1.png" width="80%" />
 
 For more examples, check the [tutorial
 page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
