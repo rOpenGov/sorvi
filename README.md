@@ -1,8 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 <!-- badges: start -->
 
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
+[![R-CMD-check](https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg)](https://github.com/rOpenGov/sorvi/actions)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/sorvi)](https://CRAN.R-project.org/package=sorvi)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 [![Watch on
 GitHub](https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social)](https://github.com/ropengov/sorvi/watchers)
@@ -10,6 +14,8 @@ GitHub](https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social)]
 GitHub](https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social)](https://github.com/ropengov/sorvi/stargazers)
 [![Follow on
 Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/intent/follow?screen_name=ropengov)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/sorvi)](https://CRAN.R-project.org/package=sorvi)
 <!-- badges: end -->
 
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
@@ -68,14 +74,14 @@ page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
 
 ## Contributing
 
--   [Submit suggestions and bug
+  - [Submit suggestions and bug
     reports](https://github.com/ropengov/sorvi/issues) (provide the
     output of `sessionInfo()` and `packageVersion("sorvi")` and
     preferably provide a [reproducible
     example](http://adv-r.had.co.nz/Reproducibility.html))
--   [Send a pull request](https://github.com/ropengov/sorvi/)
--   [Star us on the Github page](https://github.com/ropengov/sorvi/)
--   [See our website](http://ropengov.org/community/) for additional
+  - [Send a pull request](https://github.com/ropengov/sorvi/)
+  - [Star us on the Github page](https://github.com/ropengov/sorvi/)
+  - [See our website](http://ropengov.org/community/) for additional
     contact information
 
 ## Acknowledgements
@@ -87,5 +93,5 @@ Finnish Open Government Data Toolkit. URL:
 <http://ropengov.github.io/sorvi/>
 
 We are grateful to all
-[contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)!
+[contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)\!
 This project is part of [rOpenGov](http://ropengov.org).
