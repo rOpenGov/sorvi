@@ -32,3 +32,4 @@ cran-comments.md
 ^docs$
 ^pkgdown$
 ^\.github$
+^README\.Rmd$

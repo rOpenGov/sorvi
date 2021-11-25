@@ -1,0 +1,73 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "60%"
+)
+```
+
+# sorvi
+
+<!-- badges: start -->
+[![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
+[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+[![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star]
+[![Follow on Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/intent/follow?screen_name=ropengov)
+<!-- badges: end -->
+
+This package was originally intended for various algorithms for Finnish open goverment data using [R](http://www.r-project.org). Now it hosts various functions that are helpful in package maintenance and authoring but do not fit in other, more specialized packages.
+
+## Installation
+
+You can install the development version of sorvi from [GitHub](https://github.com/) with:
+
+```{r, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("rOpenGov/sorvi")
+```
+
+## Using the package
+
+Loading the package in R:
+
+```{r example_load, eval=TRUE, message=FALSE}
+library(sorvi)
+```
+
+Get download statistics of various rOpenGov packages and visualize them:
+
+```{r example_get, eval=TRUE}
+df <- cran_downloads(pkgs = "eurostat", sum = "by_year", use.cache = FALSE)
+df
+
+plot <- cran_downloads(pkgs = c("eurostat", "giscoR", "sotkanet", "geofi", "sweidnumbr"), sum = "total", output = "plot", use.cache = FALSE)
+plot
+```
+
+For more examples, check the [tutorial page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html). 
+
+## Contributing
+
+  * [Submit suggestions and bug reports](https://github.com/ropengov/sorvi/issues) (provide the output of `sessionInfo()` and `packageVersion("sorvi")` and preferably provide a [reproducible example](http://adv-r.had.co.nz/Reproducibility.html))
+  * [Send a pull request](https://github.com/ropengov/sorvi/)
+  * [Star us on the Github page](https://github.com/ropengov/sorvi/)
+  * [See our website](http://ropengov.org/community/) for additional contact information
+
+## Acknowledgements
+
+**Kindly cite this work** as follows: [Leo Lahti](http://github.com/antagomir/), Juuso Parkkinen, Joona Lehtomäki, Jussi Paananen, Einari Happonen, Juuso Haapanen, Pyry Kantanen. sorvi - Finnish Open Government Data Toolkit. URL: [http://ropengov.github.io/sorvi/](http://ropengov.github.io/sorvi/)
+
+We are grateful to all [contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)! This project is part of [rOpenGov](http://ropengov.org).
+
+[github-watch-badge]: https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social
+[github-watch]: https://github.com/ropengov/sorvi/watchers
+[github-star-badge]: https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social
+[github-star]: https://github.com/ropengov/sorvi/stargazers
