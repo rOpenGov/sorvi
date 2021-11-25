@@ -1,8 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# sorvi
-
 <!-- badges: start -->
 
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
@@ -15,10 +13,12 @@ GitHub](https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social)](ht
 Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/intent/follow?screen_name=ropengov)
 <!-- badges: end -->
 
-This package was originally intended for various algorithms for Finnish
-open goverment data using [R](http://www.r-project.org). Now it hosts
-various functions that are helpful in package maintenance and authoring
-but do not fit in other, more specialized packages.
+# sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
+
+sorvi package was originally intended for hosting various algorithms for
+Finnish open goverment data in [R](http://www.r-project.org). Now it
+hosts various functions that are helpful in package maintenance and
+authoring but do not fit in other, more specialized packages.
 
 ## Installation
 
