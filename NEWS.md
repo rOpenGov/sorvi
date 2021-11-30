@@ -1,3 +1,9 @@
+# sorvi 0.8.17 (2021-11-30)
+
+### NEW FEATURES
+
+- New function: `get_ifpi_charts()` for scraping data from Musiikkituottajat - IFPI Finland ry charts
+
 # sorvi 0.8.16 (2021-11-25)
 
 ### NEW FEATURES

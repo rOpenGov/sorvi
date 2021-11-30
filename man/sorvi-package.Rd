@@ -13,7 +13,7 @@ Brief summary of the sorvi package
 Package: \tab sorvi\cr
 Type: \tab Package\cr
 Version: \tab See sessionInfo() or DESCRIPTION file\cr
-Date: \tab 2010-2015\cr
+Date: \tab 2010-2021\cr
 License: \tab BSD-2-clause\cr
 LazyLoad: \tab yes\cr
 }
@@ -28,6 +28,6 @@ See citation("sorvi")
 \url{https://github.com/rOpenGov/sorvi}
 }
 \author{
-Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, and Juuso Haapanen \email{louhos@googlegroups.com}
+Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, Juuso Haapanen, and Pyry Kantanen \email{louhos@googlegroups.com}
 }
 \keyword{package}
