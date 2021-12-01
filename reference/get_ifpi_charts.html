@@ -57,7 +57,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_ifpi_charts</span><span class="op">(</span>channel <span class="op">=</span> <span class="st">"radio"</span>, year <span class="op">=</span> <span class="fl">2020</span>, week <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_ifpi_charts</span><span class="op">(</span>channel <span class="op">=</span> <span class="st">"radio"</span>, year <span class="op">=</span> <span class="cn">NA</span>, week <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -65,12 +65,14 @@
     <dl><dt>channel</dt>
 <dd><p>Options: "radio", "albumit", "singlet", "fyysiset-albumit"</p></dd>
 <dt>year</dt>
-<dd><p>year as numeric, default is 2020</p></dd>
+<dd><p>year as numeric. Default is NA, returning charts from current 
+year. Charts are available from 2014 onwards.</p></dd>
 <dt>week</dt>
-<dd><p>week as numeric, default is 50. Please note that number of weeks 
-differ between years. For simplicity's sake valid weeks are set to be 
-between 1 and 53. Use e.g. `lubridate::isoweek` to check how many weeks a
-given year has.</p></dd>
+<dd><p>week as numeric. Default is NA, returning most last possible 
+charts. Week cannot be the current week.
+Please note that number of weeks differ between years. 
+For simplicity's sake valid weeks are set to be between 1 and 53. 
+Use e.g. `lubridate::isoweek` to check how many weeks a given year has.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -82,7 +84,15 @@ given year has.</p></dd>
 blog post "Beginner's Guide on Web Scraping in R" on analyticsvidhya.com. 
 Downloads chart data from Musiikkituottajat - IFPI Finland ry website.
 Please note that this function works only with IFPI Finland website!</p>
-    </div>
+<p>The output has the following columns:</p><ul><li><p>rank_data: Rank on chart</p></li>
+<li><p>artist_data: Artist name</p></li>
+<li><p>song_title_data: Song title</p></li>
+<li><p>rank_last_week: Rank on chart on the previous week. RE if the song has
+re-entered the chart</p></li>
+<li><p>chart_woc_data: Weeks on chart</p></li>
+<li><p>week: Week number of observation</p></li>
+<li><p>year: Year of observation</p></li>
+</ul></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Original tutorial in <a href="https://www.analyticsvidhya.com/blog/2017/03/beginners-guide-on-web-scraping-in-r-using-rvest-with-hands-on-knowledge/" class="external-link">https://www.analyticsvidhya.com/blog/2017/03/beginners-guide-on-web-scraping-in-r-using-rvest-with-hands-on-knowledge/</a></p></div>
@@ -101,7 +111,7 @@ Please note that this function works only with IFPI Finland website!</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.9000.</p>
 </div>
 
     </footer></div>
