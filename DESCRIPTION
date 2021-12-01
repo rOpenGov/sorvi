@@ -33,7 +33,8 @@ Imports:
     utils,
     assertthat,
     rvest,
-    xml2
+    xml2,
+    lubridate
 Suggests:
     gridExtra,
     RColorBrewer,

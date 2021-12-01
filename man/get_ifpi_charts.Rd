@@ -4,17 +4,19 @@
 \alias{get_ifpi_charts}
 \title{Get CRAN download statistics}
 \usage{
-get_ifpi_charts(channel = "radio", year = 2020, week = 50)
+get_ifpi_charts(channel = "radio", year = NA, week = NA)
 }
 \arguments{
 \item{channel}{Options: "radio", "albumit", "singlet", "fyysiset-albumit"}
 
-\item{year}{year as numeric, default is 2020}
+\item{year}{year as numeric. Default is NA, returning charts from current 
+year. Charts are available from 2014 onwards.}
 
-\item{week}{week as numeric, default is 50. Please note that number of weeks 
-differ between years. For simplicity's sake valid weeks are set to be 
-between 1 and 53. Use e.g. `lubridate::isoweek` to check how many weeks a
-given year has.}
+\item{week}{week as numeric. Default is NA, returning most last possible 
+charts. Week cannot be the current week.
+Please note that number of weeks differ between years. 
+For simplicity's sake valid weeks are set to be between 1 and 53. 
+Use e.g. `lubridate::isoweek` to check how many weeks a given year has.}
 }
 \value{
 tibble
@@ -27,6 +29,18 @@ Web scraping function that is inspired by Sauravkaushik8 Kaushik's
 blog post "Beginner's Guide on Web Scraping in R" on analyticsvidhya.com. 
 Downloads chart data from Musiikkituottajat - IFPI Finland ry website.
 Please note that this function works only with IFPI Finland website!
+
+The output has the following columns:
+\itemize{
+  \item{rank_data: Rank on chart}
+  \item{artist_data: Artist name}
+  \item{song_title_data: Song title}
+  \item{rank_last_week: Rank on chart on the previous week. RE if the song has
+re-entered the chart}
+  \item{chart_woc_data: Weeks on chart}
+  \item{week: Week number of observation}
+  \item{year: Year of observation}
+}
 }
 \seealso{
 Original tutorial in \url{https://www.analyticsvidhya.com/blog/2017/03/beginners-guide-on-web-scraping-in-r-using-rvest-with-hands-on-knowledge/}
