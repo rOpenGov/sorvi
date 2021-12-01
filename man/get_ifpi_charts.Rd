@@ -32,12 +32,12 @@ Please note that this function works only with IFPI Finland website!
 
 The output has the following columns:
 \itemize{
-  \item{rank_data: Rank on chart}
-  \item{artist_data: Artist name}
-  \item{song_title_data: Song title}
+  \item{rank: Rank on chart}
+  \item{artist: Artist name}
+  \item{song_title: Song title}
   \item{rank_last_week: Rank on chart on the previous week. RE if the song has
 re-entered the chart}
-  \item{chart_woc_data: Weeks on chart}
+  \item{chart_woc: Weeks on chart}
   \item{week: Week number of observation}
   \item{year: Year of observation}
 }

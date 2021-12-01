@@ -31,10 +31,10 @@ Imports:
     curl,
     rlang,
     utils,
-    assertthat,
     rvest,
     xml2,
-    lubridate
+    lubridate,
+    checkmate
 Suggests:
     gridExtra,
     RColorBrewer,
