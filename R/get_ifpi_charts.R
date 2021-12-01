@@ -1,4 +1,4 @@
-#' @title Get CRAN download statistics
+#' @title Get IFPI Finland music consumption statistics
 #'
 #' @description 
 #' Download chart position data from ifpi.fi

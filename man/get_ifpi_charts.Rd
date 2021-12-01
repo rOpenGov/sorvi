@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_ifpi_charts.R
 \name{get_ifpi_charts}
 \alias{get_ifpi_charts}
-\title{Get CRAN download statistics}
+\title{Get IFPI Finland music consumption statistics}
 \usage{
 get_ifpi_charts(channel = "radio", year = NA, week = NA)
 }
