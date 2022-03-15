@@ -5,8 +5,7 @@
 
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
 [![R-CMD-check](https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg)](https://github.com/rOpenGov/sorvi/actions)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/sorvi)](https://CRAN.R-project.org/package=sorvi)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/sorvi)](https://cran.r-project.org/package=sorvi)
 [![r-universe](https://ropengov.r-universe.dev/badges/sorvi)](https://ropengov.r-universe.dev/)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
@@ -42,6 +41,18 @@ You can install the development version of sorvi from
 devtools::install_github("rOpenGov/sorvi")
 ```
 
+Development version can be also installed using the
+[r-universe](https://ropengov.r-universe.dev):
+
+``` r
+# Enable this universe
+options(repos = c(
+  ropengov = "https://ropengov.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+install.packages("sorvi")
+```
+
 There is still a CRAN release version of sorvi and while it passes CRAN
 checks without problems it contains mostly outdated functions. It is
 therefore highly recommended to use development version of the package.
@@ -63,11 +74,11 @@ df
 #> # Groups:   year [5]
 #>    year package      n
 #>   <dbl> <fct>    <int>
-#> 1  2016 eurostat  6419
-#> 2  2017 eurostat 12482
-#> 3  2018 eurostat 18932
-#> 4  2019 eurostat 28454
-#> 5  2020 eurostat 31298
+#> 1  2017 eurostat 12482
+#> 2  2018 eurostat 18932
+#> 3  2019 eurostat 28454
+#> 4  2020 eurostat 31298
+#> 5  2021 eurostat 30307
 ```
 
 Get download statistics of various rOpenGov packages over time and draw
