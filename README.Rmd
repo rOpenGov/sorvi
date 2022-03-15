@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
 [![R-CMD-check](https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg)](https://github.com/rOpenGov/sorvi/actions)
-[![CRAN status](https://www.r-pkg.org/badges/version/sorvi)](https://CRAN.R-project.org/package=sorvi)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/sorvi)](https://cran.r-project.org/package=sorvi)
 [![r-universe](https://ropengov.r-universe.dev/badges/sorvi)](https://ropengov.r-universe.dev/)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
@@ -38,6 +38,18 @@ You can install the development version of sorvi from [GitHub](https://github.co
 ```{r, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("rOpenGov/sorvi")
+```
+
+Development version can be also installed using the
+[r-universe](https://ropengov.r-universe.dev):
+
+```{r, eval=FALSE}
+# Enable this universe
+options(repos = c(
+  ropengov = "https://ropengov.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+install.packages("sorvi")
 ```
 
 There is still a CRAN release version of sorvi and while it passes CRAN checks without problems it contains mostly outdated functions. It is therefore highly recommended to use development version of the package.
