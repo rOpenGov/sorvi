@@ -5,7 +5,7 @@ on:
   push:
     branches: [main, master]
     tags: ['*']
-    paths-ignore: 
+    paths-ignore:
       - 'README.Rmd'
   repository_dispatch:
     types: [trigger-pkgdown-workflow]
