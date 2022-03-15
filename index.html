@@ -97,29 +97,37 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"rOpenGov/sorvi"</span><span class="op">)</span></code></pre></div>
+<p>Development version can be also installed using the <a href="https://ropengov.r-universe.dev" class="external-link">r-universe</a>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Enable this universe</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>
+  ropengov <span class="op">=</span> <span class="st">"https://ropengov.r-universe.dev"</span>,
+  CRAN <span class="op">=</span> <span class="st">"https://cloud.r-project.org"</span>
+<span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"sorvi"</span><span class="op">)</span></code></pre></div>
 <p>There is still a CRAN release version of sorvi and while it passes CRAN checks without problems it contains mostly outdated functions. It is therefore highly recommended to use development version of the package.</p>
 </div>
 <div class="section level2">
 <h2 id="using-the-package">Using the package<a class="anchor" aria-label="anchor" href="#using-the-package"></a>
 </h2>
 <p>Loading the package in R:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ropengov/sorvi" class="external-link">sorvi</a></span><span class="op">)</span></code></pre></div>
 <p>Get download statistics of eurostat-package, by year:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"eurostat"</span>, sum <span class="op">=</span> <span class="st">"by_year"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="va">df</span>
 <span class="co">#&gt; # A tibble: 5 × 3</span>
 <span class="co">#&gt; # Groups:   year [5]</span>
 <span class="co">#&gt;    year package      n</span>
 <span class="co">#&gt;   &lt;dbl&gt; &lt;fct&gt;    &lt;int&gt;</span>
-<span class="co">#&gt; 1  2016 eurostat  6419</span>
-<span class="co">#&gt; 2  2017 eurostat 12482</span>
-<span class="co">#&gt; 3  2018 eurostat 18932</span>
-<span class="co">#&gt; 4  2019 eurostat 28454</span>
-<span class="co">#&gt; 5  2020 eurostat 31298</span></code></pre></div>
+<span class="co">#&gt; 1  2017 eurostat 12482</span>
+<span class="co">#&gt; 2  2018 eurostat 18932</span>
+<span class="co">#&gt; 3  2019 eurostat 28454</span>
+<span class="co">#&gt; 4  2020 eurostat 31298</span>
+<span class="co">#&gt; 5  2021 eurostat 30307</span></code></pre></div>
 <p>Get download statistics of various rOpenGov packages over time and draw a chart:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">packages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"eurostat"</span>, <span class="st">"giscoR"</span>, <span class="st">"sotkanet"</span>, <span class="st">"geofi"</span>, <span class="st">"sweidnumbr"</span><span class="op">)</span>
 <span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/cran_downloads.html">cran_downloads</a></span><span class="op">(</span>pkgs <span class="op">=</span> <span class="va">packages</span>, sum <span class="op">=</span> <span class="st">"total"</span>, output <span class="op">=</span> <span class="st">"plot"</span>, use.cache <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="va">plot</span></code></pre></div>
@@ -189,7 +197,7 @@
 <ul class="list-unstyled">
 <li><a href="http://ropengov.org/" class="external-link"><img src="https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg" alt="rOG-badge"></a></li>
 <li><a href="https://github.com/rOpenGov/sorvi/actions" class="external-link"><img src="https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://CRAN.R-project.org/package=sorvi" class="external-link"><img src="https://www.r-pkg.org/badges/version/sorvi" alt="CRAN status"></a></li>
+<li><a href="https://cran.r-project.org/package=sorvi" class="external-link"><img src="http://www.r-pkg.org/badges/version/sorvi" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://ropengov.r-universe.dev/" class="external-link"><img src="https://ropengov.r-universe.dev/badges/sorvi" alt="r-universe"></a></li>
 <li><a href="http://github.com/badges/stability-badges" class="external-link"><img src="http://badges.github.io/stability-badges/dist/experimental.svg" alt="experimental"></a></li>
 </ul>
