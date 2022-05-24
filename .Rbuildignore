@@ -14,17 +14,12 @@ inst/win-install*
 vignettes/main.R
 vignettes/figure
 cran-comments.md
-
 # Git related
 .git*
-
 # Travis scripts
 .travis.yml
-
 # Misc
 .*~
-
-
 ^\.travis\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
@@ -33,3 +28,4 @@ cran-comments.md
 ^pkgdown$
 ^\.github$
 ^README\.Rmd$
+^CITATION\.cff$
