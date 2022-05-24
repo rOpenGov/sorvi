@@ -14,11 +14,11 @@ knitr::opts_chunk$set(
 ```
 
 <!-- badges: start -->
-[![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
+[![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](https://ropengov.org/)
 [![R-CMD-check](https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg)](https://github.com/rOpenGov/sorvi/actions)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/sorvi)](https://cran.r-project.org/package=sorvi)
 [![r-universe](https://ropengov.r-universe.dev/badges/sorvi)](https://ropengov.r-universe.dev/)
-[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](https://github.com/badges/stability-badges)
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
@@ -27,10 +27,10 @@ knitr::opts_chunk$set(
 
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
 
-sorvi package was originally intended for hosting various algorithms for Finnish open goverment data in [R](http://www.r-project.org). After being superseded by later rOpenGov packages that are more specialized in scope, sorvi now has a new life in hosting various functions that are helpful in rOpenGov package maintenance, authoring and preparing presentations.
+sorvi package was originally intended for hosting various algorithms for Finnish open goverment data in [R](http://www.r-project.org). After being superseded by later rOpenGov packages that are more specialized in scope (such as geofi, hetu and pxweb), sorvi has now found a new life in hosting various functions that are helpful in rOpenGov package maintenance, authoring and preparing presentations.
 
 Originally rOpenGov/sorvi was a fork of [juusohaapanen/soRvi-dev](https://github.com/juusohaapanen/soRvi-dev) but rOpenGov's sorvi branch has since taken a life of its own. The fork was detached fron juusohaapanen's branch in November 2021.
- 
+
 ## Installation
 
 You can install the development version of sorvi from [GitHub](https://github.com/) with:
@@ -84,13 +84,13 @@ For more (partly outdated) examples, check the [tutorial page](https://ropengov.
   * [Submit suggestions and bug reports](https://github.com/ropengov/sorvi/issues) (provide the output of `sessionInfo()` and `packageVersion("sorvi")` and preferably provide a [reproducible example](http://adv-r.had.co.nz/Reproducibility.html))
   * [Send a pull request](https://github.com/ropengov/sorvi/)
   * [Star us on the Github page](https://github.com/ropengov/sorvi/)
-  * [See our website](http://ropengov.org/community/) for additional contact information
+  * [See our website](https://ropengov.org/community/) for additional contact information
 
 ## Acknowledgements
 
-**Kindly cite this work** as follows: [Leo Lahti](http://github.com/antagomir/), Juuso Parkkinen, Joona Lehtomäki, Jussi Paananen, Einari Happonen, Juuso Haapanen, Pyry Kantanen. sorvi - Finnish Open Government Data Toolkit. URL: [http://ropengov.github.io/sorvi/](http://ropengov.github.io/sorvi/)
+**Kindly cite this work** as follows: [Leo Lahti](https://github.com/antagomir/), Juuso Parkkinen, Joona Lehtomäki, Jussi Paananen, Einari Happonen, Juuso Haapanen, Pyry Kantanen. sorvi - Finnish Open Government Data Toolkit. URL: [http://ropengov.github.io/sorvi/](http://ropengov.github.io/sorvi/)
 
-We are grateful to all [contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)! This project is part of [rOpenGov](http://ropengov.org).
+We are grateful to all [contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)! This project is part of [rOpenGov](https://ropengov.org).
 
 [github-watch-badge]: https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social
 [github-watch]: https://github.com/ropengov/sorvi/watchers

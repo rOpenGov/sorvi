@@ -19,17 +19,10 @@ Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https
 
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
 
-sorvi package was originally intended for hosting various algorithms for
-Finnish open goverment data in [R](http://www.r-project.org). After
-being superseded by later rOpenGov packages that are more specialized in
-scope, sorvi now has a new life in hosting various functions that are
-helpful in rOpenGov package maintenance, authoring and preparing
-presentations.
+sorvi package was originally intended for hosting various algorithms for Finnish open goverment data in [R](http://www.r-project.org). After being superseded by later rOpenGov packages that are more specialized in scope, sorvi has now found a new life in hosting various functions that are helpful in rOpenGov package maintenance, authoring and preparing presentations.
 
 Originally rOpenGov/sorvi was a fork of
-[juusohaapanen/soRvi-dev](https://github.com/juusohaapanen/soRvi-dev)
-but rOpenGov’s sorvi branch has since taken a life of its own. The fork
-was detached fron juusohaapanen’s branch in November 2021.
+[juusohaapanen/soRvi-dev](https://github.com/juusohaapanen/soRvi-dev) but rOpenGov’s sorvi branch has since taken a life of its own. The fork was detached fron juusohaapanen’s branch in November 2021.
 
 ## Installation
 

@@ -6,19 +6,20 @@
 \alias{sorvi}
 \title{Algorithmic Tools for Open Data in Finland}
 \description{
-Brief summary of the sorvi package
+The sorvi package hosts various functions that are mainly helpful in rOpenGov 
+package maintenance, package authoring and drawing graphs for presentations. 
+Additionally it has some functions that do not (yet) have their own package
+but are useful in some contexts.
 }
 \details{
 \tabular{ll}{
 Package: \tab sorvi\cr
 Type: \tab Package\cr
-Version: \tab See sessionInfo() or DESCRIPTION file\cr
-Date: \tab 2010-2021\cr
-License: \tab BSD-2-clause\cr
+Version: \tab 0.8.18\cr
+Date: \tab 2010-2022\cr
+License: \tab BSD 2-clause\cr
 LazyLoad: \tab yes\cr
 }
-
-Open Data tools for Finland
 }
 \examples{
 library(sorvi)

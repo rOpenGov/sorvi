@@ -1,3 +1,14 @@
+# sorvi 0.8.18 (2022-05-24)
+
+### DEPRECATED AND DEFUNCT
+
+- Removed the following outdated .R files and related functions: `convert_municipality_codes.R`, `convert_municipality_names.R`, `get_municipality_info_mml.R`, `municipality_to_province.R` and `ropengov_storage_path.R`.
+- Removed `qpdf`, `reshape2`, `RCurl` and `rjson` from Depends and `curl` from imports
+
+### DOCUMENTATION FIXES
+
+- Removed mentions to deprecated functions in package vignette
+
 # sorvi 0.8.17 (2021-11-30)
 
 ### NEW FEATURES
