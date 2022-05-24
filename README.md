@@ -5,7 +5,7 @@
 
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](https://ropengov.org/)
 [![R-CMD-check](https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg)](https://github.com/rOpenGov/sorvi/actions)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/sorvi)](https://cran.r-project.org/package=sorvi)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/sorvi)](https://cran.r-project.org/package=sorvi)
 [![r-universe](https://ropengov.r-universe.dev/badges/sorvi)](https://ropengov.r-universe.dev/)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](https://github.com/badges/stability-badges)
 
@@ -20,7 +20,7 @@ Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
 
 sorvi package was originally intended for hosting various algorithms for
-Finnish open goverment data in [R](http://www.r-project.org). After
+Finnish open goverment data in [R](https://www.r-project.org). After
 being superseded by later rOpenGov packages that are more specialized in
 scope (such as geofi, hetu and pxweb), sorvi has now found a new life in
 hosting various functions that are helpful in rOpenGov package
