@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><link href="../deps/_Roboto%20Mono-0.4.0/font.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><link href="../deps/_Roboto%20Mono-0.4.1/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="sorvi tutorial">
@@ -88,7 +88,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>sorvi tutorial</h1>
                         <h4 data-toc-skip class="author">rOpenGov core team</h4>
             
-            <h4 data-toc-skip class="date">2022-03-16</h4>
+            <h4 data-toc-skip class="date">2022-05-24</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rOpenGov/sorvi/blob/HEAD/vignettes/sorvi_tutorial.Rmd" class="external-link"><code>vignettes/sorvi_tutorial.Rmd</code></a></small>
       <div class="d-none name"><code>sorvi_tutorial.Rmd</code></div>
@@ -282,7 +282,7 @@
 <p>This vignette was created with</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## R version 4.1.3 (2022-03-10)</span>
+<pre><code><span class="co">## R version 4.2.0 (2022-04-22)</span>
 <span class="co">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
 <span class="co">## Running under: Ubuntu 20.04.4 LTS</span>
 <span class="co">## </span>
@@ -300,24 +300,24 @@
 <span class="co">## [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
 <span class="co">## </span>
 <span class="co">## other attached packages:</span>
-<span class="co">## [1] sorvi_0.8.17 knitr_1.37  </span>
+<span class="co">## [1] sorvi_0.8.17 knitr_1.39  </span>
 <span class="co">## </span>
 <span class="co">## loaded via a namespace (and not attached):</span>
-<span class="co">##  [1] pillar_1.7.0       bslib_0.3.1        compiler_4.1.3     RColorBrewer_1.1-2</span>
-<span class="co">##  [5] jquerylib_0.1.4    tools_4.1.3        digest_0.6.29      lubridate_1.8.0   </span>
-<span class="co">##  [9] tibble_3.1.6       jsonlite_1.8.0     evaluate_0.15      memoise_2.0.1     </span>
-<span class="co">## [13] lifecycle_1.0.1    checkmate_2.0.0    gtable_0.3.0       pkgconfig_2.0.3   </span>
-<span class="co">## [17] rlang_1.0.2        cli_3.2.0          yaml_2.3.5         pkgdown_2.0.2     </span>
-<span class="co">## [21] xfun_0.30          fastmap_1.1.0      xml2_1.3.3         httr_1.4.2        </span>
-<span class="co">## [25] dplyr_1.0.8        stringr_1.4.0      generics_0.1.2     vctrs_0.3.8       </span>
-<span class="co">## [29] desc_1.4.1         fs_1.5.2           sass_0.4.0         systemfonts_1.0.4 </span>
-<span class="co">## [33] dlstats_0.1.4      tidyselect_1.1.2   rprojroot_2.0.2    grid_4.1.3        </span>
+<span class="co">##  [1] pillar_1.7.0       bslib_0.3.1        compiler_4.2.0     RColorBrewer_1.1-3</span>
+<span class="co">##  [5] jquerylib_0.1.4    tools_4.2.0        digest_0.6.29      lubridate_1.8.0   </span>
+<span class="co">##  [9] tibble_3.1.7       jsonlite_1.8.0     evaluate_0.15      memoise_2.0.1     </span>
+<span class="co">## [13] lifecycle_1.0.1    checkmate_2.1.0    gtable_0.3.0       pkgconfig_2.0.3   </span>
+<span class="co">## [17] rlang_1.0.2        cli_3.3.0          yaml_2.3.5         pkgdown_2.0.3     </span>
+<span class="co">## [21] xfun_0.31          fastmap_1.1.0      xml2_1.3.3         httr_1.4.3        </span>
+<span class="co">## [25] dplyr_1.0.9        stringr_1.4.0      generics_0.1.2     vctrs_0.4.1       </span>
+<span class="co">## [29] desc_1.4.1         fs_1.5.2           sass_0.4.1         systemfonts_1.0.4 </span>
+<span class="co">## [33] dlstats_0.1.5      tidyselect_1.1.2   rprojroot_2.0.3    grid_4.2.0        </span>
 <span class="co">## [37] glue_1.6.2         R6_2.5.1           textshaping_0.3.6  gh_1.3.0          </span>
-<span class="co">## [41] fansi_1.0.2        rmarkdown_2.13     tidyr_1.2.0        purrr_0.3.4       </span>
-<span class="co">## [45] ggplot2_3.3.5      magrittr_2.0.2     ellipsis_0.3.2     backports_1.4.1   </span>
-<span class="co">## [49] scales_1.1.1       htmltools_0.5.2    rvest_1.0.2        colorspace_2.0-3  </span>
+<span class="co">## [41] fansi_1.0.3        rmarkdown_2.14     tidyr_1.2.0        purrr_0.3.4       </span>
+<span class="co">## [45] ggplot2_3.3.6      magrittr_2.0.3     ellipsis_0.3.2     backports_1.4.1   </span>
+<span class="co">## [49] scales_1.2.0       htmltools_0.5.2    rvest_1.0.2        colorspace_2.0-3  </span>
 <span class="co">## [53] ragg_1.2.2         utf8_1.2.2         stringi_1.7.6      munsell_0.5.0     </span>
-<span class="co">## [57] cachem_1.0.6       crayon_1.5.0</span></code></pre>
+<span class="co">## [57] cachem_1.0.6       crayon_1.5.1</span></code></pre>
 <p>To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of. ~ Sir Ronald Aylmer Fisher</p>
 </div>
 </div>
@@ -334,7 +334,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer>
