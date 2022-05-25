@@ -22,19 +22,10 @@
     <loc>https://ropengov.github.io/sorvi/news/index.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/reference/convert_municipality_codes.html</loc>
-  </url>
-  <url>
-    <loc>https://ropengov.github.io/sorvi/reference/convert_municipality_names.html</loc>
-  </url>
-  <url>
     <loc>https://ropengov.github.io/sorvi/reference/cran_downloads.html</loc>
   </url>
   <url>
     <loc>https://ropengov.github.io/sorvi/reference/get_ifpi_charts.html</loc>
-  </url>
-  <url>
-    <loc>https://ropengov.github.io/sorvi/reference/get_municipality_info_mml.html</loc>
   </url>
   <url>
     <loc>https://ropengov.github.io/sorvi/reference/gh_issue_stats.html</loc>
@@ -49,13 +40,7 @@
     <loc>https://ropengov.github.io/sorvi/reference/load_sorvi_data.html</loc>
   </url>
   <url>
-    <loc>https://ropengov.github.io/sorvi/reference/municipality_to_province.html</loc>
-  </url>
-  <url>
     <loc>https://ropengov.github.io/sorvi/reference/quickdf.html</loc>
-  </url>
-  <url>
-    <loc>https://ropengov.github.io/sorvi/reference/ropengov_storage_path.html</loc>
   </url>
   <url>
     <loc>https://ropengov.github.io/sorvi/reference/sorvi-package.html</loc>
