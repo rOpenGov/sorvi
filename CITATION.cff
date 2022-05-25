@@ -1,0 +1,334 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.2.2
+# See also: https://docs.ropensci.org/cffr/
+# -----------------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "sorvi" in publications use:'
+type: software
+license: BSD-2-Clause
+title: 'sorvi: Functions for Finnish Open Data'
+version: 0.8.18
+doi: 10.5281/zenodo.10280
+abstract: Miscellaneous supporting functions for rOpenGov and for downloading open
+  data.
+authors:
+- family-names: Lahti
+  given-names: Leo
+  email: leo.lahti@iki.fi
+  orcid: https://orcid.org/0000-0001-5537-637X
+- family-names: Parkkinen
+  given-names: Juuso
+- family-names: Lehtomaki
+  given-names: Joona
+- family-names: Paananen
+  given-names: Jussi
+- family-names: Happonen
+  given-names: Einari
+preferred-citation:
+  type: generic
+  title: 'sorvi: Finnish open government data toolkit for R'
+  authors:
+  - family-names: Lahti
+    given-names: Leo
+    email: leo.lahti@iki.fi
+    orcid: https://orcid.org/0000-0001-5537-637X
+  - family-names: Parkkinen
+    given-names: Juuso
+  - family-names: Lehtomaki
+    given-names: Joona
+  - family-names: Haapanen
+    given-names: Juuso
+  - family-names: Happonen
+    given-names: Einari
+  - family-names: Paananen
+    given-names: Jussi
+  - family-names: Kantanen
+    given-names: Pyry
+  doi: 10.5281/zenodo.10280
+  url: https://github.com/rOpenGov/sorvi
+  year: '2022'
+  notes: R package version 0.8.18
+repository: https://CRAN.R-project.org/package=sorvi
+repository-code: https://github.com/ropengov/sorvi
+url: https://CRAN.R-project.org/package=sorvi
+date-released: '2022-05-24'
+contact:
+- family-names: Lahti
+  given-names: Leo
+  email: leo.lahti@iki.fi
+  orcid: https://orcid.org/0000-0001-5537-637X
+references:
+- type: software
+  title: 'R: A Language and Environment for Statistical Computing'
+  notes: Depends
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2022'
+  url: https://www.R-project.org/
+  institution:
+    name: R Foundation for Statistical Computing
+  version: '>= 3.3.0'
+- type: software
+  title: dlstats
+  abstract: 'dlstats: Download Stats of R Packages'
+  notes: Imports
+  authors:
+  - family-names: Yu
+    given-names: Guangchuang
+    email: guangchuangyu@gmail.com
+  year: '2022'
+  url: https://CRAN.R-project.org/package=dlstats
+- type: software
+  title: dplyr
+  abstract: 'dplyr: A Grammar of Data Manipulation'
+  notes: Imports
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+    orcid: https://orcid.org/0000-0003-4757-117X
+  - family-names: François
+    given-names: Romain
+    orcid: https://orcid.org/0000-0002-2444-4226
+  - family-names: Henry
+    given-names: Lionel
+  - family-names: Müller
+    given-names: Kirill
+    orcid: https://orcid.org/0000-0002-1416-3412
+  year: '2022'
+  url: https://CRAN.R-project.org/package=dplyr
+- type: software
+  title: ggplot2
+  abstract: 'ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics'
+  notes: Imports
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+    orcid: https://orcid.org/0000-0003-4757-117X
+  - family-names: Chang
+    given-names: Winston
+    orcid: https://orcid.org/0000-0002-1576-2126
+  - family-names: Henry
+    given-names: Lionel
+  - family-names: Pedersen
+    given-names: Thomas Lin
+    email: thomas.pedersen@rstudio.com
+    orcid: https://orcid.org/0000-0002-5147-4711
+  - family-names: Takahashi
+    given-names: Kohske
+  - family-names: Wilke
+    given-names: Claus
+    orcid: https://orcid.org/0000-0002-7470-9261
+  - family-names: Woo
+    given-names: Kara
+    orcid: https://orcid.org/0000-0002-5125-4188
+  - family-names: Yutani
+    given-names: Hiroaki
+    orcid: https://orcid.org/0000-0002-3385-7233
+  - family-names: Dunnington
+    given-names: Dewey
+    orcid: https://orcid.org/0000-0002-9415-4582
+  year: '2022'
+  url: https://CRAN.R-project.org/package=ggplot2
+- type: software
+  title: gh
+  abstract: 'gh: ''GitHub'' ''API'''
+  notes: Imports
+  authors:
+  - family-names: Bryan
+    given-names: Jennifer
+  - family-names: Wickham
+    given-names: Hadley
+  year: '2022'
+  url: https://CRAN.R-project.org/package=gh
+- type: software
+  title: tidyr
+  abstract: 'tidyr: Tidy Messy Data'
+  notes: Imports
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  - family-names: Girlich
+    given-names: Maximilian
+  year: '2022'
+  url: https://CRAN.R-project.org/package=tidyr
+- type: software
+  title: purrr
+  abstract: 'purrr: Functional Programming Tools'
+  notes: Imports
+  authors:
+  - family-names: Henry
+    given-names: Lionel
+    email: lionel@rstudio.com
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  year: '2022'
+  url: https://CRAN.R-project.org/package=purrr
+- type: software
+  title: rlang
+  abstract: 'rlang: Functions for Base Types and Core R and ''Tidyverse'' Features'
+  notes: Imports
+  authors:
+  - family-names: Henry
+    given-names: Lionel
+    email: lionel@rstudio.com
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  year: '2022'
+  url: https://CRAN.R-project.org/package=rlang
+- type: software
+  title: utils
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2022'
+  url: https://www.R-project.org/
+  institution:
+    name: R Foundation for Statistical Computing
+- type: software
+  title: rvest
+  abstract: 'rvest: Easily Harvest (Scrape) Web Pages'
+  notes: Imports
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  year: '2022'
+  url: https://CRAN.R-project.org/package=rvest
+- type: software
+  title: xml2
+  abstract: 'xml2: Parse XML'
+  notes: Imports
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  - family-names: Hester
+    given-names: Jim
+  - family-names: Ooms
+    given-names: Jeroen
+  year: '2022'
+  url: https://CRAN.R-project.org/package=xml2
+- type: software
+  title: lubridate
+  abstract: 'lubridate: Make Dealing with Dates a Little Easier'
+  notes: Imports
+  authors:
+  - family-names: Spinu
+    given-names: Vitalie
+    email: spinuvit@gmail.com
+  - family-names: Grolemund
+    given-names: Garrett
+  - family-names: Wickham
+    given-names: Hadley
+  year: '2022'
+  url: https://CRAN.R-project.org/package=lubridate
+- type: software
+  title: checkmate
+  abstract: 'checkmate: Fast and Versatile Argument Checks'
+  notes: Imports
+  authors:
+  - family-names: Lang
+    given-names: Michel
+    email: michellang@gmail.com
+    orcid: https://orcid.org/0000-0001-9754-0393
+  year: '2022'
+  url: https://CRAN.R-project.org/package=checkmate
+- type: software
+  title: gridExtra
+  abstract: 'gridExtra: Miscellaneous Functions for "Grid" Graphics'
+  notes: Suggests
+  authors:
+  - family-names: Auguie
+    given-names: Baptiste
+    email: baptiste.auguie@gmail.com
+  year: '2022'
+  url: https://CRAN.R-project.org/package=gridExtra
+- type: software
+  title: RColorBrewer
+  abstract: 'RColorBrewer: ColorBrewer Palettes'
+  notes: Suggests
+  authors:
+  - family-names: Neuwirth
+    given-names: Erich
+    email: erich.neuwirth@univie.ac.at
+  year: '2022'
+  url: https://CRAN.R-project.org/package=RColorBrewer
+- type: software
+  title: knitr
+  abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
+  notes: Suggests
+  authors:
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  year: '2022'
+  url: https://CRAN.R-project.org/package=knitr
+- type: software
+  title: rmarkdown
+  abstract: 'rmarkdown: Dynamic Documents for R'
+  notes: Suggests
+  authors:
+  - family-names: Allaire
+    given-names: JJ
+    email: jj@rstudio.com
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  - family-names: McPherson
+    given-names: Jonathan
+    email: jonathan@rstudio.com
+  - family-names: Luraschi
+    given-names: Javier
+    email: javier@rstudio.com
+  - family-names: Ushey
+    given-names: Kevin
+    email: kevin@rstudio.com
+  - family-names: Atkins
+    given-names: Aron
+    email: aron@rstudio.com
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  - family-names: Cheng
+    given-names: Joe
+    email: joe@rstudio.com
+  - family-names: Chang
+    given-names: Winston
+    email: winston@rstudio.com
+  - family-names: Iannone
+    given-names: Richard
+    email: rich@rstudio.com
+    orcid: https://orcid.org/0000-0003-3925-190X
+  year: '2022'
+  url: https://CRAN.R-project.org/package=rmarkdown
+- type: software
+  title: Cairo
+  abstract: 'Cairo: R Graphics Device using Cairo Graphics Library for Creating High-Quality
+    Bitmap (PNG, JPEG, TIFF), Vector (PDF, SVG, PostScript) and Display (X11 and Win32)
+    Output'
+  notes: Suggests
+  authors:
+  - family-names: Urbanek
+    given-names: Simon
+    email: Simon.Urbanek@r-project.org
+  - family-names: Horner
+    given-names: Jeffrey
+    email: jeff.horner@vanderbilt.edu
+  year: '2022'
+  url: https://CRAN.R-project.org/package=Cairo
+identifiers:
+- type: url
+  value: https://ropengov.github.io/sorvi/

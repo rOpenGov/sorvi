@@ -1,24 +1,27 @@
 Package: sorvi
 Type: Package
-Title: Finnish Open Government Data Toolkit
-Version: 0.8.17
-Date: 2021-11-30
+Title: Functions for Finnish Open Data
+Version: 0.8.18
+Date: 2022-05-24
 Authors@R: c(
-  person("Leo", "Lahti", email = "louhos@googlegroups.com", role = c("aut", "cre")),
-  person("Juuso", "Parkkinen", role = "aut"),   
-  person("Joona", "Lehtomaki", role = "aut"),
-  person("Jussi", "Paananen", role = "aut"), 
-  person("Einari", "Happonen", role = "aut"),
-  person("Juuso", "Haapanen", role = "ctb"),
-  person("Pyry", "Kantanen", role = "ctb"))
+    person("Leo", "Lahti", , "leo.lahti@iki.fi", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-5537-637X")),
+    person("Juuso", "Parkkinen", role = "aut"),
+    person("Joona", "Lehtomaki", role = "aut"),
+    person("Jussi", "Paananen", role = "aut"),
+    person("Einari", "Happonen", role = "aut"),
+    person("Juuso", "Haapanen", role = "ctb"),
+    person("Pyry", "Kantanen", role = "ctb",
+           comment = c(ORCID = "0000-0003-2853-2765"))
+  )
 MailingList: rOpenGov <ropengov-forum@googlegroups.com>
-Description: Algorithms for Finnish open government data.
+Description: Miscellaneous supporting functions for rOpenGov and for downloading open data.
 License: BSD_2_clause + file LICENSE
 VignetteBuilder: knitr
 BugReports: https://github.com/ropengov/sorvi/issues
 URL: https://github.com/ropengov/sorvi,
-    http://cran.r-project.org/package=sorvi,
-    http://ropengov.github.io/sorvi
+    https://CRAN.R-project.org/package=sorvi,
+    https://ropengov.github.io/sorvi/
 Depends:
     R (>= 3.3.0)
 Imports:
@@ -28,7 +31,6 @@ Imports:
     gh,
     tidyr,
     purrr,
-    curl,
     rlang,
     utils,
     rvest,
@@ -38,12 +40,8 @@ Imports:
 Suggests:
     gridExtra,
     RColorBrewer,
-    reshape2,
     knitr,
     rmarkdown,
-    RCurl,
-    rjson,
-    Cairo,
-    qpdf
+    Cairo
 Encoding: UTF-8
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0

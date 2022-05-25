@@ -3,11 +3,11 @@
 
 <!-- badges: start -->
 
-[![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](http://ropengov.org/)
+[![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](https://ropengov.org/)
 [![R-CMD-check](https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg)](https://github.com/rOpenGov/sorvi/actions)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/sorvi)](https://cran.r-project.org/package=sorvi)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/sorvi)](https://cran.r-project.org/package=sorvi)
 [![r-universe](https://ropengov.r-universe.dev/badges/sorvi)](https://ropengov.r-universe.dev/)
-[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](https://github.com/badges/stability-badges)
 
 [![Watch on
 GitHub](https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social)](https://github.com/ropengov/sorvi/watchers)
@@ -20,11 +20,11 @@ Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
 
 sorvi package was originally intended for hosting various algorithms for
-Finnish open goverment data in [R](http://www.r-project.org). After
+Finnish open goverment data in [R](https://www.r-project.org). After
 being superseded by later rOpenGov packages that are more specialized in
-scope, sorvi now has a new life in hosting various functions that are
-helpful in rOpenGov package maintenance, authoring and preparing
-presentations.
+scope (such as geofi, hetu and pxweb), sorvi has now found a new life in
+hosting various functions that are helpful in rOpenGov package
+maintenance, authoring and preparing presentations.
 
 Originally rOpenGov/sorvi was a fork of
 [juusohaapanen/soRvi-dev](https://github.com/juusohaapanen/soRvi-dev)
@@ -104,17 +104,17 @@ page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
     example](http://adv-r.had.co.nz/Reproducibility.html))
   - [Send a pull request](https://github.com/ropengov/sorvi/)
   - [Star us on the Github page](https://github.com/ropengov/sorvi/)
-  - [See our website](http://ropengov.org/community/) for additional
+  - [See our website](https://ropengov.org/community/) for additional
     contact information
 
 ## Acknowledgements
 
 **Kindly cite this work** as follows: [Leo
-Lahti](http://github.com/antagomir/), Juuso Parkkinen, Joona Lehtomäki,
+Lahti](https://github.com/antagomir/), Juuso Parkkinen, Joona Lehtomäki,
 Jussi Paananen, Einari Happonen, Juuso Haapanen, Pyry Kantanen. sorvi -
 Finnish Open Government Data Toolkit. URL:
 <http://ropengov.github.io/sorvi/>
 
 We are grateful to all
 [contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)\!
-This project is part of [rOpenGov](http://ropengov.org).
+This project is part of [rOpenGov](https://ropengov.org).

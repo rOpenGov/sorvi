@@ -1,5 +1,8 @@
 citHeader("Kindly cite the sorvi R package as follows:")
 
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
+vers <- paste("R package version", meta$Version)
+
 citEntry(entry="misc",
          title = "sorvi: Finnish open government data toolkit for R",
          author = personList(
@@ -8,16 +11,20 @@ citEntry(entry="misc",
 	   person(given ="Joona", family="Lehtomaki"),
 	   person(given ="Juuso", family="Haapanen"),
 	   person(given ="Einari", family="Happonen"),
-	   person(given ="Jussi", family="Paananen")
+	   person(given ="Jussi", family="Paananen"),
+	   person(given = "Pyry", family="Kantanen")
          ),
 	 doi = "10.5281/zenodo.10280",
+	 url = "https://github.com/rOpenGov/sorvi",
 	 journal = "",
-	 year = "2011",
+	 year = year,
+	 note = vers,
          textVersion =
-         paste("(C) Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari Happonen and Jussi Paananen (rOpenGov 2010-2017). ",
-               "sorvi: Finnish open data toolkit for R. ",
-	       "URL: http://github.com/rOpenGov/sorvi",
-               sep=" ")
+         paste("Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari Happonen, Jussi Paananen and Pyry Kantanen (",year,"). ",
+         "sorvi: Finnish open data toolkit for R. ",
+         vers,
+	       " URL: https://github.com/rOpenGov/sorvi",
+         sep="")
          )
 
 citFooter("\nMany thanks for all contributors!")
