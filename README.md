@@ -111,10 +111,10 @@ page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
 
 **Kindly cite this work** as follows: [Leo
 Lahti](https://github.com/antagomir/), Juuso Parkkinen, Joona Lehtomäki,
-Jussi Paananen, Einari Happonen, Juuso Haapanen, Pyry Kantanen. sorvi -
-Finnish Open Government Data Toolkit. URL:
+Pyry Kantanen. sorvi - Finnish Open Data Toolkit. URL:
 <http://ropengov.github.io/sorvi/>
 
-We are grateful to all
+We are grateful to Jussi Paananen, Einari Happonen, Juuso Haapanen, and
+all other
 [contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)\!
 This project is part of [rOpenGov](https://ropengov.org).
