@@ -40,7 +40,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">sorvi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.18</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.19</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,7 +88,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>sorvi Tutorial</h1>
                         <h4 data-toc-skip class="author">rOpenGov core team</h4>
             
-            <h4 data-toc-skip class="date">2022-05-25</h4>
+            <h4 data-toc-skip class="date">2022-05-26</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rOpenGov/sorvi/blob/HEAD/vignettes/sorvi_tutorial.Rmd" class="external-link"><code>vignettes/sorvi_tutorial.Rmd</code></a></small>
       <div class="d-none name"><code>sorvi_tutorial.Rmd</code></div>
@@ -143,7 +143,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari</span>
 <span class="co">#&gt;   Happonen, Jussi Paananen and Pyry Kantanen (2022). sorvi: Finnish</span>
-<span class="co">#&gt;   open data toolkit for R. R package version 0.8.18 URL:</span>
+<span class="co">#&gt;   open data toolkit for R. R package version 0.8.19 URL:</span>
 <span class="co">#&gt;   https://github.com/rOpenGov/sorvi</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
@@ -154,7 +154,7 @@
 <span class="co">#&gt;     doi = {10.5281/zenodo.10280},</span>
 <span class="co">#&gt;     url = {https://github.com/rOpenGov/sorvi},</span>
 <span class="co">#&gt;     year = {2022},</span>
-<span class="co">#&gt;     note = {R package version 0.8.18},</span>
+<span class="co">#&gt;     note = {R package version 0.8.19},</span>
 <span class="co">#&gt;   }</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Many thanks for all contributors!</span></code></pre></div>
@@ -183,7 +183,7 @@
 <span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt; [1] sorvi_0.8.18</span>
+<span class="co">#&gt; [1] sorvi_0.8.19</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; loaded via a namespace (and not attached):</span>
 <span class="co">#&gt;  [1] pillar_1.7.0       bslib_0.3.1        compiler_4.2.0     RColorBrewer_1.1-3</span>
@@ -203,6 +203,201 @@
 <span class="co">#&gt; [57] munsell_0.5.0      cachem_1.0.6       crayon_1.5.1</span></code></pre></div>
 <p>To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of. ~ Sir Ronald Aylmer Fisher</p>
 </div>
+<div class="section level3">
+<h3 id="todo-data-sets"># TODO data sets<a class="anchor" aria-label="anchor" href="#todo-data-sets"></a>
+</h3>
+<div class="section level4">
+<h4 id="population">Population<a class="anchor" aria-label="anchor" href="#population"></a>
+</h4>
+<ul>
+<li>
+<a href="http://vrk.fi/default.aspx?id=276" class="external-link">Väestörekisterikeskus</a> Various very useful statistics</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="datakatalogit">Datakatalogit<a class="anchor" aria-label="anchor" href="#datakatalogit"></a>
+</h4>
+<ul>
+<li>
+<a href="http://www.quandl.com/finland" class="external-link">Quandl</a> Quandlin Suomi-tilastot</li>
+<li>
+<a href="http://fi.thedatahub.org/dataset" class="external-link">DataHub</a> Tämä datakatalogi sisältää keskitettyä ja joukkoistaen kerättyä tietoa suomalaisen yhteiskunnan avoimesta datasta. Pidetään silmällä kiintoisien aineistojen varalta, ja täydennetään itse.</li>
+<li>
+<a href="http://www.suomi.fi/suomifi/tyohuone/yhteiset_palvelut/avoin_data/" class="external-link">Suomi avoimet datat katalogi</a><br>
+</li>
+<li>
+<a href="http://www-958.ibm.com/software/data/cognos/manyeyes/" class="external-link">ManyEyes</a><br>
+</li>
+<li>
+<a href="http://infochimps.com/datasets" class="external-link">InfoChimps</a><br>
+</li>
+<li>
+<a href="http://opengov.fi/" class="external-link">opengov.fi</a><br>
+</li>
+<li>
+<a href="http://www.julkinendata.fi/" class="external-link">julkinendata.fi</a><br>
+</li>
+<li>
+<a href="http://www.opendatacommons.org/" class="external-link">opendatacommons</a><br>
+</li>
+<li>
+<a href="http://www.google.com/publicdata/home" class="external-link">Google Public data</a><br>
+</li>
+<li><a href="http://blog.datamarket.com/2011/10/31/using-datamarket-from-within-r/" class="external-link">DataMarket</a></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="tampere">Tampere<a class="anchor" aria-label="anchor" href="#tampere"></a>
+</h4>
+<ul>
+<li><a href="http://www.tampere.fi/tampereinfo/avoindata.html" class="external-link">Tampereen kaupungin avoin data</a></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="kuntien-talous-ja-päätöksenteko">Kuntien talous ja päätöksenteko<a class="anchor" aria-label="anchor" href="#kuntien-talous-ja-p%C3%A4%C3%A4t%C3%B6ksenteko"></a>
+</h4>
+<ul>
+<li><a href="http://vrk.fi/default.aspx?docid=612&amp;site=3&amp;id=0" class="external-link">Kuntien nimenmuutokset (VRK)</a></li>
+<li><a href="http://www.kunnat.net/fi/tietopankit/tilastot/kuntavaali-ja-demokratiatilastot/Sivut/default.aspx" class="external-link">Kuntaliiton kuntavaali- ja demokratiatilastot</a></li>
+<li><a href="http://www.kunnat.net/fi/tietopankit/tilastot/kuntavaali-ja-demokratiatilastot/kuntien-luottamushenkiloiden-palkkiot-ja-korvaukset/Sivut/default.aspx" class="external-link">Kuntien luottamushenkilöiden palkkiot ja korvaukset</a></li>
+<li><a href="http://www.kunnat.net/fi/tietopankit/tilastot/kuntatalous/Sivut/default.aspx" class="external-link">Kuntatalouden tilastot</a></li>
+<li><a href="http://www.hri.fi/fi/data/peruspalvelujen-saatavuus-ja-kustannukset-kuntakortti/" class="external-link">Peruspalvelujen saatavuus ja kustannukset</a></li>
+<li><a href="http://www.vm.fi/vm/fi/15_kunta_asiat/01_kuntatalous/03_tilastoja/index.jsp" class="external-link">Kuntien talous VM:n sivuilla</a></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="vaalit-ja-vaalikoneet">Vaalit ja vaalikoneet<a class="anchor" aria-label="anchor" href="#vaalit-ja-vaalikoneet"></a>
+</h4>
+<ul>
+<li><a href="http://vrk.fi/default.aspx?docid=719&amp;site=3&amp;id=0" class="external-link">Maistraatit ja vaalipiirit nimi-tunnus-konversiotaulut (VRK)</a></li>
+<li><a href="http://www.vaalit.fi/22381.htm" class="external-link">Kunnallisvaalien tulostilastot aikasarjana vuodesta 1983</a></li>
+<li><a href="http://yle.fi/uutiset/nyt_sita_saa_vaalikonedataa/6331306" class="external-link">YLEn vaalikone 2012</a></li>
+<li>
+<a href="http://blogit.hs.fi/hsnext/hsn-kuntavaalikoneen-2008-vastaukset-avodatana" class="external-link">HS Kuntavaalikone 2008 vastaukset</a> 2012 tulossa tuonnempana</li>
+<li>
+<a href="http://tilastokeskus.fi/til/vaa.html" class="external-link">Tilastokeskuksen vaalitilastot</a> (osa jo tehty HSOpeniin 21.5.2012 / LL -&gt; dokumentoi kunnolla wikiin)</li>
+<li>
+<a href="http://www.fsd.uta.fi/vaalimaatti/vaalit2012/ohjelmat" class="external-link">Puolueiden ohjelmat tekstinä</a> Vaalimaatti-palvelussa</li>
+<li>
+<a href="http://www.datavaalit.fi/resources/catalogue/" class="external-link">DataHub - Datavaali - katalogi</a> Pidetään silmällä kiintoisien aineistojen varalta, ja täydennetään itse.</li>
+<li>
+<a href="https://github.com/avoindata/datavaalit-data" class="external-link">avoindata/Datavaalit-data</a> Kokoelma linkkejä ja putsattua dataa datavaalit-hankkeeseen liittyen</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="politiikka-ja-talous">Politiikka ja talous<a class="anchor" aria-label="anchor" href="#politiikka-ja-talous"></a>
+</h4>
+<ul>
+<li><a href="http://www.kunnat.net/fi/tietopankit/tilastot/kuntatalous/kuntien-tilinpaatokset/taloudellisia-tunnuslukuja/Sivut/default.aspx" class="external-link">Taloudellisia-tunnuslukuja</a></li>
+<li>
+<a href="http://www.puoluerahoitus.fi/fi/index/vaalirahailmoituksia/raportit/Tietoaineistot.html.stx" class="external-link">puoluerahoitus.fi</a> Vaalirahoitusilmoituksia csv-tiedostoina.</li>
+<li>
+<a href="http://www.netra.fi/" class="external-link">Valtiokonttorin raportointipalvelu Netra</a> (tietoa valtion toiminnasta, resursseista ja tuloksellisuudesta)</li>
+<li><a href="http://www.vero.fi/fi-FI/Tietoa_Verohallinnosta/Yhteisojen_tuloverotuksen_julkiset_tiedo%2824348%29" class="external-link">Yhteisöjen tuloverotusdata CSV:nä</a></li>
+<li><a href="http://veronsaajat.vero.fi/fi-FI/kunnat/Sivut/Default.aspx" class="external-link">Verotulojen tilitys- ja kertymätietoja kuukausi- ja vuositasoilla</a></li>
+<li>
+<a href="http://openspending.org/eu-commission-fts?_view=default&amp;_time=2010" class="external-link">OpenSpending</a> (Suomen ja muiden maiden saamat EU-tuet ym.). Huom: osallistuvabudjetointi.fi on työstämässä <a href="http://osallistuvabudjetointi.fi/openspending/" class="external-link">Suomi-versiota</a><br>
+</li>
+<li>
+<a href="http://farmsubsidy.org/getthedata/download" class="external-link">FarmSubsidy</a><br>
+</li>
+<li>IATI International Aid Transparency Initiative: Ulkoministeriön avustusdata saatavilla, ks. <a href="http://www.iatiregistry.org/publisher/finland_mfa" class="external-link">IATI-registry</a> ja <a href="http://formin.finland.fi/opendata/IATI/Finland_DM.xml" class="external-link">UM:n sivut</a>. Mahdollistaa myös vertailut maiden välillä.</li>
+<li>
+<a href="http://tilastokeskus.fi/tup/tilastotietokannat/index.html" class="external-link">Kansainvälisen tiedon taulukot</a> Kansainvälisiä tilastotietoja ja tietolähteitä.</li>
+<li><a href="https://scraperwiki.com/scrapers/finnish_parliamentarians_blogs/" class="external-link">Suomalaisten poliitikkojen blogit</a></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="hyvinvointi-ja-sosioekonomia">Hyvinvointi ja sosioekonomia<a class="anchor" aria-label="anchor" href="#hyvinvointi-ja-sosioekonomia"></a>
+</h4>
+<ul>
+<li><a href="http://www.kela.fi/kelasto" class="external-link">Kelasto</a></li>
+<li>
+<a href="http://www.veripalvelu.fi/www/3073" class="external-link">SPR Veripalvelun myyntidata</a> (neljännesvuosittain päivittyviä raportteja SPR Veripalvelun punasolu- ja verihiutalevalmisteiden myynnistä)</li>
+<li><a href="http://www.etk.fi/fi/service/tilastot/658/apps4finland" class="external-link">Eläketurvakekuksen avointa dataa</a></li>
+<li>
+<a href="http://www.findikaattori.fi/fi/indicators" class="external-link">Findikaattori</a> Erittäin hyvää indikaattoridataa. Sisältyy THL:n Sotkanettiin</li>
+<li>
+<a href="http://www.terveytemme.fi/sairastavuusindeksi" class="external-link">THL Sairastavuusindeksi</a> (mukana SotkaNetissä)</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="maailma">Maailma<a class="anchor" aria-label="anchor" href="#maailma"></a>
+</h4>
+<ul>
+<li><a href="http://www.worldvaluessurvey.org" class="external-link">World Values Survey</a></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="lounais-suomi">Lounais-Suomi<a class="anchor" aria-label="anchor" href="#lounais-suomi"></a>
+</h4>
+<ul>
+<li>
+<a href="http://paikkatietokeskus.lounaispaikka.fi/fi/aineistot/" class="external-link">Lounaispaikka</a> Avoimia paikkatieto- ym. aineistoja varsinais-Suomesta.</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="tiede-ja-kulttuuri">Tiede ja kulttuuri<a class="anchor" aria-label="anchor" href="#tiede-ja-kulttuuri"></a>
+</h4>
+<ul>
+<li>
+<a href="http://creativecommons.fi/2013/10/valtion-taidemuseo-avaa-taidekokoelmansa-metadatan-avoimena-tietona/" class="external-link">Valtion taidemuseon kokoelmien metadata</a> (36000 teosta 6000 taiteilijalta)</li>
+<li><a href="http://research.fi/voimavarat.html" class="external-link">research.fi-tutkimustilastoja</a></li>
+<li><a href="https://meta.wikimedia.org/wiki/Research:Data" class="external-link">Wikimedia Research Metadata</a></li>
+<li><a href="http://data.aalto.fi/" class="external-link">Aalto-yliopiston open linked data</a></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="kirjastot-ja-kirjallisuus">Kirjastot ja kirjallisuus<a class="anchor" aria-label="anchor" href="#kirjastot-ja-kirjallisuus"></a>
+</h4>
+<ul>
+<li>
+<a href="http://tilastot.kirjastot.fi/fi-FI/vuositilastot.aspx" class="external-link">Kirjastotilastot</a> (kirjastojen sijainnit, lainamäärät, kirjojen määrät, jne. jne.)</li>
+<li>
+<a href="http://data.kirjastot.fi/data.html" class="external-link">Kirjastojen avointa dataa</a> (aineistoluettelot, suosituimmat lainat jne.)</li>
+<li><a href="http://kirjoitusalusta.fi/hsopenkirjasampo" class="external-link">KirjaSampo</a></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="ympäristö">Ympäristö<a class="anchor" aria-label="anchor" href="#ymp%C3%A4rist%C3%B6"></a>
+</h4>
+<ul>
+<li>
+<a href="http://www.metla.fi/metinfo/tilasto/" class="external-link">Metlan Metinfo</a> Metsäntutkimuslaitoksen avoimet metsätilastot sekä kansainvälisiä tilastoja!</li>
+<li><a href="http://ilmatieteenlaitos.fi/avoin-data-beta" class="external-link">Ilmatieteen laitos (FMI) säätiedot avoin data beta</a></li>
+<li><a href="http://fi.thedatahub.org/it/dataset/ilmanlaatu" class="external-link">Ilmatieteen laitoksen ilmanlaatuportaali</a></li>
+<li><a href="http://www.biomi.org/internet/ilmanlaaturajapinta.html" class="external-link">Ilmanlaatu-rajapinta</a></li>
+<li><a href="http://wwwp2.ymparisto.fi/scripts/paikkatieto.asp" class="external-link">OIVA-ympäristötietokanta</a></li>
+<li>
+<a href="http://atlas3.lintuatlas.fi/taustaa/kaytto" class="external-link">Lintuatlas (API)</a> Lintujen pesimäatlaksia ym CSV-muodossa Suomessa</li>
+<li><a href="http://karhu.luomus.fi/havaintoilmoitin/show/all" class="external-link">Avoimet luontohavainnot</a></li>
+<li><a href="http://www.luomus.fi/kasviatlas/rajapinta.php" class="external-link">Kasviatlas - suomen putkilokasvidata rajapintana</a></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="information-technology-and-internet">Information technology and Internet<a class="anchor" aria-label="anchor" href="#information-technology-and-internet"></a>
+</h4>
+<ul>
+<li>
+<a href="http://www.cert.fi/katsaukset/tilastot/avoindata.html" class="external-link">CERT-FI</a> suomalaisia verkkoja koskevia haittaohjelma- ja tietoturvaloukkaushavaintoja</li>
+<li><a href="http://tnsmetrix.tns-gallup.fi/public/" class="external-link">Suomen verkkosivustojen viikkoluvut</a></li>
+<li><a href="http://tnsmetrix.tns-gallup.fi/public/" class="external-link">TNS Gallup, Suomen web-sivustojen käyttäjämäärät</a></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="miscellaneous">Miscellaneous<a class="anchor" aria-label="anchor" href="#miscellaneous"></a>
+</h4>
+<ul>
+<li>
+<a href="http://www.inside-r.org/howto/finding-data-internet" class="external-link">r-finding-data-internet)</a><br>
+</li>
+<li>
+<a href="http://www.r-bloggers.com/25-more-ways-to-bring-data-into-r/" class="external-link">25-more-ways-to-bring-data-into-r</a><br>
+</li>
+<li><a href="http://www.decisionstats.com/using-rstats-for-online-data-access/" class="external-link">using-rstats-for-online-data-access</a></li>
+</ul>
+</div>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
@@ -212,7 +407,7 @@
 
     <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Jussi Paananen, Einari Happonen.</p>
+<p>Developed by Leo Lahti, Juuso Parkkinen, Joona Lehtomaki.</p>
 </div>
 
 <div class="pkgdown-footer-right">
