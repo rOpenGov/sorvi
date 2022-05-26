@@ -92,9 +92,10 @@ To call in the statistician after the experiment is done may be no more than ask
 
 ### Population
 * [Väestörekisterikeskus](http://vrk.fi/default.aspx?id=276) Various very useful statistics
+* [Rich source of Finnish registers](https://rekisteritutkimus.wordpress.com/rekisterit/rekisterit-aakkosissa/)
 
- 
 ### Datakatalogit
+* Valtiopäiväasiakirjat, eduskunnan äänestykset ym. [avoimena datana](http://avoindata.eduskunta.fi/help.html)
 * [Quandl](http://www.quandl.com/finland) Quandlin Suomi-tilastot
 * [DataHub](http://fi.thedatahub.org/dataset) Tämä datakatalogi sisältää keskitettyä ja joukkoistaen kerättyä tietoa suomalaisen yhteiskunnan avoimesta datasta. Pidetään silmällä kiintoisien aineistojen varalta, ja täydennetään itse.
 * [Suomi avoimet datat katalogi](http://www.suomi.fi/suomifi/tyohuone/yhteiset_palvelut/avoin_data/)  
