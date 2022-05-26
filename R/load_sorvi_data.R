@@ -9,6 +9,7 @@
 #'      \item{translation_provinces}{Translation of Finnish province (maakunta) names (Finnish, English).}
 #'    }
 #' @examples translations <- load_sorvi_data("translation_provinces")
+#' @importFrom utils read.csv
 #' @export
 #' @references
 #' See citation("sorvi")

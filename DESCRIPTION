@@ -1,21 +1,18 @@
 Package: sorvi
 Type: Package
 Title: Functions for Finnish Open Data
-Version: 0.8.18
-Date: 2022-05-24
+Version: 0.8.19
+Date: 2022-05-26
 Authors@R: c(
     person("Leo", "Lahti", , "leo.lahti@iki.fi", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-5537-637X")),
     person("Juuso", "Parkkinen", role = "aut"),
     person("Joona", "Lehtomaki", role = "aut"),
-    person("Jussi", "Paananen", role = "aut"),
-    person("Einari", "Happonen", role = "aut"),
-    person("Juuso", "Haapanen", role = "ctb"),
     person("Pyry", "Kantanen", role = "ctb",
            comment = c(ORCID = "0000-0003-2853-2765"))
   )
 MailingList: rOpenGov <ropengov-forum@googlegroups.com>
-Description: Miscellaneous supporting functions for rOpenGov and for downloading open data.
+Description: Misc support functions for rOpenGov and open data downloads.
 License: BSD_2_clause + file LICENSE
 VignetteBuilder: knitr
 BugReports: https://github.com/ropengov/sorvi/issues
