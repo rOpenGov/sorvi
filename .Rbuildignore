@@ -29,3 +29,4 @@ cran-comments.md
 ^\.github$
 ^README\.Rmd$
 ^CITATION\.cff$
+^data-raw$
