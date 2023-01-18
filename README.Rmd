@@ -88,9 +88,9 @@ For more (partly outdated) examples, check the [tutorial page](https://ropengov.
 
 ## Acknowledgements
 
-**Kindly cite this work** as follows: [Leo Lahti](https://github.com/antagomir/), Juuso Parkkinen, Joona Lehtomäki, Jussi Paananen, Einari Happonen, Juuso Haapanen, Pyry Kantanen. sorvi - Finnish Open Government Data Toolkit. URL: [http://ropengov.github.io/sorvi/](http://ropengov.github.io/sorvi/)
+**Kindly cite this work** as follows: [Leo Lahti](https://github.com/antagomir/), Juuso Parkkinen, Joona Lehtomäki, Pyry Kantanen. sorvi - Finnish Open Data Toolkit. URL: [http://ropengov.github.io/sorvi/](http://ropengov.github.io/sorvi/)
 
-We are grateful to all [contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)! This project is part of [rOpenGov](https://ropengov.org).
+We are grateful to Jussi Paananen, Einari Happonen, Juuso Haapanen, and all other [contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)! This project is part of [rOpenGov](https://ropengov.org).
 
 [github-watch-badge]: https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social
 [github-watch]: https://github.com/ropengov/sorvi/watchers

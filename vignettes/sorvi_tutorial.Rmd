@@ -65,6 +65,11 @@ plot <- cran_downloads(pkgs = packages, sum = "total", output = "plot", use.cach
 plot
 ```
 
+
+## Further data sets
+
+Possible new data sets to include are listed in the [wiki](https://github.com/rOpenGov/sorvi/wiki/Data-sources).
+
 ## Licensing and Citations
 
 This work can be freely used, modified and distributed under the 
@@ -83,3 +88,4 @@ sessionInfo()
 ```
 
 To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of. ~ Sir Ronald Aylmer Fisher
+

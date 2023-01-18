@@ -30,3 +30,4 @@ cran-comments.md
 ^README\.Rmd$
 ^CITATION\.cff$
 ^data-raw$
+^CRAN-SUBMISSION$

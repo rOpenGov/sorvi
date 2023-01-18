@@ -1,8 +1,8 @@
-# sorvi 0.8.18 (2022-05-24)
+# sorvi 0.8.19 (2022-05-24)
 
 ### DEPRECATED AND DEFUNCT
 
-- Removed the following outdated .R files and related functions: `convert_municipality_codes.R`, `convert_municipality_names.R`, `get_municipality_info_mml.R`, `municipality_to_province.R` and `ropengov_storage_path.R`.
+- Removed the following outdated .R files and related functions: `is_url`, `quickdf`, `convert_municipality_codes.R`, `convert_municipality_names.R`, `get_municipality_info_mml.R`, `municipality_to_province.R` and `ropengov_storage_path.R`.
 - Removed `qpdf`, `reshape2`, `RCurl` and `rjson` from Depends and `curl` from imports
 
 ### DOCUMENTATION FIXES
@@ -14,6 +14,11 @@
 ### NEW FEATURES
 
 - New function: `get_ifpi_charts()` for scraping data from Musiikkituottajat - IFPI Finland ry charts
+
+### OTHER CHANGES
+
+- Updated the author list to reflect the current package; added acknowledgments
+
 
 # sorvi 0.8.16 (2021-11-25)
 
