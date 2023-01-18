@@ -36,8 +36,8 @@ Originally rOpenGov/sorvi was a fork of [juusohaapanen/soRvi-dev](https://github
 You can install the development version of sorvi from [GitHub](https://github.com/) with:
 
 ```{r, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("rOpenGov/sorvi")
+# install.packages("remotes")
+remotes::install_github("rOpenGov/sorvi")
 ```
 
 Development version can be also installed using the
