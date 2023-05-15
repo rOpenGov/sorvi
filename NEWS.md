@@ -1,3 +1,11 @@
+# sorvi 0.8.19.9000 (2023-05-15)
+
+### NEW FEATURES
+
+- New function: `get_municipalities()`, for mapping historical municipalities
+- New datasets: `kunnat1865_2021` and `polygons1909_2009`, containing the data for abovementioned function to work, courtesy of 
+- Experimental version of the package for testing R functions and datasets related to mapping Finnish historical municipality maps. Raw data courtesy of [National Semantic Web Ontology Project in Finland (FinnONTO)](https://seco.cs.aalto.fi/projects/finnonto/), a project by [Semantic Computing Research Group](https://seco.cs.aalto.fi). Raw data was downloaded from the [Finnish Ontology Library Service ONKI](http://onki.fi/en/browser/) ([description in SeCo website](https://seco.cs.aalto.fi/services/onki/)).
+
 # sorvi 0.8.19 (2022-05-24)
 
 ### DEPRECATED AND DEFUNCT

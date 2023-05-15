@@ -1,0 +1,4464 @@
+# ************************************************************************************************************************
+# Creative Commons Attribution 3.0 License
+# http://creativecommons.org/licenses/by/3.0/legalcode
+# ************************************************************************************************************************
+# You must attribute this work to: FinnONTO Consortium
+# Homepage: http://www.seco.tkk.fi/projects/finnonto/
+# ************************************************************************************************************************
+# This work has been downloaded from (source): http://www.yso.fi/onto/sapo
+# Download timestamp: Thu, 04 Aug 2022 11:48:40 +0300
+# ************************************************************************************************************************
+# 
+# THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE (\"CCPL\" OR
+# \"LICENSE\"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
+# AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+# 
+# BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE. TO
+# THE EXTENT THIS LICENSE MAY BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE IN
+# CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
+# 
+# 1. Definitions
+# 
+#    1. \"Adaptation\" means a work based upon the Work, or upon the Work and other pre-existing works, such as a
+# translation, adaptation, derivative work, arrangement of music or other alterations of a literary or artistic work, or
+# phonogram or performance and includes cinematographic adaptations or any other form in which the Work may be recast,
+# transformed, or adapted including in any form recognizably derived from the original, except that a work that
+# constitutes a Collection will not be considered an Adaptation for the purpose of this License. For the avoidance of
+# doubt, where the Work is a musical work, performance or phonogram, the synchronization of the Work in timed-relation
+# with a moving image (\"synching\") will be considered an Adaptation for the purpose of this License.
+#    2. \"Collection\" means a collection of literary or artistic works, such as encyclopedias and anthologies, or
+# performances, phonograms or broadcasts, or other works or subject matter other than works listed in Section 1(f) below,
+# which, by reason of the selection and arrangement of their contents, constitute intellectual creations, in which the
+# Work is included in its entirety in unmodified form along with one or more other contributions, each constituting
+# separate and independent works in themselves, which together are assembled into a collective whole. A work that
+# constitutes a Collection will not be considered an Adaptation (as defined above) for the purposes of this License.
+#    3. \"Distribute\" means to make available to the public the original and copies of the Work or Adaptation, as
+# appropriate, through sale or other transfer of ownership.
+#    4. \"Licensor\" means the individual, individuals, entity or entities that offer(s) the Work under the terms of this
+# License.
+#    5. \"Original Author\" means, in the case of a literary or artistic work, the individual, individuals, entity or
+# entities who created the Work or if no individual or entity can be identified, the publisher; and in addition (i) in the
+# case of a performance the actors, singers, musicians, dancers, and other persons who act, sing, deliver, declaim, play
+# in, interpret or otherwise perform literary or artistic works or expressions of folklore; (ii) in the case of a
+# phonogram the producer being the person or legal entity who first fixes the sounds of a performance or other sounds;
+# and, (iii) in the case of broadcasts, the organization that transmits the broadcast.
+#    6. \"Work\" means the literary and/or artistic work offered under the terms of this License including without
+# limitation any production in the literary, scientific and artistic domain, whatever may be the mode or form of its
+# expression including digital form, such as a book, pamphlet and other writing; a lecture, address, sermon or other work
+# of the same nature; a dramatic or dramatico-musical work; a choreographic work or entertainment in dumb show; a musical
+# composition with or without words; a cinematographic work to which are assimilated works expressed by a process
+# analogous to cinematography; a work of drawing, painting, architecture, sculpture, engraving or lithography; a
+# photographic work to which are assimilated works expressed by a process analogous to photography; a work of applied art;
+# an illustration, map, plan, sketch or three-dimensional work relative to geography, topography, architecture or science;
+# a performance; a broadcast; a phonogram; a compilation of data to the extent it is protected as a copyrightable work; or
+# a work performed by a variety or circus performer to the extent it is not otherwise considered a literary or artistic
+# work.
+#    7. \"You\" means an individual or entity exercising rights under this License who has not previously violated the
+# terms of this License with respect to the Work, or who has received express permission from the Licensor to exercise
+# rights under this License despite a previous violation.
+#    8. \"Publicly Perform\" means to perform public recitations of the Work and to communicate to the public those public
+# recitations, by any means or process, including by wire or wireless means or public digital performances; to make
+# available to the public Works in such a way that members of the public may access these Works from a place and at a
+# place individually chosen by them; to perform the Work to the public by any means or process and the communication to
+# the public of the performances of the Work, including by public digital performance; to broadcast and rebroadcast the
+# Work by any means including signs, sounds or images.
+#    9. \"Reproduce\" means to make copies of the Work by any means including without limitation by sound or visual
+# recordings and the right of fixation and reproducing fixations of the Work, including storage of a protected performance
+# or phonogram in digital form or other electronic medium.
+# 
+# 2. Fair Dealing Rights. Nothing in this License is intended to reduce, limit, or restrict any uses free from copyright
+# or rights arising from limitations or exceptions that are provided for in connection with the copyright protection under
+# copyright law or other applicable laws.
+# 
+# 3. License Grant. Subject to the terms and conditions of this License, Licensor hereby grants You a worldwide,
+# royalty-free, non-exclusive, perpetual (for the duration of the applicable copyright) license to exercise the rights in
+# the Work as stated below:
+# 
+#    1. to Reproduce the Work, to incorporate the Work into one or more Collections, and to Reproduce the Work as
+# incorporated in the Collections;
+#    2. to create and Reproduce Adaptations provided that any such Adaptation, including any translation in any medium,
+# takes reasonable steps to clearly label, demarcate or otherwise identify that changes were made to the original Work.
+# For example, a translation could be marked \"The original work was translated from English to Spanish,\" or a
+# modification could indicate \"The original work has been modified.\";
+#    3. to Distribute and Publicly Perform the Work including as incorporated in Collections; and,
+#    4. to Distribute and Publicly Perform Adaptations.
+#    5.
+# 
+#       For the avoidance of doubt:
+#          1. Non-waivable Compulsory License Schemes. In those jurisdictions in which the right to collect royalties
+# through any statutory or compulsory licensing scheme cannot be waived, the Licensor reserves the exclusive right to
+# collect such royalties for any exercise by You of the rights granted under this License;
+#          2. Waivable Compulsory License Schemes. In those jurisdictions in which the right to collect royalties through
+# any statutory or compulsory licensing scheme can be waived, the Licensor waives the exclusive right to collect such
+# royalties for any exercise by You of the rights granted under this License; and,
+#          3. Voluntary License Schemes. The Licensor waives the right to collect royalties, whether individually or, in
+# the event that the Licensor is a member of a collecting society that administers voluntary licensing schemes, via that
+# society, from any exercise by You of the rights granted under this License.
+# 
+# The above rights may be exercised in all media and formats whether now known or hereafter devised. The above rights
+# include the right to make such modifications as are technically necessary to exercise the rights in other media and
+# formats. Subject to Section 8(f), all rights not expressly granted by Licensor are hereby reserved.
+# 
+# 4. Restrictions. The license granted in Section 3 above is expressly made subject to and limited by the following
+# restrictions:
+# 
+#    1. You may Distribute or Publicly Perform the Work only under the terms of this License. You must include a copy of,
+# or the Uniform Resource Identifier (URI) for, this License with every copy of the Work You Distribute or Publicly
+# Perform. You may not offer or impose any terms on the Work that restrict the terms of this License or the ability of the
+# recipient of the Work to exercise the rights granted to that recipient under the terms of the License. You may not
+# sublicense the Work. You must keep intact all notices that refer to this License and to the disclaimer of warranties
+# with every copy of the Work You Distribute or Publicly Perform. When You Distribute or Publicly Perform the Work, You
+# may not impose any effective technological measures on the Work that restrict the ability of a recipient of the Work
+# from You to exercise the rights granted to that recipient under the terms of the License. This Section 4(a) applies to
+# the Work as incorporated in a Collection, but this does not require the Collection apart from the Work itself to be made
+# subject to the terms of this License. If You create a Collection, upon notice from any Licensor You must, to the extent
+# practicable, remove from the Collection any credit as required by Section 4(b), as requested. If You create an
+# Adaptation, upon notice from any Licensor You must, to the extent practicable, remove from the Adaptation any credit as
+# required by Section 4(b), as requested.
+#    2. If You Distribute, or Publicly Perform the Work or any Adaptations or Collections, You must, unless a request has
+# been made pursuant to Section 4(a), keep intact all copyright notices for the Work and provide, reasonable to the medium
+# or means You are utilizing: (i) the name of the Original Author (or pseudonym, if applicable) if supplied, and/or if the
+# Original Author and/or Licensor designate another party or parties (e.g., a sponsor institute, publishing entity,
+# journal) for attribution (\"Attribution Parties\") in Licensor's copyright notice, terms of service or by other
+# reasonable means, the name of such party or parties; (ii) the title of the Work if supplied; (iii) to the extent
+# reasonably practicable, the URI, if any, that Licensor specifies to be associated with the Work, unless such URI does
+# not refer to the copyright notice or licensing information for the Work; and (iv) , consistent with Section 3(b), in the
+# case of an Adaptation, a credit identifying the use of the Work in the Adaptation (e.g., \"French translation of the
+# Work by Original Author,\" or \"Screenplay based on original Work by Original Author\"). The credit required by this
+# Section 4 (b) may be implemented in any reasonable manner; provided, however, that in the case of a Adaptation or
+# Collection, at a minimum such credit will appear, if a credit for all contributing authors of the Adaptation or
+# Collection appears, then as part of these credits and in a manner at least as prominent as the credits for the other
+# contributing authors. For the avoidance of doubt, You may only use the credit required by this Section for the purpose
+# of attribution in the manner set out above and, by exercising Your rights under this License, You may not implicitly or
+# explicitly assert or imply any connection with, sponsorship or endorsement by the Original Author, Licensor and/or
+# Attribution Parties, as appropriate, of You or Your use of the Work, without the separate, express prior written
+# permission of the Original Author, Licensor and/or Attribution Parties.
+#    3. Except as otherwise agreed in writing by the Licensor or as may be otherwise permitted by applicable law, if You
+# Reproduce, Distribute or Publicly Perform the Work either by itself or as part of any Adaptations or Collections, You
+# must not distort, mutilate, modify or take other derogatory action in relation to the Work which would be prejudicial to
+# the Original Author's honor or reputation. Licensor agrees that in those jurisdictions (e.g. Japan), in which any
+# exercise of the right granted in Section 3(b) of this License (the right to make Adaptations) would be deemed to be a
+# distortion, mutilation, modification or other derogatory action prejudicial to the Original Author's honor and
+# reputation, the Licensor will waive or not assert, as appropriate, this Section, to the fullest extent permitted by the
+# applicable national law, to enable You to reasonably exercise Your right under Section 3(b) of this License (right to
+# make Adaptations) but not otherwise.
+# 
+# 5. Representations, Warranties and Disclaimer
+# 
+# UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS AND MAKES NO
+# REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING,
+# WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE
+# ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME
+# JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
+# 
+# 6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU
+# ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS
+# LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+# 
+# 7. Termination
+# 
+#    1. This License and the rights granted hereunder will terminate automatically upon any breach by You of the terms of
+# this License. Individuals or entities who have received Adaptations or Collections from You under this License, however,
+# will not have their licenses terminated provided such individuals or entities remain in full compliance with those
+# licenses. Sections 1, 2, 5, 6, 7, and 8 will survive any termination of this License.
+#    2. Subject to the above terms and conditions, the license granted here is perpetual (for the duration of the
+# applicable copyright in the Work). Notwithstanding the above, Licensor reserves the right to release the Work under
+# different license terms or to stop distributing the Work at any time; provided, however that any such election will not
+# serve to withdraw this License (or any other license that has been, or is required to be, granted under the terms of
+# this License), and this License will continue in full force and effect unless terminated as stated above.
+# 
+# 8. Miscellaneous
+# 
+#    1. Each time You Distribute or Publicly Perform the Work or a Collection, the Licensor offers to the recipient a
+# license to the Work on the same terms and conditions as the license granted to You under this License.
+#    2. Each time You Distribute or Publicly Perform an Adaptation, Licensor offers to the recipient a license to the
+# original Work on the same terms and conditions as the license granted to You under this License.
+#    3. If any provision of this License is invalid or unenforceable under applicable law, it shall not affect the
+# validity or enforceability of the remainder of the terms of this License, and without further action by the parties to
+# this agreement, such provision shall be reformed to the minimum extent necessary to make such provision valid and
+# enforceable.
+#    4. No term or provision of this License shall be deemed waived and no breach consented to unless such waiver or
+# consent shall be in writing and signed by the party to be charged with such waiver or consent.
+#    5. This License constitutes the entire agreement between the parties with respect to the Work licensed here. There
+# are no understandings, agreements or representations with respect to the Work not specified here. Licensor shall not be
+# bound by any additional provisions that may appear in any communication from You. This License may not be modified
+# without the mutual written agreement of the Licensor and You.
+#    6. The rights granted under, and the subject matter referenced, in this License were drafted utilizing the
+# terminology of the Berne Convention for the Protection of Literary and Artistic Works (as amended on September 28,
+# 1979), the Rome Convention of 1961, the WIPO Copyright Treaty of 1996, the WIPO Performances and Phonograms Treaty of
+# 1996 and the Universal Copyright Convention (as revised on July 24, 1971). These rights and subject matter take effect
+# in the relevant jurisdiction in which the License terms are sought to be enforced according to the corresponding
+# provisions of the implementation of those treaty provisions in the applicable national law. If the standard suite of
+# rights granted under applicable copyright law includes additional rights not granted under this License, such additional
+# rights are deemed to be included in the License; this License is not intended to restrict the license of any rights
+# under applicable law.
+# 
+# 
+
+@prefix sapo:    <http://www.yso.fi/onto/sapo/> .
+
+<http://www.yso.fi/onto/sapo/Kemi(1869-1930)>
+      sapo:hasunionof sapo:Kemi .
+
+<http://www.yso.fi/onto/sapo/Orivesi(1913-1972)>
+      sapo:hasunionof sapo:Orivesi .
+
+<http://www.yso.fi/onto/sapo/Merikarvia(1866-)>
+      sapo:hasunionof sapo:Merikarvia .
+
+<http://www.yso.fi/onto/sapo/Saaksmaki(1949-1956)>
+      sapo:hasunionof sapo:Saaksmaki .
+
+<http://www.yso.fi/onto/sapo/Parikkala(1923-1928)>
+      sapo:hasunionof sapo:Parikkala .
+
+<http://www.yso.fi/onto/sapo/Jyvaskyla(1914-1940)>
+      sapo:hasunionof sapo:Jyvaskyla .
+
+<http://www.yso.fi/onto/sapo/Seinajoen_mlk(1954-1958)>
+      sapo:hasunionof sapo:Seinajoen_mlk .
+
+<http://www.yso.fi/onto/sapo/Loimaa(1916-1921)>
+      sapo:hasunionof sapo:Loimaa .
+
+<http://www.yso.fi/onto/sapo/Ylojarvi(1954-2006)>
+      sapo:hasunionof sapo:Ylojarvi .
+
+<http://www.yso.fi/onto/sapo/Uukuniemi(1871-1939)>
+      sapo:hasunionof sapo:Uukuniemi .
+
+<http://www.yso.fi/onto/sapo/Lieksa(1973-)>
+      sapo:hasunionof sapo:Lieksa .
+
+<http://www.yso.fi/onto/sapo/Loimaa(1922-2004)>
+      sapo:hasunionof sapo:Loimaa .
+
+<http://www.yso.fi/onto/sapo/Saraisniemi(1865-1914)>
+      sapo:hasunionof sapo:Saraisniemi .
+
+<http://www.yso.fi/onto/sapo/Kauniainen(1957-)>
+      sapo:hasunionof sapo:Kauniainen .
+
+<http://www.yso.fi/onto/sapo/Piippola(1909-2008)>
+      sapo:hasunionof sapo:Piippola .
+
+<http://www.yso.fi/onto/sapo/Kangaslampi(1872-2004)>
+      sapo:hasunionof sapo:Kangaslampi .
+
+<http://www.yso.fi/onto/sapo/Somerniemi(1865-1976)>
+      sapo:hasunionof sapo:Somerniemi .
+
+<http://www.yso.fi/onto/sapo/Uudenmaan_ja_Hameen_laani(1775-1830)>
+      sapo:hasunionof sapo:Uudenmaan_ja_Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Piikkio(1869-1913)>
+      sapo:hasunionof sapo:Piikkio .
+
+<http://www.yso.fi/onto/sapo/Jyvaskylan_mlk(1941-1947)>
+      sapo:hasunionof sapo:Jyvaskylan_mlk .
+
+<http://www.yso.fi/onto/sapo/Kiiminki(1965-2012)>
+      sapo:hasunionof sapo:Kiiminki .
+
+<http://www.yso.fi/onto/sapo/Tohmajarvi(1946-1950)>
+      sapo:hasunionof sapo:Tohmajarvi .
+
+<http://www.yso.fi/onto/sapo/Helsinki(2009-)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Vartsila(1920-1935)>
+      sapo:hasunionof sapo:Vartsila .
+
+<http://www.yso.fi/onto/sapo/Savonlinnan_ja_Kymenkartanon_laani(1721-1742)>
+      sapo:hasunionof sapo:Savonlinnan_ja_Kymenkartanon_laani .
+
+<http://www.yso.fi/onto/sapo/Turun_ja_Porin_laani(1775-1869)>
+      sapo:hasunionof sapo:Turun_ja_Porin_laani .
+
+<http://www.yso.fi/onto/sapo/Myrskyla(1865-)>
+      sapo:hasunionof sapo:Myrskyla .
+
+<http://www.yso.fi/onto/sapo/Oulujoki(1910-1910)>
+      sapo:hasunionof sapo:Oulujoki .
+
+<http://www.yso.fi/onto/sapo/Rovaniemen_mlk(1948-1956)>
+      sapo:hasunionof sapo:Rovaniemen_mlk .
+
+<http://www.yso.fi/onto/sapo/Pietarsaari(1652-1949)>
+      sapo:hasunionof sapo:Pietarsaari .
+
+<http://www.yso.fi/onto/sapo/Rovaniemen_mlk(1957-1963)>
+      sapo:hasunionof sapo:Rovaniemen_mlk .
+
+<http://www.yso.fi/onto/sapo/Vartsila(1936-1939)>
+      sapo:hasunionof sapo:Vartsila .
+
+<http://www.yso.fi/onto/sapo/Alatornio(1865-1956)>
+      sapo:hasunionof sapo:Alatornio .
+
+<http://www.yso.fi/onto/sapo/Etela-Pirkkala(1922-1937)>
+      sapo:hasunionof sapo:Etela-Pirkkala .
+
+<http://www.yso.fi/onto/sapo/Nurmeksen_mlk(1903-1909)>
+      sapo:hasunionof sapo:Nurmeksen_mlk .
+
+<http://www.yso.fi/onto/sapo/Hankasalmi(1872-1966)>
+      sapo:hasunionof sapo:Hankasalmi .
+
+<http://www.yso.fi/onto/sapo/Turku(1968-1972)>
+      sapo:hasunionof sapo:Turku .
+
+<http://www.yso.fi/onto/sapo/Ikaalisten_mlk(1917-1971)>
+      sapo:hasunionof sapo:Ikaalisten_mlk .
+
+<http://www.yso.fi/onto/sapo/Oja(1932-1968)>
+      sapo:hasunionof sapo:Oja .
+
+<http://www.yso.fi/onto/sapo/Hameen_laani(1990-1992)>
+      sapo:hasunionof sapo:Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Salla(1940-)>
+      sapo:hasunionof sapo:Salla .
+
+<http://www.yso.fi/onto/sapo/Kuhmoinen(1920-)>
+      sapo:hasunionof sapo:Kuhmoinen .
+
+<http://www.yso.fi/onto/sapo/Pielisjarvi(1936-1972)>
+      sapo:hasunionof sapo:Pielisjarvi .
+
+<http://www.yso.fi/onto/sapo/Lappeenranta(1649-1931)>
+      sapo:hasunionof sapo:Lappeenranta .
+
+<http://www.yso.fi/onto/sapo/Kisko(1867-2008)>
+      sapo:hasunionof sapo:Kisko .
+
+<http://www.yso.fi/onto/sapo/Loviisa(1969-2009)>
+      sapo:hasunionof sapo:Loviisa .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_mlk(1933-1947)>
+      sapo:hasunionof sapo:Mikkelin_mlk .
+
+<http://www.yso.fi/onto/sapo/Hattula(1967-1970)>
+      sapo:hasunionof sapo:Hattula .
+
+<http://www.yso.fi/onto/sapo/Sakyla(1869-2010)>
+      sapo:hasunionof sapo:Sakyla .
+
+<http://www.yso.fi/onto/sapo/Vimpeli(1866-)>
+      sapo:hasunionof sapo:Vimpeli .
+
+<http://www.yso.fi/onto/sapo/Viipuri(1928-1931)>
+      sapo:hasunionof sapo:Viipuri .
+
+<http://www.yso.fi/onto/sapo/Kemijarven_mlk(1957-1972)>
+      sapo:hasunionof sapo:Kemijarven_mlk .
+
+<http://www.yso.fi/onto/sapo/Suursaari(1900-1939)>
+      sapo:hasunionof sapo:Suursaari .
+
+<http://www.yso.fi/onto/sapo/Joroinen(1958-)>
+      sapo:hasunionof sapo:Joroinen .
+
+<http://www.yso.fi/onto/sapo/Muolaa(1934-1939)>
+      sapo:hasunionof sapo:Muolaa .
+
+<http://www.yso.fi/onto/sapo/Keuruu(1912-1936)>
+      sapo:hasunionof sapo:Keuruu .
+
+<http://www.yso.fi/onto/sapo/Lohja(2013-)>
+      sapo:hasunionof sapo:Lohja .
+
+<http://www.yso.fi/onto/sapo/Pieksamaki(1866-1911)>
+      sapo:hasunionof sapo:Pieksamaki .
+
+<http://www.yso.fi/onto/sapo/Ahtari(1868-)>
+      sapo:hasunionof sapo:Ahtari .
+
+<http://www.yso.fi/onto/sapo/Vilppula(1973-2008)>
+      sapo:hasunionof sapo:Vilppula .
+
+<http://www.yso.fi/onto/sapo/Lapinjarvi(1870-)>
+      sapo:hasunionof sapo:Lapinjarvi .
+
+<http://www.yso.fi/onto/sapo/Pohjanmaan_laani(1634-1774)>
+      sapo:hasunionof sapo:Pohjanmaan_laani .
+
+<http://www.yso.fi/onto/sapo/Rantsila(1959-2000)>
+      sapo:hasunionof sapo:Rantsila .
+
+<http://www.yso.fi/onto/sapo/Karjaa(1969-1976)>
+      sapo:hasunionof sapo:Karjaa .
+
+<http://www.yso.fi/onto/sapo/Hartola(1867-1925)>
+      sapo:hasunionof sapo:Hartola .
+
+<http://www.yso.fi/onto/sapo/Viipurin_laani(1940-1944)>
+      sapo:hasunionof sapo:Viipurin_laani .
+
+<http://www.yso.fi/onto/sapo/Porvoon_mlk(1925-1953)>
+      sapo:hasunionof sapo:Porvoon_mlk .
+
+<http://www.yso.fi/onto/sapo/Kiuruvesi(1873-)>
+      sapo:hasunionof sapo:Kiuruvesi .
+
+<http://www.yso.fi/onto/sapo/Kuopion_laani(1831-1939)>
+      sapo:hasunionof sapo:Kuopion_laani .
+
+<http://www.yso.fi/onto/sapo/Sodankyla(1916-)>
+      sapo:hasunionof sapo:Sodankyla .
+
+<http://www.yso.fi/onto/sapo/Hongonjoki(1867-1951)>
+      sapo:hasunionof sapo:Hongonjoki .
+
+<http://www.yso.fi/onto/sapo/Laukaa(1911-1966)>
+      sapo:hasunionof sapo:Laukaa .
+
+<http://www.yso.fi/onto/sapo/Rusko(1865-2008)>
+      sapo:hasunionof sapo:Rusko .
+
+<http://www.yso.fi/onto/sapo/Punkalaidun(1865-)>
+      sapo:hasunionof sapo:Punkalaidun .
+
+<http://www.yso.fi/onto/sapo/Pieksamaki(1912-1929)>
+      sapo:hasunionof sapo:Pieksamaki .
+
+<http://www.yso.fi/onto/sapo/Akaa(1870-1894)>
+      sapo:hasunionof sapo:Akaa .
+
+<http://www.yso.fi/onto/sapo/Vanaja(1943-1954)>
+      sapo:hasunionof sapo:Vanaja .
+
+<http://www.yso.fi/onto/sapo/Savon_ja_Karjalan_laani(1775-1830)>
+      sapo:hasunionof sapo:Savon_ja_Karjalan_laani .
+
+<http://www.yso.fi/onto/sapo/Hameen_laani(1831-1869)>
+      sapo:hasunionof sapo:Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Heinavesi(1917-1919)>
+      sapo:hasunionof sapo:Heinavesi .
+
+<http://www.yso.fi/onto/sapo/Tervola(1867-)>
+      sapo:hasunionof sapo:Tervola .
+
+<http://www.yso.fi/onto/sapo/Helsinki(1966-2008)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Pori(1967-1970)>
+      sapo:hasunionof sapo:Pori .
+
+<http://www.yso.fi/onto/sapo/Uusikirkko_Tl.(1870-1935)>
+      sapo:hasunionof <http://www.yso.fi/onto/sapo/Uusikirkko_Tl.> .
+
+<http://www.yso.fi/onto/sapo/Vaasa(1973-)>
+      sapo:hasunionof sapo:Vaasa .
+
+<http://www.yso.fi/onto/sapo/Porvoo(1997-)>
+      sapo:hasunionof sapo:Porvoo .
+
+<http://www.yso.fi/onto/sapo/Viljakkala(1874-2006)>
+      sapo:hasunionof sapo:Viljakkala .
+
+<http://www.yso.fi/onto/sapo/Helsinki(1927-1930)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Lappajarvi(1866-)>
+      sapo:hasunionof sapo:Lappajarvi .
+
+<http://www.yso.fi/onto/sapo/Valkjarvi(1914-1939)>
+      sapo:hasunionof sapo:Valkjarvi .
+
+<http://www.yso.fi/onto/sapo/Evijarvi(1867-)>
+      sapo:hasunionof sapo:Evijarvi .
+
+<http://www.yso.fi/onto/sapo/Hauho(1868-2008)>
+      sapo:hasunionof sapo:Hauho .
+
+<http://www.yso.fi/onto/sapo/Saaminki(1965-1972)>
+      sapo:hasunionof sapo:Saaminki .
+
+<http://www.yso.fi/onto/sapo/Oulujoki(1947-1960)>
+      sapo:hasunionof sapo:Oulujoki .
+
+<http://www.yso.fi/onto/sapo/Vilppula(1922-1936)>
+      sapo:hasunionof sapo:Vilppula .
+
+<http://www.yso.fi/onto/sapo/Hollola(1905-1923)>
+      sapo:hasunionof sapo:Hollola .
+
+<http://www.yso.fi/onto/sapo/Metsapirtti(1903-1939)>
+      sapo:hasunionof sapo:Metsapirtti .
+
+<http://www.yso.fi/onto/sapo/Ylikiiminki(1867-1913)>
+      sapo:hasunionof sapo:Ylikiiminki .
+
+<http://www.yso.fi/onto/sapo/Revonlahti(1865-1972)>
+      sapo:hasunionof sapo:Revonlahti .
+
+<http://www.yso.fi/onto/sapo/Liperi(1875-1920)>
+      sapo:hasunionof sapo:Liperi .
+
+<http://www.yso.fi/onto/sapo/Kuopio(1973-2004)>
+      sapo:hasunionof sapo:Kuopio .
+
+<http://www.yso.fi/onto/sapo/Hameenlinnan_mlk(1913-1929)>
+      sapo:hasunionof sapo:Hameenlinnan_mlk .
+
+<http://www.yso.fi/onto/sapo/Ruokolahti(1940-1947)>
+      sapo:hasunionof sapo:Ruokolahti .
+
+<http://www.yso.fi/onto/sapo/Vilppula(1954-1972)>
+      sapo:hasunionof sapo:Vilppula .
+
+<http://www.yso.fi/onto/sapo/Suojarvi(1886-1930)>
+      sapo:hasunionof sapo:Suojarvi .
+
+<http://www.yso.fi/onto/sapo/Kokkolan_mlk(1865-1926)>
+      sapo:hasunionof sapo:Kokkolan_mlk .
+
+<http://www.yso.fi/onto/sapo/Virrat(1868-1972)>
+      sapo:hasunionof sapo:Virrat .
+
+<http://www.yso.fi/onto/sapo/Rautavaara(1874-)>
+      sapo:hasunionof sapo:Rautavaara .
+
+<http://www.yso.fi/onto/sapo/Jyvaskyla(1965-1992)>
+      sapo:hasunionof sapo:Jyvaskyla .
+
+<http://www.yso.fi/onto/sapo/Laukaa(1868-1910)>
+      sapo:hasunionof sapo:Laukaa .
+
+<http://www.yso.fi/onto/sapo/Kemin_mlk(1868-1868)>
+      sapo:hasunionof sapo:Kemin_mlk .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(1639-1776)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Uudenmaan_laani(1949-1955)>
+      sapo:hasunionof sapo:Uudenmaan_laani .
+
+<http://www.yso.fi/onto/sapo/Finstrom(1865-)>
+      sapo:hasunionof sapo:Finstrom .
+
+<http://www.yso.fi/onto/sapo/Ii(1924-2006)>
+      sapo:hasunionof sapo:Ii .
+
+<http://www.yso.fi/onto/sapo/Askola(1868-)>
+      sapo:hasunionof sapo:Askola .
+
+<http://www.yso.fi/onto/sapo/Saaminki(1932-1964)>
+      sapo:hasunionof sapo:Saaminki .
+
+<http://www.yso.fi/onto/sapo/Ristiina(1867-1932)>
+      sapo:hasunionof sapo:Ristiina .
+
+<http://www.yso.fi/onto/sapo/Vesilahti(1932-1952)>
+      sapo:hasunionof sapo:Vesilahti .
+
+<http://www.yso.fi/onto/sapo/Pyhajarvi_Vpl.(1871-1939)>
+      sapo:hasunionof <http://www.yso.fi/onto/sapo/Pyhajarvi_Vpl.> .
+
+<http://www.yso.fi/onto/sapo/Kyyjarvi(1929-)>
+      sapo:hasunionof sapo:Kyyjarvi .
+
+<http://www.yso.fi/onto/sapo/Suolahti(1932-1938)>
+      sapo:hasunionof sapo:Suolahti .
+
+<http://www.yso.fi/onto/sapo/Rovaniemi(1867-1928)>
+      sapo:hasunionof sapo:Rovaniemi .
+
+<http://www.yso.fi/onto/sapo/Vahviala(1940-1945)>
+      sapo:hasunionof sapo:Vahviala .
+
+<http://www.yso.fi/onto/sapo/Terijoki(1911-1936)>
+      sapo:hasunionof sapo:Terijoki .
+
+<http://www.yso.fi/onto/sapo/Liminka(2001-)>
+      sapo:hasunionof sapo:Liminka .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(1888-1912)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Virolahti(1887-1907)>
+      sapo:hasunionof sapo:Virolahti .
+
+<http://www.yso.fi/onto/sapo/Kulosaaren_hk(1922-1945)>
+      sapo:hasunionof sapo:Kulosaaren_hk .
+
+<http://www.yso.fi/onto/sapo/Virolahti(1940-)>
+      sapo:hasunionof sapo:Virolahti .
+
+<http://www.yso.fi/onto/sapo/Kotka(1965-1973)>
+      sapo:hasunionof sapo:Kotka .
+
+<http://www.yso.fi/onto/sapo/Viipuri(1403-1923)>
+      sapo:hasunionof sapo:Viipuri .
+
+<http://www.yso.fi/onto/sapo/Kuopio(1652-1926)>
+      sapo:hasunionof sapo:Kuopio .
+
+<http://www.yso.fi/onto/sapo/Janakkala(1866-1921)>
+      sapo:hasunionof sapo:Janakkala .
+
+<http://www.yso.fi/onto/sapo/Simpele(1923-1939)>
+      sapo:hasunionof sapo:Simpele .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1923-1923)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Nurmes(1870-1873)>
+      sapo:hasunionof sapo:Nurmes .
+
+<http://www.yso.fi/onto/sapo/Poytya(1917-2004)>
+      sapo:hasunionof sapo:Poytya .
+
+<http://www.yso.fi/onto/sapo/Muonio(1923-2003)>
+      sapo:hasunionof sapo:Muonio .
+
+<http://www.yso.fi/onto/sapo/Soanlahti(1936-1939)>
+      sapo:hasunionof sapo:Soanlahti .
+
+<http://www.yso.fi/onto/sapo/Bromarv(1881-1976)>
+      sapo:hasunionof sapo:Bromarv .
+
+<http://www.yso.fi/onto/sapo/Keuruu(1868-1911)>
+      sapo:hasunionof sapo:Keuruu .
+
+<http://www.yso.fi/onto/sapo/Hanko(1977-)>
+      sapo:hasunionof sapo:Hanko .
+
+<http://www.yso.fi/onto/sapo/Maaninka(1964-)>
+      sapo:hasunionof sapo:Maaninka .
+
+<http://www.yso.fi/onto/sapo/Lappeenranta(2010-)>
+      sapo:hasunionof sapo:Lappeenranta .
+
+<http://www.yso.fi/onto/sapo/Loimaan_mlk(1976-1977)>
+      sapo:hasunionof sapo:Loimaan_mlk .
+
+<http://www.yso.fi/onto/sapo/Rauma(2007-2008)>
+      sapo:hasunionof sapo:Rauma .
+
+<http://www.yso.fi/onto/sapo/Isokyro(1868-)>
+      sapo:hasunionof sapo:Isokyro .
+
+<http://www.yso.fi/onto/sapo/Raaseporin_linnalaani(1375-1633)>
+      sapo:hasunionof sapo:Raaseporin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Lapinlahti(1874-1963)>
+      sapo:hasunionof sapo:Lapinlahti .
+
+<http://www.yso.fi/onto/sapo/Korpilahti(1867-1920)>
+      sapo:hasunionof sapo:Korpilahti .
+
+<http://www.yso.fi/onto/sapo/Kivijarvi(1914-1933)>
+      sapo:hasunionof sapo:Kivijarvi .
+
+<http://www.yso.fi/onto/sapo/Imatra(1977-)>
+      sapo:hasunionof sapo:Imatra .
+
+<http://www.yso.fi/onto/sapo/Heinola(1997-)>
+      sapo:hasunionof sapo:Heinola .
+
+<http://www.yso.fi/onto/sapo/Karjaa(1865-1929)>
+      sapo:hasunionof sapo:Karjaa .
+
+<http://www.yso.fi/onto/sapo/Piikkio(1914-2008)>
+      sapo:hasunionof sapo:Piikkio .
+
+<http://www.yso.fi/onto/sapo/Loviisa(2010-)>
+      sapo:hasunionof sapo:Loviisa .
+
+<http://www.yso.fi/onto/sapo/Jamsa(1925-1925)>
+      sapo:hasunionof sapo:Jamsa .
+
+<http://www.yso.fi/onto/sapo/Karunki(1865-1972)>
+      sapo:hasunionof sapo:Karunki .
+
+<http://www.yso.fi/onto/sapo/Reisjarvi(1880-)>
+      sapo:hasunionof sapo:Reisjarvi .
+
+<http://www.yso.fi/onto/sapo/Liperi(1937-)>
+      sapo:hasunionof sapo:Liperi .
+
+<http://www.yso.fi/onto/sapo/Terijoki(1937-1939)>
+      sapo:hasunionof sapo:Terijoki .
+
+<http://www.yso.fi/onto/sapo/Lappeenranta(1989-2008)>
+      sapo:hasunionof sapo:Lappeenranta .
+
+<http://www.yso.fi/onto/sapo/Harjavalta(1869-1964)>
+      sapo:hasunionof sapo:Harjavalta .
+
+<http://www.yso.fi/onto/sapo/Punkaharju(1924-1972)>
+      sapo:hasunionof sapo:Punkaharju .
+
+<http://www.yso.fi/onto/sapo/Kuopion_mlk(1927-1941)>
+      sapo:hasunionof sapo:Kuopion_mlk .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_laani(1960-1996)>
+      sapo:hasunionof sapo:Mikkelin_laani .
+
+<http://www.yso.fi/onto/sapo/Simo(1865-1916)>
+      sapo:hasunionof sapo:Simo .
+
+<http://www.yso.fi/onto/sapo/Salmi(1865-1930)>
+      sapo:hasunionof sapo:Salmi .
+
+<http://www.yso.fi/onto/sapo/Turku(1939-1943)>
+      sapo:hasunionof sapo:Turku .
+
+<http://www.yso.fi/onto/sapo/Vesilahti(1869-1920)>
+      sapo:hasunionof sapo:Vesilahti .
+
+<http://www.yso.fi/onto/sapo/Hameen_linnalaani(1446-1451)>
+      sapo:hasunionof sapo:Hameen_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Pielavesi(1874-)>
+      sapo:hasunionof sapo:Pielavesi .
+
+<http://www.yso.fi/onto/sapo/Taivassalo(1868-)>
+      sapo:hasunionof sapo:Taivassalo .
+
+<http://www.yso.fi/onto/sapo/Rantsila(1867-1955)>
+      sapo:hasunionof sapo:Rantsila .
+
+<http://www.yso.fi/onto/sapo/Joutseno(1870-1947)>
+      sapo:hasunionof sapo:Joutseno .
+
+<http://www.yso.fi/onto/sapo/Sortavala(1632-1939)>
+      sapo:hasunionof sapo:Sortavala .
+
+<http://www.yso.fi/onto/sapo/Parikkala(1940-1944)>
+      sapo:hasunionof sapo:Parikkala .
+
+<http://www.yso.fi/onto/sapo/Uukuniemi(1940-2004)>
+      sapo:hasunionof sapo:Uukuniemi .
+
+<http://www.yso.fi/onto/sapo/Lumijoki(1867-)>
+      sapo:hasunionof sapo:Lumijoki .
+
+<http://www.yso.fi/onto/sapo/Kullaa(1869-2004)>
+      sapo:hasunionof sapo:Kullaa .
+
+<http://www.yso.fi/onto/sapo/Lestijarvi(1868-)>
+      sapo:hasunionof sapo:Lestijarvi .
+
+<http://www.yso.fi/onto/sapo/Toholampi(1865-)>
+      sapo:hasunionof sapo:Toholampi .
+
+<http://www.yso.fi/onto/sapo/Palkane(2007-)>
+      sapo:hasunionof sapo:Palkane .
+
+<http://www.yso.fi/onto/sapo/Turun_ja_Porin_laani(1918-1972)>
+      sapo:hasunionof sapo:Turun_ja_Porin_laani .
+
+<http://www.yso.fi/onto/sapo/Korpiselka(1877-1939)>
+      sapo:hasunionof sapo:Korpiselka .
+
+<http://www.yso.fi/onto/sapo/Ita-Suomen_laani(1997-2009)>
+      sapo:hasunionof sapo:Ita-Suomen_laani .
+
+<http://www.yso.fi/onto/sapo/Tuusula(1924-1930)>
+      sapo:hasunionof sapo:Tuusula .
+
+<http://www.yso.fi/onto/sapo/Parikkala(1945-2004)>
+      sapo:hasunionof sapo:Parikkala .
+
+<http://www.yso.fi/onto/sapo/Loviisa(1924-1956)>
+      sapo:hasunionof sapo:Loviisa .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1924-1927)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Muurla(1869-2008)>
+      sapo:hasunionof sapo:Muurla .
+
+<http://www.yso.fi/onto/sapo/Eura_(kappeli)(1869-1909)>
+      sapo:hasunionof <http://www.yso.fi/onto/sapo/Eura_(kappeli)> .
+
+<http://www.yso.fi/onto/sapo/Nokia(1976-)>
+      sapo:hasunionof sapo:Nokia .
+
+<http://www.yso.fi/onto/sapo/Viiala(1932-1945)>
+      sapo:hasunionof sapo:Viiala .
+
+<http://www.yso.fi/onto/sapo/Kaustinen(1868-)>
+      sapo:hasunionof sapo:Kaustinen .
+
+<http://www.yso.fi/onto/sapo/Tenhola(1865-1976)>
+      sapo:hasunionof sapo:Tenhola .
+
+<http://www.yso.fi/onto/sapo/Kymi(1948-1950)>
+      sapo:hasunionof sapo:Kymi .
+
+<http://www.yso.fi/onto/sapo/Tammela(1923-1955)>
+      sapo:hasunionof sapo:Tammela .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1446-1451)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Joroinen(1944-1957)>
+      sapo:hasunionof sapo:Joroinen .
+
+<http://www.yso.fi/onto/sapo/Maaninka(1925-1963)>
+      sapo:hasunionof sapo:Maaninka .
+
+<http://www.yso.fi/onto/sapo/Iisalmen_mlk(1873-1905)>
+      sapo:hasunionof sapo:Iisalmen_mlk .
+
+<http://www.yso.fi/onto/sapo/Hamina(1953-2002)>
+      sapo:hasunionof sapo:Hamina .
+
+<http://www.yso.fi/onto/sapo/Sastamala(2009-)>
+      sapo:hasunionof sapo:Sastamala .
+
+<http://www.yso.fi/onto/sapo/Mikkeli(1925-1930)>
+      sapo:hasunionof sapo:Mikkeli .
+
+<http://www.yso.fi/onto/sapo/Polvijarvi(1876-1920)>
+      sapo:hasunionof sapo:Polvijarvi .
+
+<http://www.yso.fi/onto/sapo/Jyvaskyla(1993-2008)>
+      sapo:hasunionof sapo:Jyvaskyla .
+
+<http://www.yso.fi/onto/sapo/Juuka(1868-1869)>
+      sapo:hasunionof sapo:Juuka .
+
+<http://www.yso.fi/onto/sapo/Koylio(1870-2010)>
+      sapo:hasunionof sapo:Koylio .
+
+<http://www.yso.fi/onto/sapo/Naantalin_mlk(1948-1963)>
+      sapo:hasunionof sapo:Naantalin_mlk .
+
+<http://www.yso.fi/onto/sapo/Kuusamo(1868-1925)>
+      sapo:hasunionof sapo:Kuusamo .
+
+<http://www.yso.fi/onto/sapo/Lieksa(1936-1972)>
+      sapo:hasunionof sapo:Lieksa .
+
+<http://www.yso.fi/onto/sapo/Pirttikyla(1865-1972)>
+      sapo:hasunionof sapo:Pirttikyla .
+
+<http://www.yso.fi/onto/sapo/Uusikirkko(1869-1924)>
+      sapo:hasunionof sapo:Uusikirkko .
+
+<http://www.yso.fi/onto/sapo/Karjaa(1977-2008)>
+      sapo:hasunionof sapo:Karjaa .
+
+<http://www.yso.fi/onto/sapo/Jyvaskyla(1837-1913)>
+      sapo:hasunionof sapo:Jyvaskyla .
+
+<http://www.yso.fi/onto/sapo/Maalahti(1908-1972)>
+      sapo:hasunionof sapo:Maalahti .
+
+<http://www.yso.fi/onto/sapo/Kuortane(1865-)>
+      sapo:hasunionof sapo:Kuortane .
+
+<http://www.yso.fi/onto/sapo/Aanekoski(1911-1931)>
+      sapo:hasunionof sapo:Aanekoski .
+
+<http://www.yso.fi/onto/sapo/Alajarvi(1868-2008)>
+      sapo:hasunionof sapo:Alajarvi .
+
+<http://www.yso.fi/onto/sapo/Loviisa(1957-1968)>
+      sapo:hasunionof sapo:Loviisa .
+
+<http://www.yso.fi/onto/sapo/Kiiminki(1867-1913)>
+      sapo:hasunionof sapo:Kiiminki .
+
+<http://www.yso.fi/onto/sapo/Kitee(1874-1919)>
+      sapo:hasunionof sapo:Kitee .
+
+<http://www.yso.fi/onto/sapo/Kuusankoski(1921-2008)>
+      sapo:hasunionof sapo:Kuusankoski .
+
+<http://www.yso.fi/onto/sapo/Miehikkala(1908-1945)>
+      sapo:hasunionof sapo:Miehikkala .
+
+<http://www.yso.fi/onto/sapo/Nummi-Pusula(1981-)>
+      sapo:hasunionof sapo:Nummi-Pusula .
+
+<http://www.yso.fi/onto/sapo/Ruovesi(1912-1940)>
+      sapo:hasunionof sapo:Ruovesi .
+
+<http://www.yso.fi/onto/sapo/Lempaala(1866-1931)>
+      sapo:hasunionof sapo:Lempaala .
+
+<http://www.yso.fi/onto/sapo/Loppi(1865-1921)>
+      sapo:hasunionof sapo:Loppi .
+
+<http://www.yso.fi/onto/sapo/Kokkola(2009-)>
+      sapo:hasunionof sapo:Kokkola .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1936-1937)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Rantsila(1956-1958)>
+      sapo:hasunionof sapo:Rantsila .
+
+<http://www.yso.fi/onto/sapo/Huittinen(2009-)>
+      sapo:hasunionof sapo:Huittinen .
+
+<http://www.yso.fi/onto/sapo/Karkku(1972-1972)>
+      sapo:hasunionof sapo:Karkku .
+
+<http://www.yso.fi/onto/sapo/Porvoo(1380-1924)>
+      sapo:hasunionof sapo:Porvoo .
+
+<http://www.yso.fi/onto/sapo/Kuopio(1942-1968)>
+      sapo:hasunionof sapo:Kuopio .
+
+<http://www.yso.fi/onto/sapo/Lohtaja(1868-2008)>
+      sapo:hasunionof sapo:Lohtaja .
+
+<http://www.yso.fi/onto/sapo/Kajaanin_mlk(1967-1976)>
+      sapo:hasunionof sapo:Kajaanin_mlk .
+
+<http://www.yso.fi/onto/sapo/Karvia(1866-)>
+      sapo:hasunionof sapo:Karvia .
+
+<http://www.yso.fi/onto/sapo/Foglo(1865-)>
+      sapo:hasunionof sapo:Foglo .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1387-1398)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Mouhijarvi(1868-2008)>
+      sapo:hasunionof sapo:Mouhijarvi .
+
+<http://www.yso.fi/onto/sapo/Rautalampi(1927-)>
+      sapo:hasunionof sapo:Rautalampi .
+
+<http://www.yso.fi/onto/sapo/Muolaa(1870-1889)>
+      sapo:hasunionof sapo:Muolaa .
+
+<http://www.yso.fi/onto/sapo/Langelmaki(1920-2006)>
+      sapo:hasunionof sapo:Langelmaki .
+
+<http://www.yso.fi/onto/sapo/Turku(1290-1929)>
+      sapo:hasunionof sapo:Turku .
+
+<http://www.yso.fi/onto/sapo/Kruunupyy(1865-1931)>
+      sapo:hasunionof sapo:Kruunupyy .
+
+<http://www.yso.fi/onto/sapo/Tohmajarvi(1951-2004)>
+      sapo:hasunionof sapo:Tohmajarvi .
+
+<http://www.yso.fi/onto/sapo/Hameen_linnalaani(1452-1633)>
+      sapo:hasunionof sapo:Hameen_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Kiikala(1875-2008)>
+      sapo:hasunionof sapo:Kiikala .
+
+<http://www.yso.fi/onto/sapo/Hameen_laani(1993-1996)>
+      sapo:hasunionof sapo:Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Tammisaari(1940-1943)>
+      sapo:hasunionof sapo:Tammisaari .
+
+<http://www.yso.fi/onto/sapo/Kitee(1920-1939)>
+      sapo:hasunionof sapo:Kitee .
+
+<http://www.yso.fi/onto/sapo/Tammisaaren_mlk(1865-1939)>
+      sapo:hasunionof sapo:Tammisaaren_mlk .
+
+<http://www.yso.fi/onto/sapo/Lappee(1865-1931)>
+      sapo:hasunionof sapo:Lappee .
+
+<http://www.yso.fi/onto/sapo/Hameen_linnalaani(1323-1361)>
+      sapo:hasunionof sapo:Hameen_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Harjavalta(1965-)>
+      sapo:hasunionof sapo:Harjavalta .
+
+<http://www.yso.fi/onto/sapo/Konnevesi(1967-)>
+      sapo:hasunionof sapo:Konnevesi .
+
+<http://www.yso.fi/onto/sapo/Ruskeala(1920-1921)>
+      sapo:hasunionof sapo:Ruskeala .
+
+<http://www.yso.fi/onto/sapo/Jaakkima(1938-1939)>
+      sapo:hasunionof sapo:Jaakkima .
+
+<http://www.yso.fi/onto/sapo/Palkjarvi(1868-1935)>
+      sapo:hasunionof sapo:Palkjarvi .
+
+<http://www.yso.fi/onto/sapo/Kylmakoski(1906-1945)>
+      sapo:hasunionof sapo:Kylmakoski .
+
+<http://www.yso.fi/onto/sapo/Suolahti(1939-2006)>
+      sapo:hasunionof sapo:Suolahti .
+
+<http://www.yso.fi/onto/sapo/Pudasjarvi(1917-)>
+      sapo:hasunionof sapo:Pudasjarvi .
+
+<http://www.yso.fi/onto/sapo/Jaala(1879-2008)>
+      sapo:hasunionof sapo:Jaala .
+
+<http://www.yso.fi/onto/sapo/Tornio(1957-1972)>
+      sapo:hasunionof sapo:Tornio .
+
+<http://www.yso.fi/onto/sapo/Lahti(1905-1923)>
+      sapo:hasunionof sapo:Lahti .
+
+<http://www.yso.fi/onto/sapo/Kakisalmi(1624-1939)>
+      sapo:hasunionof sapo:Kakisalmi .
+
+<http://www.yso.fi/onto/sapo/Mikkeli(1931-1954)>
+      sapo:hasunionof sapo:Mikkeli .
+
+<http://www.yso.fi/onto/sapo/Kanneljarvi(1925-1939)>
+      sapo:hasunionof sapo:Kanneljarvi .
+
+<http://www.yso.fi/onto/sapo/Nilsia(1869-1906)>
+      sapo:hasunionof sapo:Nilsia .
+
+<http://www.yso.fi/onto/sapo/Suoniemi(1868-1971)>
+      sapo:hasunionof sapo:Suoniemi .
+
+<http://www.yso.fi/onto/sapo/Palkjarvi(1940-1945)>
+      sapo:hasunionof sapo:Palkjarvi .
+
+<http://www.yso.fi/onto/sapo/Kymenkartanon_laani(1775-1830)>
+      sapo:hasunionof sapo:Kymenkartanon_laani .
+
+<http://www.yso.fi/onto/sapo/Anttola(1875-2000)>
+      sapo:hasunionof sapo:Anttola .
+
+<http://www.yso.fi/onto/sapo/Mikkeli(2007-)>
+      sapo:hasunionof sapo:Mikkeli .
+
+<http://www.yso.fi/onto/sapo/Nurmes(1866-1869)>
+      sapo:hasunionof sapo:Nurmes .
+
+<http://www.yso.fi/onto/sapo/Kruunupyy(1969-)>
+      sapo:hasunionof sapo:Kruunupyy .
+
+<http://www.yso.fi/onto/sapo/Hiittinen(1865-1968)>
+      sapo:hasunionof sapo:Hiittinen .
+
+<http://www.yso.fi/onto/sapo/Siilinjarvi(1969-)>
+      sapo:hasunionof sapo:Siilinjarvi .
+
+<http://www.yso.fi/onto/sapo/Messukyla(1920-1921)>
+      sapo:hasunionof sapo:Messukyla .
+
+<http://www.yso.fi/onto/sapo/Oulu(1605-1885)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Korsholman_linnalaani(1595-1633)>
+      sapo:hasunionof sapo:Korsholman_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Inari(1876-1946)>
+      sapo:hasunionof sapo:Inari .
+
+<http://www.yso.fi/onto/sapo/Uudenmaan_ja_Hameen_laani(1634-1746)>
+      sapo:hasunionof sapo:Uudenmaan_ja_Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Kymen_laani(1946-1948)>
+      sapo:hasunionof sapo:Kymen_laani .
+
+<http://www.yso.fi/onto/sapo/Lohja(1997-2008)>
+      sapo:hasunionof sapo:Lohja .
+
+<http://www.yso.fi/onto/sapo/Seinajoki(2005-2008)>
+      sapo:hasunionof sapo:Seinajoki .
+
+<http://www.yso.fi/onto/sapo/Oulu(2009-2012)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Joutsa(1926-1991)>
+      sapo:hasunionof sapo:Joutsa .
+
+<http://www.yso.fi/onto/sapo/Kiiminki(1914-1964)>
+      sapo:hasunionof sapo:Kiiminki .
+
+<http://www.yso.fi/onto/sapo/Mikkeli(1838-1924)>
+      sapo:hasunionof sapo:Mikkeli .
+
+<http://www.yso.fi/onto/sapo/Kakskerta(1936-1967)>
+      sapo:hasunionof sapo:Kakskerta .
+
+<http://www.yso.fi/onto/sapo/Rautu(1874-1939)>
+      sapo:hasunionof sapo:Rautu .
+
+<http://www.yso.fi/onto/sapo/Kuusjarvi(1921-1936)>
+      sapo:hasunionof sapo:Kuusjarvi .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1928-1931)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Eura(1970-1971)>
+      sapo:hasunionof sapo:Eura .
+
+<http://www.yso.fi/onto/sapo/Oulu(1961-1964)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Parkano(1925-)>
+      sapo:hasunionof sapo:Parkano .
+
+<http://www.yso.fi/onto/sapo/Jyvaskylan_mlk(1909-1913)>
+      sapo:hasunionof sapo:Jyvaskylan_mlk .
+
+<http://www.yso.fi/onto/sapo/Lemu(1869-2008)>
+      sapo:hasunionof sapo:Lemu .
+
+<http://www.yso.fi/onto/sapo/Hameen_laani(1870-1959)>
+      sapo:hasunionof sapo:Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Sakkijarvi(1936-1939)>
+      sapo:hasunionof sapo:Sakkijarvi .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_laani(1831-1869)>
+      sapo:hasunionof sapo:Mikkelin_laani .
+
+<http://www.yso.fi/onto/sapo/Jappila(1944-2003)>
+      sapo:hasunionof sapo:Jappila .
+
+<http://www.yso.fi/onto/sapo/Kerava(1945-1953)>
+      sapo:hasunionof sapo:Kerava .
+
+<http://www.yso.fi/onto/sapo/Saaksmaki(1865-1922)>
+      sapo:hasunionof sapo:Saaksmaki .
+
+<http://www.yso.fi/onto/sapo/Haukivuori(1868-2006)>
+      sapo:hasunionof sapo:Haukivuori .
+
+<http://www.yso.fi/onto/sapo/Lappeenranta(2009-2009)>
+      sapo:hasunionof sapo:Lappeenranta .
+
+<http://www.yso.fi/onto/sapo/Mustasaari(1973-)>
+      sapo:hasunionof sapo:Mustasaari .
+
+<http://www.yso.fi/onto/sapo/Turun_ja_Porin_laani(1870-1917)>
+      sapo:hasunionof sapo:Turun_ja_Porin_laani .
+
+<http://www.yso.fi/onto/sapo/Pieksamaen_mlk(1930-2003)>
+      sapo:hasunionof sapo:Pieksamaen_mlk .
+
+<http://www.yso.fi/onto/sapo/Tuusula(1931-1944)>
+      sapo:hasunionof sapo:Tuusula .
+
+<http://www.yso.fi/onto/sapo/Marttila(1865-)>
+      sapo:hasunionof sapo:Marttila .
+
+<http://www.yso.fi/onto/sapo/Uusikirkko(1925-1939)>
+      sapo:hasunionof sapo:Uusikirkko .
+
+<http://www.yso.fi/onto/sapo/Huopalahti(1920-1922)>
+      sapo:hasunionof sapo:Huopalahti .
+
+<http://www.yso.fi/onto/sapo/Pieksama(1930-1947)>
+      sapo:hasunionof sapo:Pieksama .
+
+<http://www.yso.fi/onto/sapo/Hyvinkaa(1926-1968)>
+      sapo:hasunionof sapo:Hyvinkaa .
+
+<http://www.yso.fi/onto/sapo/Haukipudas(1866-1960)>
+      sapo:hasunionof sapo:Haukipudas .
+
+<http://www.yso.fi/onto/sapo/Tottijarvi(1869-1975)>
+      sapo:hasunionof sapo:Tottijarvi .
+
+<http://www.yso.fi/onto/sapo/Jamsankoski(1925-1968)>
+      sapo:hasunionof sapo:Jamsankoski .
+
+<http://www.yso.fi/onto/sapo/Kotka(1974-1976)>
+      sapo:hasunionof sapo:Kotka .
+
+<http://www.yso.fi/onto/sapo/Narpio(1973-)>
+      sapo:hasunionof sapo:Narpio .
+
+<http://www.yso.fi/onto/sapo/Seinajoki(1959-2004)>
+      sapo:hasunionof sapo:Seinajoki .
+
+<http://www.yso.fi/onto/sapo/Rauma(1959-1992)>
+      sapo:hasunionof sapo:Rauma .
+
+<http://www.yso.fi/onto/sapo/Tuusula(1974-)>
+      sapo:hasunionof sapo:Tuusula .
+
+<http://www.yso.fi/onto/sapo/Muonio(2004-)>
+      sapo:hasunionof sapo:Muonio .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(1930-1942)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Kirkkonummi(1944-1955)>
+      sapo:hasunionof sapo:Kirkkonummi .
+
+<http://www.yso.fi/onto/sapo/Mustasaari(1865-1934)>
+      sapo:hasunionof sapo:Mustasaari .
+
+<http://www.yso.fi/onto/sapo/Muurame(1924-)>
+      sapo:hasunionof sapo:Muurame .
+
+<http://www.yso.fi/onto/sapo/Lohjan_mlk(1926-1952)>
+      sapo:hasunionof sapo:Lohjan_mlk .
+
+<http://www.yso.fi/onto/sapo/Bergo(1908-1972)>
+      sapo:hasunionof sapo:Bergo .
+
+<http://www.yso.fi/onto/sapo/Oulujoki(1911-1937)>
+      sapo:hasunionof sapo:Oulujoki .
+
+<http://www.yso.fi/onto/sapo/Ylivieska(1867-)>
+      sapo:hasunionof sapo:Ylivieska .
+
+<http://www.yso.fi/onto/sapo/Porvoon_linnalaani(1399-1546)>
+      sapo:hasunionof sapo:Porvoon_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Ruukki(1973-2006)>
+      sapo:hasunionof sapo:Ruukki .
+
+<http://www.yso.fi/onto/sapo/Aura(1917-)>
+      sapo:hasunionof sapo:Aura .
+
+<http://www.yso.fi/onto/sapo/Juankoski(1971-1972)>
+      sapo:hasunionof sapo:Juankoski .
+
+<http://www.yso.fi/onto/sapo/Maksamaa(1867-2006)>
+      sapo:hasunionof sapo:Maksamaa .
+
+<http://www.yso.fi/onto/sapo/Nuijamaa(1940-1988)>
+      sapo:hasunionof sapo:Nuijamaa .
+
+<http://www.yso.fi/onto/sapo/Vestanfjard(1872-1972)>
+      sapo:hasunionof sapo:Vestanfjard .
+
+<http://www.yso.fi/onto/sapo/Iisalmi(1970-)>
+      sapo:hasunionof sapo:Iisalmi .
+
+<http://www.yso.fi/onto/sapo/Hyrynsalmi(1868-)>
+      sapo:hasunionof sapo:Hyrynsalmi .
+
+<http://www.yso.fi/onto/sapo/Jyvaskylan_mlk(1948-1964)>
+      sapo:hasunionof sapo:Jyvaskylan_mlk .
+
+<http://www.yso.fi/onto/sapo/Siikalatva(2009-)>
+      sapo:hasunionof sapo:Siikalatva .
+
+<http://www.yso.fi/onto/sapo/Hailuoto(1865-)>
+      sapo:hasunionof sapo:Hailuoto .
+
+<http://www.yso.fi/onto/sapo/Rautjarvi(1871-1939)>
+      sapo:hasunionof sapo:Rautjarvi .
+
+<http://www.yso.fi/onto/sapo/Orivesi(2007-)>
+      sapo:hasunionof sapo:Orivesi .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1938-1939)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Muuruvesi(1926-1970)>
+      sapo:hasunionof sapo:Muuruvesi .
+
+<http://www.yso.fi/onto/sapo/Kalvia(1909-1976)>
+      sapo:hasunionof sapo:Kalvia .
+
+<http://www.yso.fi/onto/sapo/Pyhajarvi_Ul.(1932-1968)>
+      sapo:hasunionof <http://www.yso.fi/onto/sapo/Pyhajarvi_Ul.> .
+
+<http://www.yso.fi/onto/sapo/Oulu(1938-1946)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Oulun_mlk(1882-1885)>
+      sapo:hasunionof sapo:Oulun_mlk .
+
+<http://www.yso.fi/onto/sapo/Kemionsaari(2009-)>
+      sapo:hasunionof sapo:Kemionsaari .
+
+<http://www.yso.fi/onto/sapo/Jamsa(2001-2006)>
+      sapo:hasunionof sapo:Jamsa .
+
+<http://www.yso.fi/onto/sapo/Eura(1972-2008)>
+      sapo:hasunionof sapo:Eura .
+
+<http://www.yso.fi/onto/sapo/Haukipudas(1961-1964)>
+      sapo:hasunionof sapo:Haukipudas .
+
+<http://www.yso.fi/onto/sapo/Keitele(1879-)>
+      sapo:hasunionof sapo:Keitele .
+
+<http://www.yso.fi/onto/sapo/Vesanto(1927-)>
+      sapo:hasunionof sapo:Vesanto .
+
+<http://www.yso.fi/onto/sapo/Johannes(1936-1939)>
+      sapo:hasunionof sapo:Johannes .
+
+<http://www.yso.fi/onto/sapo/Pernaja(1957-2009)>
+      sapo:hasunionof sapo:Pernaja .
+
+<http://www.yso.fi/onto/sapo/Kuusisto(1914-1945)>
+      sapo:hasunionof sapo:Kuusisto .
+
+<http://www.yso.fi/onto/sapo/Maalahti(1865-1907)>
+      sapo:hasunionof sapo:Maalahti .
+
+<http://www.yso.fi/onto/sapo/Tampere(1937-1946)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Pernaja(1865-1923)>
+      sapo:hasunionof sapo:Pernaja .
+
+<http://www.yso.fi/onto/sapo/Turun_linnalaani(1304-1374)>
+      sapo:hasunionof sapo:Turun_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Himanka(1868-2009)>
+      sapo:hasunionof sapo:Himanka .
+
+<http://www.yso.fi/onto/sapo/Ruskeala(1922-1939)>
+      sapo:hasunionof sapo:Ruskeala .
+
+<http://www.yso.fi/onto/sapo/Karjalohja(1866-2012)>
+      sapo:hasunionof sapo:Karjalohja .
+
+<http://www.yso.fi/onto/sapo/Vehmaa(1905-)>
+      sapo:hasunionof sapo:Vehmaa .
+
+<http://www.yso.fi/onto/sapo/Hyvinkaa(1918-1925)>
+      sapo:hasunionof sapo:Hyvinkaa .
+
+<http://www.yso.fi/onto/sapo/Orimattila(2011-)>
+      sapo:hasunionof sapo:Orimattila .
+
+<http://www.yso.fi/onto/sapo/Iisalmen_mlk(1906-1921)>
+      sapo:hasunionof sapo:Iisalmen_mlk .
+
+<http://www.yso.fi/onto/sapo/Kuopion_mlk(1925-1926)>
+      sapo:hasunionof sapo:Kuopion_mlk .
+
+<http://www.yso.fi/onto/sapo/Kemijarvi(1957-1972)>
+      sapo:hasunionof sapo:Kemijarvi .
+
+<http://www.yso.fi/onto/sapo/Teisko(1954-1971)>
+      sapo:hasunionof sapo:Teisko .
+
+<http://www.yso.fi/onto/sapo/Savon_linnalaani(1514-1547)>
+      sapo:hasunionof sapo:Savon_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Ylikiiminki(1914-1964)>
+      sapo:hasunionof sapo:Ylikiiminki .
+
+<http://www.yso.fi/onto/sapo/Toivakka(1909-)>
+      sapo:hasunionof sapo:Toivakka .
+
+<http://www.yso.fi/onto/sapo/Kangasniemi(1867-)>
+      sapo:hasunionof sapo:Kangasniemi .
+
+<http://www.yso.fi/onto/sapo/Nurmes(1973-)>
+      sapo:hasunionof sapo:Nurmes .
+
+<http://www.yso.fi/onto/sapo/Hyvinkaa(1974-)>
+      sapo:hasunionof sapo:Hyvinkaa .
+
+<http://www.yso.fi/onto/sapo/Tyrnava(1867-1964)>
+      sapo:hasunionof sapo:Tyrnava .
+
+<http://www.yso.fi/onto/sapo/Mynamaki(1868-1976)>
+      sapo:hasunionof sapo:Mynamaki .
+
+<http://www.yso.fi/onto/sapo/Kajaani(1651-1966)>
+      sapo:hasunionof sapo:Kajaani .
+
+<http://www.yso.fi/onto/sapo/Uusikaupunki(1981-1992)>
+      sapo:hasunionof sapo:Uusikaupunki .
+
+<http://www.yso.fi/onto/sapo/Rauman_mlk(1959-1992)>
+      sapo:hasunionof sapo:Rauman_mlk .
+
+<http://www.yso.fi/onto/sapo/Kittila(2004-)>
+      sapo:hasunionof sapo:Kittila .
+
+<http://www.yso.fi/onto/sapo/Mantta-Vilppula(2009-)>
+      sapo:hasunionof sapo:Mantta-Vilppula .
+
+<http://www.yso.fi/onto/sapo/Vuoksela(1925-1939)>
+      sapo:hasunionof sapo:Vuoksela .
+
+<http://www.yso.fi/onto/sapo/Nastola(1869-1955)>
+      sapo:hasunionof sapo:Nastola .
+
+<http://www.yso.fi/onto/sapo/Varkaus(1929-1957)>
+      sapo:hasunionof sapo:Varkaus .
+
+<http://www.yso.fi/onto/sapo/Haapasaari(1913-1973)>
+      sapo:hasunionof sapo:Haapasaari .
+
+<http://www.yso.fi/onto/sapo/Kauhajoki(1868-)>
+      sapo:hasunionof sapo:Kauhajoki .
+
+<http://www.yso.fi/onto/sapo/Karuna(1930-1968)>
+      sapo:hasunionof sapo:Karuna .
+
+<http://www.yso.fi/onto/sapo/Kemi(1931-)>
+      sapo:hasunionof sapo:Kemi .
+
+<http://www.yso.fi/onto/sapo/Ylitornio(1865-1934)>
+      sapo:hasunionof sapo:Ylitornio .
+
+<http://www.yso.fi/onto/sapo/Kangasala(2005-2010)>
+      sapo:hasunionof sapo:Kangasala .
+
+<http://www.yso.fi/onto/sapo/Uusikaupunki(1969-1973)>
+      sapo:hasunionof sapo:Uusikaupunki .
+
+<http://www.yso.fi/onto/sapo/Rovaniemi(1964-1984)>
+      sapo:hasunionof sapo:Rovaniemi .
+
+<http://www.yso.fi/onto/sapo/Nurmijarvi(1868-1917)>
+      sapo:hasunionof sapo:Nurmijarvi .
+
+<http://www.yso.fi/onto/sapo/Saaminki(1867-1900)>
+      sapo:hasunionof sapo:Saaminki .
+
+<http://www.yso.fi/onto/sapo/Pyhamaan_Rohdainen(1865-1909)>
+      sapo:hasunionof sapo:Pyhamaan_Rohdainen .
+
+<http://www.yso.fi/onto/sapo/Vaasan_laani(1775-1869)>
+      sapo:hasunionof sapo:Vaasan_laani .
+
+<http://www.yso.fi/onto/sapo/Oulun_laani(1922-1937)>
+      sapo:hasunionof sapo:Oulun_laani .
+
+<http://www.yso.fi/onto/sapo/Tampere(1929-1936)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Turun_ja_Porin_laani(1634-1774)>
+      sapo:hasunionof sapo:Turun_ja_Porin_laani .
+
+<http://www.yso.fi/onto/sapo/Sulva(1865-1972)>
+      sapo:hasunionof sapo:Sulva .
+
+<http://www.yso.fi/onto/sapo/Lempaala(1932-1963)>
+      sapo:hasunionof sapo:Lempaala .
+
+<http://www.yso.fi/onto/sapo/Kruunupyy(1932-1968)>
+      sapo:hasunionof sapo:Kruunupyy .
+
+<http://www.yso.fi/onto/sapo/Keski-Suomen_laani(1960-1973)>
+      sapo:hasunionof sapo:Keski-Suomen_laani .
+
+<http://www.yso.fi/onto/sapo/Kuivaniemi(1867-2006)>
+      sapo:hasunionof sapo:Kuivaniemi .
+
+<http://www.yso.fi/onto/sapo/Masku(1870-2008)>
+      sapo:hasunionof sapo:Masku .
+
+<http://www.yso.fi/onto/sapo/Tohmajarvi(2005-)>
+      sapo:hasunionof sapo:Tohmajarvi .
+
+<http://www.yso.fi/onto/sapo/Joutsa(2008-)>
+      sapo:hasunionof sapo:Joutsa .
+
+<http://www.yso.fi/onto/sapo/Paattinen(1865-1972)>
+      sapo:hasunionof sapo:Paattinen .
+
+<http://www.yso.fi/onto/sapo/Kiukainen(1872-2008)>
+      sapo:hasunionof sapo:Kiukainen .
+
+<http://www.yso.fi/onto/sapo/Jaaski(1869-1939)>
+      sapo:hasunionof sapo:Jaaski .
+
+<http://www.yso.fi/onto/sapo/Kestila(1959-1972)>
+      sapo:hasunionof sapo:Kestila .
+
+<http://www.yso.fi/onto/sapo/Huittinen(1865-1919)>
+      sapo:hasunionof sapo:Huittinen .
+
+<http://www.yso.fi/onto/sapo/Karhula(1965-1976)>
+      sapo:hasunionof sapo:Karhula .
+
+<http://www.yso.fi/onto/sapo/Hattula(1979-2008)>
+      sapo:hasunionof sapo:Hattula .
+
+<http://www.yso.fi/onto/sapo/Savonlinna(1973-2008)>
+      sapo:hasunionof sapo:Savonlinna .
+
+<http://www.yso.fi/onto/sapo/Ilmajoki(1867-)>
+      sapo:hasunionof sapo:Ilmajoki .
+
+<http://www.yso.fi/onto/sapo/Uusikaarlepyy(1906-1974)>
+      sapo:hasunionof sapo:Uusikaarlepyy .
+
+<http://www.yso.fi/onto/sapo/Anjala(1863-1974)>
+      sapo:hasunionof sapo:Anjala .
+
+<http://www.yso.fi/onto/sapo/Heinolan_mlk(1951-1996)>
+      sapo:hasunionof sapo:Heinolan_mlk .
+
+<http://www.yso.fi/onto/sapo/Kymi(1878-1912)>
+      sapo:hasunionof sapo:Kymi .
+
+<http://www.yso.fi/onto/sapo/Kankaanpaa(1865-)>
+      sapo:hasunionof sapo:Kankaanpaa .
+
+<http://www.yso.fi/onto/sapo/Vilppula(1912-1921)>
+      sapo:hasunionof sapo:Vilppula .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1869-1905)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Rantasalmi(1866-1964)>
+      sapo:hasunionof sapo:Rantasalmi .
+
+<http://www.yso.fi/onto/sapo/Riistavesi(1924-1972)>
+      sapo:hasunionof sapo:Riistavesi .
+
+<http://www.yso.fi/onto/sapo/Lavansaari(1905-1939)>
+      sapo:hasunionof sapo:Lavansaari .
+
+<http://www.yso.fi/onto/sapo/Poytya(2005-2008)>
+      sapo:hasunionof sapo:Poytya .
+
+<http://www.yso.fi/onto/sapo/Elimaki(1868-2008)>
+      sapo:hasunionof sapo:Elimaki .
+
+<http://www.yso.fi/onto/sapo/Halikko(1916-1966)>
+      sapo:hasunionof sapo:Halikko .
+
+<http://www.yso.fi/onto/sapo/Siilinjarvi(1925-1968)>
+      sapo:hasunionof sapo:Siilinjarvi .
+
+<http://www.yso.fi/onto/sapo/Saarijarvi(1865-1910)>
+      sapo:hasunionof sapo:Saarijarvi .
+
+<http://www.yso.fi/onto/sapo/Lokalahti(1905-1980)>
+      sapo:hasunionof sapo:Lokalahti .
+
+<http://www.yso.fi/onto/sapo/Rautalampi(1867-1921)>
+      sapo:hasunionof sapo:Rautalampi .
+
+<http://www.yso.fi/onto/sapo/Kuopion_laani(1946-1959)>
+      sapo:hasunionof sapo:Kuopion_laani .
+
+<http://www.yso.fi/onto/sapo/Maarianhamina(1961-)>
+      sapo:hasunionof sapo:Maarianhamina .
+
+<http://www.yso.fi/onto/sapo/Ylitornio(1935-)>
+      sapo:hasunionof sapo:Ylitornio .
+
+<http://www.yso.fi/onto/sapo/Eurajoki(1869-)>
+      sapo:hasunionof sapo:Eurajoki .
+
+<http://www.yso.fi/onto/sapo/Turun_ja_Porin_laani(1990-1992)>
+      sapo:hasunionof sapo:Turun_ja_Porin_laani .
+
+<http://www.yso.fi/onto/sapo/Kajaanin_mlk(1865-1914)>
+      sapo:hasunionof sapo:Kajaanin_mlk .
+
+<http://www.yso.fi/onto/sapo/Kaavi(1923-1970)>
+      sapo:hasunionof sapo:Kaavi .
+
+<http://www.yso.fi/onto/sapo/Helsingin_mlk(1946-1953)>
+      sapo:hasunionof sapo:Helsingin_mlk .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1293-1322)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Espoo(1957-)>
+      sapo:hasunionof sapo:Espoo .
+
+<http://www.yso.fi/onto/sapo/Virolahti(1908-1939)>
+      sapo:hasunionof sapo:Virolahti .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(1913-1929)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Ylojarvi(2009-)>
+      sapo:hasunionof sapo:Ylojarvi .
+
+<http://www.yso.fi/onto/sapo/Kakisalmen_laani(1617-1720)>
+      sapo:hasunionof sapo:Kakisalmen_laani .
+
+<http://www.yso.fi/onto/sapo/Hameen_laani(1969-1972)>
+      sapo:hasunionof sapo:Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Vehkalahti(1953-2002)>
+      sapo:hasunionof sapo:Vehkalahti .
+
+<http://www.yso.fi/onto/sapo/Lappee(1932-1945)>
+      sapo:hasunionof sapo:Lappee .
+
+<http://www.yso.fi/onto/sapo/Kuopio(1969-1972)>
+      sapo:hasunionof sapo:Kuopio .
+
+<http://www.yso.fi/onto/sapo/Brando(1865-)>
+      sapo:hasunionof sapo:Brando .
+
+<http://www.yso.fi/onto/sapo/Porvoo(1954-1996)>
+      sapo:hasunionof sapo:Porvoo .
+
+<http://www.yso.fi/onto/sapo/Palkjarvi(1936-1939)>
+      sapo:hasunionof sapo:Palkjarvi .
+
+<http://www.yso.fi/onto/sapo/Helsinki(1640-1642)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Petsamo(1921-1939)>
+      sapo:hasunionof sapo:Petsamo .
+
+<http://www.yso.fi/onto/sapo/Kokar(1865-)>
+      sapo:hasunionof sapo:Kokar .
+
+<http://www.yso.fi/onto/sapo/Urjala(1969-)>
+      sapo:hasunionof sapo:Urjala .
+
+<http://www.yso.fi/onto/sapo/Kaarina(2009-)>
+      sapo:hasunionof sapo:Kaarina .
+
+<http://www.yso.fi/onto/sapo/Laukaa(1967-)>
+      sapo:hasunionof sapo:Laukaa .
+
+<http://www.yso.fi/onto/sapo/Nilsia(1907-1910)>
+      sapo:hasunionof sapo:Nilsia .
+
+<http://www.yso.fi/onto/sapo/Valtimo(1910-)>
+      sapo:hasunionof sapo:Valtimo .
+
+<http://www.yso.fi/onto/sapo/Kustavi(1874-)>
+      sapo:hasunionof sapo:Kustavi .
+
+<http://www.yso.fi/onto/sapo/Kokemaki(1965-1968)>
+      sapo:hasunionof sapo:Kokemaki .
+
+<http://www.yso.fi/onto/sapo/Hattula(2009-)>
+      sapo:hasunionof sapo:Hattula .
+
+<http://www.yso.fi/onto/sapo/Karjaa(1930-1968)>
+      sapo:hasunionof sapo:Karjaa .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1547-1633)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Huopalahti(1923-1926)>
+      sapo:hasunionof sapo:Huopalahti .
+
+<http://www.yso.fi/onto/sapo/Kalajoki(2010-)>
+      sapo:hasunionof sapo:Kalajoki .
+
+<http://www.yso.fi/onto/sapo/Nurmeksen_mlk(1910-1972)>
+      sapo:hasunionof sapo:Nurmeksen_mlk .
+
+<http://www.yso.fi/onto/sapo/Sipoo(1868-2008)>
+      sapo:hasunionof sapo:Sipoo .
+
+<http://www.yso.fi/onto/sapo/Vaala(1973-)>
+      sapo:hasunionof sapo:Vaala .
+
+<http://www.yso.fi/onto/sapo/Helsingin_mlk(1865-1905)>
+      sapo:hasunionof sapo:Helsingin_mlk .
+
+<http://www.yso.fi/onto/sapo/Tarvasjoki(1910-)>
+      sapo:hasunionof sapo:Tarvasjoki .
+
+<http://www.yso.fi/onto/sapo/Masku(2009-)>
+      sapo:hasunionof sapo:Masku .
+
+<http://www.yso.fi/onto/sapo/Vesilahti(1964-)>
+      sapo:hasunionof sapo:Vesilahti .
+
+<http://www.yso.fi/onto/sapo/Etela-Suomen_laani(1997-2009)>
+      sapo:hasunionof sapo:Etela-Suomen_laani .
+
+<http://www.yso.fi/onto/sapo/Luumaki(1865-)>
+      sapo:hasunionof sapo:Luumaki .
+
+<http://www.yso.fi/onto/sapo/Aetsa(1981-2008)>
+      sapo:hasunionof sapo:Aetsa .
+
+<http://www.yso.fi/onto/sapo/Kuopion_mlk(1868-1921)>
+      sapo:hasunionof sapo:Kuopion_mlk .
+
+<http://www.yso.fi/onto/sapo/Kylmakoski(1895-1905)>
+      sapo:hasunionof sapo:Kylmakoski .
+
+<http://www.yso.fi/onto/sapo/Nastola(1956-)>
+      sapo:hasunionof sapo:Nastola .
+
+<http://www.yso.fi/onto/sapo/Oulu(1911-1937)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Lavia(1868-)>
+      sapo:hasunionof sapo:Lavia .
+
+<http://www.yso.fi/onto/sapo/Lumivaara(1923-1939)>
+      sapo:hasunionof sapo:Lumivaara .
+
+<http://www.yso.fi/onto/sapo/Haapavesi(1866-)>
+      sapo:hasunionof sapo:Haapavesi .
+
+<http://www.yso.fi/onto/sapo/Kokkola(1620-1930)>
+      sapo:hasunionof sapo:Kokkola .
+
+<http://www.yso.fi/onto/sapo/Kurkijoki(1869-1939)>
+      sapo:hasunionof sapo:Kurkijoki .
+
+<http://www.yso.fi/onto/sapo/Muuruvesi(1907-1925)>
+      sapo:hasunionof sapo:Muuruvesi .
+
+<http://www.yso.fi/onto/sapo/Voyri(1868-2006)>
+      sapo:hasunionof sapo:Voyri .
+
+<http://www.yso.fi/onto/sapo/Hiitola(1870-1939)>
+      sapo:hasunionof sapo:Hiitola .
+
+<http://www.yso.fi/onto/sapo/Mietoinen(1865-2006)>
+      sapo:hasunionof sapo:Mietoinen .
+
+<http://www.yso.fi/onto/sapo/Ikaalisten_mlk(1858-1898)>
+      sapo:hasunionof sapo:Ikaalisten_mlk .
+
+<http://www.yso.fi/onto/sapo/Naantali(1948-1963)>
+      sapo:hasunionof sapo:Naantali .
+
+<http://www.yso.fi/onto/sapo/Tuupovaara(1946-2004)>
+      sapo:hasunionof sapo:Tuupovaara .
+
+<http://www.yso.fi/onto/sapo/Helsinki(1906-1911)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Hameen_linnalaani(1300-1303)>
+      sapo:hasunionof sapo:Hameen_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Seiskari(1905-1939)>
+      sapo:hasunionof sapo:Seiskari .
+
+<http://www.yso.fi/onto/sapo/Joutsa(1992-2007)>
+      sapo:hasunionof sapo:Joutsa .
+
+<http://www.yso.fi/onto/sapo/Kristiinankaupunki(1973-)>
+      sapo:hasunionof sapo:Kristiinankaupunki .
+
+<http://www.yso.fi/onto/sapo/Tornio(1973-)>
+      sapo:hasunionof sapo:Tornio .
+
+<http://www.yso.fi/onto/sapo/Kodisjoki(1869-2006)>
+      sapo:hasunionof sapo:Kodisjoki .
+
+<http://www.yso.fi/onto/sapo/Viitasaari(1934-)>
+      sapo:hasunionof sapo:Viitasaari .
+
+<http://www.yso.fi/onto/sapo/Suoniemi(1972-1972)>
+      sapo:hasunionof sapo:Suoniemi .
+
+<http://www.yso.fi/onto/sapo/Tuusula(1945-1950)>
+      sapo:hasunionof sapo:Tuusula .
+
+<http://www.yso.fi/onto/sapo/Kotka(1948-1953)>
+      sapo:hasunionof sapo:Kotka .
+
+<http://www.yso.fi/onto/sapo/Ranua(1917-)>
+      sapo:hasunionof sapo:Ranua .
+
+<http://www.yso.fi/onto/sapo/Vantaa(1972-2008)>
+      sapo:hasunionof sapo:Vantaa .
+
+<http://www.yso.fi/onto/sapo/Kerimaki(1866-1923)>
+      sapo:hasunionof sapo:Kerimaki .
+
+<http://www.yso.fi/onto/sapo/Pirkkala(1921-1921)>
+      sapo:hasunionof sapo:Pirkkala .
+
+<http://www.yso.fi/onto/sapo/Vanaja(1868-1942)>
+      sapo:hasunionof sapo:Vanaja .
+
+<http://www.yso.fi/onto/sapo/Veteli(1860-)>
+      sapo:hasunionof sapo:Veteli .
+
+<http://www.yso.fi/onto/sapo/Kuhmo(1937-)>
+      sapo:hasunionof sapo:Kuhmo .
+
+<http://www.yso.fi/onto/sapo/Pedersoren_kunta(1989-)>
+      sapo:hasunionof sapo:Pedersoren_kunta .
+
+<http://www.yso.fi/onto/sapo/Kuusjarvi(1937-1967)>
+      sapo:hasunionof sapo:Kuusjarvi .
+
+<http://www.yso.fi/onto/sapo/Vihti(1867-)>
+      sapo:hasunionof sapo:Vihti .
+
+<http://www.yso.fi/onto/sapo/Savon_linnalaani(1595-1633)>
+      sapo:hasunionof sapo:Savon_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Sumiainen(1868-1938)>
+      sapo:hasunionof sapo:Sumiainen .
+
+<http://www.yso.fi/onto/sapo/Kouvola(1950-1965)>
+      sapo:hasunionof sapo:Kouvola .
+
+<http://www.yso.fi/onto/sapo/Sysma(1866-)>
+      sapo:hasunionof sapo:Sysma .
+
+<http://www.yso.fi/onto/sapo/Valkeala(1868-1920)>
+      sapo:hasunionof sapo:Valkeala .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1452-1513)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(1955-1966)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Sakkijarvi(1930-1935)>
+      sapo:hasunionof sapo:Sakkijarvi .
+
+<http://www.yso.fi/onto/sapo/Ulvila_2(1971-2004)>
+      sapo:hasunionof sapo:Ulvila_2 .
+
+<http://www.yso.fi/onto/sapo/Hamina(1723-1952)>
+      sapo:hasunionof sapo:Hamina .
+
+<http://www.yso.fi/onto/sapo/Naantali(2009-)>
+      sapo:hasunionof sapo:Naantali .
+
+<http://www.yso.fi/onto/sapo/Kemin_mlk(1869-1930)>
+      sapo:hasunionof sapo:Kemin_mlk .
+
+<http://www.yso.fi/onto/sapo/Pertteli(1867-2008)>
+      sapo:hasunionof sapo:Pertteli .
+
+<http://www.yso.fi/onto/sapo/Sauvo(1930-1968)>
+      sapo:hasunionof sapo:Sauvo .
+
+<http://www.yso.fi/onto/sapo/Seinajoki(2009-)>
+      sapo:hasunionof sapo:Seinajoki .
+
+<http://www.yso.fi/onto/sapo/Kempele(1965-)>
+      sapo:hasunionof sapo:Kempele .
+
+<http://www.yso.fi/onto/sapo/Kylmakoski(1946-2010)>
+      sapo:hasunionof sapo:Kylmakoski .
+
+<http://www.yso.fi/onto/sapo/Kaarina(1869-1935)>
+      sapo:hasunionof sapo:Kaarina .
+
+<http://www.yso.fi/onto/sapo/Naantali(1944-1947)>
+      sapo:hasunionof sapo:Naantali .
+
+<http://www.yso.fi/onto/sapo/Vammala(1955-1972)>
+      sapo:hasunionof sapo:Vammala .
+
+<http://www.yso.fi/onto/sapo/Kemin_mlk(1931-1978)>
+      sapo:hasunionof sapo:Kemin_mlk .
+
+<http://www.yso.fi/onto/sapo/Hollola(1933-1955)>
+      sapo:hasunionof sapo:Hollola .
+
+<http://www.yso.fi/onto/sapo/Hollola(1865-1904)>
+      sapo:hasunionof sapo:Hollola .
+
+<http://www.yso.fi/onto/sapo/Pyhajarvi_2(1996-)>
+      sapo:hasunionof sapo:Pyhajarvi_2 .
+
+<http://www.yso.fi/onto/sapo/Oulu(1979-2008)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Vantaa(2009-)>
+      sapo:hasunionof sapo:Vantaa .
+
+<http://www.yso.fi/onto/sapo/Kalvia(1977-2008)>
+      sapo:hasunionof sapo:Kalvia .
+
+<http://www.yso.fi/onto/sapo/Kotka(1977-)>
+      sapo:hasunionof sapo:Kotka .
+
+<http://www.yso.fi/onto/sapo/Kontiolahti(1873-1921)>
+      sapo:hasunionof sapo:Kontiolahti .
+
+<http://www.yso.fi/onto/sapo/Pohjois-Pirkkala(1937-1937)>
+      sapo:hasunionof sapo:Pohjois-Pirkkala .
+
+<http://www.yso.fi/onto/sapo/Tohmajarvi(1920-1945)>
+      sapo:hasunionof sapo:Tohmajarvi .
+
+<http://www.yso.fi/onto/sapo/Juupajoki(1913-)>
+      sapo:hasunionof sapo:Juupajoki .
+
+<http://www.yso.fi/onto/sapo/Laitila(1868-1971)>
+      sapo:hasunionof sapo:Laitila .
+
+<http://www.yso.fi/onto/sapo/Toijala(1975-2006)>
+      sapo:hasunionof sapo:Toijala .
+
+<http://www.yso.fi/onto/sapo/Vierema(1922-)>
+      sapo:hasunionof sapo:Vierema .
+
+<http://www.yso.fi/onto/sapo/Yli-Ii(1924-2012)>
+      sapo:hasunionof sapo:Yli-Ii .
+
+<http://www.yso.fi/onto/sapo/Riihimaki(1971-)>
+      sapo:hasunionof sapo:Riihimaki .
+
+<http://www.yso.fi/onto/sapo/Petsamon_laani(1921-1921)>
+      sapo:hasunionof sapo:Petsamon_laani .
+
+<http://www.yso.fi/onto/sapo/Ii(1866-1923)>
+      sapo:hasunionof sapo:Ii .
+
+<http://www.yso.fi/onto/sapo/Kyyrola(1890-1933)>
+      sapo:hasunionof sapo:Kyyrola .
+
+<http://www.yso.fi/onto/sapo/Kuusamo(1940-)>
+      sapo:hasunionof sapo:Kuusamo .
+
+<http://www.yso.fi/onto/sapo/Pieksanmaa(2004-2006)>
+      sapo:hasunionof sapo:Pieksanmaa .
+
+<http://www.yso.fi/onto/sapo/Tyrvaa(1869-1906)>
+      sapo:hasunionof sapo:Tyrvaa .
+
+<http://www.yso.fi/onto/sapo/Viitasaari(1868-1894)>
+      sapo:hasunionof sapo:Viitasaari .
+
+<http://www.yso.fi/onto/sapo/Multia(1868-)>
+      sapo:hasunionof sapo:Multia .
+
+<http://www.yso.fi/onto/sapo/Joroinen(1867-1912)>
+      sapo:hasunionof sapo:Joroinen .
+
+<http://www.yso.fi/onto/sapo/Ruotsinpyhtaa(1969-2009)>
+      sapo:hasunionof sapo:Ruotsinpyhtaa .
+
+<http://www.yso.fi/onto/sapo/Kovero(1902-1912)>
+      sapo:hasunionof sapo:Kovero .
+
+<http://www.yso.fi/onto/sapo/Nurmo(1973-2008)>
+      sapo:hasunionof sapo:Nurmo .
+
+<http://www.yso.fi/onto/sapo/Pieksamaki_2(1948-2006)>
+      sapo:hasunionof sapo:Pieksamaki_2 .
+
+<http://www.yso.fi/onto/sapo/Varkaus(2005-)>
+      sapo:hasunionof sapo:Varkaus .
+
+<http://www.yso.fi/onto/sapo/Karkkila(1932-1968)>
+      sapo:hasunionof sapo:Karkkila .
+
+<http://www.yso.fi/onto/sapo/Huopalahti(1931-1945)>
+      sapo:hasunionof sapo:Huopalahti .
+
+<http://www.yso.fi/onto/sapo/Merijarvi(1866-)>
+      sapo:hasunionof sapo:Merijarvi .
+
+<http://www.yso.fi/onto/sapo/Oulunkyla(1921-1945)>
+      sapo:hasunionof sapo:Oulunkyla .
+
+<http://www.yso.fi/onto/sapo/Nuijamaa(1906-1939)>
+      sapo:hasunionof sapo:Nuijamaa .
+
+<http://www.yso.fi/onto/sapo/Raisio(1930-1948)>
+      sapo:hasunionof sapo:Raisio .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1362-1386)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Loimaa(2005-2008)>
+      sapo:hasunionof sapo:Loimaa .
+
+<http://www.yso.fi/onto/sapo/Lappee(1946-1966)>
+      sapo:hasunionof sapo:Lappee .
+
+<http://www.yso.fi/onto/sapo/Enonkoski(1882-1919)>
+      sapo:hasunionof sapo:Enonkoski .
+
+<http://www.yso.fi/onto/sapo/Ylimarkku(1871-1972)>
+      sapo:hasunionof sapo:Ylimarkku .
+
+<http://www.yso.fi/onto/sapo/Oravainen(1868-2010)>
+      sapo:hasunionof sapo:Oravainen .
+
+<http://www.yso.fi/onto/sapo/Pori(1971-1971)>
+      sapo:hasunionof sapo:Pori .
+
+<http://www.yso.fi/onto/sapo/Kaskinen(1785-)>
+      sapo:hasunionof sapo:Kaskinen .
+
+<http://www.yso.fi/onto/sapo/Kajaani(1977-2006)>
+      sapo:hasunionof sapo:Kajaani .
+
+<http://www.yso.fi/onto/sapo/Juankoski(1973-)>
+      sapo:hasunionof sapo:Juankoski .
+
+<http://www.yso.fi/onto/sapo/Saaksmaki(1923-1945)>
+      sapo:hasunionof sapo:Saaksmaki .
+
+<http://www.yso.fi/onto/sapo/Helsinki(1912-1926)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Lemland(1865-)>
+      sapo:hasunionof sapo:Lemland .
+
+<http://www.yso.fi/onto/sapo/Lappeenranta(1932-1945)>
+      sapo:hasunionof sapo:Lappeenranta .
+
+<http://www.yso.fi/onto/sapo/Ruskeala(1866-1919)>
+      sapo:hasunionof sapo:Ruskeala .
+
+<http://www.yso.fi/onto/sapo/Saarijarvi(1911-1913)>
+      sapo:hasunionof sapo:Saarijarvi .
+
+<http://www.yso.fi/onto/sapo/Pyhajarvi_Ol.(1866-1968)>
+      sapo:hasunionof <http://www.yso.fi/onto/sapo/Pyhajarvi_Ol.> .
+
+<http://www.yso.fi/onto/sapo/Vehmersalmi(1922-2004)>
+      sapo:hasunionof sapo:Vehmersalmi .
+
+<http://www.yso.fi/onto/sapo/Purmo(1867-1976)>
+      sapo:hasunionof sapo:Purmo .
+
+<http://www.yso.fi/onto/sapo/Kitee(1954-)>
+      sapo:hasunionof sapo:Kitee .
+
+<http://www.yso.fi/onto/sapo/Joensuu(1922-1953)>
+      sapo:hasunionof sapo:Joensuu .
+
+<http://www.yso.fi/onto/sapo/Juva(1868-)>
+      sapo:hasunionof sapo:Juva .
+
+<http://www.yso.fi/onto/sapo/Tuulos(1874-2008)>
+      sapo:hasunionof sapo:Tuulos .
+
+<http://www.yso.fi/onto/sapo/Helsingin_mlk(1922-1945)>
+      sapo:hasunionof sapo:Helsingin_mlk .
+
+<http://www.yso.fi/onto/sapo/Raahe(2003-)>
+      sapo:hasunionof sapo:Raahe .
+
+<http://www.yso.fi/onto/sapo/Huittinen(1920-2008)>
+      sapo:hasunionof sapo:Huittinen .
+
+<http://www.yso.fi/onto/sapo/Vesilahti(1921-1931)>
+      sapo:hasunionof sapo:Vesilahti .
+
+<http://www.yso.fi/onto/sapo/Pyhtaa(1868-)>
+      sapo:hasunionof sapo:Pyhtaa .
+
+<http://www.yso.fi/onto/sapo/Ulvila_2(1865-1907)>
+      sapo:hasunionof sapo:Ulvila_2 .
+
+<http://www.yso.fi/onto/sapo/Lahdenpohja(1938-1939)>
+      sapo:hasunionof sapo:Lahdenpohja .
+
+<http://www.yso.fi/onto/sapo/Pattijoki(1922-2002)>
+      sapo:hasunionof sapo:Pattijoki .
+
+<http://www.yso.fi/onto/sapo/Saltvik(1865-)>
+      sapo:hasunionof sapo:Saltvik .
+
+<http://www.yso.fi/onto/sapo/Koiviston_mlk(1927-1939)>
+      sapo:hasunionof sapo:Koiviston_mlk .
+
+<http://www.yso.fi/onto/sapo/Hameenkoski(1995-)>
+      sapo:hasunionof sapo:Hameenkoski .
+
+<http://www.yso.fi/onto/sapo/Simo(1917-)>
+      sapo:hasunionof sapo:Simo .
+
+<http://www.yso.fi/onto/sapo/Tuusniemi(1870-1923)>
+      sapo:hasunionof sapo:Tuusniemi .
+
+<http://www.yso.fi/onto/sapo/Joutseno(1948-2008)>
+      sapo:hasunionof sapo:Joutseno .
+
+<http://www.yso.fi/onto/sapo/Enontekio(1877-)>
+      sapo:hasunionof sapo:Enontekio .
+
+<http://www.yso.fi/onto/sapo/Helsinki(1931-1945)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Kuhmoniemi(1903-1936)>
+      sapo:hasunionof sapo:Kuhmoniemi .
+
+<http://www.yso.fi/onto/sapo/Inkoo(1946-1955)>
+      sapo:hasunionof sapo:Inkoo .
+
+<http://www.yso.fi/onto/sapo/Forssa(1969-)>
+      sapo:hasunionof sapo:Forssa .
+
+<http://www.yso.fi/onto/sapo/Lohjan_mlk(1953-1976)>
+      sapo:hasunionof sapo:Lohjan_mlk .
+
+<http://www.yso.fi/onto/sapo/Kouvola(1939-1949)>
+      sapo:hasunionof sapo:Kouvola .
+
+<http://www.yso.fi/onto/sapo/Pietarsaari(1950-1976)>
+      sapo:hasunionof sapo:Pietarsaari .
+
+<http://www.yso.fi/onto/sapo/Forssa(1923-1968)>
+      sapo:hasunionof sapo:Forssa .
+
+<http://www.yso.fi/onto/sapo/Uudenmaan_laani(1944-1948)>
+      sapo:hasunionof sapo:Uudenmaan_laani .
+
+<http://www.yso.fi/onto/sapo/Kauhava(1866-2008)>
+      sapo:hasunionof sapo:Kauhava .
+
+<http://www.yso.fi/onto/sapo/Narpio(1871-1972)>
+      sapo:hasunionof sapo:Narpio .
+
+<http://www.yso.fi/onto/sapo/Porvoon_mlk(1954-1996)>
+      sapo:hasunionof sapo:Porvoon_mlk .
+
+<http://www.yso.fi/onto/sapo/Rusko(2009-)>
+      sapo:hasunionof sapo:Rusko .
+
+<http://www.yso.fi/onto/sapo/Mustio(1868-1928)>
+      sapo:hasunionof sapo:Mustio .
+
+<http://www.yso.fi/onto/sapo/Mikkeli(1985-2000)>
+      sapo:hasunionof sapo:Mikkeli .
+
+<http://www.yso.fi/onto/sapo/Alavus(1973-)>
+      sapo:hasunionof sapo:Alavus .
+
+<http://www.yso.fi/onto/sapo/Heinavesi(1869-1916)>
+      sapo:hasunionof sapo:Heinavesi .
+
+<http://www.yso.fi/onto/sapo/Maaria(1944-1966)>
+      sapo:hasunionof sapo:Maaria .
+
+<http://www.yso.fi/onto/sapo/Sortavalan_mlk(1868-1921)>
+      sapo:hasunionof sapo:Sortavalan_mlk .
+
+<http://www.yso.fi/onto/sapo/Korsholman_linnalaani(1441-1593)>
+      sapo:hasunionof sapo:Korsholman_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Pernio(1868-2008)>
+      sapo:hasunionof sapo:Pernio .
+
+<http://www.yso.fi/onto/sapo/Honkilahti(1868-1969)>
+      sapo:hasunionof sapo:Honkilahti .
+
+<http://www.yso.fi/onto/sapo/Perttula(1876-1892)>
+      sapo:hasunionof sapo:Perttula .
+
+<http://www.yso.fi/onto/sapo/Pylkonmaki(1914-2008)>
+      sapo:hasunionof sapo:Pylkonmaki .
+
+<http://www.yso.fi/onto/sapo/Kivennapa(1911-1936)>
+      sapo:hasunionof sapo:Kivennapa .
+
+<http://www.yso.fi/onto/sapo/Joensuu(1954-2004)>
+      sapo:hasunionof sapo:Joensuu .
+
+<http://www.yso.fi/onto/sapo/Rautio(1865-1972)>
+      sapo:hasunionof sapo:Rautio .
+
+<http://www.yso.fi/onto/sapo/Kaukola(1868-1939)>
+      sapo:hasunionof sapo:Kaukola .
+
+<http://www.yso.fi/onto/sapo/Akaa(1932-1945)>
+      sapo:hasunionof sapo:Akaa .
+
+<http://www.yso.fi/onto/sapo/Valkeala(1950-1965)>
+      sapo:hasunionof sapo:Valkeala .
+
+<http://www.yso.fi/onto/sapo/Sumiainen(1939-2006)>
+      sapo:hasunionof sapo:Sumiainen .
+
+<http://www.yso.fi/onto/sapo/Uudenmaan_laani(1831-1918)>
+      sapo:hasunionof sapo:Uudenmaan_laani .
+
+<http://www.yso.fi/onto/sapo/Savitaipale(1867-)>
+      sapo:hasunionof sapo:Savitaipale .
+
+<http://www.yso.fi/onto/sapo/Akaa(1895-1931)>
+      sapo:hasunionof sapo:Akaa .
+
+<http://www.yso.fi/onto/sapo/Liperi(1921-1936)>
+      sapo:hasunionof sapo:Liperi .
+
+<http://www.yso.fi/onto/sapo/Seinajoen_mlk(1931-1953)>
+      sapo:hasunionof sapo:Seinajoen_mlk .
+
+<http://www.yso.fi/onto/sapo/Korpilahti(1921-2008)>
+      sapo:hasunionof sapo:Korpilahti .
+
+<http://www.yso.fi/onto/sapo/Geta(1865-)>
+      sapo:hasunionof sapo:Geta .
+
+<http://www.yso.fi/onto/sapo/Jappila(1882-1912)>
+      sapo:hasunionof sapo:Jappila .
+
+<http://www.yso.fi/onto/sapo/Nurmes(1874-1875)>
+      sapo:hasunionof sapo:Nurmes .
+
+<http://www.yso.fi/onto/sapo/Kaarlela(1927-1968)>
+      sapo:hasunionof sapo:Kaarlela .
+
+<http://www.yso.fi/onto/sapo/Lapin_laani(1944-2009)>
+      sapo:hasunionof sapo:Lapin_laani .
+
+<http://www.yso.fi/onto/sapo/Sauvo(1969-)>
+      sapo:hasunionof sapo:Sauvo .
+
+<http://www.yso.fi/onto/sapo/Ylamaa(1940-1945)>
+      sapo:hasunionof sapo:Ylamaa .
+
+<http://www.yso.fi/onto/sapo/Savonranta(1868-1916)>
+      sapo:hasunionof sapo:Savonranta .
+
+<http://www.yso.fi/onto/sapo/Suistamo(1865-1939)>
+      sapo:hasunionof sapo:Suistamo .
+
+<http://www.yso.fi/onto/sapo/Salo_2(1967-2008)>
+      sapo:hasunionof sapo:Salo_2 .
+
+<http://www.yso.fi/onto/sapo/Kemio(1969-2008)>
+      sapo:hasunionof sapo:Kemio .
+
+<http://www.yso.fi/onto/sapo/Loimaan_mlk(1922-1975)>
+      sapo:hasunionof sapo:Loimaan_mlk .
+
+<http://www.yso.fi/onto/sapo/Turku(1967-1967)>
+      sapo:hasunionof sapo:Turku .
+
+<http://www.yso.fi/onto/sapo/Seinajoki(1931-1958)>
+      sapo:hasunionof sapo:Seinajoki .
+
+<http://www.yso.fi/onto/sapo/Perho(1868-)>
+      sapo:hasunionof sapo:Perho .
+
+<http://www.yso.fi/onto/sapo/Lauritsala(1932-1966)>
+      sapo:hasunionof sapo:Lauritsala .
+
+<http://www.yso.fi/onto/sapo/Oulainen(1865-)>
+      sapo:hasunionof sapo:Oulainen .
+
+<http://www.yso.fi/onto/sapo/Luhanka(1867-)>
+      sapo:hasunionof sapo:Luhanka .
+
+<http://www.yso.fi/onto/sapo/Siikajoki(1868-2006)>
+      sapo:hasunionof sapo:Siikajoki .
+
+<http://www.yso.fi/onto/sapo/Ullava(1909-2008)>
+      sapo:hasunionof sapo:Ullava .
+
+<http://www.yso.fi/onto/sapo/Kalanti(1936-1992)>
+      sapo:hasunionof sapo:Kalanti .
+
+<http://www.yso.fi/onto/sapo/Tytarsaari(1900-1939)>
+      sapo:hasunionof sapo:Tytarsaari .
+
+<http://www.yso.fi/onto/sapo/Vaasan_laani(1870-1959)>
+      sapo:hasunionof sapo:Vaasan_laani .
+
+<http://www.yso.fi/onto/sapo/Uudenkaupungin_mlk(1869-1968)>
+      sapo:hasunionof sapo:Uudenkaupungin_mlk .
+
+<http://www.yso.fi/onto/sapo/Ayrapaa(1925-1939)>
+      sapo:hasunionof sapo:Ayrapaa .
+
+<http://www.yso.fi/onto/sapo/Parainen(1948-1966)>
+      sapo:hasunionof sapo:Parainen .
+
+<http://www.yso.fi/onto/sapo/Leivonmaki(1870-2007)>
+      sapo:hasunionof sapo:Leivonmaki .
+
+<http://www.yso.fi/onto/sapo/Siikajoki(2007-)>
+      sapo:hasunionof sapo:Siikajoki .
+
+<http://www.yso.fi/onto/sapo/Viipuri(1933-1935)>
+      sapo:hasunionof sapo:Viipuri .
+
+<http://www.yso.fi/onto/sapo/Valkeala(1939-1949)>
+      sapo:hasunionof sapo:Valkeala .
+
+<http://www.yso.fi/onto/sapo/Mynamaki(2007-)>
+      sapo:hasunionof sapo:Mynamaki .
+
+<http://www.yso.fi/onto/sapo/Kirkkonummi(1956-)>
+      sapo:hasunionof sapo:Kirkkonummi .
+
+<http://www.yso.fi/onto/sapo/Uudenmaan_laani(1956-1996)>
+      sapo:hasunionof sapo:Uudenmaan_laani .
+
+<http://www.yso.fi/onto/sapo/Riihimaki(1946-1970)>
+      sapo:hasunionof sapo:Riihimaki .
+
+<http://www.yso.fi/onto/sapo/Finnby(1868-1929)>
+      sapo:hasunionof sapo:Finnby .
+
+<http://www.yso.fi/onto/sapo/Kuusjoki(1886-2008)>
+      sapo:hasunionof sapo:Kuusjoki .
+
+<http://www.yso.fi/onto/sapo/Polvijarvi(1921-)>
+      sapo:hasunionof sapo:Polvijarvi .
+
+<http://www.yso.fi/onto/sapo/Urjala(1868-1905)>
+      sapo:hasunionof sapo:Urjala .
+
+<http://www.yso.fi/onto/sapo/Mantyharju(1926-)>
+      sapo:hasunionof sapo:Mantyharju .
+
+<http://www.yso.fi/onto/sapo/Nauvo(1875-2008)>
+      sapo:hasunionof sapo:Nauvo .
+
+<http://www.yso.fi/onto/sapo/Pihlajavesi(1865-1968)>
+      sapo:hasunionof sapo:Pihlajavesi .
+
+<http://www.yso.fi/onto/sapo/Jaakkima(1923-1923)>
+      sapo:hasunionof sapo:Jaakkima .
+
+<http://www.yso.fi/onto/sapo/Sotkamo(1866-)>
+      sapo:hasunionof sapo:Sotkamo .
+
+<http://www.yso.fi/onto/sapo/Lahti(1933-1955)>
+      sapo:hasunionof sapo:Lahti .
+
+<http://www.yso.fi/onto/sapo/Kaavi(1873-1920)>
+      sapo:hasunionof sapo:Kaavi .
+
+<http://www.yso.fi/onto/sapo/Liljendal(1867-2009)>
+      sapo:hasunionof sapo:Liljendal .
+
+<http://www.yso.fi/onto/sapo/Lehtimaki(1868-2008)>
+      sapo:hasunionof sapo:Lehtimaki .
+
+<http://www.yso.fi/onto/sapo/Eura(2011-)>
+      sapo:hasunionof sapo:Eura .
+
+<http://www.yso.fi/onto/sapo/Loimaa(1865-1909)>
+      sapo:hasunionof sapo:Loimaa .
+
+<http://www.yso.fi/onto/sapo/Imatra(1974-1976)>
+      sapo:hasunionof sapo:Imatra .
+
+<http://www.yso.fi/onto/sapo/Keski-Suomen_laani(1974-1996)>
+      sapo:hasunionof sapo:Keski-Suomen_laani .
+
+<http://www.yso.fi/onto/sapo/Kivennapa(1871-1910)>
+      sapo:hasunionof sapo:Kivennapa .
+
+<http://www.yso.fi/onto/sapo/Pori(1558-1966)>
+      sapo:hasunionof sapo:Pori .
+
+<http://www.yso.fi/onto/sapo/Joroinen(1913-1928)>
+      sapo:hasunionof sapo:Joroinen .
+
+<http://www.yso.fi/onto/sapo/Pukkila(1867-)>
+      sapo:hasunionof sapo:Pukkila .
+
+<http://www.yso.fi/onto/sapo/Muolaa(1914-1924)>
+      sapo:hasunionof sapo:Muolaa .
+
+<http://www.yso.fi/onto/sapo/Naantalin_mlk(1944-1947)>
+      sapo:hasunionof sapo:Naantalin_mlk .
+
+<http://www.yso.fi/onto/sapo/Tyrnava(1965-2000)>
+      sapo:hasunionof sapo:Tyrnava .
+
+<http://www.yso.fi/onto/sapo/Siipyy(1865-1972)>
+      sapo:hasunionof sapo:Siipyy .
+
+<http://www.yso.fi/onto/sapo/Voyri-Maksamaa(2007-2010)>
+      sapo:hasunionof sapo:Voyri-Maksamaa .
+
+<http://www.yso.fi/onto/sapo/Jalasjarvi(1867-)>
+      sapo:hasunionof sapo:Jalasjarvi .
+
+<http://www.yso.fi/onto/sapo/Ruovesi(1941-)>
+      sapo:hasunionof sapo:Ruovesi .
+
+<http://www.yso.fi/onto/sapo/Turtola(1935-1948)>
+      sapo:hasunionof sapo:Turtola .
+
+<http://www.yso.fi/onto/sapo/Vampula(1867-2008)>
+      sapo:hasunionof sapo:Vampula .
+
+<http://www.yso.fi/onto/sapo/Rauma(1993-2006)>
+      sapo:hasunionof sapo:Rauma .
+
+<http://www.yso.fi/onto/sapo/Lohja(2009-2012)>
+      sapo:hasunionof sapo:Lohja .
+
+<http://www.yso.fi/onto/sapo/Hameen_laani(1960-1968)>
+      sapo:hasunionof sapo:Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Kerimaki(1924-)>
+      sapo:hasunionof sapo:Kerimaki .
+
+<http://www.yso.fi/onto/sapo/Turku(1930-1938)>
+      sapo:hasunionof sapo:Turku .
+
+<http://www.yso.fi/onto/sapo/Parikkala(2005-)>
+      sapo:hasunionof sapo:Parikkala .
+
+<http://www.yso.fi/onto/sapo/Suonenjoki(1869-)>
+      sapo:hasunionof sapo:Suonenjoki .
+
+<http://www.yso.fi/onto/sapo/Hankasalmi(1967-)>
+      sapo:hasunionof sapo:Hankasalmi .
+
+<http://www.yso.fi/onto/sapo/Haukipudas(1965-1978)>
+      sapo:hasunionof sapo:Haukipudas .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(1943-1947)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Kuopion_mlk(1922-1923)>
+      sapo:hasunionof sapo:Kuopion_mlk .
+
+<http://www.yso.fi/onto/sapo/Hyvinkaan_mlk(1926-1968)>
+      sapo:hasunionof sapo:Hyvinkaan_mlk .
+
+<http://www.yso.fi/onto/sapo/Kaarlela(1969-1976)>
+      sapo:hasunionof sapo:Kaarlela .
+
+<http://www.yso.fi/onto/sapo/Vaasan_laani(1969-1996)>
+      sapo:hasunionof sapo:Vaasan_laani .
+
+<http://www.yso.fi/onto/sapo/Koskenpaa(1926-1968)>
+      sapo:hasunionof sapo:Koskenpaa .
+
+<http://www.yso.fi/onto/sapo/Ikaalinen(1972-)>
+      sapo:hasunionof sapo:Ikaalinen .
+
+<http://www.yso.fi/onto/sapo/Iitti(1921-)>
+      sapo:hasunionof sapo:Iitti .
+
+<http://www.yso.fi/onto/sapo/Inkoo(1867-1943)>
+      sapo:hasunionof sapo:Inkoo .
+
+<http://www.yso.fi/onto/sapo/Karinainen(1872-2004)>
+      sapo:hasunionof sapo:Karinainen .
+
+<http://www.yso.fi/onto/sapo/Kalajoki(1973-2009)>
+      sapo:hasunionof sapo:Kalajoki .
+
+<http://www.yso.fi/onto/sapo/Vaasan_laani(1960-1968)>
+      sapo:hasunionof sapo:Vaasan_laani .
+
+<http://www.yso.fi/onto/sapo/Hanko(1944-1976)>
+      sapo:hasunionof sapo:Hanko .
+
+<http://www.yso.fi/onto/sapo/Akaa_2(2011-)>
+      sapo:hasunionof sapo:Akaa_2 .
+
+<http://www.yso.fi/onto/sapo/Karsamaki(1869-)>
+      sapo:hasunionof sapo:Karsamaki .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_mlk(1931-1932)>
+      sapo:hasunionof sapo:Mikkelin_mlk .
+
+<http://www.yso.fi/onto/sapo/Valkeala(1921-1921)>
+      sapo:hasunionof sapo:Valkeala .
+
+<http://www.yso.fi/onto/sapo/Nousiainen(1867-)>
+      sapo:hasunionof sapo:Nousiainen .
+
+<http://www.yso.fi/onto/sapo/Puumala(1868-)>
+      sapo:hasunionof sapo:Puumala .
+
+<http://www.yso.fi/onto/sapo/Vaasa(1935-1972)>
+      sapo:hasunionof sapo:Vaasa .
+
+<http://www.yso.fi/onto/sapo/Kymi(1913-1947)>
+      sapo:hasunionof sapo:Kymi .
+
+<http://www.yso.fi/onto/sapo/Pyhajoki(1865-)>
+      sapo:hasunionof sapo:Pyhajoki .
+
+<http://www.yso.fi/onto/sapo/Pyhamaa(1910-1973)>
+      sapo:hasunionof sapo:Pyhamaa .
+
+<http://www.yso.fi/onto/sapo/Karttula(1926-2010)>
+      sapo:hasunionof sapo:Karttula .
+
+<http://www.yso.fi/onto/sapo/Kuhmoinen(1873-1919)>
+      sapo:hasunionof sapo:Kuhmoinen .
+
+<http://www.yso.fi/onto/sapo/Erajarvi(1870-1972)>
+      sapo:hasunionof sapo:Erajarvi .
+
+<http://www.yso.fi/onto/sapo/Valkeala(1922-1938)>
+      sapo:hasunionof sapo:Valkeala .
+
+<http://www.yso.fi/onto/sapo/Kurikka(1868-2008)>
+      sapo:hasunionof sapo:Kurikka .
+
+<http://www.yso.fi/onto/sapo/Tervo(1926-)>
+      sapo:hasunionof sapo:Tervo .
+
+<http://www.yso.fi/onto/sapo/Pusula(1868-1980)>
+      sapo:hasunionof sapo:Pusula .
+
+<http://www.yso.fi/onto/sapo/Hattula(1971-1978)>
+      sapo:hasunionof sapo:Hattula .
+
+<http://www.yso.fi/onto/sapo/Vuoksenranta(1924-1939)>
+      sapo:hasunionof sapo:Vuoksenranta .
+
+<http://www.yso.fi/onto/sapo/Parkano(1917-1919)>
+      sapo:hasunionof sapo:Parkano .
+
+<http://www.yso.fi/onto/sapo/Asikkala(1867-)>
+      sapo:hasunionof sapo:Asikkala .
+
+<http://www.yso.fi/onto/sapo/Lahti(1956-)>
+      sapo:hasunionof sapo:Lahti .
+
+<http://www.yso.fi/onto/sapo/Eno(1871-2008)>
+      sapo:hasunionof sapo:Eno .
+
+<http://www.yso.fi/onto/sapo/Lahti(1924-1932)>
+      sapo:hasunionof sapo:Lahti .
+
+<http://www.yso.fi/onto/sapo/Alavieska(1879-)>
+      sapo:hasunionof sapo:Alavieska .
+
+<http://www.yso.fi/onto/sapo/Ikaalinen(1858-1971)>
+      sapo:hasunionof sapo:Ikaalinen .
+
+<http://www.yso.fi/onto/sapo/Anjalankoski(1975-2008)>
+      sapo:hasunionof sapo:Anjalankoski .
+
+<http://www.yso.fi/onto/sapo/Hyvinkaa(1971-1973)>
+      sapo:hasunionof sapo:Hyvinkaa .
+
+<http://www.yso.fi/onto/sapo/Alavus(1865-1972)>
+      sapo:hasunionof sapo:Alavus .
+
+<http://www.yso.fi/onto/sapo/Kaavi(1921-1922)>
+      sapo:hasunionof sapo:Kaavi .
+
+<http://www.yso.fi/onto/sapo/Kumlinge(1865-)>
+      sapo:hasunionof sapo:Kumlinge .
+
+<http://www.yso.fi/onto/sapo/Luopioinen(1868-2006)>
+      sapo:hasunionof sapo:Luopioinen .
+
+<http://www.yso.fi/onto/sapo/Pertunmaa(1926-)>
+      sapo:hasunionof sapo:Pertunmaa .
+
+<http://www.yso.fi/onto/sapo/Korsholman_linnalaani(1594-1594)>
+      sapo:hasunionof sapo:Korsholman_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Kalvola(1867-1955)>
+      sapo:hasunionof sapo:Kalvola .
+
+<http://www.yso.fi/onto/sapo/Enonkoski(1920-)>
+      sapo:hasunionof sapo:Enonkoski .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(1948-1954)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Hameenlinnan_mlk(1869-1887)>
+      sapo:hasunionof sapo:Hameenlinnan_mlk .
+
+<http://www.yso.fi/onto/sapo/Oulu(1965-1978)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Lansi-Suomen_laani(1997-2009)>
+      sapo:hasunionof sapo:Lansi-Suomen_laani .
+
+<http://www.yso.fi/onto/sapo/Tammisaaren_mlk(1940-1943)>
+      sapo:hasunionof sapo:Tammisaaren_mlk .
+
+<http://www.yso.fi/onto/sapo/Espoo(1868-1919)>
+      sapo:hasunionof sapo:Espoo .
+
+<http://www.yso.fi/onto/sapo/Paltamo(1870-)>
+      sapo:hasunionof sapo:Paltamo .
+
+<http://www.yso.fi/onto/sapo/Oripaa(1869-)>
+      sapo:hasunionof sapo:Oripaa .
+
+<http://www.yso.fi/onto/sapo/Tampere(1877-1919)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Lahdenpohja(1924-1937)>
+      sapo:hasunionof sapo:Lahdenpohja .
+
+<http://www.yso.fi/onto/sapo/Oulunsalo(1882-1964)>
+      sapo:hasunionof sapo:Oulunsalo .
+
+<http://www.yso.fi/onto/sapo/Rauman_mlk(1865-1958)>
+      sapo:hasunionof sapo:Rauman_mlk .
+
+<http://www.yso.fi/onto/sapo/Lohja(1926-1996)>
+      sapo:hasunionof sapo:Lohja .
+
+<http://www.yso.fi/onto/sapo/Suursaari_ja_Tytar(1875-1899)>
+      sapo:hasunionof sapo:Suursaari_ja_Tytar .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_mlk(1868-1924)>
+      sapo:hasunionof sapo:Mikkelin_mlk .
+
+<http://www.yso.fi/onto/sapo/Isojoki(1865-)>
+      sapo:hasunionof sapo:Isojoki .
+
+<http://www.yso.fi/onto/sapo/Karttula(1873-1925)>
+      sapo:hasunionof sapo:Karttula .
+
+<http://www.yso.fi/onto/sapo/Uusikaarlepyy(1975-)>
+      sapo:hasunionof sapo:Uusikaarlepyy .
+
+<http://www.yso.fi/onto/sapo/Alastaro(1869-2008)>
+      sapo:hasunionof sapo:Alastaro .
+
+<http://www.yso.fi/onto/sapo/Saari(1929-1939)>
+      sapo:hasunionof sapo:Saari .
+
+<http://www.yso.fi/onto/sapo/Mynamaki(1977-2006)>
+      sapo:hasunionof sapo:Mynamaki .
+
+<http://www.yso.fi/onto/sapo/Messukyla(1922-1922)>
+      sapo:hasunionof sapo:Messukyla .
+
+<http://www.yso.fi/onto/sapo/Suojarvi(1931-1939)>
+      sapo:hasunionof sapo:Suojarvi .
+
+<http://www.yso.fi/onto/sapo/Karstula(1929-)>
+      sapo:hasunionof sapo:Karstula .
+
+<http://www.yso.fi/onto/sapo/Sahalahti(1869-2004)>
+      sapo:hasunionof sapo:Sahalahti .
+
+<http://www.yso.fi/onto/sapo/Kymi(1954-1976)>
+      sapo:hasunionof sapo:Kymi .
+
+<http://www.yso.fi/onto/sapo/Raisala(1867-1939)>
+      sapo:hasunionof sapo:Raisala .
+
+<http://www.yso.fi/onto/sapo/Kajaanin_mlk(1915-1966)>
+      sapo:hasunionof sapo:Kajaanin_mlk .
+
+<http://www.yso.fi/onto/sapo/Raahe(1649-1972)>
+      sapo:hasunionof sapo:Raahe .
+
+<http://www.yso.fi/onto/sapo/Kannonkoski(1934-)>
+      sapo:hasunionof sapo:Kannonkoski .
+
+<http://www.yso.fi/onto/sapo/Paavola(1871-1972)>
+      sapo:hasunionof sapo:Paavola .
+
+<http://www.yso.fi/onto/sapo/Kokemaki(1969-)>
+      sapo:hasunionof sapo:Kokemaki .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_laani(1870-1959)>
+      sapo:hasunionof sapo:Mikkelin_laani .
+
+<http://www.yso.fi/onto/sapo/Tampere(1947-1949)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1415-1445)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Heinola(1839-1950)>
+      sapo:hasunionof sapo:Heinola .
+
+<http://www.yso.fi/onto/sapo/Savonlinnan_ja_Kymenkartanon_laani(1743-1746)>
+      sapo:hasunionof sapo:Savonlinnan_ja_Kymenkartanon_laani .
+
+<http://www.yso.fi/onto/sapo/Kristiinankaupungin_mlk(1865-1918)>
+      sapo:hasunionof sapo:Kristiinankaupungin_mlk .
+
+<http://www.yso.fi/onto/sapo/Kemio(1867-1968)>
+      sapo:hasunionof sapo:Kemio .
+
+<http://www.yso.fi/onto/sapo/Lapin_laani(1938-1943)>
+      sapo:hasunionof sapo:Lapin_laani .
+
+<http://www.yso.fi/onto/sapo/Haukipudas(1979-2012)>
+      sapo:hasunionof sapo:Haukipudas .
+
+<http://www.yso.fi/onto/sapo/Tammela(1956-)>
+      sapo:hasunionof sapo:Tammela .
+
+<http://www.yso.fi/onto/sapo/Sakkola(1903-1913)>
+      sapo:hasunionof sapo:Sakkola .
+
+<http://www.yso.fi/onto/sapo/Raakkyla(1874-1953)>
+      sapo:hasunionof sapo:Raakkyla .
+
+<http://www.yso.fi/onto/sapo/Pohjois-Karjalan_laani(1960-1996)>
+      sapo:hasunionof sapo:Pohjois-Karjalan_laani .
+
+<http://www.yso.fi/onto/sapo/Ruokolahti(1868-1939)>
+      sapo:hasunionof sapo:Ruokolahti .
+
+<http://www.yso.fi/onto/sapo/Joroinen(1929-1943)>
+      sapo:hasunionof sapo:Joroinen .
+
+<http://www.yso.fi/onto/sapo/Helsinki(1643-1905)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Pohja(1865-2008)>
+      sapo:hasunionof sapo:Pohja .
+
+<http://www.yso.fi/onto/sapo/Keminmaa(1979-)>
+      sapo:hasunionof sapo:Keminmaa .
+
+<http://www.yso.fi/onto/sapo/Tiukka(1919-1972)>
+      sapo:hasunionof sapo:Tiukka .
+
+<http://www.yso.fi/onto/sapo/Mantyharju(1867-1925)>
+      sapo:hasunionof sapo:Mantyharju .
+
+<http://www.yso.fi/onto/sapo/Vehkalahti(1865-1952)>
+      sapo:hasunionof sapo:Vehkalahti .
+
+<http://www.yso.fi/onto/sapo/Peraseinajoki(1868-1953)>
+      sapo:hasunionof sapo:Peraseinajoki .
+
+<http://www.yso.fi/onto/sapo/Posio(1926-)>
+      sapo:hasunionof sapo:Posio .
+
+<http://www.yso.fi/onto/sapo/Miehikkala(1946-)>
+      sapo:hasunionof sapo:Miehikkala .
+
+<http://www.yso.fi/onto/sapo/Pernaja(1924-1956)>
+      sapo:hasunionof sapo:Pernaja .
+
+<http://www.yso.fi/onto/sapo/Kakisalmen_mlk(1870-1939)>
+      sapo:hasunionof sapo:Kakisalmen_mlk .
+
+<http://www.yso.fi/onto/sapo/Rovaniemen_mlk(1964-1984)>
+      sapo:hasunionof sapo:Rovaniemen_mlk .
+
+<http://www.yso.fi/onto/sapo/Lapinlahti(1964-2010)>
+      sapo:hasunionof sapo:Lapinlahti .
+
+<http://www.yso.fi/onto/sapo/Pyhamaan_Luoto(1865-1909)>
+      sapo:hasunionof sapo:Pyhamaan_Luoto .
+
+<http://www.yso.fi/onto/sapo/Iisalmen_mlk(1922-1969)>
+      sapo:hasunionof sapo:Iisalmen_mlk .
+
+<http://www.yso.fi/onto/sapo/Naantali(1443-1943)>
+      sapo:hasunionof sapo:Naantali .
+
+<http://www.yso.fi/onto/sapo/Tammela(1868-1922)>
+      sapo:hasunionof sapo:Tammela .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1932-1932)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Jyvaskyla(1948-1964)>
+      sapo:hasunionof sapo:Jyvaskyla .
+
+<http://www.yso.fi/onto/sapo/Pihtipudas(1863-)>
+      sapo:hasunionof sapo:Pihtipudas .
+
+<http://www.yso.fi/onto/sapo/Maaria(1868-1943)>
+      sapo:hasunionof sapo:Maaria .
+
+<http://www.yso.fi/onto/sapo/Degerby(1745-1751)>
+      sapo:hasunionof sapo:Degerby .
+
+<http://www.yso.fi/onto/sapo/Oulunsalo(1965-2012)>
+      sapo:hasunionof sapo:Oulunsalo .
+
+<http://www.yso.fi/onto/sapo/Inari(1947-)>
+      sapo:hasunionof sapo:Inari .
+
+<http://www.yso.fi/onto/sapo/Tyrvanto(1873-1970)>
+      sapo:hasunionof sapo:Tyrvanto .
+
+<http://www.yso.fi/onto/sapo/Juuka(1870-)>
+      sapo:hasunionof sapo:Juuka .
+
+<http://www.yso.fi/onto/sapo/Tuusniemi(1924-)>
+      sapo:hasunionof sapo:Tuusniemi .
+
+<http://www.yso.fi/onto/sapo/Toijala(1946-1974)>
+      sapo:hasunionof sapo:Toijala .
+
+<http://www.yso.fi/onto/sapo/Kittila(1868-2003)>
+      sapo:hasunionof sapo:Kittila .
+
+<http://www.yso.fi/onto/sapo/Tyrvaa(1955-1972)>
+      sapo:hasunionof sapo:Tyrvaa .
+
+<http://www.yso.fi/onto/sapo/Eura(2009-2010)>
+      sapo:hasunionof sapo:Eura .
+
+<http://www.yso.fi/onto/sapo/Ylamaa(1930-1939)>
+      sapo:hasunionof sapo:Ylamaa .
+
+<http://www.yso.fi/onto/sapo/Rovaniemi(1957-1963)>
+      sapo:hasunionof sapo:Rovaniemi .
+
+<http://www.yso.fi/onto/sapo/Miehikkala(1887-1907)>
+      sapo:hasunionof sapo:Miehikkala .
+
+<http://www.yso.fi/onto/sapo/Piippola(1865-1908)>
+      sapo:hasunionof sapo:Piippola .
+
+<http://www.yso.fi/onto/sapo/Maarianhamina(1861-1960)>
+      sapo:hasunionof sapo:Maarianhamina .
+
+<http://www.yso.fi/onto/sapo/Eura(1866-1969)>
+      sapo:hasunionof sapo:Eura .
+
+<http://www.yso.fi/onto/sapo/Huopalahti(1927-1930)>
+      sapo:hasunionof sapo:Huopalahti .
+
+<http://www.yso.fi/onto/sapo/Hameen_laani(1974-1989)>
+      sapo:hasunionof sapo:Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Siuntio(1868-1943)>
+      sapo:hasunionof sapo:Siuntio .
+
+<http://www.yso.fi/onto/sapo/Lammi(1865-2008)>
+      sapo:hasunionof sapo:Lammi .
+
+<http://www.yso.fi/onto/sapo/Dragsfjard(1865-1968)>
+      sapo:hasunionof sapo:Dragsfjard .
+
+<http://www.yso.fi/onto/sapo/Keuruu(1969-)>
+      sapo:hasunionof sapo:Keuruu .
+
+<http://www.yso.fi/onto/sapo/Ruotsinpyhtaa(1865-1968)>
+      sapo:hasunionof sapo:Ruotsinpyhtaa .
+
+<http://www.yso.fi/onto/sapo/Sayneinen(1923-1970)>
+      sapo:hasunionof sapo:Sayneinen .
+
+<http://www.yso.fi/onto/sapo/Taivalkoski(1926-)>
+      sapo:hasunionof sapo:Taivalkoski .
+
+<http://www.yso.fi/onto/sapo/Utajarvi(1954-1964)>
+      sapo:hasunionof sapo:Utajarvi .
+
+<http://www.yso.fi/onto/sapo/Karkola(1867-)>
+      sapo:hasunionof sapo:Karkola .
+
+<http://www.yso.fi/onto/sapo/Aanekoski(1969-1992)>
+      sapo:hasunionof sapo:Aanekoski .
+
+<http://www.yso.fi/onto/sapo/Salo_2(2009-)>
+      sapo:hasunionof sapo:Salo_2 .
+
+<http://www.yso.fi/onto/sapo/Kokemaenkartanon_linnalaani(1594-1633)>
+      sapo:hasunionof sapo:Kokemaenkartanon_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Oulu(2013-)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Siuntio(1953-)>
+      sapo:hasunionof sapo:Siuntio .
+
+<http://www.yso.fi/onto/sapo/Ylamaa(1946-2009)>
+      sapo:hasunionof sapo:Ylamaa .
+
+<http://www.yso.fi/onto/sapo/Utajarvi(1865-1953)>
+      sapo:hasunionof sapo:Utajarvi .
+
+<http://www.yso.fi/onto/sapo/Alaharma(1867-2008)>
+      sapo:hasunionof sapo:Alaharma .
+
+<http://www.yso.fi/onto/sapo/Kauvatsa(1867-1968)>
+      sapo:hasunionof sapo:Kauvatsa .
+
+<http://www.yso.fi/onto/sapo/Antrea(1869-1923)>
+      sapo:hasunionof sapo:Antrea .
+
+<http://www.yso.fi/onto/sapo/Vårdo(1866-)>
+      sapo:hasunionof sapo:Vårdo .
+
+<http://www.yso.fi/onto/sapo/Ii(2007-)>
+      sapo:hasunionof sapo:Ii .
+
+<http://www.yso.fi/onto/sapo/Somero(1977-)>
+      sapo:hasunionof sapo:Somero .
+
+<http://www.yso.fi/onto/sapo/Kestila(1867-1955)>
+      sapo:hasunionof sapo:Kestila .
+
+<http://www.yso.fi/onto/sapo/Ulvila(1365-1557)>
+      sapo:hasunionof sapo:Ulvila .
+
+<http://www.yso.fi/onto/sapo/Maaninka(1872-1924)>
+      sapo:hasunionof sapo:Maaninka .
+
+<http://www.yso.fi/onto/sapo/Valkeakoski(1957-1972)>
+      sapo:hasunionof sapo:Valkeakoski .
+
+<http://www.yso.fi/onto/sapo/Vesilahti(1953-1963)>
+      sapo:hasunionof sapo:Vesilahti .
+
+<http://www.yso.fi/onto/sapo/Porvoon_linnalaani(1547-1633)>
+      sapo:hasunionof sapo:Porvoon_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Saari(1940-2004)>
+      sapo:hasunionof sapo:Saari .
+
+<http://www.yso.fi/onto/sapo/Pyhajarvi_Ul.(1868-1931)>
+      sapo:hasunionof <http://www.yso.fi/onto/sapo/Pyhajarvi_Ul.> .
+
+<http://www.yso.fi/onto/sapo/Oulun_laani(1775-1921)>
+      sapo:hasunionof sapo:Oulun_laani .
+
+<http://www.yso.fi/onto/sapo/Petajavesi(1868-)>
+      sapo:hasunionof sapo:Petajavesi .
+
+<http://www.yso.fi/onto/sapo/Pieksamaki_2(2007-)>
+      sapo:hasunionof sapo:Pieksamaki_2 .
+
+<http://www.yso.fi/onto/sapo/Korpiselka(1940-1945)>
+      sapo:hasunionof sapo:Korpiselka .
+
+<http://www.yso.fi/onto/sapo/Jamsa(1866-1924)>
+      sapo:hasunionof sapo:Jamsa .
+
+<http://www.yso.fi/onto/sapo/Peraseinajoki(1954-2004)>
+      sapo:hasunionof sapo:Peraseinajoki .
+
+<http://www.yso.fi/onto/sapo/Kuusamo(1926-1939)>
+      sapo:hasunionof sapo:Kuusamo .
+
+<http://www.yso.fi/onto/sapo/Ilomantsi(1940-)>
+      sapo:hasunionof sapo:Ilomantsi .
+
+<http://www.yso.fi/onto/sapo/Inio(1874-2008)>
+      sapo:hasunionof sapo:Inio .
+
+<http://www.yso.fi/onto/sapo/Savonlinna(1901-1931)>
+      sapo:hasunionof sapo:Savonlinna .
+
+<http://www.yso.fi/onto/sapo/Orivesi(1973-2006)>
+      sapo:hasunionof sapo:Orivesi .
+
+<http://www.yso.fi/onto/sapo/Vammala(1907-1954)>
+      sapo:hasunionof sapo:Vammala .
+
+<http://www.yso.fi/onto/sapo/Saaminki(1901-1931)>
+      sapo:hasunionof sapo:Saaminki .
+
+<http://www.yso.fi/onto/sapo/Kuorevesi(1954-2000)>
+      sapo:hasunionof sapo:Kuorevesi .
+
+<http://www.yso.fi/onto/sapo/Sund(1865-)>
+      sapo:hasunionof sapo:Sund .
+
+<http://www.yso.fi/onto/sapo/Kuopion_mlk(1942-1968)>
+      sapo:hasunionof sapo:Kuopion_mlk .
+
+<http://www.yso.fi/onto/sapo/Valkeakoski(1979-)>
+      sapo:hasunionof sapo:Valkeakoski .
+
+<http://www.yso.fi/onto/sapo/Kouvola(1922-1938)>
+      sapo:hasunionof sapo:Kouvola .
+
+<http://www.yso.fi/onto/sapo/Helsingin_mlk(1954-1965)>
+      sapo:hasunionof sapo:Helsingin_mlk .
+
+<http://www.yso.fi/onto/sapo/Liminka(1865-2000)>
+      sapo:hasunionof sapo:Liminka .
+
+<http://www.yso.fi/onto/sapo/Raahe(1973-2002)>
+      sapo:hasunionof sapo:Raahe .
+
+<http://www.yso.fi/onto/sapo/Ahlainen(1908-1971)>
+      sapo:hasunionof sapo:Ahlainen .
+
+<http://www.yso.fi/onto/sapo/Aanekosken_mlk(1932-1968)>
+      sapo:hasunionof sapo:Aanekosken_mlk .
+
+<http://www.yso.fi/onto/sapo/Parainen(1967-2008)>
+      sapo:hasunionof sapo:Parainen .
+
+<http://www.yso.fi/onto/sapo/Uudenmaan_ja_Hameen_laani(1747-1774)>
+      sapo:hasunionof sapo:Uudenmaan_ja_Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Heinavesi(1920-)>
+      sapo:hasunionof sapo:Heinavesi .
+
+<http://www.yso.fi/onto/sapo/Kuolemajarvi(1871-1939)>
+      sapo:hasunionof sapo:Kuolemajarvi .
+
+<http://www.yso.fi/onto/sapo/Koivisto(1927-1939)>
+      sapo:hasunionof sapo:Koivisto .
+
+<http://www.yso.fi/onto/sapo/Urjala(1906-1922)>
+      sapo:hasunionof sapo:Urjala .
+
+<http://www.yso.fi/onto/sapo/Ilomantsi(1875-1901)>
+      sapo:hasunionof sapo:Ilomantsi .
+
+<http://www.yso.fi/onto/sapo/Nurmes(1876-1972)>
+      sapo:hasunionof sapo:Nurmes .
+
+<http://www.yso.fi/onto/sapo/Pulkkila(1867-2008)>
+      sapo:hasunionof sapo:Pulkkila .
+
+<http://www.yso.fi/onto/sapo/Suomusjarvi(1868-2008)>
+      sapo:hasunionof sapo:Suomusjarvi .
+
+<http://www.yso.fi/onto/sapo/Virolahti(1865-1886)>
+      sapo:hasunionof sapo:Virolahti .
+
+<http://www.yso.fi/onto/sapo/Lappi(1865-2008)>
+      sapo:hasunionof sapo:Lappi .
+
+<http://www.yso.fi/onto/sapo/Saarijarvi(2009-)>
+      sapo:hasunionof sapo:Saarijarvi .
+
+<http://www.yso.fi/onto/sapo/Savonlinna(2009-)>
+      sapo:hasunionof sapo:Savonlinna .
+
+<http://www.yso.fi/onto/sapo/Jaaski(1940-1947)>
+      sapo:hasunionof sapo:Jaaski .
+
+<http://www.yso.fi/onto/sapo/Turku(1944-1948)>
+      sapo:hasunionof sapo:Turku .
+
+<http://www.yso.fi/onto/sapo/Tampere(1950-1965)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Simpele(1945-1972)>
+      sapo:hasunionof sapo:Simpele .
+
+<http://www.yso.fi/onto/sapo/Nummi(1868-1980)>
+      sapo:hasunionof sapo:Nummi .
+
+<http://www.yso.fi/onto/sapo/Turun_linnalaani(1375-1384)>
+      sapo:hasunionof sapo:Turun_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Askainen(1876-2008)>
+      sapo:hasunionof sapo:Askainen .
+
+<http://www.yso.fi/onto/sapo/Kestila(1956-1958)>
+      sapo:hasunionof sapo:Kestila .
+
+<http://www.yso.fi/onto/sapo/Suomussalmi(1867-)>
+      sapo:hasunionof sapo:Suomussalmi .
+
+<http://www.yso.fi/onto/sapo/Salo(1867-1921)>
+      sapo:hasunionof sapo:Salo .
+
+<http://www.yso.fi/onto/sapo/Viipurin_laani(1831-1918)>
+      sapo:hasunionof sapo:Viipurin_laani .
+
+<http://www.yso.fi/onto/sapo/Viipurin_laani(1919-1939)>
+      sapo:hasunionof sapo:Viipurin_laani .
+
+<http://www.yso.fi/onto/sapo/Rovaniemi(2006-)>
+      sapo:hasunionof sapo:Rovaniemi .
+
+<http://www.yso.fi/onto/sapo/Lapinlahti(2011-)>
+      sapo:hasunionof sapo:Lapinlahti .
+
+<http://www.yso.fi/onto/sapo/Jyvaskyla(1941-1947)>
+      sapo:hasunionof sapo:Jyvaskyla .
+
+<http://www.yso.fi/onto/sapo/Hausjarvi(1918-1921)>
+      sapo:hasunionof sapo:Hausjarvi .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(1777-1887)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Sortavalan_mlk(1922-1939)>
+      sapo:hasunionof sapo:Sortavalan_mlk .
+
+<http://www.yso.fi/onto/sapo/Kymi(1865-1877)>
+      sapo:hasunionof sapo:Kymi .
+
+<http://www.yso.fi/onto/sapo/Sakkola(1871-1902)>
+      sapo:hasunionof sapo:Sakkola .
+
+<http://www.yso.fi/onto/sapo/Kestila(1973-2008)>
+      sapo:hasunionof sapo:Kestila .
+
+<http://www.yso.fi/onto/sapo/Rovaniemi(1929-1947)>
+      sapo:hasunionof sapo:Rovaniemi .
+
+<http://www.yso.fi/onto/sapo/Renko(1967-2008)>
+      sapo:hasunionof sapo:Renko .
+
+<http://www.yso.fi/onto/sapo/Palkane(1866-2006)>
+      sapo:hasunionof sapo:Palkane .
+
+<http://www.yso.fi/onto/sapo/Tyrvaa(1907-1954)>
+      sapo:hasunionof sapo:Tyrvaa .
+
+<http://www.yso.fi/onto/sapo/Tammisaari(1977-1992)>
+      sapo:hasunionof sapo:Tammisaari .
+
+<http://www.yso.fi/onto/sapo/Suodenniemi(1868-2006)>
+      sapo:hasunionof sapo:Suodenniemi .
+
+<http://www.yso.fi/onto/sapo/Savukoski(1916-)>
+      sapo:hasunionof sapo:Savukoski .
+
+<http://www.yso.fi/onto/sapo/Velkua(1868-2008)>
+      sapo:hasunionof sapo:Velkua .
+
+<http://www.yso.fi/onto/sapo/Kuru(1867-1924)>
+      sapo:hasunionof sapo:Kuru .
+
+<http://www.yso.fi/onto/sapo/Hausjarvi(1922-1945)>
+      sapo:hasunionof sapo:Hausjarvi .
+
+<http://www.yso.fi/onto/sapo/Kempele(1867-1964)>
+      sapo:hasunionof sapo:Kempele .
+
+<http://www.yso.fi/onto/sapo/Soini(1868-)>
+      sapo:hasunionof sapo:Soini .
+
+<http://www.yso.fi/onto/sapo/Hameenlinnan_mlk(1888-1912)>
+      sapo:hasunionof sapo:Hameenlinnan_mlk .
+
+<http://www.yso.fi/onto/sapo/Raippaluoto(1932-1972)>
+      sapo:hasunionof sapo:Raippaluoto .
+
+<http://www.yso.fi/onto/sapo/Tampere(1966-1971)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Loimaan_kunta(1978-2004)>
+      sapo:hasunionof sapo:Loimaan_kunta .
+
+<http://www.yso.fi/onto/sapo/Karjaan_mlk(1929-1929)>
+      sapo:hasunionof sapo:Karjaan_mlk .
+
+<http://www.yso.fi/onto/sapo/Suomenniemi(1869-)>
+      sapo:hasunionof sapo:Suomenniemi .
+
+<http://www.yso.fi/onto/sapo/Nokia(1938-1972)>
+      sapo:hasunionof sapo:Nokia .
+
+<http://www.yso.fi/onto/sapo/Viipuri(1932-1932)>
+      sapo:hasunionof sapo:Viipuri .
+
+<http://www.yso.fi/onto/sapo/Parikkala(1873-1922)>
+      sapo:hasunionof sapo:Parikkala .
+
+<http://www.yso.fi/onto/sapo/Korsholman_linnalaani(1385-1440)>
+      sapo:hasunionof sapo:Korsholman_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Vaala(1954-1972)>
+      sapo:hasunionof sapo:Vaala .
+
+<http://www.yso.fi/onto/sapo/Ypaja(1893-1909)>
+      sapo:hasunionof sapo:Ypaja .
+
+<http://www.yso.fi/onto/sapo/Pello(1949-)>
+      sapo:hasunionof sapo:Pello .
+
+<http://www.yso.fi/onto/sapo/Hameen_linnalaani(1415-1445)>
+      sapo:hasunionof sapo:Hameen_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Pyhanta(1909-)>
+      sapo:hasunionof sapo:Pyhanta .
+
+<http://www.yso.fi/onto/sapo/Vartsila(1951-2004)>
+      sapo:hasunionof sapo:Vartsila .
+
+<http://www.yso.fi/onto/sapo/Heinjoki(1869-1939)>
+      sapo:hasunionof sapo:Heinjoki .
+
+<http://www.yso.fi/onto/sapo/Jyvaskyla(2009-)>
+      sapo:hasunionof sapo:Jyvaskyla .
+
+<http://www.yso.fi/onto/sapo/Pyhasalmi(1993-1995)>
+      sapo:hasunionof sapo:Pyhasalmi .
+
+<http://www.yso.fi/onto/sapo/Ristiina(1948-)>
+      sapo:hasunionof sapo:Ristiina .
+
+<http://www.yso.fi/onto/sapo/Johannes(1865-1935)>
+      sapo:hasunionof sapo:Johannes .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(2009-)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Ylojarvi(1950-1953)>
+      sapo:hasunionof sapo:Ylojarvi .
+
+<http://www.yso.fi/onto/sapo/Kinnula(1914-)>
+      sapo:hasunionof sapo:Kinnula .
+
+<http://www.yso.fi/onto/sapo/Kesalahti(1873-)>
+      sapo:hasunionof sapo:Kesalahti .
+
+<http://www.yso.fi/onto/sapo/Muolaa(1925-1933)>
+      sapo:hasunionof sapo:Muolaa .
+
+<http://www.yso.fi/onto/sapo/Mustasaari(1935-1972)>
+      sapo:hasunionof sapo:Mustasaari .
+
+<http://www.yso.fi/onto/sapo/Kuolajarvi(1857-1935)>
+      sapo:hasunionof sapo:Kuolajarvi .
+
+<http://www.yso.fi/onto/sapo/Viiala(1946-2006)>
+      sapo:hasunionof sapo:Viiala .
+
+<http://www.yso.fi/onto/sapo/Loimaa(1910-1915)>
+      sapo:hasunionof sapo:Loimaa .
+
+<http://www.yso.fi/onto/sapo/Vammala(2007-2008)>
+      sapo:hasunionof sapo:Vammala .
+
+<http://www.yso.fi/onto/sapo/Saaksmaki(1946-1948)>
+      sapo:hasunionof sapo:Saaksmaki .
+
+<http://www.yso.fi/onto/sapo/Temmes(1865-2000)>
+      sapo:hasunionof sapo:Temmes .
+
+<http://www.yso.fi/onto/sapo/Kotka(1878-1947)>
+      sapo:hasunionof sapo:Kotka .
+
+<http://www.yso.fi/onto/sapo/Muolaa(1890-1913)>
+      sapo:hasunionof sapo:Muolaa .
+
+<http://www.yso.fi/onto/sapo/Ruokolahti(1977-)>
+      sapo:hasunionof sapo:Ruokolahti .
+
+<http://www.yso.fi/onto/sapo/Ylane(1869-2008)>
+      sapo:hasunionof sapo:Ylane .
+
+<http://www.yso.fi/onto/sapo/Utsjoki(1876-)>
+      sapo:hasunionof sapo:Utsjoki .
+
+<http://www.yso.fi/onto/sapo/Jepua(1906-1974)>
+      sapo:hasunionof sapo:Jepua .
+
+<http://www.yso.fi/onto/sapo/Ruokolahti(1974-1976)>
+      sapo:hasunionof sapo:Ruokolahti .
+
+<http://www.yso.fi/onto/sapo/Koski_Tl.(1869-)>
+      sapo:hasunionof <http://www.yso.fi/onto/sapo/Koski_Tl.> .
+
+<http://www.yso.fi/onto/sapo/Kangasala(1865-2004)>
+      sapo:hasunionof sapo:Kangasala .
+
+<http://www.yso.fi/onto/sapo/Viipurin_laani(1812-1830)>
+      sapo:hasunionof sapo:Viipurin_laani .
+
+<http://www.yso.fi/onto/sapo/Hanko(1940-1943)>
+      sapo:hasunionof sapo:Hanko .
+
+<http://www.yso.fi/onto/sapo/Pyhajarvi(1969-1992)>
+      sapo:hasunionof sapo:Pyhajarvi .
+
+<http://www.yso.fi/onto/sapo/Tyrnava(2001-)>
+      sapo:hasunionof sapo:Tyrnava .
+
+<http://www.yso.fi/onto/sapo/Kuopio(1927-1941)>
+      sapo:hasunionof sapo:Kuopio .
+
+<http://www.yso.fi/onto/sapo/Lohja(1868-1925)>
+      sapo:hasunionof sapo:Lohja .
+
+<http://www.yso.fi/onto/sapo/Ulvila_2(2005-)>
+      sapo:hasunionof sapo:Ulvila_2 .
+
+<http://www.yso.fi/onto/sapo/Mikkeli(2001-2006)>
+      sapo:hasunionof sapo:Mikkeli .
+
+<http://www.yso.fi/onto/sapo/Naantali(1964-2008)>
+      sapo:hasunionof sapo:Naantali .
+
+<http://www.yso.fi/onto/sapo/Kuopio(2011-)>
+      sapo:hasunionof sapo:Kuopio .
+
+<http://www.yso.fi/onto/sapo/Muonionniska(1868-1922)>
+      sapo:hasunionof sapo:Muonionniska .
+
+<http://www.yso.fi/onto/sapo/Leppavirta(1873-1928)>
+      sapo:hasunionof sapo:Leppavirta .
+
+<http://www.yso.fi/onto/sapo/Orimattila(1865-1955)>
+      sapo:hasunionof sapo:Orimattila .
+
+<http://www.yso.fi/onto/sapo/Akaa_2(2007-2010)>
+      sapo:hasunionof sapo:Akaa_2 .
+
+<http://www.yso.fi/onto/sapo/Kristiinankaupunki(1649-1972)>
+      sapo:hasunionof sapo:Kristiinankaupunki .
+
+<http://www.yso.fi/onto/sapo/Petolahti(1865-1972)>
+      sapo:hasunionof sapo:Petolahti .
+
+<http://www.yso.fi/onto/sapo/Saloinen(1913-1972)>
+      sapo:hasunionof sapo:Saloinen .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1323-1361)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Messukyla(1929-1946)>
+      sapo:hasunionof sapo:Messukyla .
+
+<http://www.yso.fi/onto/sapo/Karijoki(1868-)>
+      sapo:hasunionof sapo:Karijoki .
+
+<http://www.yso.fi/onto/sapo/Kymen_laani(1945-1945)>
+      sapo:hasunionof sapo:Kymen_laani .
+
+<http://www.yso.fi/onto/sapo/Hameenkyro(1866-)>
+      sapo:hasunionof sapo:Hameenkyro .
+
+<http://www.yso.fi/onto/sapo/Kiikoinen(1869-)>
+      sapo:hasunionof sapo:Kiikoinen .
+
+<http://www.yso.fi/onto/sapo/Pielisjarvi(1865-1935)>
+      sapo:hasunionof sapo:Pielisjarvi .
+
+<http://www.yso.fi/onto/sapo/Juankoski(1926-1970)>
+      sapo:hasunionof sapo:Juankoski .
+
+<http://www.yso.fi/onto/sapo/Savonlinna(1932-1972)>
+      sapo:hasunionof sapo:Savonlinna .
+
+<http://www.yso.fi/onto/sapo/Ikaalisten_mlk(1899-1916)>
+      sapo:hasunionof sapo:Ikaalisten_mlk .
+
+<http://www.yso.fi/onto/sapo/Porvoon_mlk(1866-1924)>
+      sapo:hasunionof sapo:Porvoon_mlk .
+
+<http://www.yso.fi/onto/sapo/Kaarina(1936-1938)>
+      sapo:hasunionof sapo:Kaarina .
+
+<http://www.yso.fi/onto/sapo/Kaarina(1939-1945)>
+      sapo:hasunionof sapo:Kaarina .
+
+<http://www.yso.fi/onto/sapo/Uusikaupunki(1974-1980)>
+      sapo:hasunionof sapo:Uusikaupunki .
+
+<http://www.yso.fi/onto/sapo/Turtola(1867-1934)>
+      sapo:hasunionof sapo:Turtola .
+
+<http://www.yso.fi/onto/sapo/Karjaan_mlk(1865-1928)>
+      sapo:hasunionof sapo:Karjaan_mlk .
+
+<http://www.yso.fi/onto/sapo/Heinola(1951-1996)>
+      sapo:hasunionof sapo:Heinola .
+
+<http://www.yso.fi/onto/sapo/Yliharma(1868-2008)>
+      sapo:hasunionof sapo:Yliharma .
+
+<http://www.yso.fi/onto/sapo/Pelkosenniemi(1916-)>
+      sapo:hasunionof sapo:Pelkosenniemi .
+
+<http://www.yso.fi/onto/sapo/Hollola(1924-1932)>
+      sapo:hasunionof sapo:Hollola .
+
+<http://www.yso.fi/onto/sapo/Karjaan_mlk(1930-1968)>
+      sapo:hasunionof sapo:Karjaan_mlk .
+
+<http://www.yso.fi/onto/sapo/Orivesi(1865-1912)>
+      sapo:hasunionof sapo:Orivesi .
+
+<http://www.yso.fi/onto/sapo/Konginkangas(1895-1992)>
+      sapo:hasunionof sapo:Konginkangas .
+
+<http://www.yso.fi/onto/sapo/Pietarsaaren_mlk(1950-1976)>
+      sapo:hasunionof sapo:Pietarsaaren_mlk .
+
+<http://www.yso.fi/onto/sapo/Rautalampi(1922-1926)>
+      sapo:hasunionof sapo:Rautalampi .
+
+<http://www.yso.fi/onto/sapo/Raippaluoto(1872-1931)>
+      sapo:hasunionof sapo:Raippaluoto .
+
+<http://www.yso.fi/onto/sapo/Tampere(1922-1928)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Antrea(1924-1939)>
+      sapo:hasunionof sapo:Antrea .
+
+<http://www.yso.fi/onto/sapo/Eckero(1865-)>
+      sapo:hasunionof sapo:Eckero .
+
+<http://www.yso.fi/onto/sapo/Kuhmalahti(1869-2010)>
+      sapo:hasunionof sapo:Kuhmalahti .
+
+<http://www.yso.fi/onto/sapo/Maalahti(1973-)>
+      sapo:hasunionof sapo:Maalahti .
+
+<http://www.yso.fi/onto/sapo/Turku(1973-)>
+      sapo:hasunionof sapo:Turku .
+
+<http://www.yso.fi/onto/sapo/Hanko(1874-1939)>
+      sapo:hasunionof sapo:Hanko .
+
+<http://www.yso.fi/onto/sapo/Urjala(1923-1952)>
+      sapo:hasunionof sapo:Urjala .
+
+<http://www.yso.fi/onto/sapo/Turun_ja_Porin_laani(1993-1996)>
+      sapo:hasunionof sapo:Turun_ja_Porin_laani .
+
+<http://www.yso.fi/onto/sapo/Ilomantsi(1902-1939)>
+      sapo:hasunionof sapo:Ilomantsi .
+
+<http://www.yso.fi/onto/sapo/Vastanfjard(1973-2008)>
+      sapo:hasunionof sapo:Vastanfjard .
+
+<http://www.yso.fi/onto/sapo/Raakkyla(1954-)>
+      sapo:hasunionof sapo:Raakkyla .
+
+<http://www.yso.fi/onto/sapo/Aitolahti(1923-1965)>
+      sapo:hasunionof sapo:Aitolahti .
+
+<http://www.yso.fi/onto/sapo/Oulujoki(1961-1964)>
+      sapo:hasunionof sapo:Oulujoki .
+
+<http://www.yso.fi/onto/sapo/Salo_(kappeli)(1865-1912)>
+      sapo:hasunionof <http://www.yso.fi/onto/sapo/Salo_(kappeli)> .
+
+<http://www.yso.fi/onto/sapo/Paraisten_mlk(1865-1947)>
+      sapo:hasunionof sapo:Paraisten_mlk .
+
+<http://www.yso.fi/onto/sapo/Parikkala(1929-1939)>
+      sapo:hasunionof sapo:Parikkala .
+
+<http://www.yso.fi/onto/sapo/Langelmaki(1865-1919)>
+      sapo:hasunionof sapo:Langelmaki .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_mlk(1955-1984)>
+      sapo:hasunionof sapo:Mikkelin_mlk .
+
+<http://www.yso.fi/onto/sapo/Loviisa(1752-1923)>
+      sapo:hasunionof sapo:Loviisa .
+
+<http://www.yso.fi/onto/sapo/Ylojarvi(1869-1949)>
+      sapo:hasunionof sapo:Ylojarvi .
+
+<http://www.yso.fi/onto/sapo/Kuhmoniemi(1865-1902)>
+      sapo:hasunionof sapo:Kuhmoniemi .
+
+<http://www.yso.fi/onto/sapo/Kuopion_mlk(1924-1924)>
+      sapo:hasunionof sapo:Kuopion_mlk .
+
+<http://www.yso.fi/onto/sapo/Keikya(1920-1980)>
+      sapo:hasunionof sapo:Keikya .
+
+<http://www.yso.fi/onto/sapo/Rautjarvi(1973-)>
+      sapo:hasunionof sapo:Rautjarvi .
+
+<http://www.yso.fi/onto/sapo/Kalvola(1956-2008)>
+      sapo:hasunionof sapo:Kalvola .
+
+<http://www.yso.fi/onto/sapo/Korsnas(1973-)>
+      sapo:hasunionof sapo:Korsnas .
+
+<http://www.yso.fi/onto/sapo/Ylikiiminki(1965-2008)>
+      sapo:hasunionof sapo:Ylikiiminki .
+
+<http://www.yso.fi/onto/sapo/Lohjan_kunta(1977-1996)>
+      sapo:hasunionof sapo:Lohjan_kunta .
+
+<http://www.yso.fi/onto/sapo/Angelniemi(1916-1966)>
+      sapo:hasunionof sapo:Angelniemi .
+
+<http://www.yso.fi/onto/sapo/Koski_Hl.(1865-1994)>
+      sapo:hasunionof <http://www.yso.fi/onto/sapo/Koski_Hl.> .
+
+<http://www.yso.fi/onto/sapo/Loppi(1922-)>
+      sapo:hasunionof sapo:Loppi .
+
+<http://www.yso.fi/onto/sapo/Sakkijarvi(1866-1929)>
+      sapo:hasunionof sapo:Sakkijarvi .
+
+<http://www.yso.fi/onto/sapo/Oulujoki(1938-1946)>
+      sapo:hasunionof sapo:Oulujoki .
+
+<http://www.yso.fi/onto/sapo/Honkajoki(1952-)>
+      sapo:hasunionof sapo:Honkajoki .
+
+<http://www.yso.fi/onto/sapo/Vuoksela(1914-1924)>
+      sapo:hasunionof sapo:Vuoksela .
+
+<http://www.yso.fi/onto/sapo/Tampere(1972-)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_mlk(1985-2000)>
+      sapo:hasunionof sapo:Mikkelin_mlk .
+
+<http://www.yso.fi/onto/sapo/Vammala(1973-2006)>
+      sapo:hasunionof sapo:Vammala .
+
+<http://www.yso.fi/onto/sapo/Halsua(1868-)>
+      sapo:hasunionof sapo:Halsua .
+
+<http://www.yso.fi/onto/sapo/Kajaani(2007-)>
+      sapo:hasunionof sapo:Kajaani .
+
+<http://www.yso.fi/onto/sapo/Nilsia(1925-1972)>
+      sapo:hasunionof sapo:Nilsia .
+
+<http://www.yso.fi/onto/sapo/Somero(1867-1976)>
+      sapo:hasunionof sapo:Somero .
+
+<http://www.yso.fi/onto/sapo/Espoo(1920-1956)>
+      sapo:hasunionof sapo:Espoo .
+
+<http://www.yso.fi/onto/sapo/Teuva(1868-)>
+      sapo:hasunionof sapo:Teuva .
+
+<http://www.yso.fi/onto/sapo/Snappertuna(1865-1976)>
+      sapo:hasunionof sapo:Snappertuna .
+
+<http://www.yso.fi/onto/sapo/Alatornio(1957-1972)>
+      sapo:hasunionof sapo:Alatornio .
+
+<http://www.yso.fi/onto/sapo/Rautjarvi(1940-1972)>
+      sapo:hasunionof sapo:Rautjarvi .
+
+<http://www.yso.fi/onto/sapo/Poytya(2009-)>
+      sapo:hasunionof sapo:Poytya .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1906-1920)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Helsingin_mlk(1920-1920)>
+      sapo:hasunionof sapo:Helsingin_mlk .
+
+<http://www.yso.fi/onto/sapo/Tammisaaren_mlk(1944-1976)>
+      sapo:hasunionof sapo:Tammisaaren_mlk .
+
+<http://www.yso.fi/onto/sapo/Salmi(1931-1939)>
+      sapo:hasunionof sapo:Salmi .
+
+<http://www.yso.fi/onto/sapo/Laihia(1868-)>
+      sapo:hasunionof sapo:Laihia .
+
+<http://www.yso.fi/onto/sapo/Houtskari(1867-2008)>
+      sapo:hasunionof sapo:Houtskari .
+
+<http://www.yso.fi/onto/sapo/Halikko(1867-1915)>
+      sapo:hasunionof sapo:Halikko .
+
+<http://www.yso.fi/onto/sapo/Bjorkoby(1932-1972)>
+      sapo:hasunionof sapo:Bjorkoby .
+
+<http://www.yso.fi/onto/sapo/Turun_ja_Porin_laani(1973-1989)>
+      sapo:hasunionof sapo:Turun_ja_Porin_laani .
+
+<http://www.yso.fi/onto/sapo/Lapua(1868-)>
+      sapo:hasunionof sapo:Lapua .
+
+<http://www.yso.fi/onto/sapo/Jaakkima(1924-1937)>
+      sapo:hasunionof sapo:Jaakkima .
+
+<http://www.yso.fi/onto/sapo/Helsingin_mlk(1906-1911)>
+      sapo:hasunionof sapo:Helsingin_mlk .
+
+<http://www.yso.fi/onto/sapo/Varkaus(1958-2004)>
+      sapo:hasunionof sapo:Varkaus .
+
+<http://www.yso.fi/onto/sapo/Koivisto(1905-1926)>
+      sapo:hasunionof sapo:Koivisto .
+
+<http://www.yso.fi/onto/sapo/Helsingin_mlk(1912-1919)>
+      sapo:hasunionof sapo:Helsingin_mlk .
+
+<http://www.yso.fi/onto/sapo/Kitee(1940-1953)>
+      sapo:hasunionof sapo:Kitee .
+
+<http://www.yso.fi/onto/sapo/Pirkkala(1867-1920)>
+      sapo:hasunionof sapo:Pirkkala .
+
+<http://www.yso.fi/onto/sapo/Hattula(1868-1966)>
+      sapo:hasunionof sapo:Hattula .
+
+<http://www.yso.fi/onto/sapo/Tampere(1779-1876)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Sammatti(1866-2008)>
+      sapo:hasunionof sapo:Sammatti .
+
+<http://www.yso.fi/onto/sapo/Sakkijarvi(1940-1945)>
+      sapo:hasunionof sapo:Sakkijarvi .
+
+<http://www.yso.fi/onto/sapo/Urjala(1953-1968)>
+      sapo:hasunionof sapo:Urjala .
+
+<http://www.yso.fi/onto/sapo/Iisalmi(1860-1969)>
+      sapo:hasunionof sapo:Iisalmi .
+
+<http://www.yso.fi/onto/sapo/Vaasa(1606-1934)>
+      sapo:hasunionof sapo:Vaasa .
+
+<http://www.yso.fi/onto/sapo/Sauvo(1865-1929)>
+      sapo:hasunionof sapo:Sauvo .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1399-1414)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Nivala(1867-)>
+      sapo:hasunionof sapo:Nivala .
+
+<http://www.yso.fi/onto/sapo/Kauniainen(1949-1956)>
+      sapo:hasunionof sapo:Kauniainen .
+
+<http://www.yso.fi/onto/sapo/Hamina(2003-)>
+      sapo:hasunionof sapo:Hamina .
+
+<http://www.yso.fi/onto/sapo/Degerby_2(1867-1943)>
+      sapo:hasunionof sapo:Degerby_2 .
+
+<http://www.yso.fi/onto/sapo/Vilppula(1937-1953)>
+      sapo:hasunionof sapo:Vilppula .
+
+<http://www.yso.fi/onto/sapo/Kurikka(2009-)>
+      sapo:hasunionof sapo:Kurikka .
+
+<http://www.yso.fi/onto/sapo/Heinolan_mlk(1865-1950)>
+      sapo:hasunionof sapo:Heinolan_mlk .
+
+<http://www.yso.fi/onto/sapo/Kerava(1954-)>
+      sapo:hasunionof sapo:Kerava .
+
+<http://www.yso.fi/onto/sapo/Jamijarvi(1899-)>
+      sapo:hasunionof sapo:Jamijarvi .
+
+<http://www.yso.fi/onto/sapo/Valkeakoski(1949-1956)>
+      sapo:hasunionof sapo:Valkeakoski .
+
+<http://www.yso.fi/onto/sapo/Narpio(1867-1870)>
+      sapo:hasunionof sapo:Narpio .
+
+<http://www.yso.fi/onto/sapo/Rutakko(1872-1905)>
+      sapo:hasunionof sapo:Rutakko .
+
+<http://www.yso.fi/onto/sapo/Vahto(1870-2008)>
+      sapo:hasunionof sapo:Vahto .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_mlk(1948-1954)>
+      sapo:hasunionof sapo:Mikkelin_mlk .
+
+<http://www.yso.fi/onto/sapo/Lemi(1867-)>
+      sapo:hasunionof sapo:Lemi .
+
+<http://www.yso.fi/onto/sapo/Tammisaari(1944-1976)>
+      sapo:hasunionof sapo:Tammisaari .
+
+<http://www.yso.fi/onto/sapo/Kirkkonummi(1867-1943)>
+      sapo:hasunionof sapo:Kirkkonummi .
+
+<http://www.yso.fi/onto/sapo/Kerava(1924-1944)>
+      sapo:hasunionof sapo:Kerava .
+
+<http://www.yso.fi/onto/sapo/Tuupovaara(1913-1945)>
+      sapo:hasunionof sapo:Tuupovaara .
+
+<http://www.yso.fi/onto/sapo/Saarijarvi(1914-2008)>
+      sapo:hasunionof sapo:Saarijarvi .
+
+<http://www.yso.fi/onto/sapo/Imatra(1948-1973)>
+      sapo:hasunionof sapo:Imatra .
+
+<http://www.yso.fi/onto/sapo/Paimio(1870-)>
+      sapo:hasunionof sapo:Paimio .
+
+<http://www.yso.fi/onto/sapo/Hartola(1926-1991)>
+      sapo:hasunionof sapo:Hartola .
+
+<http://www.yso.fi/onto/sapo/Kiihtelysvaara(1925-2004)>
+      sapo:hasunionof sapo:Kiihtelysvaara .
+
+<http://www.yso.fi/onto/sapo/Kuorevesi(1869-1953)>
+      sapo:hasunionof sapo:Kuorevesi .
+
+<http://www.yso.fi/onto/sapo/Vesanto(1871-1926)>
+      sapo:hasunionof sapo:Vesanto .
+
+<http://www.yso.fi/onto/sapo/Rovaniemen_mlk(1929-1947)>
+      sapo:hasunionof sapo:Rovaniemen_mlk .
+
+<http://www.yso.fi/onto/sapo/Lumparland(1865-)>
+      sapo:hasunionof sapo:Lumparland .
+
+<http://www.yso.fi/onto/sapo/Rauma(1442-1958)>
+      sapo:hasunionof sapo:Rauma .
+
+<http://www.yso.fi/onto/sapo/Karhula(1951-1964)>
+      sapo:hasunionof sapo:Karhula .
+
+<http://www.yso.fi/onto/sapo/Kokkola(1931-1976)>
+      sapo:hasunionof sapo:Kokkola .
+
+<http://www.yso.fi/onto/sapo/Hyvinkaa(1969-1970)>
+      sapo:hasunionof sapo:Hyvinkaa .
+
+<http://www.yso.fi/onto/sapo/Kouvola(1966-2008)>
+      sapo:hasunionof sapo:Kouvola .
+
+<http://www.yso.fi/onto/sapo/Jyvaskylan_mlk(1914-1940)>
+      sapo:hasunionof sapo:Jyvaskylan_mlk .
+
+<http://www.yso.fi/onto/sapo/Lapvaartti(1865-1972)>
+      sapo:hasunionof sapo:Lapvaartti .
+
+<http://www.yso.fi/onto/sapo/Taipalsaari(1865-)>
+      sapo:hasunionof sapo:Taipalsaari .
+
+<http://www.yso.fi/onto/sapo/Kotka(1954-1964)>
+      sapo:hasunionof sapo:Kotka .
+
+<http://www.yso.fi/onto/sapo/Kuopio(2005-2010)>
+      sapo:hasunionof sapo:Kuopio .
+
+<http://www.yso.fi/onto/sapo/Ahtava(1865-1976)>
+      sapo:hasunionof sapo:Ahtava .
+
+<http://www.yso.fi/onto/sapo/Sodankyla(1893-1915)>
+      sapo:hasunionof sapo:Sodankyla .
+
+<http://www.yso.fi/onto/sapo/Naantalin_mlk(1865-1943)>
+      sapo:hasunionof sapo:Naantalin_mlk .
+
+<http://www.yso.fi/onto/sapo/Kiikka(1869-1980)>
+      sapo:hasunionof sapo:Kiikka .
+
+<http://www.yso.fi/onto/sapo/Korsnas(1887-1972)>
+      sapo:hasunionof sapo:Korsnas .
+
+<http://www.yso.fi/onto/sapo/Riihimaki(1922-1945)>
+      sapo:hasunionof sapo:Riihimaki .
+
+<http://www.yso.fi/onto/sapo/Salo_2(1887-1966)>
+      sapo:hasunionof sapo:Salo_2 .
+
+<http://www.yso.fi/onto/sapo/Hartola(1992-)>
+      sapo:hasunionof sapo:Hartola .
+
+<http://www.yso.fi/onto/sapo/Ruokolahti(1948-1973)>
+      sapo:hasunionof sapo:Ruokolahti .
+
+<http://www.yso.fi/onto/sapo/Nurmijarvi(1918-1930)>
+      sapo:hasunionof sapo:Nurmijarvi .
+
+<http://www.yso.fi/onto/sapo/Humppila(1874-)>
+      sapo:hasunionof sapo:Humppila .
+
+<http://www.yso.fi/onto/sapo/Rantasalmi(1965-)>
+      sapo:hasunionof sapo:Rantasalmi .
+
+<http://www.yso.fi/onto/sapo/Noormarkku(1869-2009)>
+      sapo:hasunionof sapo:Noormarkku .
+
+<http://www.yso.fi/onto/sapo/Valkeakoski(1923-1948)>
+      sapo:hasunionof sapo:Valkeakoski .
+
+<http://www.yso.fi/onto/sapo/Koivisto(1869-1904)>
+      sapo:hasunionof sapo:Koivisto .
+
+<http://www.yso.fi/onto/sapo/Kihnio(1920-)>
+      sapo:hasunionof sapo:Kihnio .
+
+<http://www.yso.fi/onto/sapo/Kuru(1954-2008)>
+      sapo:hasunionof sapo:Kuru .
+
+<http://www.yso.fi/onto/sapo/Haaga(1923-1945)>
+      sapo:hasunionof sapo:Haaga .
+
+<http://www.yso.fi/onto/sapo/Konnevesi(1922-1966)>
+      sapo:hasunionof sapo:Konnevesi .
+
+<http://www.yso.fi/onto/sapo/Tampere(1920-1921)>
+      sapo:hasunionof sapo:Tampere .
+
+<http://www.yso.fi/onto/sapo/Oulu(1947-1960)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Sulkava(1870-)>
+      sapo:hasunionof sapo:Sulkava .
+
+<http://www.yso.fi/onto/sapo/Karstula(1868-1928)>
+      sapo:hasunionof sapo:Karstula .
+
+<http://www.yso.fi/onto/sapo/Kemijarvi(1973-)>
+      sapo:hasunionof sapo:Kemijarvi .
+
+<http://www.yso.fi/onto/sapo/Valkeala(1966-2008)>
+      sapo:hasunionof sapo:Valkeala .
+
+<http://www.yso.fi/onto/sapo/Parkano(1920-1924)>
+      sapo:hasunionof sapo:Parkano .
+
+<http://www.yso.fi/onto/sapo/Lempaala(1964-)>
+      sapo:hasunionof sapo:Lempaala .
+
+<http://www.yso.fi/onto/sapo/Kemijarvi(1871-1956)>
+      sapo:hasunionof sapo:Kemijarvi .
+
+<http://www.yso.fi/onto/sapo/Taivalkoski(1878-1925)>
+      sapo:hasunionof sapo:Taivalkoski .
+
+<http://www.yso.fi/onto/sapo/Koivulahti(1865-1972)>
+      sapo:hasunionof sapo:Koivulahti .
+
+<http://www.yso.fi/onto/sapo/Viipurin_ja_Savonlinnan_laani(1634-1720)>
+      sapo:hasunionof sapo:Viipurin_ja_Savonlinnan_laani .
+
+<http://www.yso.fi/onto/sapo/Viipuri(1924-1927)>
+      sapo:hasunionof sapo:Viipuri .
+
+<http://www.yso.fi/onto/sapo/Nurmijarvi(1931-)>
+      sapo:hasunionof sapo:Nurmijarvi .
+
+<http://www.yso.fi/onto/sapo/Kauhava(2009-)>
+      sapo:hasunionof sapo:Kauhava .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1921-1922)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Uusikaupunki(1617-1968)>
+      sapo:hasunionof sapo:Uusikaupunki .
+
+<http://www.yso.fi/onto/sapo/Tuusula(1868-1923)>
+      sapo:hasunionof sapo:Tuusula .
+
+<http://www.yso.fi/onto/sapo/Soanlahti(1894-1935)>
+      sapo:hasunionof sapo:Soanlahti .
+
+<http://www.yso.fi/onto/sapo/Nurmo(1868-1972)>
+      sapo:hasunionof sapo:Nurmo .
+
+<http://www.yso.fi/onto/sapo/Tornio(1621-1956)>
+      sapo:hasunionof sapo:Tornio .
+
+<http://www.yso.fi/onto/sapo/Kajaani(1967-1976)>
+      sapo:hasunionof sapo:Kajaani .
+
+<http://www.yso.fi/onto/sapo/Kuusjarvi(1875-1920)>
+      sapo:hasunionof sapo:Kuusjarvi .
+
+<http://www.yso.fi/onto/sapo/Helsinki(1550-1639)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Raisio(1865-1929)>
+      sapo:hasunionof sapo:Raisio .
+
+<http://www.yso.fi/onto/sapo/Kalvia(1865-1908)>
+      sapo:hasunionof sapo:Kalvia .
+
+<http://www.yso.fi/onto/sapo/Mikkeli(1955-1984)>
+      sapo:hasunionof sapo:Mikkeli .
+
+<http://www.yso.fi/onto/sapo/Raisio(1949-)>
+      sapo:hasunionof sapo:Raisio .
+
+<http://www.yso.fi/onto/sapo/Pori(1972-2009)>
+      sapo:hasunionof sapo:Pori .
+
+<http://www.yso.fi/onto/sapo/Dragsfjard(1969-2008)>
+      sapo:hasunionof sapo:Dragsfjard .
+
+<http://www.yso.fi/onto/sapo/Ylojarvi(2007-2008)>
+      sapo:hasunionof sapo:Ylojarvi .
+
+<http://www.yso.fi/onto/sapo/Pyhaselka(1925-2008)>
+      sapo:hasunionof sapo:Pyhaselka .
+
+<http://www.yso.fi/onto/sapo/Kivijarvi(1934-)>
+      sapo:hasunionof sapo:Kivijarvi .
+
+<http://www.yso.fi/onto/sapo/Lansi-Turunmaa(2009-)>
+      sapo:hasunionof sapo:Lansi-Turunmaa .
+
+<http://www.yso.fi/onto/sapo/Joutsa(1866-1925)>
+      sapo:hasunionof sapo:Joutsa .
+
+<http://www.yso.fi/onto/sapo/Vahakyro(1868-)>
+      sapo:hasunionof sapo:Vahakyro .
+
+<http://www.yso.fi/onto/sapo/Tohmajarvi(1869-1919)>
+      sapo:hasunionof sapo:Tohmajarvi .
+
+<http://www.yso.fi/onto/sapo/Ypaja(1910-)>
+      sapo:hasunionof sapo:Ypaja .
+
+<http://www.yso.fi/onto/sapo/Loimaa(2009-)>
+      sapo:hasunionof sapo:Loimaa .
+
+<http://www.yso.fi/onto/sapo/Impilahti(1868-1939)>
+      sapo:hasunionof sapo:Impilahti .
+
+<http://www.yso.fi/onto/sapo/Oulun_mlk(1865-1881)>
+      sapo:hasunionof sapo:Oulun_mlk .
+
+<http://www.yso.fi/onto/sapo/Renko(1948-1966)>
+      sapo:hasunionof sapo:Renko .
+
+<http://www.yso.fi/onto/sapo/Hirvensalmi(1868-)>
+      sapo:hasunionof sapo:Hirvensalmi .
+
+<http://www.yso.fi/onto/sapo/Messukyla(1923-1928)>
+      sapo:hasunionof sapo:Messukyla .
+
+<http://www.yso.fi/onto/sapo/Aanekoski(1993-2006)>
+      sapo:hasunionof sapo:Aanekoski .
+
+<http://www.yso.fi/onto/sapo/Renko(1866-1947)>
+      sapo:hasunionof sapo:Renko .
+
+<http://www.yso.fi/onto/sapo/Muhos(1865-1913)>
+      sapo:hasunionof sapo:Muhos .
+
+<http://www.yso.fi/onto/sapo/Pornainen(1869-)>
+      sapo:hasunionof sapo:Pornainen .
+
+<http://www.yso.fi/onto/sapo/Turku(1949-1966)>
+      sapo:hasunionof sapo:Turku .
+
+<http://www.yso.fi/onto/sapo/Mantsala(1866-)>
+      sapo:hasunionof sapo:Mantsala .
+
+<http://www.yso.fi/onto/sapo/Sarkisalo(1930-2008)>
+      sapo:hasunionof sapo:Sarkisalo .
+
+<http://www.yso.fi/onto/sapo/Ruovesi(1865-1911)>
+      sapo:hasunionof sapo:Ruovesi .
+
+<http://www.yso.fi/onto/sapo/Joensuu(2009-)>
+      sapo:hasunionof sapo:Joensuu .
+
+<http://www.yso.fi/onto/sapo/Parkano(1866-1916)>
+      sapo:hasunionof sapo:Parkano .
+
+<http://www.yso.fi/onto/sapo/Rauma(2009-)>
+      sapo:hasunionof sapo:Rauma .
+
+<http://www.yso.fi/onto/sapo/Karjala(1865-1976)>
+      sapo:hasunionof sapo:Karjala .
+
+<http://www.yso.fi/onto/sapo/Kaavi(1971-)>
+      sapo:hasunionof sapo:Kaavi .
+
+<http://www.yso.fi/onto/sapo/Valkjarvi(1870-1913)>
+      sapo:hasunionof sapo:Valkjarvi .
+
+<http://www.yso.fi/onto/sapo/Nokia(1973-1975)>
+      sapo:hasunionof sapo:Nokia .
+
+<http://www.yso.fi/onto/sapo/Pohjois-Pirkkala(1922-1936)>
+      sapo:hasunionof sapo:Pohjois-Pirkkala .
+
+<http://www.yso.fi/onto/sapo/Pori(2010-)>
+      sapo:hasunionof sapo:Pori .
+
+<http://www.yso.fi/onto/sapo/Saaksmaki(1957-1972)>
+      sapo:hasunionof sapo:Saaksmaki .
+
+<http://www.yso.fi/onto/sapo/Punkaharju(1973-)>
+      sapo:hasunionof sapo:Punkaharju .
+
+<http://www.yso.fi/onto/sapo/Sakkola(1914-1939)>
+      sapo:hasunionof sapo:Sakkola .
+
+<http://www.yso.fi/onto/sapo/Kuru(1925-1953)>
+      sapo:hasunionof sapo:Kuru .
+
+<http://www.yso.fi/onto/sapo/Tammisaari(1546-1939)>
+      sapo:hasunionof sapo:Tammisaari .
+
+<http://www.yso.fi/onto/sapo/Pietarsaari(1977-)>
+      sapo:hasunionof sapo:Pietarsaari .
+
+<http://www.yso.fi/onto/sapo/Savonranta(1917-2008)>
+      sapo:hasunionof sapo:Savonranta .
+
+<http://www.yso.fi/onto/sapo/Jokioinen(1873-)>
+      sapo:hasunionof sapo:Jokioinen .
+
+<http://www.yso.fi/onto/sapo/Koijarvi(1923-1968)>
+      sapo:hasunionof sapo:Koijarvi .
+
+<http://www.yso.fi/onto/sapo/Pohjaslahti(1941-1972)>
+      sapo:hasunionof sapo:Pohjaslahti .
+
+<http://www.yso.fi/onto/sapo/Laitila(1972-)>
+      sapo:hasunionof sapo:Laitila .
+
+<http://www.yso.fi/onto/sapo/Kymi(1951-1953)>
+      sapo:hasunionof sapo:Kymi .
+
+<http://www.yso.fi/onto/sapo/Rovaniemen_mlk(1985-2005)>
+      sapo:hasunionof sapo:Rovaniemen_mlk .
+
+<http://www.yso.fi/onto/sapo/Jamsa(2007-2008)>
+      sapo:hasunionof sapo:Jamsa .
+
+<http://www.yso.fi/onto/sapo/Helsinki(1946-1965)>
+      sapo:hasunionof sapo:Helsinki .
+
+<http://www.yso.fi/onto/sapo/Kastelholman_linnalaani(1385-1633)>
+      sapo:hasunionof sapo:Kastelholman_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Porvoo(1925-1953)>
+      sapo:hasunionof sapo:Porvoo .
+
+<http://www.yso.fi/onto/sapo/Paraisten_mlk(1948-1966)>
+      sapo:hasunionof sapo:Paraisten_mlk .
+
+<http://www.yso.fi/onto/sapo/Teerijarvi(1865-1968)>
+      sapo:hasunionof sapo:Teerijarvi .
+
+<http://www.yso.fi/onto/sapo/Mikkelin_mlk(1925-1930)>
+      sapo:hasunionof sapo:Mikkelin_mlk .
+
+<http://www.yso.fi/onto/sapo/Messukyla(1865-1876)>
+      sapo:hasunionof sapo:Messukyla .
+
+<http://www.yso.fi/onto/sapo/Sievi(1867-)>
+      sapo:hasunionof sapo:Sievi .
+
+<http://www.yso.fi/onto/sapo/Rovaniemi(1948-1956)>
+      sapo:hasunionof sapo:Rovaniemi .
+
+<http://www.yso.fi/onto/sapo/Vartsila(1940-1950)>
+      sapo:hasunionof sapo:Vartsila .
+
+<http://www.yso.fi/onto/sapo/Outokumpu(1968-)>
+      sapo:hasunionof sapo:Outokumpu .
+
+<http://www.yso.fi/onto/sapo/Orimattila(1956-2010)>
+      sapo:hasunionof sapo:Orimattila .
+
+<http://www.yso.fi/onto/sapo/Petsamo(1940-1943)>
+      sapo:hasunionof sapo:Petsamo .
+
+<http://www.yso.fi/onto/sapo/Sottunga(1865-)>
+      sapo:hasunionof sapo:Sottunga .
+
+<http://www.yso.fi/onto/sapo/Vanaja(1955-1966)>
+      sapo:hasunionof sapo:Vanaja .
+
+<http://www.yso.fi/onto/sapo/Jarvenpaa(1951-)>
+      sapo:hasunionof sapo:Jarvenpaa .
+
+<http://www.yso.fi/onto/sapo/Kokemaki(1869-1964)>
+      sapo:hasunionof sapo:Kokemaki .
+
+<http://www.yso.fi/onto/sapo/Lieto(1867-)>
+      sapo:hasunionof sapo:Lieto .
+
+<http://www.yso.fi/onto/sapo/Hameenlinna(1967-2008)>
+      sapo:hasunionof sapo:Hameenlinna .
+
+<http://www.yso.fi/onto/sapo/Hameenlinnan_mlk(1930-1947)>
+      sapo:hasunionof sapo:Hameenlinnan_mlk .
+
+<http://www.yso.fi/onto/sapo/Mellila(1916-2008)>
+      sapo:hasunionof sapo:Mellila .
+
+<http://www.yso.fi/onto/sapo/Oulu(1886-1910)>
+      sapo:hasunionof sapo:Oulu .
+
+<http://www.yso.fi/onto/sapo/Hausjarvi(1868-1917)>
+      sapo:hasunionof sapo:Hausjarvi .
+
+<http://www.yso.fi/onto/sapo/Kalajoki(1865-1972)>
+      sapo:hasunionof sapo:Kalajoki .
+
+<http://www.yso.fi/onto/sapo/Korppoo(1865-2008)>
+      sapo:hasunionof sapo:Korppoo .
+
+<http://www.yso.fi/onto/sapo/Muhos(1914-)>
+      sapo:hasunionof sapo:Muhos .
+
+<http://www.yso.fi/onto/sapo/Pyharanta(1910-)>
+      sapo:hasunionof sapo:Pyharanta .
+
+<http://www.yso.fi/onto/sapo/Nurmeksen_mlk(1876-1902)>
+      sapo:hasunionof sapo:Nurmeksen_mlk .
+
+<http://www.yso.fi/onto/sapo/Inkoo(1956-)>
+      sapo:hasunionof sapo:Inkoo .
+
+<http://www.yso.fi/onto/sapo/Kiihtelysvaara(1868-1924)>
+      sapo:hasunionof sapo:Kiihtelysvaara .
+
+<http://www.yso.fi/onto/sapo/Kolari(1867-)>
+      sapo:hasunionof sapo:Kolari .
+
+<http://www.yso.fi/onto/sapo/Teisko(1865-1953)>
+      sapo:hasunionof sapo:Teisko .
+
+<http://www.yso.fi/onto/sapo/Messukyla(1877-1919)>
+      sapo:hasunionof sapo:Messukyla .
+
+<http://www.yso.fi/onto/sapo/Valkeakoski(1973-1974)>
+      sapo:hasunionof sapo:Valkeakoski .
+
+<http://www.yso.fi/onto/sapo/Kymen_laani(1949-1996)>
+      sapo:hasunionof sapo:Kymen_laani .
+
+<http://www.yso.fi/onto/sapo/Iitti(1870-1920)>
+      sapo:hasunionof sapo:Iitti .
+
+<http://www.yso.fi/onto/sapo/Kannus(1859-)>
+      sapo:hasunionof sapo:Kannus .
+
+<http://www.yso.fi/onto/sapo/Jamsankoski(1969-2008)>
+      sapo:hasunionof sapo:Jamsankoski .
+
+<http://www.yso.fi/onto/sapo/Mantta(1922-2008)>
+      sapo:hasunionof sapo:Mantta .
+
+<http://www.yso.fi/onto/sapo/Simpele(1940-1944)>
+      sapo:hasunionof sapo:Simpele .
+
+<http://www.yso.fi/onto/sapo/Pietarsaaren_mlk(1865-1949)>
+      sapo:hasunionof sapo:Pietarsaaren_mlk .
+
+<http://www.yso.fi/onto/sapo/Virrat(1973-)>
+      sapo:hasunionof sapo:Virrat .
+
+<http://www.yso.fi/onto/sapo/Janakkala(1922-1966)>
+      sapo:hasunionof sapo:Janakkala .
+
+<http://www.yso.fi/onto/sapo/Janakkala(1967-)>
+      sapo:hasunionof sapo:Janakkala .
+
+<http://www.yso.fi/onto/sapo/Siikainen(1871-)>
+      sapo:hasunionof sapo:Siikainen .
+
+<http://www.yso.fi/onto/sapo/Kortesjarvi(1868-2008)>
+      sapo:hasunionof sapo:Kortesjarvi .
+
+<http://www.yso.fi/onto/sapo/Tuusula(1951-1973)>
+      sapo:hasunionof sapo:Tuusula .
+
+<http://www.yso.fi/onto/sapo/Harlu(1922-1939)>
+      sapo:hasunionof sapo:Harlu .
+
+<http://www.yso.fi/onto/sapo/Uudenmaan_laani(1919-1939)>
+      sapo:hasunionof sapo:Uudenmaan_laani .
+
+<http://www.yso.fi/onto/sapo/Kouvola(2009-)>
+      sapo:hasunionof sapo:Kouvola .
+
+<http://www.yso.fi/onto/sapo/Virtasalmi(1912-2003)>
+      sapo:hasunionof sapo:Virtasalmi .
+
+<http://www.yso.fi/onto/sapo/Nilsia(1973-)>
+      sapo:hasunionof sapo:Nilsia .
+
+<http://www.yso.fi/onto/sapo/Sipoo(2009-)>
+      sapo:hasunionof sapo:Sipoo .
+
+<http://www.yso.fi/onto/sapo/Sippola(1865-1974)>
+      sapo:hasunionof sapo:Sippola .
+
+<http://www.yso.fi/onto/sapo/Kuopion_laani(1940-1945)>
+      sapo:hasunionof sapo:Kuopion_laani .
+
+<http://www.yso.fi/onto/sapo/Oulun_laani(1938-2009)>
+      sapo:hasunionof sapo:Oulun_laani .
+
+<http://www.yso.fi/onto/sapo/Hollola(1956-)>
+      sapo:hasunionof sapo:Hollola .
+
+<http://www.yso.fi/onto/sapo/Lappeenranta(1946-1966)>
+      sapo:hasunionof sapo:Lappeenranta .
+
+<http://www.yso.fi/onto/sapo/Seinajoki(1868-1930)>
+      sapo:hasunionof sapo:Seinajoki .
+
+<http://www.yso.fi/onto/sapo/Luvia(1865-)>
+      sapo:hasunionof sapo:Luvia .
+
+<http://www.yso.fi/onto/sapo/Aanekoski(2007-)>
+      sapo:hasunionof sapo:Aanekoski .
+
+<http://www.yso.fi/onto/sapo/Jyvaskylan_mlk(1965-2008)>
+      sapo:hasunionof sapo:Jyvaskylan_mlk .
+
+<http://www.yso.fi/onto/sapo/Artjarvi(1866-2010)>
+      sapo:hasunionof sapo:Artjarvi .
+
+<http://www.yso.fi/onto/sapo/Saynatsalo(1924-1992)>
+      sapo:hasunionof sapo:Saynatsalo .
+
+<http://www.yso.fi/onto/sapo/Keuruu(1937-1968)>
+      sapo:hasunionof sapo:Keuruu .
+
+<http://www.yso.fi/onto/sapo/Alaveteli(1896-1968)>
+      sapo:hasunionof sapo:Alaveteli .
+
+<http://www.yso.fi/onto/sapo/Savonlinna(1639-1900)>
+      sapo:hasunionof sapo:Savonlinna .
+
+<http://www.yso.fi/onto/sapo/Toysa(1865-)>
+      sapo:hasunionof sapo:Toysa .
+
+<http://www.yso.fi/onto/sapo/Uusikaupunki(1993-)>
+      sapo:hasunionof sapo:Uusikaupunki .
+
+<http://www.yso.fi/onto/sapo/Jurva(1868-2008)>
+      sapo:hasunionof sapo:Jurva .
+
+<http://www.yso.fi/onto/sapo/Pomarkku(1868-)>
+      sapo:hasunionof sapo:Pomarkku .
+
+<http://www.yso.fi/onto/sapo/Uudenmaan_laani(1940-1943)>
+      sapo:hasunionof sapo:Uudenmaan_laani .
+
+<http://www.yso.fi/onto/sapo/Ylistaro(1867-2008)>
+      sapo:hasunionof sapo:Ylistaro .
+
+<http://www.yso.fi/onto/sapo/Viipuri(1938-1939)>
+      sapo:hasunionof sapo:Viipuri .
+
+<http://www.yso.fi/onto/sapo/Siuntio(1956-1952)>
+      sapo:hasunionof sapo:Siuntio .
+
+<http://www.yso.fi/onto/sapo/Vahviala(1921-1922)>
+      sapo:hasunionof sapo:Vahviala .
+
+<http://www.yso.fi/onto/sapo/Padasjoki(1865-)>
+      sapo:hasunionof sapo:Padasjoki .
+
+<http://www.yso.fi/onto/sapo/Nilsia(1911-1924)>
+      sapo:hasunionof sapo:Nilsia .
+
+<http://www.yso.fi/onto/sapo/Kuopion_laani(1960-1996)>
+      sapo:hasunionof sapo:Kuopion_laani .
+
+<http://www.yso.fi/onto/sapo/Pirkkala_2(1938-)>
+      sapo:hasunionof sapo:Pirkkala_2 .
+
+<http://www.yso.fi/onto/sapo/Joensuu(1848-1921)>
+      sapo:hasunionof sapo:Joensuu .
+
+<http://www.yso.fi/onto/sapo/Lahti(1878-1904)>
+      sapo:hasunionof sapo:Lahti .
+
+<http://www.yso.fi/onto/sapo/Pietarsaaren_mlk(1977-1988)>
+      sapo:hasunionof sapo:Pietarsaaren_mlk .
+
+<http://www.yso.fi/onto/sapo/Muurame(1921-1923)>
+      sapo:hasunionof sapo:Muurame .
+
+<http://www.yso.fi/onto/sapo/Aanekoski(1932-1968)>
+      sapo:hasunionof sapo:Aanekoski .
+
+<http://www.yso.fi/onto/sapo/Jyvaskylan_mlk(1868-1908)>
+      sapo:hasunionof sapo:Jyvaskylan_mlk .
+
+<http://www.yso.fi/onto/sapo/Ulvila_2(1908-1970)>
+      sapo:hasunionof sapo:Ulvila_2 .
+
+<http://www.yso.fi/onto/sapo/Lappeenranta(1967-1988)>
+      sapo:hasunionof sapo:Lappeenranta .
+
+<http://www.yso.fi/onto/sapo/Inkoo(1944-1945)>
+      sapo:hasunionof sapo:Inkoo .
+
+<http://www.yso.fi/onto/sapo/Metsamaa(1869-1975)>
+      sapo:hasunionof sapo:Metsamaa .
+
+<http://www.yso.fi/onto/sapo/Grankulla(1920-1948)>
+      sapo:hasunionof sapo:Grankulla .
+
+<http://www.yso.fi/onto/sapo/Vahviala(1923-1939)>
+      sapo:hasunionof sapo:Vahviala .
+
+<http://www.yso.fi/onto/sapo/Kangasala(2011-)>
+      sapo:hasunionof sapo:Kangasala .
+
+<http://www.yso.fi/onto/sapo/Uudenkaarlepyyn_mlk(1865-1974)>
+      sapo:hasunionof sapo:Uudenkaarlepyyn_mlk .
+
+<http://www.yso.fi/onto/sapo/Vehmaa(1869-1904)>
+      sapo:hasunionof sapo:Vehmaa .
+
+<http://www.yso.fi/onto/sapo/Puolanka(1865-)>
+      sapo:hasunionof sapo:Puolanka .
+
+<http://www.yso.fi/onto/sapo/Kokemaenkartanon_linnalaani(1375-1593)>
+      sapo:hasunionof sapo:Kokemaenkartanon_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Kymenkartanon_ja_Savon_laani(1747-1774)>
+      sapo:hasunionof sapo:Kymenkartanon_ja_Savon_laani .
+
+<http://www.yso.fi/onto/sapo/Rantsila(2001-2008)>
+      sapo:hasunionof sapo:Rantsila .
+
+<http://www.yso.fi/onto/sapo/Kontiolahti(1922-)>
+      sapo:hasunionof sapo:Kontiolahti .
+
+<http://www.yso.fi/onto/sapo/Turun_linnalaani(1285-1303)>
+      sapo:hasunionof sapo:Turun_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Uusikaarlepyy(1620-1905)>
+      sapo:hasunionof sapo:Uusikaarlepyy .
+
+<http://www.yso.fi/onto/sapo/Kirvu(1871-1939)>
+      sapo:hasunionof sapo:Kirvu .
+
+<http://www.yso.fi/onto/sapo/Siuntio(1944-1955)>
+      sapo:hasunionof sapo:Siuntio .
+
+<http://www.yso.fi/onto/sapo/Vuolijoki(1915-2006)>
+      sapo:hasunionof sapo:Vuolijoki .
+
+<http://www.yso.fi/onto/sapo/Hameen_linnalaani(1362-1414)>
+      sapo:hasunionof sapo:Hameen_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Sonkajarvi(1922-)>
+      sapo:hasunionof sapo:Sonkajarvi .
+
+<http://www.yso.fi/onto/sapo/Hinnerjoki(1864-1969)>
+      sapo:hasunionof sapo:Hinnerjoki .
+
+<http://www.yso.fi/onto/sapo/Viitasaari(1895-1933)>
+      sapo:hasunionof sapo:Viitasaari .
+
+<http://www.yso.fi/onto/sapo/Valkeakoski(1975-1978)>
+      sapo:hasunionof sapo:Valkeakoski .
+
+<http://www.yso.fi/onto/sapo/Tammisaari(1993-2008)>
+      sapo:hasunionof sapo:Tammisaari .
+
+<http://www.yso.fi/onto/sapo/Voyri-Maksamaa(2011-)>
+      sapo:hasunionof sapo:Voyri-Maksamaa .
+
+<http://www.yso.fi/onto/sapo/Hameen_laani(1973-1973)>
+      sapo:hasunionof sapo:Hameen_laani .
+
+<http://www.yso.fi/onto/sapo/Jaakkima(1866-1922)>
+      sapo:hasunionof sapo:Jaakkima .
+
+<http://www.yso.fi/onto/sapo/Nakkila(1868-)>
+      sapo:hasunionof sapo:Nakkila .
+
+<http://www.yso.fi/onto/sapo/Leppavirta(1929-)>
+      sapo:hasunionof sapo:Leppavirta .
+
+<http://www.yso.fi/onto/sapo/Kokkola(1977-2008)>
+      sapo:hasunionof sapo:Kokkola .
+
+<http://www.yso.fi/onto/sapo/Porin_mlk(1869-1966)>
+      sapo:hasunionof sapo:Porin_mlk .
+
+<http://www.yso.fi/onto/sapo/Viipuri(1936-1937)>
+      sapo:hasunionof sapo:Viipuri .
+
+<http://www.yso.fi/onto/sapo/Poytya(1869-1916)>
+      sapo:hasunionof sapo:Poytya .
+
+<http://www.yso.fi/onto/sapo/Kaarina(1946-2008)>
+      sapo:hasunionof sapo:Kaarina .
+
+<http://www.yso.fi/onto/sapo/Hausjarvi(1946-)>
+      sapo:hasunionof sapo:Hausjarvi .
+
+<http://www.yso.fi/onto/sapo/Ristijarvi(1867-)>
+      sapo:hasunionof sapo:Ristijarvi .
+
+<http://www.yso.fi/onto/sapo/Viipurin_mlk(1933-1935)>
+      sapo:hasunionof sapo:Viipurin_mlk .
+
+<http://www.yso.fi/onto/sapo/Utajarvi(1965-)>
+      sapo:hasunionof sapo:Utajarvi .
+
+<http://www.yso.fi/onto/sapo/Helsingin_mlk(1966-1971)>
+      sapo:hasunionof sapo:Helsingin_mlk .
+
+<http://www.yso.fi/onto/sapo/Hameen_linnalaani(1304-1322)>
+      sapo:hasunionof sapo:Hameen_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Degerby_2(1944-1945)>
+      sapo:hasunionof sapo:Degerby_2 .
+
+<http://www.yso.fi/onto/sapo/Alajarvi(2009-)>
+      sapo:hasunionof sapo:Alajarvi .
+
+<http://www.yso.fi/onto/sapo/Karkkila(1969-)>
+      sapo:hasunionof sapo:Karkkila .
+
+<http://www.yso.fi/onto/sapo/Porvoon_linnalaani(1387-1398)>
+      sapo:hasunionof sapo:Porvoon_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Kivennapa(1937-1939)>
+      sapo:hasunionof sapo:Kivennapa .
+
+<http://www.yso.fi/onto/sapo/Uskela(1865-1966)>
+      sapo:hasunionof sapo:Uskela .
+
+<http://www.yso.fi/onto/sapo/Vihanti(1865-)>
+      sapo:hasunionof sapo:Vihanti .
+
+<http://www.yso.fi/onto/sapo/Viipurin_linnalaani(1514-1546)>
+      sapo:hasunionof sapo:Viipurin_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Helsingin_mlk(1921-1921)>
+      sapo:hasunionof sapo:Helsingin_mlk .
+
+<http://www.yso.fi/onto/sapo/Saraisniemi(1915-1953)>
+      sapo:hasunionof sapo:Saraisniemi .
+
+<http://www.yso.fi/onto/sapo/Merimasku(1865-2008)>
+      sapo:hasunionof sapo:Merimasku .
+
+<http://www.yso.fi/onto/sapo/Pudasjarvi(1865-1916)>
+      sapo:hasunionof sapo:Pudasjarvi .
+
+<http://www.yso.fi/onto/sapo/Savon_linnalaani(1548-1594)>
+      sapo:hasunionof sapo:Savon_linnalaani .
+
+<http://www.yso.fi/onto/sapo/Luoto(1867-)>
+      sapo:hasunionof sapo:Luoto .
+
+<http://www.yso.fi/onto/sapo/Rovaniemi(1985-2005)>
+      sapo:hasunionof sapo:Rovaniemi .
+
+<http://www.yso.fi/onto/sapo/Oulun_mlk(1886-1909)>
+      sapo:hasunionof sapo:Oulun_mlk .
+
+<http://www.yso.fi/onto/sapo/Rymattyla(1869-2008)>
+      sapo:hasunionof sapo:Rymattyla .
+
+<http://www.yso.fi/onto/sapo/Salla(1936-1939)>
+      sapo:hasunionof sapo:Salla .
+
+<http://www.yso.fi/onto/sapo/Jappila(1913-1943)>
+      sapo:hasunionof sapo:Jappila .
+
+<http://www.yso.fi/onto/sapo/Pielisensuu(1922-1953)>
+      sapo:hasunionof sapo:Pielisensuu .
+
+<http://www.yso.fi/onto/sapo/Munsala(1865-1974)>
+      sapo:hasunionof sapo:Munsala .
+
+<http://www.yso.fi/onto/sapo/Halikko(1967-2008)>
+      sapo:hasunionof sapo:Halikko .
+
+<http://www.yso.fi/onto/sapo/Hammarland(1869-)>
+      sapo:hasunionof sapo:Hammarland .
+
+<http://www.yso.fi/onto/sapo/Raasepori(2009-)>
+      sapo:hasunionof sapo:Raasepori .
+
+<http://www.yso.fi/onto/sapo/Jamsa(2009-)>
+      sapo:hasunionof sapo:Jamsa .
+
+<http://www.yso.fi/onto/sapo/Jamsa(1926-2000)>
+      sapo:hasunionof sapo:Jamsa .
+
+<http://www.yso.fi/onto/sapo/Tenhola(1977-1992)>
+      sapo:hasunionof sapo:Tenhola .
+
+<http://www.yso.fi/onto/sapo/Ahvenanmaan_laani(1918-2009)>
+      sapo:hasunionof sapo:Ahvenanmaan_laani .
+
+<http://www.yso.fi/onto/sapo/Haapajarvi(1868-)>
+      sapo:hasunionof sapo:Haapajarvi .
+
+<http://www.yso.fi/onto/sapo/Ristiina(1933-1947)>
+      sapo:hasunionof sapo:Ristiina .
+
+<http://www.yso.fi/onto/sapo/Joensuu(2005-2008)>
+      sapo:hasunionof sapo:Joensuu .
+
+<http://www.yso.fi/onto/sapo/Kivijarvi(1868-1913)>
+      sapo:hasunionof sapo:Kivijarvi .
+
+<http://www.yso.fi/onto/sapo/Jomala(1865-)>
+      sapo:hasunionof sapo:Jomala .
+
+<http://www.yso.fi/onto/sapo/Varpaisjarvi(1911-2010)>
+      sapo:hasunionof sapo:Varpaisjarvi .
+
+<http://www.yso.fi/onto/sapo/Uurainen(1868-)>
+      sapo:hasunionof sapo:Uurainen .
+
+<http://www.yso.fi/onto/sapo/Karkku(1868-1971)>
+      sapo:hasunionof sapo:Karkku .
