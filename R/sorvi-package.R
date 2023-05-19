@@ -6,7 +6,7 @@
 #' \tabular{ll}{
 #' Package: \tab sorvi\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.8.20.9000\cr
+#' Version: \tab 0.8.21.9000\cr
 #' Date: \tab 2010-2023\cr
 #' License: \tab BSD 2-clause\cr
 #' LazyLoad: \tab yes\cr
