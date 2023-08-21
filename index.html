@@ -82,7 +82,7 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9">
-<p><a href="https://github.com/ropengov/sorvi/watchers" class="external-link"><img src="https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social" alt="Watch on GitHub"></a> <a href="https://github.com/ropengov/sorvi/stargazers" class="external-link"><img src="https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social" alt="Star on GitHub"></a> <a href="https://twitter.com/intent/follow?screen_name=ropengov" class="external-link"><img src="https://img.shields.io/twitter/follow/ropengov.svg?style=social" alt="Follow on Twitter"></a> <!-- badges: end --></p>
+<p><a href="https://github.com/ropengov/sorvi/watchers" class="external-link"><img src="https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social" alt="Watch on GitHub"></a> <a href="https://github.com/ropengov/sorvi/stargazers" class="external-link"><img src="https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social" alt="Star on GitHub"></a> <a href="https://twitter.com/rOpenGov" class="external-link"><img src="https://img.shields.io/twitter/follow/ropengov.svg?style=social" alt="Follow on Twitter"></a> <!-- badges: end --></p>
 <div class="section level1">
 <div class="page-header">
 <img src="logo.png" class="logo" alt=""><h1 id="sorvi">sorvi
@@ -96,8 +96,8 @@
 </h2>
 <p>You can install the development version of sorvi from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"rOpenGov/sorvi"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"rOpenGov/sorvi"</span><span class="op">)</span></span></code></pre></div>
 <p>Development version can be also installed using the <a href="https://ropengov.r-universe.dev" class="external-link">r-universe</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Enable this universe</span></span>
@@ -122,11 +122,11 @@
 <span><span class="co">#&gt; # Groups:   year [5]</span></span>
 <span><span class="co">#&gt;    year package      n</span></span>
 <span><span class="co">#&gt;   &lt;dbl&gt; &lt;fct&gt;    &lt;int&gt;</span></span>
-<span><span class="co">#&gt; 1  2017 eurostat 12482</span></span>
-<span><span class="co">#&gt; 2  2018 eurostat 18932</span></span>
-<span><span class="co">#&gt; 3  2019 eurostat 28454</span></span>
-<span><span class="co">#&gt; 4  2020 eurostat 31298</span></span>
-<span><span class="co">#&gt; 5  2021 eurostat 30307</span></span></code></pre></div>
+<span><span class="co">#&gt; 1  2018 eurostat 18932</span></span>
+<span><span class="co">#&gt; 2  2019 eurostat 28454</span></span>
+<span><span class="co">#&gt; 3  2020 eurostat 31298</span></span>
+<span><span class="co">#&gt; 4  2021 eurostat 30307</span></span>
+<span><span class="co">#&gt; 5  2022 eurostat 27656</span></span></code></pre></div>
 <p>Get download statistics of various rOpenGov packages over time and draw a chart:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">packages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"eurostat"</span>, <span class="st">"giscoR"</span>, <span class="st">"sotkanet"</span>, <span class="st">"geofi"</span>, <span class="st">"sweidnumbr"</span><span class="op">)</span></span>

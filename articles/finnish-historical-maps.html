@@ -104,24 +104,24 @@ Kantanen</h4>
 <div class="section level3">
 <h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h3>
-<p>Accessing high quality shapefiles and other vectorized geospatial
+<p>Accessing high-quality shapefiles and other vectorized geospatial
 location boundaries for different administrative divisions is nowadays
 trivial as datasets are readily available through download services and
 APIs. Packages such as <a href="https://ropengov.github.io/geofi/" class="external-link">geofi/</a> and <a href="https://ropengov.github.io/giscoR/" class="external-link">giscoR</a> make it easy to
 draw maps in the case of Finland and European NUTS areas and visualize
 statistical data in the form of choropleth maps.</p>
 <p>However, when it comes to historical boundaries such as Finnish
-municipality boundaries before year 2013, drawing maps becomes harder.
-For example, National Land Survey of Finland offers municipality based
-boundaries only for the current year and Statistics Finland offers maps
-only from 2013 onwards. In the time period of 2005 to 2022 only, Finnish
-municipalities have undergone 79 merger processes with their number
-falling from 431 to 309, or approximately by one fourth. In time series
-data municipality mergers are taken into account by the Statistics
-Authorities, making it possible to see how current municipalities and
-their parts combined have developed in the past. In most cases
-Statistics Finland uses the current municipality division as the basis
-of population statistics time series.</p>
+municipality boundaries before the year 2013, drawing maps becomes
+harder. For example, the National Land Survey of Finland offers
+municipality-based boundaries only for the current year and Statistics
+Finland offers maps only from 2013 onwards. From 2005 to 2022 only,
+Finnish municipalities have undergone 79 merger processes with their
+number falling from 431 to 309, or approximately one-fourth. In time
+series data municipality mergers are taken into account by the
+Statistics Authorities, making it possible to see how current
+municipalities and their parts combined have developed in the past. In
+most cases, Statistics Finland uses the current municipality division as
+the basis of population statistics time series.</p>
 </div>
 <div class="section level3">
 <h3 id="previous-work">Previous work<a class="anchor" aria-label="anchor" href="#previous-work"></a>
@@ -136,9 +136,9 @@ ontologies and vocabularies in a centralized way, with 150 organizations
 as registered users.</p>
 <p>As part of the FinnONTO project, the <a href="https://seco.cs.aalto.fi/ontologies/sapo/" class="external-link">Finnish Spatio-Temporal
 Ontology (SAPO)</a> was created. SAPO is an “ontology time series of
-Finnish municipalities over the time interval 1865-2010” and it as an
-ontology it “represents knowledge about changes (e.g. merges, splits) in
-historical regions (e.g. cities, counties)”. The types of changes
+Finnish municipalities over the time interval 1865-2010” and as an
+ontology, it “represents knowledge about changes (e.g. merges, splits)
+in historical regions (e.g. cities, counties)”. The types of changes
 include (from <a href="https://urn.fi/URN:ISBN:978-951-51-1422-8" class="external-link">Väätäinen &amp;
 Kauppinen 2015</a>, Finnish terms in parentheses):</p>
 <ul>
@@ -186,8 +186,8 @@ it into sovereign rule (<em>aluevuokrauksen loppuminen</em>);</li>
 settlements) that have gradually started to exist without any specific
 founding date (<em>muodostuminen</em>);</li>
 <li>
-<strong>demarcation</strong>, when areas are clearly divided between
-two neighboring administrative areas that didn’t previously have clearly
+<strong>demarcation</strong>, when areas are divided between two
+neighbouring administrative areas that didn’t previously have clearly
 defined borders (<em>rajanveto</em>).</li>
 </ul>
 <p>In practice, all Finnish municipalities have a set establishment
@@ -198,20 +198,20 @@ information in <a href="https://fi.wikipedia.org/w/index.php?title=Vuoden_1865_k
 (in Finnish)</a>), that moved secular administration away from church
 parishes to newly established municipalities. Many municipalities have
 also changed names at some point, been split or merged, and had border
-changes with their neighboring municipalities. Ceding or abolishing
+changes with their neighbouring municipalities. Ceding or abolishing
 municipalities is mostly related to the situation after the Second World
 War when many Finnish municipalities in Karelia were ceded to the Soviet
 Union.</p>
 <p>Since 2008, ONKI has been superseded by <a href="https://finto.fi/en/" class="external-link">Finto</a>, although it does not contain all
 the data that ONKI did. I have used data files (RDF/Turtle files)
-downloaded from ONKI as a starting point and created datasets that are
-feel more natural for an R user to use, using <a href="https://cran.r-project.org/package=rdflib" class="external-link">rdflib</a> R
+downloaded from ONKI as a starting point and created datasets that feel
+more natural for an R user to use, using <a href="https://cran.r-project.org/package=rdflib" class="external-link">rdflib</a> R
 package.</p>
 </div>
 <div class="section level3">
 <h3 id="drawing-historical-maps">Drawing historical maps<a class="anchor" aria-label="anchor" href="#drawing-historical-maps"></a>
 </h3>
-<p>Historical maps can be drawn simply by using
+<p>Historical maps can be drawn simply by using the
 <code><a href="../reference/get_municipalities.html">get_municipalities()</a></code> function.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ropengov/sorvi" class="external-link">sorvi</a></span><span class="op">)</span></span>
@@ -251,13 +251,21 @@ ggplot2.</p>
 <code class="sourceCode R"><span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="finnish-historical-maps_files/figure-html/unnamed-chunk-3-2.png" width="700"></p>
+<p><img src="finnish-historical-maps_files/figure-html/unnamed-chunk-3-2.png" width="700">
+For more interesting mapping examples, I recommend readers to
+acquaintance themselves e.g. with the <a href="https://ropengov.github.io/geofi/index.html" class="external-link">geofi packages</a>
+articles on <a href="https://ropengov.github.io/geofi/articles/geofi_making_maps.html" class="external-link">making
+maps</a>, <a href="https://ropengov.github.io/geofi/articles/geofi_joining_attribute_data.html" class="external-link">joining
+attribute data with geospatial objects</a> or <a href="https://ropengov.github.io/geofi/articles/geofi_spatial_analysis.html" class="external-link">spatial
+data analysis</a>. The <code><a href="../reference/kunnat1865_2021.html">sorvi::kunnat1865_2021</a></code> dataset in
+sorvi consists of sf objects which are analogous to the more recent
+objects downloaded by the geofi package.</p>
 </div>
 <div class="section level3">
 <h3 id="future-work">Future work<a class="anchor" aria-label="anchor" href="#future-work"></a>
 </h3>
-<p>As it can be seen from the visualizations above, there are some gaps
-in the data. For example, the dataset metadata for year 1912 shows that
+<p>As can be seen from the visualizations above, there are some gaps in
+the data. For example, the dataset metadata for the year 1912 shows that
 it has 49 empty geometries:</p>
 <pre><code>Simple feature collection with 520 features and 8 fields (with 49 geometries empty)
 Geometry type: GEOMETRY
@@ -269,29 +277,40 @@ Geodetic CRS:  ISN93
 <p>In addition, there are some inconsistencies with the geometries
 compared to newer datasets downloaded from the National Land Survey of
 Finland / Statistics Finland API. For example, municipalities that are
-surrounded by rural municipalities (“maalaiskunta”) can in some cases be
+surrounded by rural municipalities (“maalaiskunta”) can sometimes be
 left under the rural municipality polygon if the rural municipality
-polygon too simplified and doesn’t have any holes. Similarly, some
-municipality enclaves or exclaves might not be properly represented as
-the borders of the municipalities are rather simplified. However, it
-must be noted that small scale information like this is not essential
-for drawing choropleth maps and visualizing the broad strokes of
-municipality administration development in Finland.</p>
+polygon is too simplified and has no holes. Similarly, some municipality
+enclaves or exclaves might not be properly represented as the borders of
+the municipalities are rather simplified. However, it must be noted that
+small-scale information like this is not essential for drawing
+choropleth maps and visualizing the broad strokes of municipality
+administration development in Finland.</p>
 <p>Additionally, having access to historical maps does not mean that
 much else could be done with them without having access to some other
 type of data. Statistics Finland has published data on the Finnish
-population from 1750 onwards, but regrettably this data is only only
-national level. Publications such as Suomen Tilastollinen Vuosikirja
-(Finnish Statistical Yearbook, <a href="https://urn.fi/URN:NBN:fi-fe2023013124885" class="external-link">example from 1918</a>)
-might be interesting source of information. Utilizing <a href="https://hiski.genealogia.fi" class="external-link">HisKi database</a> that contains
+population from 1750 onwards in their statistical database that can be
+accessed e.g. with the <a href="https://ropengov.github.io/pxweb/" class="external-link">pxweb
+R package</a>, but regrettably, this data is only at a national level.
+Publications such as Suomen Tilastollinen Vuosikirja (Finnish
+Statistical Yearbook, <a href="https://urn.fi/URN:NBN:fi-fe2023013124885" class="external-link">example from 1918</a>)
+might be interesting sources of information if someone has the time and
+resources to digitize tables from there. Utilizing <a href="https://hiski.genealogia.fi" class="external-link">HisKi database</a> that contains
 digitized parish record data would also be interesting, although the
 oldest parish records are much older than the oldest municipalities.
-This would again prompt the need to map out parish district borders, if
-such well defined borders ever existed.</p>
+This would again prompt the need to map out parish district borders if
+such well-defined borders ever existed.</p>
 <p>It is therefore evident that much work is still to be done. Users are
-very much welcome to fill and data gaps or provide better polygons! <a href="https://github.com/rOpenGov/sorvi/issues" class="external-link">Opening an issue</a> in
+welcome to fill data gaps or provide better polygons! <a href="https://github.com/rOpenGov/sorvi/issues" class="external-link">Opening an issue</a> in
 GitHub or directly <a href="https://github.com/rOpenGov/sorvi/pulls" class="external-link">making a pull request</a>
-is very much appreciated.</p>
+is very much appreciated. Suggestions regarding the best possible
+practices and solutions for data and metadata storage are also
+welcome.</p>
+</div>
+<div class="section level3">
+<h3 id="attribution">Attribution<a class="anchor" aria-label="anchor" href="#attribution"></a>
+</h3>
+<p>Raw data downloaded from ONKI.fi website on 04 Aug 2022: <a href="http://onki.fi/en/browser/overview/sapo" class="external-link uri">http://onki.fi/en/browser/overview/sapo</a></p>
+<p>Data attribution: FinnONTO Consortium: <a href="https://seco.cs.aalto.fi/projects/finnonto/" class="external-link uri">https://seco.cs.aalto.fi/projects/finnonto/</a></p>
 </div>
 <div class="section level3">
 <h3 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
