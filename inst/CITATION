@@ -3,9 +3,9 @@ citHeader("Kindly cite the sorvi R package as follows:")
 year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
 vers <- paste("R package version", meta$Version)
 
-citEntry(entry="misc",
+bibentry(bibtype="misc",
          title = "sorvi: Finnish open government data toolkit for R",
-         author = personList(
+         author = c(
 	   person(given ="Leo", family="Lahti", email = "leo.lahti@iki.fi"),
 	   person(given ="Juuso", family="Parkkinen"),
 	   person(given ="Joona", family="Lehtomaki"),

@@ -1,6 +1,6 @@
 ## Test environments
 
-* local macOS 12.4 install (Intel 64-bit), R 4.2.0
+* local macOS 13.5 install (aarch64-apple-darwin20 64-bit), R 4.3.1
 * win-builder (devel and release)
 * R-CMD-check workflow (macOS-latest, windows-latest, ubuntu-latest-devel, ubuntu-latest-release, ubuntu-latest-oldrel-1)
 
