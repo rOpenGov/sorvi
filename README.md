@@ -13,7 +13,7 @@ GitHub](https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social)]
 [![Star on
 GitHub](https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social)](https://github.com/ropengov/sorvi/stargazers)
 [![Follow on
-Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/rOpenGov)
+Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/intent/follow?screen_name=ropengov)
 <!-- badges: end -->
 
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
@@ -91,8 +91,8 @@ plot
 
 <img src="man/figures/README-example_visualize-1.png" width="80%" />
 
-For more (partly outdated) examples, check the [tutorial
-page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
+For more examples, check the [package
+vignette](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
 
 ## Contributing
 

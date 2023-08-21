@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
-[![Follow on Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/rOpenGov)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/intent/follow?screen_name=ropengov)
 <!-- badges: end -->
 
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
@@ -77,7 +77,7 @@ plot <- cran_downloads(pkgs = packages, sum = "total", output = "plot", use.cach
 plot
 ```
 
-For more (partly outdated) examples, check the [tutorial page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html). 
+For more examples, check the [package vignette](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
 
 ## Contributing
 

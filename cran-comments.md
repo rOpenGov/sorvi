@@ -8,6 +8,15 @@
 
 There were no ERRORs or WARNINGs. 
 
+On win-builder check logs the following (possibly) invalid URLs are reported:
+
+ URL: https://twitter.com/intent/follow?screen_name=ropengov
+    From: README.md
+    Status: 403
+    Message: Forbidden
+    
+This is probably due to Twitter erroneously classifying traffic from win-builder as bot traffic and blocking it. No such error is reported on local tests.
+
 ## Downstream dependencies
 
 There are currently no downstream dependencies for this package.

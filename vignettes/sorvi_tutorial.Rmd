@@ -65,10 +65,21 @@ plot <- cran_downloads(pkgs = packages, sum = "total", output = "plot", use.cach
 plot
 ```
 
+## Historical mapping and data sets
 
-## Further data sets
+The sorvi package includes 2 datasets: `sorvi::kunnat1865_2021` for listing municipalities that existed between years 1865-2021, and `sorvi::polygons1909_2009` that contains polygons for most of the municipalities contained by the former dataset. Despite the slightly misleading name, the polygons dataset contains shapes for most municipalities from the 1800s as well, as municipalities and their borders remained relatively unchanged before the 2nd World War and late 1900s-early 2000s municipality mergers. 
 
-Possible new data sets to include are listed in the [wiki](https://github.com/rOpenGov/sorvi/wiki/Data-sources).
+While users most definitely can use the datasets directly in their work (and improvements / additions / forks are most welcome!), we have included `get_municipalities()` function for conveniently returning a map of Finland as it existed at a certain point in time.
+
+A simple example of using the `get_municipalities()` function for drawing a map containing Finnish municipalities in 1931:
+
+```{r example_map}
+library(ggplot2)
+map1931 <- get_municipalities(year = 1931)
+ggplot(map1931) + geom_sf()
+```
+
+See sorvi article [Finnish historical maps with sorvi R package](https://ropengov.github.io/sorvi/articles/finnish-historical-maps.html) for more information and examples.
 
 ## Licensing and Citations
 
@@ -78,6 +89,8 @@ This work can be freely used, modified and distributed under the
 ```{r citation, message=FALSE, eval=TRUE}
 citation("sorvi")
 ```
+
+For data attribution, see dataset documentation.
 
 ## Session info
 
