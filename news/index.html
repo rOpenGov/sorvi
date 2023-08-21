@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">sorvi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.21.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.21</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,12 +52,17 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.8.21.9000" id="sorvi-08219000-2023-05-15">sorvi 0.8.21.9000 (2023-05-15)<a class="anchor" aria-label="anchor" href="#sorvi-08219000-2023-05-15"></a></h2>
+<h2 class="pkg-version" data-toc-text="0.8.21" id="sorvi-0821-2023-08-21">sorvi 0.8.21 (2023-08-21)<a class="anchor" aria-label="anchor" href="#sorvi-0821-2023-08-21"></a></h2>
 <div class="section level4">
-<h4 id="new-features-0-8-21-9000">NEW FEATURES<a class="anchor" aria-label="anchor" href="#new-features-0-8-21-9000"></a></h4>
-<ul><li>New function: <code><a href="../reference/get_municipalities.html">get_municipalities()</a></code>, for mapping historical municipalities</li>
-<li>New datasets: <code><a href="../reference/kunnat1865_2021.html">sorvi::kunnat1865_2021</a></code> and <code><a href="../reference/polygons1909_2009.html">sorvi::polygons1909_2009</a></code>, containing the data for abovementioned function to work, courtesy of</li>
-<li>Experimental version of the package for testing R functions and datasets related to mapping Finnish historical municipality maps. Raw data courtesy of <a href="https://seco.cs.aalto.fi/projects/finnonto/" class="external-link">National Semantic Web Ontology Project in Finland (FinnONTO)</a>, a project by <a href="https://seco.cs.aalto.fi" class="external-link">Semantic Computing Research Group</a>. Raw data was downloaded from the <a href="http://onki.fi/en/browser/" class="external-link">Finnish Ontology Library Service ONKI</a> (<a href="https://seco.cs.aalto.fi/services/onki/" class="external-link">description in SeCo website</a>).</li>
+<h4 id="new-features-0-8-21">NEW FEATURES<a class="anchor" aria-label="anchor" href="#new-features-0-8-21"></a></h4>
+<ul><li>Experimental new features of the package for testing R functions and datasets related to mapping Finnish historical municipality maps:</li>
+<li>New experimental function: <code><a href="../reference/get_municipalities.html">get_municipalities()</a></code>, for mapping historical Finnish municipalities. <code>year</code> argument can be given to filter out the correct selection of municipalities for that given year.</li>
+<li>New experimental datasets: <code><a href="../reference/kunnat1865_2021.html">sorvi::kunnat1865_2021</a></code> and <code><a href="../reference/polygons1909_2009.html">sorvi::polygons1909_2009</a></code>, containing the needed data for <code><a href="../reference/get_municipalities.html">get_municipalities()</a></code> function</li>
+<li>Raw data courtesy of <a href="https://seco.cs.aalto.fi/projects/finnonto/" class="external-link">National Semantic Web Ontology Project in Finland (FinnONTO)</a>, a project by <a href="https://seco.cs.aalto.fi" class="external-link">Semantic Computing Research Group</a>. Raw data was downloaded from the <a href="http://onki.fi/en/browser/" class="external-link">Finnish Ontology Library Service ONKI</a> (<a href="https://seco.cs.aalto.fi/services/onki/" class="external-link">description in SeCo website</a>).</li>
+</ul></div>
+<div class="section level4">
+<h4 id="documentation-fixes-0-8-21">DOCUMENTATION FIXES<a class="anchor" aria-label="anchor" href="#documentation-fixes-0-8-21"></a></h4>
+<ul><li>Removed table from <code>sorvi-package</code> that essentially contained the same information as DESCRIPTION file, with the additional risk that sometimes <code>sorvi-package</code> was not updated when the rest of the package was.</li>
 </ul></div>
 </div>
     <div class="section level2">
@@ -384,7 +389,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by Leo Lahti, Juuso Parkkinen, Joona Lehtomaki.</p>
+  <p></p><p>Developed by Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Pyry Kantanen.</p>
 </div>
 
 <div class="pkgdown-footer-right">
