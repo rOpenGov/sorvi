@@ -108,10 +108,11 @@ vignette](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
 
 ## Acknowledgements
 
-**Kindly cite this work** as follows: [Leo
-Lahti](https://github.com/antagomir/), Juuso Parkkinen, Joona Lehtomäki,
-Pyry Kantanen. sorvi - Finnish Open Data Toolkit. URL:
-<http://ropengov.github.io/sorvi/>
+**Kindly cite this work** as follows:
+
+[Leo Lahti](https://github.com/antagomir/), Juuso Parkkinen, Joona
+Lehtomaki and Pyry Kantanen (2023). sorvi: Finnish open data toolkit for
+R. R package version 0.8.21. URL: <https://github.com/rOpenGov/sorvi>
 
 We are grateful to Jussi Paananen, Einari Happonen, Juuso Haapanen, and
 all other
