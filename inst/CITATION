@@ -14,7 +14,7 @@ bibentry(bibtype="misc",
 	   person(given ="Jussi", family="Paananen"),
 	   person(given = "Pyry", family="Kantanen")
          ),
-	 doi = "10.5281/zenodo.10280",
+	 doi = "10.5281/zenodo.598121",
 	 url = "https://github.com/rOpenGov/sorvi",
 	 journal = "",
 	 year = year,
