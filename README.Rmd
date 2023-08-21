@@ -23,7 +23,6 @@ knitr::opts_chunk$set(
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 [![Follow on Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/rOpenGov)
-[![R-CMD-check](https://github.com/rOpenGov/sorvi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rOpenGov/sorvi/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>

@@ -1,11 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
 <!-- badges: start -->
 
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](https://ropengov.org/)
 [![R-CMD-check](https://github.com/rOpenGov/sorvi/workflows/R-CMD-check/badge.svg)](https://github.com/rOpenGov/sorvi/actions)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/sorvi)](https://cran.r-project.org/package=sorvi)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/sorvi)](https://cran.r-project.org/package=sorvi)
 [![r-universe](https://ropengov.r-universe.dev/badges/sorvi)](https://ropengov.r-universe.dev/)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](https://github.com/badges/stability-badges)
 
@@ -14,7 +13,7 @@ GitHub](https://img.shields.io/github/watchers/ropengov/sorvi.svg?style=social)]
 [![Star on
 GitHub](https://img.shields.io/github/stars/ropengov/sorvi.svg?style=social)](https://github.com/ropengov/sorvi/stargazers)
 [![Follow on
-Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/intent/follow?screen_name=ropengov)
+Twitter](https://img.shields.io/twitter/follow/ropengov.svg?style=social)](https://twitter.com/rOpenGov)
 <!-- badges: end -->
 
 # sorvi<a href="https://ropengov.github.io/sorvi/"><img src="man/figures/logo.png" align="right" height="139" /></a>
@@ -37,8 +36,8 @@ You can install the development version of sorvi from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("rOpenGov/sorvi")
+# install.packages("remotes")
+remotes::install_github("rOpenGov/sorvi")
 ```
 
 Development version can be also installed using the
@@ -74,11 +73,11 @@ df
 #> # Groups:   year [5]
 #>    year package      n
 #>   <dbl> <fct>    <int>
-#> 1  2017 eurostat 12482
-#> 2  2018 eurostat 18932
-#> 3  2019 eurostat 28454
-#> 4  2020 eurostat 31298
-#> 5  2021 eurostat 30307
+#> 1  2018 eurostat 18932
+#> 2  2019 eurostat 28454
+#> 3  2020 eurostat 31298
+#> 4  2021 eurostat 30307
+#> 5  2022 eurostat 27656
 ```
 
 Get download statistics of various rOpenGov packages over time and draw
@@ -97,15 +96,15 @@ page](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
 
 ## Contributing
 
-  - [Submit suggestions and bug
-    reports](https://github.com/ropengov/sorvi/issues) (provide the
-    output of `sessionInfo()` and `packageVersion("sorvi")` and
-    preferably provide a [reproducible
-    example](http://adv-r.had.co.nz/Reproducibility.html))
-  - [Send a pull request](https://github.com/ropengov/sorvi/)
-  - [Star us on the Github page](https://github.com/ropengov/sorvi/)
-  - [See our website](https://ropengov.org/community/) for additional
-    contact information
+- [Submit suggestions and bug
+  reports](https://github.com/ropengov/sorvi/issues) (provide the output
+  of `sessionInfo()` and `packageVersion("sorvi")` and preferably
+  provide a [reproducible
+  example](http://adv-r.had.co.nz/Reproducibility.html))
+- [Send a pull request](https://github.com/ropengov/sorvi/)
+- [Star us on the Github page](https://github.com/ropengov/sorvi/)
+- [See our website](https://ropengov.org/community/) for additional
+  contact information
 
 ## Acknowledgements
 
@@ -116,5 +115,5 @@ Pyry Kantanen. sorvi - Finnish Open Data Toolkit. URL:
 
 We are grateful to Jussi Paananen, Einari Happonen, Juuso Haapanen, and
 all other
-[contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)\!
+[contributors](https://github.com/rOpenGov/sorvi/graphs/contributors)!
 This project is part of [rOpenGov](https://ropengov.org).
