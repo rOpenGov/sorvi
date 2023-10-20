@@ -7,12 +7,12 @@
 Data attribution: FinnONTO Consortium: \url{https://seco.cs.aalto.fi/projects/finnonto/}
 }
 \usage{
-get_municipalities(year = 2002, type = "data.frame")
+get_municipalities(year = 2002, type = "sf")
 }
 \arguments{
 \item{year}{a year between 1865-2020}
 
-\item{type}{either "data.frame" or "sf"}
+\item{type}{either "data.frame", "tibble" or "sf"}
 }
 \value{
 a data.frame or sf object

@@ -3,19 +3,19 @@
 #' pick a certain year and return an output that contains the most recent 
 #' information on each municipality.
 #' @param year a year between 1865-2020
-#' @param type either "data.frame" or "sf"
+#' @param type either "data.frame", "tibble" or "sf"
 #' @return a data.frame or sf object
 #' @details See dataset "kunnat1865_2021"
 #' @importFrom dplyr group_by arrange filter left_join
 #' @importFrom magrittr %>%
 #' @importFrom checkmate assert_integer assert_choice
-#' @importFrom sf st_is_empty st_as_sf
+#' @importFrom sf st_is_empty st_as_sf st_drop_geometry
 #' @source Data attribution: FinnONTO Consortium: \url{https://seco.cs.aalto.fi/projects/finnonto/}
 #' @export
 #' @author Pyry Kantanen
-get_municipalities <- function(year = 2002, type = "data.frame") {
+get_municipalities <- function(year = 2002, type = "sf") {
   checkmate::assert_double(year, lower = 1865, upper = 2020)
-  checkmate::assert_choice(type, choices = c("data.frame", "sf"))
+  checkmate::assert_choice(type, choices = c("data.frame", "tibble", "sf"))
 
   kunnat1865_2021 <- sorvi::kunnat1865_2021
   polygons1909_2009 <- sorvi::polygons1909_2009
@@ -48,6 +48,12 @@ get_municipalities <- function(year = 2002, type = "data.frame") {
     }
   }
   
+  if (type == "data.frame") {
+    filtered_dataset <- sf::st_drop_geometry(filtered_dataset)
+    filtered_dataset <- as.data.frame(filtered_dataset)
+  } else if (type == "tibble") {
+    filtered_dataset <- sf::st_drop_geometry(filtered_dataset)
+  }
   
   return(filtered_dataset)
 }

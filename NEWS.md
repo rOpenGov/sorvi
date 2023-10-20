@@ -1,3 +1,10 @@
+# sorvi 0.8.22 (2023-10-20)
+
+### BUG FIXES
+
+- Fixed function argument `type` in `get_municipalities()` - now it actually affects the class of the returned object! New default object type is `sf` and other options are `tibble` and `data.frame`
+- Fixed Loimaan mlk / Loimaa lk and Metsämaa division / merger information in the datasets `sorvi::kunnat1865_2021` and `sorvi::polygons1909_2009`
+
 # sorvi 0.8.21 (2023-08-21)
 
 ### NEW FEATURES
