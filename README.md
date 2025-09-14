@@ -1,5 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 <!-- badges: start -->
 
 [![rOG-badge](https://ropengov.github.io/rogtemplate/reference/figures/ropengov-badge.svg)](https://ropengov.org/)
@@ -73,11 +74,11 @@ df
 #> # Groups:   year [5]
 #>    year package      n
 #>   <dbl> <fct>    <int>
-#> 1  2018 eurostat 18932
-#> 2  2019 eurostat 28454
-#> 3  2020 eurostat 31298
-#> 4  2021 eurostat 30307
-#> 5  2022 eurostat 27656
+#> 1  2020 eurostat 31298
+#> 2  2021 eurostat 30307
+#> 3  2022 eurostat 27656
+#> 4  2023 eurostat 41685
+#> 5  2024 eurostat 55423
 ```
 
 Get download statistics of various rOpenGov packages over time and draw
@@ -110,9 +111,31 @@ vignette](https://ropengov.github.io/sorvi/articles/sorvi_tutorial.html).
 
 **Kindly cite this work** as follows:
 
-[Leo Lahti](https://github.com/antagomir/), Juuso Parkkinen, Joona
-Lehtomaki and Pyry Kantanen (2023). sorvi: Finnish open data toolkit for
-R. R package version 0.8.21. URL: <https://github.com/rOpenGov/sorvi>
+``` text
+citation("sorvi")
+Kindly cite the sorvi R package as follows:
+
+To cite 'sorvi' in publications use:
+
+  Lahti L, Parkkinen J, Lehtomaki J, Haapanen J, Happonen E, Paananen
+  J, Kantanen P (2025). _sorvi: Functions for Finnish Open Data_.
+  doi:10.32614/CRAN.package.sorvi
+  <https://doi.org/10.32614/CRAN.package.sorvi>, R package version
+  0.9.1, <https://github.com/rOpenGov/sorvi>.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{R-sorvi,
+    title = {{sorvi: Functions for Finnish Open Data}},
+    doi = {10.32614/CRAN.package.sorvi},
+    author = {Leo Lahti and Juuso Parkkinen and Joona Lehtomaki and Juuso Haapanen and Einari Happonen and Jussi Paananen and Pyry Kantanen},
+    url = {https://github.com/rOpenGov/sorvi},
+    year = {2025},
+    note = {R package version 0.9.1},
+  }
+
+Many thanks for all contributors!
+```
 
 We are grateful to Jussi Paananen, Einari Happonen, Juuso Haapanen, and
 all other

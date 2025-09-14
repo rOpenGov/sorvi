@@ -1,7 +1,7 @@
 Package: sorvi
 Type: Package
 Title: Functions for Finnish Open Data
-Version: 0.9.01
+Version: 0.9.1
 Date: 2025-09-14
 Authors@R: c(
     person("Leo", "Lahti", , "leo.lahti@iki.fi", role = c("aut", "cre"),
