@@ -1,11 +1,16 @@
+year <- sub("-.*", "", meta$Date)
+version_note <- paste("R package version", meta$Version)
+pkg <- meta$Package
+title <- gsub("'", "", meta$Title)
+doi <- paste0("10.32614/CRAN.package.", pkg)
+
 citHeader("Kindly cite the sorvi R package as follows:")
 
-year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
-vers <- paste("R package version", meta$Version)
-
-bibentry(bibtype="misc",
-         title = "sorvi: Finnish open government data toolkit for R",
-         author = c(
+bibentry(bibtype = "Manual",
+  header = sprintf("To cite '%s' in publications use:", pkg),
+  title = sprintf("{%s: %s}", pkg, title),
+  doi = doi,
+  author = c(
 	   person(given ="Leo", family="Lahti", email = "leo.lahti@iki.fi"),
 	   person(given ="Juuso", family="Parkkinen"),
 	   person(given ="Joona", family="Lehtomaki"),
@@ -13,18 +18,11 @@ bibentry(bibtype="misc",
 	   person(given ="Einari", family="Happonen"),
 	   person(given ="Jussi", family="Paananen"),
 	   person(given = "Pyry", family="Kantanen")
-         ),
-	 doi = "10.5281/zenodo.598121",
+	   ),
 	 url = "https://github.com/rOpenGov/sorvi",
-	 journal = "",
 	 year = year,
-	 note = vers,
-         textVersion =
-         paste("Leo Lahti, Juuso Parkkinen, Joona Lehtomaki, Juuso Haapanen, Einari Happonen, Jussi Paananen and Pyry Kantanen (",year,"). ",
-         "sorvi: Finnish open data toolkit for R. ",
-         vers,
-	       " URL: https://github.com/rOpenGov/sorvi",
-         sep="")
-         )
+	 note = version_note,
+	 key = paste0("R-", pkg)
+	 )
 
 citFooter("\nMany thanks for all contributors!")
