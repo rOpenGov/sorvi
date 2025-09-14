@@ -6,8 +6,8 @@
 \alias{sorvi}
 \title{Algorithmic Tools for Open Data in Finland}
 \description{
-The sorvi package hosts various functions that are mainly helpful in rOpenGov 
-package maintenance, package authoring and drawing graphs for presentations. 
+The sorvi package hosts various functions that are mainly helpful in rOpenGov
+package maintenance, package authoring and drawing graphs for presentations.
 Additionally it has some functions that do not (yet) have their own package
 but are useful in some contexts.
 }
@@ -17,6 +17,16 @@ library(sorvi)
 \references{
 See citation("sorvi")
 \url{https://github.com/rOpenGov/sorvi}
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/ropengov/sorvi}
+  \item \url{https://CRAN.R-project.org/package=sorvi}
+  \item \url{https://ropengov.github.io/sorvi/}
+  \item Report bugs at \url{https://github.com/ropengov/sorvi/issues}
+}
+
 }
 \author{
 Leo Lahti, Juuso Parkkinen, Jussi Paananen, Joona Lehtomaki, Einari Happonen, Juuso Haapanen, and Pyry Kantanen \email{louhos@googlegroups.com}
