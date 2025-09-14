@@ -1,3 +1,15 @@
+# sorvi 0.9.01 (2025-09-14)
+
+### NEW FEATURES
+
+- Added function `get_classification_df()` for downloading classifications from Statistics Finland Classification API
+- Added R6 Class `WFSClient` for using basic methods related to WFS APIs. Added subclass `TurkuWFS` that inherits `WFSClient` and has the relevant WFS API URL ready in the constructor.
+- Added wrapper functions `list_features_turku()` and `get_feature_turku()` as a more familiar interface for most users.
+
+### OTHER CHANGES
+
+- Made `load_sorvi_data()` use classification info downloaded from the API with `get_classification_df()` instead of using datasets included with the package.
+
 # sorvi 0.8.22 (2023-10-20)
 
 ### BUG FIXES

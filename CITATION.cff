@@ -1,15 +1,20 @@
-# -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.5.0
+# --------------------------------------------
+# CITATION file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# -----------------------------------------------------------
+# --------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "sorvi" in publications use:'
 type: software
 license: BSD-2-Clause
 title: 'sorvi: Functions for Finnish Open Data'
-version: 0.8.21
+version: 0.9.01
 doi: 10.5281/zenodo.598121
+identifiers:
+- type: doi
+  value: 10.32614/CRAN.package.sorvi
+- type: url
+  value: https://ropengov.github.io/sorvi/
 abstract: Misc support functions for rOpenGov and open data downloads.
 authors:
 - family-names: Lahti
@@ -46,12 +51,12 @@ preferred-citation:
     orcid: https://orcid.org/0000-0003-2853-2765
   doi: 10.5281/zenodo.598121
   url: https://github.com/rOpenGov/sorvi
-  year: '2023'
-  notes: R package version 0.8.21
+  year: '2025'
+  notes: R package version 0.9.01
 repository: https://CRAN.R-project.org/package=sorvi
 repository-code: https://github.com/ropengov/sorvi
 url: https://CRAN.R-project.org/package=sorvi
-date-released: '2023-08-21'
+date-released: '2025-08-21'
 contact:
 - family-names: Lahti
   given-names: Leo
@@ -64,12 +69,11 @@ references:
   url: https://www.R-project.org/
   authors:
   - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2023'
   institution:
     name: R Foundation for Statistical Computing
-  version: '>= 3.5.0'
+    address: Vienna, Austria
+  year: '2025'
+  version: '>= 4.1.0'
 - type: software
   title: dlstats
   abstract: 'dlstats: Download Stats of R Packages'
@@ -80,7 +84,8 @@ references:
   - family-names: Yu
     given-names: Guangchuang
     email: guangchuangyu@gmail.com
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.dlstats
 - type: software
   title: dplyr
   abstract: 'dplyr: A Grammar of Data Manipulation'
@@ -104,7 +109,8 @@ references:
     given-names: Davis
     email: davis@posit.co
     orcid: https://orcid.org/0000-0003-4777-038X
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.dplyr
 - type: software
   title: ggplot2
   abstract: 'ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics'
@@ -139,7 +145,12 @@ references:
   - family-names: Dunnington
     given-names: Dewey
     orcid: https://orcid.org/0000-0002-9415-4582
-  year: '2023'
+  - family-names: Brand
+    given-names: Teun
+    name-particle: van den
+    orcid: https://orcid.org/0000-0002-9335-7468
+  year: '2025'
+  doi: 10.32614/CRAN.package.ggplot2
 - type: software
   title: gh
   abstract: 'gh: ''GitHub'' ''API'''
@@ -151,7 +162,8 @@ references:
     given-names: Jennifer
   - family-names: Wickham
     given-names: Hadley
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.gh
 - type: software
   title: tidyr
   abstract: 'tidyr: Tidy Messy Data'
@@ -167,7 +179,8 @@ references:
     email: davis@posit.co
   - family-names: Girlich
     given-names: Maximilian
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.tidyr
 - type: software
   title: purrr
   abstract: 'purrr: Functional Programming Tools'
@@ -177,12 +190,13 @@ references:
   authors:
   - family-names: Wickham
     given-names: Hadley
-    email: hadley@rstudio.com
+    email: hadley@posit.co
     orcid: https://orcid.org/0000-0003-4757-117X
   - family-names: Henry
     given-names: Lionel
-    email: lionel@rstudio.com
-  year: '2023'
+    email: lionel@posit.co
+  year: '2025'
+  doi: 10.32614/CRAN.package.purrr
 - type: software
   title: rlang
   abstract: 'rlang: Functions for Base Types and Core R and ''Tidyverse'' Features'
@@ -196,18 +210,8 @@ references:
   - family-names: Wickham
     given-names: Hadley
     email: hadley@posit.co
-  year: '2023'
-- type: software
-  title: utils
-  abstract: 'R: A Language and Environment for Statistical Computing'
-  notes: Imports
-  authors:
-  - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2023'
-  institution:
-    name: R Foundation for Statistical Computing
+  year: '2025'
+  doi: 10.32614/CRAN.package.rlang
 - type: software
   title: rvest
   abstract: 'rvest: Easily Harvest (Scrape) Web Pages'
@@ -217,23 +221,25 @@ references:
   authors:
   - family-names: Wickham
     given-names: Hadley
-    email: hadley@rstudio.com
-  year: '2023'
+    email: hadley@posit.co
+  year: '2025'
+  doi: 10.32614/CRAN.package.rvest
 - type: software
   title: xml2
   abstract: 'xml2: Parse XML'
   notes: Imports
-  url: https://xml2.r-lib.org/
+  url: https://xml2.r-lib.org
   repository: https://CRAN.R-project.org/package=xml2
   authors:
   - family-names: Wickham
     given-names: Hadley
-    email: hadley@rstudio.com
   - family-names: Hester
     given-names: Jim
   - family-names: Ooms
     given-names: Jeroen
-  year: '2023'
+    email: jeroenooms@gmail.com
+  year: '2025'
+  doi: 10.32614/CRAN.package.xml2
 - type: software
   title: lubridate
   abstract: 'lubridate: Make Dealing with Dates a Little Easier'
@@ -248,7 +254,8 @@ references:
     given-names: Garrett
   - family-names: Wickham
     given-names: Hadley
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.lubridate
 - type: software
   title: checkmate
   abstract: 'checkmate: Fast and Versatile Argument Checks'
@@ -260,7 +267,8 @@ references:
     given-names: Michel
     email: michellang@gmail.com
     orcid: https://orcid.org/0000-0001-9754-0393
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.checkmate
 - type: software
   title: magrittr
   abstract: 'magrittr: A Forward-Pipe Operator for R'
@@ -274,7 +282,8 @@ references:
   - family-names: Wickham
     given-names: Hadley
     email: hadley@rstudio.com
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.magrittr
 - type: software
   title: sf
   abstract: 'sf: Simple Features for R'
@@ -286,7 +295,36 @@ references:
     given-names: Edzer
     email: edzer.pebesma@uni-muenster.de
     orcid: https://orcid.org/0000-0001-8049-7069
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.sf
+- type: software
+  title: httr2
+  abstract: 'httr2: Perform HTTP Requests and Process the Responses'
+  notes: Imports
+  url: https://httr2.r-lib.org
+  repository: https://CRAN.R-project.org/package=httr2
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  year: '2025'
+  doi: 10.32614/CRAN.package.httr2
+- type: software
+  title: tibble
+  abstract: 'tibble: Simple Data Frames'
+  notes: Imports
+  url: https://tibble.tidyverse.org/
+  repository: https://CRAN.R-project.org/package=tibble
+  authors:
+  - family-names: Müller
+    given-names: Kirill
+    email: kirill@cynkra.com
+    orcid: https://orcid.org/0000-0002-1416-3412
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  year: '2025'
+  doi: 10.32614/CRAN.package.tibble
 - type: software
   title: gridExtra
   abstract: 'gridExtra: Miscellaneous Functions for "Grid" Graphics'
@@ -296,7 +334,8 @@ references:
   - family-names: Auguie
     given-names: Baptiste
     email: baptiste.auguie@gmail.com
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.gridExtra
 - type: software
   title: RColorBrewer
   abstract: 'RColorBrewer: ColorBrewer Palettes'
@@ -306,7 +345,8 @@ references:
   - family-names: Neuwirth
     given-names: Erich
     email: erich.neuwirth@univie.ac.at
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.RColorBrewer
 - type: software
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
@@ -318,7 +358,8 @@ references:
     given-names: Yihui
     email: xie@yihui.name
     orcid: https://orcid.org/0000-0003-0645-5666
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.knitr
 - type: software
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
@@ -361,7 +402,8 @@ references:
     given-names: Richard
     email: rich@posit.co
     orcid: https://orcid.org/0000-0003-3925-190X
-  year: '2023'
+  year: '2025'
+  doi: 10.32614/CRAN.package.rmarkdown
 - type: software
   title: Cairo
   abstract: 'Cairo: R Graphics Device using Cairo Graphics Library for Creating High-Quality
@@ -377,7 +419,6 @@ references:
   - family-names: Horner
     given-names: Jeffrey
     email: jeff.horner@vanderbilt.edu
-  year: '2023'
-identifiers:
-- type: url
-  value: https://ropengov.github.io/sorvi/
+  year: '2025'
+  doi: 10.32614/CRAN.package.Cairo
+
