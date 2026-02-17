@@ -1,8 +1,8 @@
 Package: sorvi
 Type: Package
 Title: Functions for Finnish Open Data
-Version: 0.8.21
-Date: 2023-10-20
+Version: 0.9.1
+Date: 2025-09-14
 Authors@R: c(
     person("Leo", "Lahti", , "leo.lahti@iki.fi", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-5537-637X")),
@@ -20,7 +20,7 @@ URL: https://github.com/ropengov/sorvi,
     https://CRAN.R-project.org/package=sorvi,
     https://ropengov.github.io/sorvi/
 Depends:
-    R (>= 3.6.0)
+    R (>= 4.1.0)
 Imports:
     dlstats,
     dplyr,
@@ -29,13 +29,16 @@ Imports:
     tidyr,
     purrr,
     rlang,
-    utils,
     rvest,
     xml2,
     lubridate,
     checkmate,
     magrittr,
-    sf
+    sf,
+    httr2,
+    tibble,
+    R6,
+    utils
 Suggests:
     gridExtra,
     RColorBrewer,
@@ -43,5 +46,5 @@ Suggests:
     rmarkdown,
     Cairo
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 LazyData: true

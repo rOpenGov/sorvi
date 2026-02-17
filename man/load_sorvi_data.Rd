@@ -4,24 +4,22 @@
 \alias{load_sorvi_data}
 \title{Supporting Data}
 \usage{
-load_sorvi_data(data.id, verbose = TRUE)
+load_sorvi_data(data.id = "translation_provinces")
 }
 \arguments{
 \item{data.id}{data ID to download (see details)}
-
-\item{verbose}{verbose}
 }
 \value{
-Data set. The format depends on the data.
+a data.frame
 }
 \description{
 Load custom data sets.
 }
 \details{
-The following data sets are available:
-   \itemize{
-     \item{translation_provinces}{Translation of Finnish province (maakunta) names (Finnish, English).}
-   }
+This function is a thin wrapper to `get_classification_df()`. The only
+value data.id parameter will accept as argument is `translation_provinces`,
+which will return a data.frame object containing the English and Finnish
+names of Finnish provinces from 2025 classification.
 }
 \examples{
 translations <- load_sorvi_data("translation_provinces")

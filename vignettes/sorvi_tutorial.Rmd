@@ -81,6 +81,18 @@ ggplot(map1931) + geom_sf()
 
 See sorvi article [Finnish historical maps with sorvi R package](https://ropengov.github.io/sorvi/articles/finnish-historical-maps.html) for more information and examples.
 
+## Data from Statistics Finland Classification API
+
+Basic usage example:
+
+```{r}
+maakunta <- get_classification_df("maakunta_1", "20200101", lang = "fi")
+head(maakunta)
+suuruusluokka <- get_classification_df("suuruusluokka_1", "20180101", lang = "all")
+
+```
+
+
 ## Licensing and Citations
 
 This work can be freely used, modified and distributed under the 

@@ -1,39 +1,41 @@
 #' @title Supporting Data
 #' @description Load custom data sets.
 #' @param data.id data ID to download (see details)
-#' @param verbose verbose
+#' @details
+#' This function is a thin wrapper to `get_classification_df()`. The only
+#' value data.id parameter will accept as argument is `translation_provinces`,
+#' which will return a data.frame object containing the English and Finnish
+#' names of Finnish provinces from 2025 classification.
 #'
-#' @return Data set. The format depends on the data.
-#' @details The following data sets are available:
-#'    \itemize{
-#'      \item{translation_provinces}{Translation of Finnish province (maakunta) names (Finnish, English).}
-#'    }
+#' @return a data.frame
 #' @examples translations <- load_sorvi_data("translation_provinces")
-#' @importFrom utils read.csv
-#' @export
 #' @references
 #' See citation("sorvi")
-#' @author Leo Lahti \email{leo.lahti@iki.fi}
+#' @author Leo Lahti \email{leo.lahti@@iki.fi}
 #' @keywords utilities
-load_sorvi_data <- function(data.id, verbose = TRUE) {
+#' @importFrom tidyr pivot_wider
+#' @importFrom dplyr rename select
+#' @importFrom rlang .data
+#' @export
+load_sorvi_data <- function(data.id = "translation_provinces") {
 
-  # Useful code for retrieving data from other github repos
-  #url <- ropengov_storage_path("louhos")
-  #filepath <- paste0(url, data.id, ".rda")
-  # While trying to be URL agnostic, figure out if storage path is
-  # pointing to GitHub. If yes, add an extra extension to the url
-  #if (grepl("github.com", filepath)) {
-  #  filepath <- paste0(filepath, "?raw=true")
-  #}
-  #if (verbose) { message(paste("Loading ", filepath, sep = "")) }
-  #load(url(filepath))
+  allow_list <- c("translation_provinces")
 
+  stopifnot(data.id %in% allow_list)
+
+  d <- NULL
   if ( data.id == "translation_provinces" ) {
-    f <- system.file("/extdata/translation_provinces.csv", package = "sorvi")
-    d <- read.csv(f)
+    maakunta_all <- get_classification_df("maakunta_1", "20250101", lang = "all")
+
+    maakunta_wide <- maakunta_all |>
+      tidyr::pivot_wider(names_from = .data$lang, values_from = .data$name, names_prefix = "name_") |>
+      dplyr::rename(Finnish = "name_fi", English = "name_en", Swedish = "name_sv") |>
+      dplyr::select("English", "Finnish")
+
+    d <- maakunta_wide
+    d <- as.data.frame(d)
   }
 
   d
 
 }
-
