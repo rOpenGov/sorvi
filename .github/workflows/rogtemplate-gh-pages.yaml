@@ -9,6 +9,7 @@ on:
       - 'README.Rmd'
   repository_dispatch:
     types: [trigger-pkgdown-workflow]
+  workflow_dispatch:
 
 name: rogtemplate-gh-pages
 
