@@ -25,6 +25,7 @@ You can install the development version of sorvi from
 [GitHub](https://github.com/) with:
 
 ``` r
+
 # install.packages("remotes")
 remotes::install_github("rOpenGov/sorvi")
 ```
@@ -33,6 +34,7 @@ Development version can be also installed using the
 [r-universe](https://ropengov.r-universe.dev):
 
 ``` r
+
 # Enable this universe
 options(repos = c(
   ropengov = "https://ropengov.r-universe.dev",
@@ -50,12 +52,14 @@ therefore highly recommended to use development version of the package.
 Loading the package in R:
 
 ``` r
+
 library(sorvi)
 ```
 
 Get download statistics of eurostat-package, by year:
 
 ``` r
+
 df <- cran_downloads(pkgs = "eurostat", sum = "by_year", use.cache = FALSE)
 df
 #> # A tibble: 5 × 3
@@ -73,6 +77,7 @@ Get download statistics of various rOpenGov packages over time and draw
 a chart:
 
 ``` r
+
 packages <- c("eurostat", "giscoR", "sotkanet", "geofi", "sweidnumbr")
 plot <- cran_downloads(pkgs = packages, sum = "total", output = "plot", use.cache = FALSE)
 plot

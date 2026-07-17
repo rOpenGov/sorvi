@@ -18,6 +18,7 @@ maintenance, authoring and preparing presentations.
 Install the stable release version from CRAN in R:
 
 ``` r
+
 install.packages("sorvi")
 ```
 
@@ -25,6 +26,7 @@ Alternatively, use `remotes` package to install the latest development
 version from GitHub:
 
 ``` r
+
 library(remotes)
 remotes::install_github("ropengov/sorvi")
 ```
@@ -32,6 +34,7 @@ remotes::install_github("ropengov/sorvi")
 Loading the package in R command line:
 
 ``` r
+
 library(sorvi)
 ```
 
@@ -43,6 +46,7 @@ older versions.
 Get download statistics of eurostat-package, by year:
 
 ``` r
+
 df <- cran_downloads(pkgs = "eurostat", sum = "by_year", use.cache = FALSE)
 df
 ```
@@ -51,6 +55,7 @@ Get download statistics of various rOpenGov packages over time and draw
 a chart:
 
 ``` r
+
 packages <- c("eurostat", "giscoR", "sotkanet", "geofi", "sweidnumbr")
 plot <- cran_downloads(pkgs = packages, sum = "total", output = "plot", use.cache = FALSE)
 plot
@@ -80,6 +85,7 @@ A simple example of using the
 function for drawing a map containing Finnish municipalities in 1931:
 
 ``` r
+
 library(ggplot2)
 map1931 <- get_municipalities(year = 1931)
 ggplot(map1931) + geom_sf()
@@ -97,6 +103,7 @@ This work can be freely used, modified and distributed under the
 [Two-clause BSD license](https://en.wikipedia.org/wiki/BSD_licenses).
 
 ``` r
+
 citation("sorvi")
 #> Kindly cite the sorvi R package as follows:
 #> 
@@ -126,10 +133,11 @@ For data attribution, see dataset documentation.
 This vignette was created with
 
 ``` r
+
 sessionInfo()
-#> R version 4.5.2 (2025-10-31)
+#> R version 4.6.1 (2026-06-24)
 #> Platform: x86_64-pc-linux-gnu
-#> Running under: Ubuntu 24.04.3 LTS
+#> Running under: Ubuntu 24.04.4 LTS
 #> 
 #> Matrix products: default
 #> BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
@@ -148,25 +156,25 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] ggplot2_4.0.2 sorvi_0.8.21 
+#> [1] ggplot2_4.0.3 sorvi_0.8.21 
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] tidyr_1.3.2        sass_0.4.10        generics_0.1.4     class_7.3-23      
-#>  [5] xml2_1.5.2         KernSmooth_2.23-26 digest_0.6.39      magrittr_2.0.4    
-#>  [9] evaluate_1.0.5     grid_4.5.2         timechange_0.4.0   RColorBrewer_1.1-3
-#> [13] fastmap_1.2.0      jsonlite_2.0.0     e1071_1.7-17       backports_1.5.0   
-#> [17] DBI_1.3.0          httr_1.4.8         rvest_1.0.5        purrr_1.2.1       
-#> [21] scales_1.4.0       textshaping_1.0.5  jquerylib_0.1.4    cli_3.6.5         
-#> [25] rlang_1.1.7        units_1.0-0        withr_3.0.2        cachem_1.1.0      
-#> [29] yaml_2.3.12        tools_4.5.2        checkmate_2.3.4    dplyr_1.2.0       
-#> [33] vctrs_0.7.1        R6_2.6.1           proxy_0.4-29       lifecycle_1.0.5   
-#> [37] lubridate_1.9.5    classInt_0.4-11    fs_1.6.7           htmlwidgets_1.6.4 
-#> [41] ragg_1.5.1         pkgconfig_2.0.3    desc_1.4.3         pkgdown_2.2.0     
-#> [45] pillar_1.11.1      bslib_0.10.0       gtable_0.3.6       Rcpp_1.1.1        
-#> [49] glue_1.8.0         gh_1.5.0           sf_1.1-0           systemfonts_1.3.2 
-#> [53] xfun_0.56          tibble_3.3.1       tidyselect_1.2.1   knitr_1.51        
-#> [57] farver_2.1.2       htmltools_0.5.9    rmarkdown_2.30     dlstats_0.1.7     
-#> [61] compiler_4.5.2     S7_0.2.1
+#>  [5] xml2_1.6.0         KernSmooth_2.23-26 digest_0.6.39      magrittr_2.0.5    
+#>  [9] evaluate_1.0.5     grid_4.6.1         timechange_0.4.0   RColorBrewer_1.1-3
+#> [13] fastmap_1.2.0      jsonlite_2.0.0     e1071_1.7-17       backports_1.5.1   
+#> [17] DBI_1.3.0          httr_1.4.8         rvest_1.0.5        purrr_1.2.2       
+#> [21] scales_1.4.0       textshaping_1.0.5  jquerylib_0.1.4    cli_3.6.6         
+#> [25] rlang_1.3.0        units_1.0-1        withr_3.0.3        cachem_1.1.0      
+#> [29] yaml_2.3.12        otel_0.2.0         tools_4.6.1        checkmate_2.3.4   
+#> [33] dplyr_1.2.1        vctrs_0.7.3        R6_2.6.1           proxy_0.4-29      
+#> [37] lifecycle_1.0.5    lubridate_1.9.5    classInt_0.4-11    fs_2.1.0          
+#> [41] htmlwidgets_1.6.4  ragg_1.5.2         pkgconfig_2.0.3    desc_1.4.3        
+#> [45] pkgdown_2.2.1      pillar_1.11.1      bslib_0.11.0       gtable_0.3.6      
+#> [49] Rcpp_1.1.2         glue_1.8.1         gh_1.6.0           sf_1.1-1          
+#> [53] systemfonts_1.3.2  xfun_0.60          tibble_3.3.1       tidyselect_1.2.1  
+#> [57] knitr_1.51         farver_2.1.2       htmltools_0.5.9    rmarkdown_2.31    
+#> [61] dlstats_0.1.8      compiler_4.6.1     S7_0.2.2
 ```
 
 To call in the statistician after the experiment is done may be no more

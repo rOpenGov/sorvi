@@ -103,6 +103,7 @@ Historical maps can be drawn simply by using the
 function.
 
 ``` r
+
 library(sorvi)
 #> sorvi - Tools for Finnish Open Data.
 #> Copyright (C) 2010-2023 Leo Lahti, Juuso Parkkinen, Joona Lehtomaki and Pyry Kantanen 
@@ -136,12 +137,14 @@ head(x)
 The municipalities can be plotted with base R functions or with ggplot2.
 
 ``` r
+
 plot(x)
 ```
 
 ![](finnish-historical-maps_files/figure-html/unnamed-chunk-3-1.png)
 
 ``` r
+
 
 library(ggplot2)
 ggplot(x) + geom_sf()
